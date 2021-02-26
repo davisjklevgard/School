@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking the dog</title>
+    <style>
+      body {
+        background-color: #182739;
+        color: #808080;
+        margin: 0px 0px 0px 0px;
+      }
+      canvas {
+        display: block;
+
+        border: 1px solid #808080;
+        margin: auto;
+      }
+      p, footer {
+        display: block;
+        margin: auto;
+        text-align: center;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="output">Choose: 1
+    <p>You are sitting in your chair. It feels 
+      so great to be able to sit down, you dont want to move. 
+      Your dog comes up to you, pining and holding their leash. 
+      Oh no, do you need to go for a walk?
+      Your dog nods its head.<br>1. Take the dog for a walk.
+   </p>
+    </main>
+    <script>
+    let sceneId = 0
+  const onPress = function(event) {
+      console.log(event);
+      if (event.keyCode === 49 && sceneId === 0) {
+        output.innerHTML = "Walking the dog"
+      }
+      else {
+        (event.keyCode === 50 && sceneId === 0)
+          output.innerHTML = "Oh you better walk the dog"
+      }
+    };
+
+window.addEventListener('keydown', onPress, false);
+window.addEventListener('mousedown', onPress, false);
+    </script>
+    
+    <footer>version 1.0</footer>
+  </body>
+</html>
