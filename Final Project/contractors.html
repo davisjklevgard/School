@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Rentals Organized-Contractor Repair Request</title>
+    <link rel="stylesheet" href= "css/javajam.css">
+  <meta name="generator" content="BBEdit 13.5" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="wrapper">
+  <header>
+    <h1>Contractor Requests</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a>
+      <li><a href="repairrequests.html">Rentals</a>
+      <li><a href="tenants.html">Tenants</a>
+      <li><a href="contractors.html">Contractors</a>
+    </ul>
+  </nav>
+  <main>
+    <h2>Request Form</h2>
+    <p>Want to work at JavaJam? Fill out the form below to start your application.</p>
+    <form method="post" action="https://webdevbasics.net/scripts/javajam.php">
+      <label for="myName">*Name:</label>
+      <input required type="text" name="myName" id="myName">
+      
+      <label for="myEmail">*Email:</label>
+      <input required type="email" name="myEmail" id="myEmail">
+      
+      <label for="myStart">Date of Entry:</label>
+      <input type="date" name="myStart" id="myStart">
+      
+      <label for="contractor">*Contractor:</label>
+        <select name="contractor" id="contractor">
+          <option selected value="electrician">Electrician</option>
+          <option selected value="plumber">Plumber</option>
+          <option selected value="hamdyman">Handyman</option>
+        </select>
+        
+      <label for="repairRequest">*Repair Request:</label>
+      <textarea required id="repairRequest" name="repairRequest" rows="4" cols="50">
+      </textarea>
+      
+      <input type="submit" value="Apply Now">
+    </form>
+  </main>
+    <footer>
+      <small> Copyright &copy; 2021 Rentals Organized<br> 
+        <a href="mailto:davis@klevgard.com">davis@klevgard.com</a>
+      </small>
+    </footer>
+    </div>
+  </body>
+</html>
