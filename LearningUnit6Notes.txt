@@ -1,0 +1,109 @@
+Learning Unit 6
+	•	For Statements and Data Structures
+	⁃		Repeat. Programming
+	⁃		Called Looping
+	⁃		We need to learn how to control:	
+	⁃			which tasks are repeated
+	⁃			how many times are they repeated
+	⁃			when should it stop repeating the tasks
+	⁃			what should happen after it stops repeating
+	⁃		We do that through a loop
+	⁃		Three main looping structures 
+	⁃			Leading Decision Loop
+	⁃				Test the condition and make the decision FIRST
+	⁃				done using a while loop
+	⁃			Trailing Decision Loop
+	⁃				Test the condition and make the decision AFTER  the fact
+	⁃				Example pseudocode
+	⁃					DO
+	⁃					statement block
+	⁃					WHILE condition p is true
+	⁃				this guarantees that the statement will run at least once
+	⁃			Counted Loop
+	⁃				Repeat the statement block a specific number of times
+	⁃				different ways to make this 
+	⁃				example:
+	⁃					set counter
+	⁃					WHILE counter < 10
+	⁃					add 1 to counter
+	⁃		Infinite loops
+	⁃			will happen with while and for loops
+	⁃			loop will not stop so add a condition that will not be true
+	⁃		For loops
+	⁃			a counted loop
+	⁃			for (I = 0; I < 10; I++)
+	⁃			similar to while loops, but loop counter is built in
+	⁃		Arrays
+	⁃			can help store more than one value in a variable
+	⁃			used for lists of data
+	⁃			An array is a piece of memory divided up into portions
+	⁃			arrays are data types, like strings and numbers
+	⁃			the array will take up more memory than just one of them
+	⁃			Example:
+	⁃			var names = [];
+	⁃			var names = [“Homer”, “Bart”, “Lisa”];
+	⁃		Index
+	⁃			used to get an element from an array
+	⁃			names[0];
+	⁃			indexes start at 0 instead of 1
+	⁃			This is because of the location in the computer’s memory
+	⁃		Index Error
+	⁃			happens when a user tries to call an index out of range
+	⁃		Array Size
+	⁃			Some languages have arrays that are fixed to a size
+	⁃			JavaScript does not care
+	⁃			It will fill in the entries that do not have anything in them though
+	⁃		Nested Arrays
+	⁃			Two-dimensional arrays
+	⁃			an array in an array
+	⁃			var letters = [
+	⁃	 		 ["A", "B", "C", "D", "E", "F", "G"],
+	⁃			 ["H", "I", "J", "K", "L", "M", "N"],
+	⁃	 		 ["O", "P", "Q", "R", "S", "T", "U"],
+	⁃			 ["V", "W", "X", "Y", "Z", ".", "!"]
+	⁃			];
+	⁃			var theLetterH = letters[1][0]; [row][column]
+	⁃			the first bracket gets the row, second gets the column 
+	⁃		Strings are Arrays
+	⁃			strings are an array of characters 
+	⁃			C makes you face that head on 
+	⁃			char name[] = “Homer”
+	⁃		Finding the number of entries 
+	⁃			use .length
+	⁃			numberOfItems = fruit.length
+	⁃		Print an array
+	⁃			for( var index=0; index < fruit.length; index++) {
+	⁃				document.write(fruit[index] + “\n”);
+	⁃			}
+	⁃		Pushing into arrays
+	⁃			we can add more to an array in JavaScript with ‘push’
+	⁃			Example:
+	⁃				fruit.push(“Cherry”);
+	⁃			this adds an item to the end of the array
+	⁃		Operations on Arrays
+	⁃			Reverse the order
+	⁃				var reverse = numbers.revers();
+	⁃			Sort them in order
+	⁃				var sort = numbers.sort
+	⁃			Split a string into an array
+	⁃				var letters = word.split();
+	⁃			Join arrays into strings if the array is of characters
+	⁃				var. word = letters.join(“”)l
+	⁃		Hashing
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
