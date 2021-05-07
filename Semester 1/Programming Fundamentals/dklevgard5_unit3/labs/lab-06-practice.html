@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 6 - Specifications</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head> 
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 3: Program Design and Debugging</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>Lab 6 - Specifications</h1>
+        <h4>File: /Unit3/labs/lab-06-practice.html</h4>
+        <h3>Student</h3>
+        <ul>
+          <li>Name: Davis Klevgard</li>
+        </ul>
+        <h3>Specifications</h3>
+        <ul>
+          <li>Open this file in Firefox and Notepad++</li>
+          <li>Add your name in the appropriate spot</li>
+          <li>You can use your previous labs as a guides/examples.</li>
+          <li>Read the following problem statement and complete all 5 steps in the development process.
+            <ul>
+              <li>Remember, you'll fill in the nouns and verbs, create the defining diagram, build the solution algorithm, create test plans, and then write the code.</li>
+            </ul>
+          </li>
+          <li> This program will really test your ability to work with strings!</li>
+        </ul>
+        <h3>Problem Statement</h3>
+        <blockquote>
+          <p><em><strong>A program is required that prompts a user for the first name and last name of a dog owner and the name of his or her dog. The program will generate an information statement for the dog owner using the following pattern and then display the string on the page. (Check out the sample output below.)</strong></em></p>
+        </blockquote>
+        <ul>
+          <li>Example output: <strong>Lou Smith's dog is named "Fido.&quot;</strong></li>
+          <li> These are the parts of the string:
+            <ul>
+              <li>First Name</li>
+              <li>A space</li>
+              <li>Last Name</li>
+              <li>An apostrophe</li>
+              <li>The letter <strong>s</strong></li>
+              <li>A space</li>
+              <li>This string of text: <strong>dog is named</strong></li>
+              <li>A space</li>
+              <li>A double quote mark</li>
+              <li>The dog's name</li>
+              <li>A period</li>
+              <li>A double quote mark</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>1. Nouns and Verbs</h3>
+        <p>Identify the nouns and verbs in the problem statement. Concentrate on the important nouns and verbs that are relevant to the problem.</p>
+
+
+<pre class="pseudocode">PROBLEM STATEMENT:
+
+Nouns: Lou, Smith, Fido
+
+Verbs: named
+</pre>
+
+
+
+        <h3>2. Defining Diagram</h3>
+        <p>Convert the nouns and verbs into variable names and processes and create a defining diagram. Follow the course naming standards for inputs and outputs.</p>
+
+
+<pre class="pseudocode">
+INPUTS:
+  firstName
+  lastName
+  dogName
+
+PROCESSING:
+  read firstName
+  read lastName
+  read dogName
+  create dogStatement
+  output dogStatement
+
+OUTPUTS:
+  dogStatement
+
+</pre>
+
+
+        <h3>3. Solution Algorithm</h3>
+        <p>Create a solution algorithm based on the defining diagram.</p>
+
+
+<pre class="pseudocode">
+SOLUTION ALGORITHM
+  PersonDogsName
+    Initialize firstName to ""
+    Initialize lastName to ""
+    Initialize dogName to ""
+    
+    Prompt for firstName
+    Prompt for lastName
+    Prompt for dogName
+    
+    Display firstName + lastName "'s dog is named \"" + dogName + ".\""
+  END
+</pre>
+
+
+        <h3>4. Checking the Solution Algorithm</h3>
+        <p>Create a test plan for the algorithm. You need to have <b>at least
+            three</b> test cases. Once your JavaScript solution is running
+          correctly, fill in the actual results.</p>
+
+        <p>Don't forget to fill in the <span class="keyword">VARIABLES</span> section at the
+          top of the test plan!</p>
+
+
+<pre class="pseudocode">
+VARIABLES:
+  firstName
+  lastName
+  dogName
+
+TEST CASE 1:
+
+  INPUT VALUES: Alex, Carter, Buddy
+
+  EXPECTED RESULT:
+    Alex Carter's dog is named "Buddy."
+  ACTUAL RESULT:
+    Alex Carter's dog is named "Buddy."
+TEST CASE 2:
+
+  INPUT VALUES: Alli, Jones, Rock
+
+  EXPECTED RESULT:
+    Alli Jones's dog is named "Rock."
+  ACTUAL RESULT:
+    Alli Jones's dog is named "Rock."
+TEST CASE 3:
+
+  INPUT VALUES: Jacob, Dunn, Maggie 
+
+  EXPECTED RESULT:
+    Jacob Dunn's dog is named "Maggie."
+  ACTUAL RESULT:
+    Jacob Dunn's dog is named "Maggie."
+</pre>
+
+
+        <h3>5. JavaScript Code</h3>
+        <p>Write the JavaScript code based on everything you've done. Your code must follow the course coding standards. You should add good comments about the different parts of your solution.</p>
+        <h3><strong>Sample Output:</strong></h3>
+
+
+<pre class="output">
+Bart Simpson's dog is named &quot;Santa's Little Helper.&quot;</pre>
+
+				<h3>Your Output:</h3>
+
+<pre class="output">
+<script id="student_code">
+// YOUR CODE STARTS AFTER THIS LINE:
+// Declare variables
+var firstName = "";
+var lastName = "";
+var dogName = "";
+var output = ""; 
+
+//Prompt user for names
+firstName = prompt("Enter first name");
+lastName = prompt("Enter last name");
+dogName = prompt("Enter dog name"); 
+
+output = firstName + " " + lastName + "'s dog is named \"" + dogName + ".\"";
+
+document.write(output); 
+
+
+
+// END OF YOUR CODE
+</script>
+</pre>
+
+
+        <h2>What you learned</h2>
+        <p>You got more practice writing JavaScript code, going through the entire development process. Keep it up. </p>
+        <p><a href="../index.html">Back</a></p>
+        <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

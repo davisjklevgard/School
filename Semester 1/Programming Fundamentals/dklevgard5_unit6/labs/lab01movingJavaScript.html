@@ -1,0 +1,109 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 1: Moving Your JavaScript</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head> 
+  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 6: Loops, Functions, and Data Structures</a></h2>
+      </header>
+      
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+        <h1>Lab 1: Moving Your JavaScript</h1>
+        <h4>File: unit6/labs/lab01movingJavaScript.html</h4>
+        <h3>Student</h3>
+        <ul>
+          <li>Name:  Davis Klevgard</li>
+        </ul>
+        <h3>Lab Steps</h3>
+        <ol>
+          <li>Open this file in Firefox and Notepad++.</li>
+          <li>Add your name to this file in the appropriate spot.</li>
+          <li>Open Notepad++ and create a new empty file.</li>
+          <li>Save this new file into the <code>unit6/labs/js</code> directory.</li>
+          <li>Give the file the name <code>lab01movingJavaScript.js</code>. It must be spelled EXACTLY like that or this lab won't work!</li>
+          <li>Open this Lab 1 <span class="caps">HTML </span>file <code>lab01movingJavaScript.html</code> in Notepad++.</li>
+          <li>Scroll down to the JavaScript code, it's in the place we usually key in our JavaScript code.</li>
+          <li>Copy the JavaScript code, and <strong>just the JavaScript code</strong>, and paste it into the file you made named <code>lab01movingJavaScript.js</code>. Remember, don't take the <code class="keyword">&lt;script&gt;</code> tags, just take the JavaScript code.</li>
+          <li>Add this line above the code you just pasted - it should be the <strong>first line of the file</strong>:<br />
+            <pre><code class="js">function lab01movingJavaScript() {</code></pre>
+          </li>
+          <li>Add this after the end - it should be <strong>the last line of the file.</strong><br />
+            <pre><code class="js">}</code></pre>
+          </li>
+          <li>Now we need to indent our code. The <code class="varname">function</code> line and the final <code>}</code> should be all the way over to the left. Our code between those lines must then be indented 2 spaces.<br>
+            <br>
+
+<pre><code class="js">
+function lab01movingJavaScript() {<br>  //your code
+  // should all be indented
+  // two spaces over
+}</code></pre>
+
+          </li>
+          <li>Finally, add the function call. The function call looks like this:<br>
+            <pre><code class="js">lab01movingJavaScript();</code></pre>
+          </li>
+          <li>Save that file. We're done with it.</li>
+          <li>
+            Now edit the lab <span class="caps">HTML </span>file (this file
+            you're reading) and delete everything between the <code
+            class="keyword">&lt;script&gt;</code> tag and the<strong> <code
+            class="keyword">&lt;/script&gt; </code></strong>tag.
+            That's right, we don't need the JavaScript code any more now
+            that we've put the code to another file.</li>
+          <li>Finally, since the <code class="keyword">&lt;script&gt;</code> tags are empty, we can remove those too.</li>
+          <li>Refresh this  page. Did it work? Did you still get the output? (If you didn't, go through each of the steps above to see where your error is. Check each step. Is everything is spelled correctly? Has it been keyed into the proper location?)</li>
+        </ol>
+        <p>How did that work? Well, if you look at the source of this page,
+          you'll find this line in the <code class="keyword">output</code> section right below the &lt;script&gt; tags you just removed:</p>
+
+<pre><code language="html">
+&lt;script src="js/lab01movingJavaScript.js"&gt;&lt;/script&gt;</code></pre>
+
+        <p>This line loads the <code>lab01movingJavaScript.js</code> file that you created to the document.
+          Without this line, the functions you placed in the <code>lab01movingJavaScript.js</code> file wouldn't be visible to the page and you'd get errors.</p>
+
+        <h3>Lab Output:</h3>
+
+
+<pre class="output">
+
+
+<!-- DON'T DELETE THIS!!!! -->
+<script src="js/lab01movingJavaScript.js"></script>
+</pre>
+
+        <h2>What You Learned</h2>
+        <p>You learned how you can separate JavaScript code from HTML code by placing JavaScript code in a separate file. This is how professional web developers work with JavaScript and how you'll be expected to do things from this point on.</p>
+        <p><a href="../externalScripts.html">Back</a></p>
+
+
+    <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+   </section>
+ </body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 3: First Variables</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable --> 
+  </head>  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 2: JavaScript Syntax and Variables</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>Lab 3: First Variables</h1>
+        <h4>File: /Unit2/lab-03-variables1.html</h4>
+        <h3>Student Information</h3>
+        <ul>
+          <li>Name: Davis Klevgard</li>
+        </ul>
+        <h3>First...take a look at this sample JavaScript Source Code:</h3>
+        <ul>
+          <li> The code in my example will:
+            <ul>
+              <li> add a variable to hold my age, which is called "declaring a variable"</li>
+              <li>...and put my age in the variable, which is called "assigning a value to a variable" </li>
+              <li> declare a variable to hold my dog's name</li>
+              <li>...and assigns my dog's name to it</li>
+              <li>add a "break tag" so that my age and my dog's name display on two separate lines </li>
+            </ul>
+          </li>
+        </ul>
+
+<pre><code class="javascript">
+// Declare Variables
+var myAge;
+var myDogsName;
+
+// Assign values to variables
+myAge = 33;
+myDogsName = "Penny";
+
+// Display my age on the page
+document.write(myAge);
+
+// Add a line-break
+document.write(&quot;\n&quot;);
+
+// Display my dog's name on the page.
+document.write(myDogsName);
+</code></pre>
+
+
+        <ul>
+          <li>Here's what my output would look like:</li>
+        </ul>
+
+<pre class="output">
+33
+Penny</pre>
+
+
+        <h3>Lab Steps</h3>
+        <ul>
+          <li>Open this file in Firefox and Notepad++</li>
+          <li>Add your name in the regular spot up toward the top.</li>
+          <li>In Notepad++, with this document open, locate the coding section. Scroll down until you find the line that says:<code> YOUR CODE STARTS AFTER THIS LINE:</code></li>
+          <li>In the coding section below, add these variables:
+            <ul>
+              <li>a variable that holds a <strong>name</strong>, put your name in the variable</li>
+              <li>a variable that holds an <strong>address</strong>, put a fake address in the variable</li>
+              <li>a variable that holds a <strong>count</strong>, put the number 10 in the variable</li>
+              <li>a variable that holds a <strong>price</strong>, put an amount of "12.99" in the variable</li>
+            </ul>
+          </li>
+          <li>Now display the variables using the <strong>document.write();</strong> function
+            <ul>
+              <li>Use a separate statement for each variable</li>
+            </ul>
+          </li>
+          <li>Does your code follow the course coding standards you learned?
+            <ul>
+              <li>Did you indent your code 2 spaces, not tabs?</li>
+              <li>Did you use good names?</li>
+              <li>How about blank lines to improve readability?</li>
+              <li>Did you comment your code?</li>
+              <li>Did you <b>check your code with <a href="http://jshint.com">JSHint?</a></b></li>
+            </ul>
+          </li>
+          <li>Now save this file in Notepad++, swap over to Firefox and refresh your browser, and scroll down the web page to look at the section called: "Your Output".</li>
+          <li>By the way, by refreshing your browser, you just "ran your program". Did you see something like this?</li>
+        </ul>
+
+<pre class="output">Homer Simpson123 Some Street1012.99</pre>
+
+        <ul>
+          <li>If you have NO OUTPUT...or incorrect output...you must have an error in your code. Check each character in each line carefully! If you find an error, fix it in Notepad++, save it again, and refresh. Continue to fix errors until you get output!</li>
+          <li>If you DID get output, but it's all on one line...you need some line-breaks (we call them break tags).</li>
+          <li><strong>document.write();</strong> does not make its output go on the next line. You have to do that yourself. Here's how to do it:
+            <ul>
+              <ul>
+                <li>You could add a blank line like this:
+                  <ul>
+                    <li><code>document.write(&quot;\n&quot;);</code></li>
+                  </ul>
+                </li>
+                <li>But normally you'd add the characters <code>\n</code> to the end of the string, inside the quotes, like this:
+                  <ul>
+                    <li><code>document.write(&quot;Hello there!\n&quot;);</code></li>
+                  </ul>
+                </li>
+                <li>That's the newline character, and that's the preferred method in most programming languages. </li>
+                <li>When using JavaScript within HTML pages, newline characters are ignored unless the output is wrapped in &lt;pre&gt; tags.
+                  <ul>
+                    <li>The output sections of each learning unit (where you will type your code) are set up to accept newline characters.</li>
+                  </ul>
+                </li>
+                <li>The other option, when working with HTML, is to use document.write to insert the &lt;br&gt; tag, like this:
+                  <ul>
+                    <li><code>document.write(&quot;&lt;br&gt;&quot;);</code></li>
+                  </ul>
+                </li>
+                </ul>
+              <li>You will need to use one of the above methods  when you want the next piece of data to be on the next line.</li>
+              <ul>
+                <li>You will need either three break tags (One after each of the first three document.write commands) or you'll need to put \n at the end of each line of text, within the quotes. <strong>Remember, either approach is acceptable, but the \n approach is universal to any program in any language, whereas </strong><strong>&lt;br&gt; only works in HTML pages, as the browser processes the &lt;br&gt; character and turns it into a line break.</strong> </li>
+              </ul>
+            </ul>
+          </li>
+          <li>Your output should look exactly like this:</li>
+        </ul>
+
+<pre class="output">
+Homer Simpson
+123 Some Street
+10
+12.99
+</pre>
+
+        <ul>
+          <li>So when do you use <code>&lt;br&gt;</code> vs <code>\n</code>?
+            <ul>
+              <li>In output that will be displayed on a web page, use <code>&lt;br&gt;</code>. You can even append it to each line of output:
+                <ul>
+                  <li>document.write(&quot;Some text&lt;br&gt;&quot;);</li>
+                </ul>
+              </li>
+              <li>For other kinds of programs where the text is not being displayed inside of HTML, like JavaScript prompts, alert boxes, etc, use <code>\n</code>.</li>
+            </ul>
+          </li>
+          <li>Remember, in our labs, both will work because of how I coded the output section. Be comfortable with both approaches, but be consistent in a program.</li>
+        </ul>
+        <h3>Your Output</h3>
+
+<pre class="output">
+<script>
+// YOUR CODE STARTS AFTER THIS LINE:
+
+//
+var programmerName = "Davis Klevgard";
+var addressOfFakePlace = "123 Fake Street";
+var countOfRandomNumber = 10;
+var priceForBanana = "12.99";
+
+document.write(programmerName);
+document.write("<br>");
+document.write(addressOfFakePlace);
+document.write("<br>");
+document.write(countOfRandomNumber);
+document.write("<br>");
+document.write(priceForBanana);
+
+
+// END OF YOUR CODE
+</script>
+</pre>
+
+        <h3>What You Did</h3>
+        <p>You practiced creating some JavaScript variables and then displaying their values on the lab page. You learned that we need to add a line break in our output to have new lines of text.</p>
+        <p>Remember, <code>&lt;br&gt;</code> really means a <strong>line break</strong> in HTML. Always mark up content  using proper semantic markup. If it's a paragraph, wrap it in <code>&lt;p&gt;</code> tags. If you don't like the spaces between lines, control how it looks with CSS. HTML has many tags that each have a specific use. Use them correctly.</p>
+        <p><a href="../variables.html">Back</a></p>
+    	<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

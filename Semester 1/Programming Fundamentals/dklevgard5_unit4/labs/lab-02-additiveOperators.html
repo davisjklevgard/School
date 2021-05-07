@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 2: Additive Operators</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 4: Operators and Functions</a></h2>
+      </header>
+
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Lab 2: Additive Operators</h1>
+
+        <h4>File: unit4/labs/lab-02-additiveOperators.html</h4>
+
+        <h3>Student Information</h3>
+
+
+        <ul>
+          <li>Name: Davis Klevgard</li>
+        </ul>
+
+
+
+        <h3>Lab Steps</h3>
+
+
+        <ol>
+          <li>Open this file in Firefox and Notepad++.</li>
+          <li>Add your name in the appropriate area above.</li>
+          <li>Add code after the line: <code>YOUR CODE STARTS AFTER THIS LINE:</code> to complete this lab.</li>
+          <li>Your output should look like the <strong>Example Output</strong> below.</li>
+          <li><strong>Variable declarations section</strong>
+            <ol>
+              <li>Write a comment that identifies this coding section.</li>
+              <li>Add the following variables (<strong>but be sure to declare them in the right order!)</strong>
+                <ol>
+                  <li><code class="keyword">addTotal</code></li>
+                  <li><code class="keyword">subtractTotal</code></li>
+                  <li><code class="keyword">total</code></li>
+                  <li><code class="keyword">numberOne</code></li>
+                  <li><code class="keyword">numberTwo</code></li>
+                  <li><code class="keyword">numberThree</code></li>
+                  <li><code class="keyword">numberFour</code></li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li><strong>Assignments section</strong>
+            <ol>
+              <li>Write a comment that identifies this coding section.</li>
+              <li>Prompt the user for a number and assign it to the variable <code class="keyword">numberOne</code>.</li>
+              <li>Repeat Step 2 to ask for numbers for variables: <code class="keyword">numberTwo</code>, <code class="keyword">numberThree</code>, and <code class="keyword">numberFour</code>.</li>
+              <li>Using the <code>prompt</code> function means that JavaScript will accept the values keyed in by the user as strings. Use the <code>Number</code> function to convert the entered strings to numbers in-place. (There's a good example on the page you already covered in this unit on Simple Assignment statements.)</li>
+            </ol>
+          </li>
+          <li><strong>Calculations section</strong>
+            <ol>
+              <li>Write a comment that identifies this coding section.</li>
+              <li>Add <code class="keyword">numberOne</code> to <code class="keyword">numberTwo</code> and put the results into <code class="keyword">addTotal</code>.</li>
+              <li>Subtract <code class="keyword">numberFour</code> <strong>from</strong> <code class="keyword">numberThree</code> and put the results into <code class="keyword">subtractTotal</code>.</li>
+              <li>Add <code class="keyword">addTotal</code> and <code class="keyword">subtractTotal</code> and put the results into <code class="keyword">total</code>.</li>
+            </ol>
+          </li>
+          <li><strong>Output section</strong>
+            <ol>
+              <li>Write a comment that identifies this coding section.</li>
+              <li>Display <code class="keyword">numberOne</code>, <code class="keyword">numberTwo</code>, <code class="keyword">numberThree</code>, and <code class="keyword">numberFour</code> </li>
+              <li>Display <code class="keyword">addTotal</code> and <code class="keyword">subtractTotal</code> on their own lines with labels.</li>
+              <li>Display <code class="keyword">total</code> on its own line with a label.</li>
+            </ol>
+          </li>
+        </ol>
+
+        <ul>
+          <li><strong>Note:</strong> Make sure you have a blank line between the coding sections.</li>
+          <li>
+            <strong>Another Note:</strong> Make sure your output is formatted
+            like the example output below.  The numbers will change, obviously,
+            based on which numbers are keyed in by the user. But, the format
+            should be the same.</li>
+        </ul>
+
+
+        <h3>Example Output</h3>
+
+
+<pre class="output">
+NumberOne is 1
+NumberTwo is 2
+NumberThree is 3
+NumberFour is 4<br>
+addTotal: 3
+subtractTotal: -1
+
+total: 2
+</pre>
+
+
+
+        <h3>Your Output:</h3>
+
+
+
+<pre class="output">
+<script id="student_code">
+// YOUR CODE STARTS AFTER THIS LINE:
+//Variable Declaration
+var numberOne;
+var numberTwo;
+var numberThree;
+var numberFour;
+var addTotal;
+var subtractTotal;
+var total;
+
+
+
+//Assignments
+numberOne = Number(prompt("Enter a number"));
+numberTwo = Number(prompt("Enter a number"));
+numberThree = Number(prompt("Enter a number"));
+numberFour = Number(prompt("Enter a number"));
+
+//Calculations 
+
+addTotal = numberOne + numberTwo; 
+subtractTotal = numberThree - numberFour;
+total = addTotal + subtractTotal;
+
+//Output 
+document.write("NumberOne is " + numberOne + "\nNumberTwo is " + numberTwo + "\nNumberThree is " 
+                + numberThree + "\nNumberFour is " + numberFour + "\n\naddTotal: " + addTotal + 
+                "\nsubtractTotal: " + subtractTotal + "\n\ntotal: " + total)
+
+
+// END OF YOUR CODE
+</script>
+</pre>
+
+        <h3>What You Learned</h3>
+        <p>You used addition and subtraction operators with variables, and got more practice with string concatenation.</p>
+        <p><a href="../addSubtractOperators.html">Back</a></p>
+        <p>&nbsp;</p>
+<!-- InstanceEndEditable -->
+      </section>
+
+      <footer>
+        <p>
+          Latest version: 1.2009
+        </p>
+      </footer>
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+<title>The Structure Theorem</title>
+<!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+  </head>  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 1</a>: Introduction and Program Design</h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>The Structure Theorem</h1>
+        <p><em>The Structure Theorem helps us break down a problem or a system into small parts that can be easily coded. It is also known as The Structured Program Theorem</em>. </p>
+        <p>The theorem states that it is possible to write any computer program by using only three basic control structures that are easily represented in pseudocode. Here they are:</p>
+        <ul style="padding-left:55px;">
+          <li><strong>Sequence</strong></li>
+          <li><strong>Selection</strong></li>
+          <li><strong>Repetition</strong></li>
+        </ul>
+        <h3>Sequence</h3>
+        <blockquote>
+          <p><em>This is putting one foot before the other. You have to tell a computer to do one thing at a time, in a sequence of statements.</em></p>
+        </blockquote>
+        <ul>
+          <li>In pseudocode we will see things like this:</li>
+        </ul>
+
+<pre class="pseudocode">
+prompt user for name
+display name</pre>
+
+<pre class="pseudocode">
+set firstName to Fred
+set lastName to Flintstone
+fullName = firstName and lastName with a space in between
+add fullName to names list </pre>
+
+        <ul>
+          <li>If the order isn't correct in each of those blocks of pseudocode, then things won't work when we convert the pseudocode into real code.</li>
+          <li>For example, the SEQUENCE of the following statements is very important! You wouldn't get the correct answer for "area" if you didn't have the correct values in "length" and "width" first!</li>
+        </ul>
+
+<pre><code class="js">
+// Statement
+
+length = 4;
+width = 5;
+area = length * width;
+</code></pre>
+
+        <p>Time for a bit of practice: </p>
+        <p class="lab_link"><a href="labs/lab-03-sequence.html">Lab 3: Sequence</a></p>
+        <h3>Selection</h3>
+        <p><em>Selection means that our program needs to make a decision to go one way or another. It does this by first testing something. Is the door locked? Is this number smaller than 500? Is the user logged in? Once it has done the test it will then run one of two statements or sequence of statements.</em></p>
+        <p>In pseudocode we use a simple <span class="caps">IF, THEN, ELSE </span>block to represent this</p>
+
+<pre class="pseudocode">
+IF condition p is true THEN
+  statement(s) in true case
+ELSE
+  statement(s) in false case
+ENDIF</pre>
+
+        <p>Here's a pseudocode example that uses the <span class="caps">IF, THEN, ELSE </span>block to show SELECTION:</p>
+
+<pre class="pseudocode">
+Check to see what the price is
+IF the price is less than $10
+  pay with my $10 bill
+ELSE
+  pay with my charge card
+ENDIF
+Collect the receipt and go home</pre>
+
+        <p>In JavaScript code we also use an <strong>if</strong> construct that looks like this:</p>
+
+<pre><code class="js">
+// Selection in JavaScript
+
+if (something === 1) {
+  // some good code here
+} else {
+  // some really good code here!
+}
+</code></pre>
+
+        <p>More about JavaScript code later.  For now, let's use pseudocode to practice: </p>
+        <p class="lab_link"><a href="labs/lab-04-selection.html">Lab 4: Selection</a></p>
+        <h3>Repetition</h3>
+        <p><em>REPETITION refers to a set of statements or instructions that will be performed over and over. Walking, doing the dishes, and playing tennis are examples of activities where certain steps are repeated over and over. In programming repetition is also called <strong>iteration</strong> or <strong>looping</strong>.</em></p>
+        <p>In pseudocode we write it as:</p>
+
+<pre class="pseudocode">
+WHILE condition is true
+  statement block
+  another statement block
+ENDWHILE</pre>
+
+        <p>Or</p>
+
+<pre class="pseudocode">
+DOWHILE condition is true
+  statement block
+  another statement block
+ENDDO</pre>
+
+
+
+        <p>We sometimes need to do a process until it's done. Like washing dishes:</p>
+
+<pre class="pseudocode">
+WHILE there are dirty dishes in the stack
+  dip dish in soapy water in sink
+  rub dish with sponge
+  rinse dish in clean water
+  place dish in draining rack to dry
+ENDWHILE</pre>
+
+        <p>Or perhaps we need to hand out pens to everyone until we run out of pens. One way we can express this
+          is like this:</p>
+
+<pre class="pseudocode">
+WHILE I have pens in my hand
+  give one to a student
+END
+Tell everyone I'm out of pens.
+</pre>
+
+        <p>Each time I give a pen away, I have one less pen in my hand. When I no longer have any pens, I'm done. Note that the steps inside the repeating process are indented. But the last step,
+          where I tell people I'm out of pens, is outside. It happens <b>after</b> I have given all my pens away.</p>
+
+
+        <p>We can use repeating processes to count up to a value. </p>
+<pre class="pseudocode">
+  Initialize count to 0
+  WHILE the count is less than 10
+    Display count
+    add 1 to count
+  ENDWHILE
+</pre>
+
+        <p>And we can even do selection inside of repeating processes.</p>
+
+<pre class="pseudocode">
+  Initialize count to 0
+  WHILE the count is less than 10
+    IF count is an even number THEN
+      Display count
+    END
+    add 1 to count
+  ENDWHILE
+</pre>
+
+        <p>In JavaScript we will be using a few different repetition structures. Here are two examples.</p>
+<pre><code class="js">
+// Repetition with a while loop
+
+var count = 0;
+while(count &lt; 10) {
+  document.write(count);  // prints out the count
+  count = count + 1;      // adds one to the count
+}
+</code></pre>
+
+<pre><code class="js">
+// Repetition with a for loop
+
+for(var count = 0 ; count &lt; 10; count++) {
+  document.write(count);
+}
+</code></pre>
+
+        <p>Don't worry, we won't be writing these kinds of things in JavaScript just yet. This is just a chance for you to see what's coming.</p>
+        <p>Lab time again!</p>
+        <p class="lab_link"> <a href="labs/lab-05-repetition.html">Lab 5: Repetition</a></p>
+        <p><em>Don't forget to go back to the main page after you finish Lab 5...there's more to do in this Unit! </em> </p>
+        <p><a href="index.html">Back</a></p>
+    <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

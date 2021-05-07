@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar Lander 2</title>
+    <style>
+      body {
+        background-color: #000000;
+        color: #808080;
+        margin: 0px 0px 0px 0px;
+      }
+      canvas {
+        display: block;
+
+        border: 1px solid #808080;
+        margin: auto;
+      }
+      p, footer {
+        display: block;
+        margin: auto;
+        text-align: center;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500">   <!-- We'll use the id in JavaScript. -->
+      Enable JavaScript to play.
+    </canvas>
+    <p id="output">Spacebar: Thrust</p>             <!-- We'll use this one, too. -->
+    <script>
+// We're going to define constants (variables that we assign 
+// but can't change the value of later) and regular variables
+// (that we can change the value of later). Let's start with
+// constants that don't depend on other JavaScript variables.
+const canvas = document.getElementById("canvas");   // Assign the constant canvas 
+                                                    // the HTML element with 
+                                                    // id="canvas". If you change the 
+                                                    // HTML id, you'd also need to 
+                                                    // update this, too.
+const output = document.getElementById("output");   // Do the same, but assign the
+                                                    // constant output to the HTML
+                                                    // element with id="output".
+const ctx = canvas.getContext("2d");                // Specify we want to call 2D drawing
+                                                    // functions with the canvas. ctx
+                                                    // is a standard abbreviation for 
+                                                    // the "context" we receive from 
+                                                    // the getContext function.
+const landerHeight = 20;                            // The height of the lander, in pixels.
+const landerWidth = 20;                             // The width of the lander, in pixels.
+// The following two constants may have surprising signs.
+// Remember that (0, 0) is the upper-left of the canvas,
+// and so +y is down and -y is up.
+const gravity = 0.00001;                            // An arbitrary number we'll use for
+                                                    // the gravity. Try changing it!
+const thrustAcceleration = -0.000015;               // An arbitrary number for the lander's
+                                                    // thrust acceleration. Try changing it!
+
+// The next set of constants are derived from those above.
+const landerCenterX = canvas.width / 2;             // Record 1/2 of the canvas's width
+                                                    // as the x-position of the lander's
+                                                    // center.
+const landerHeightHalf = landerHeight / 2;          // Record 1/2 of the lander's height.
+const landerWidthHalf = landerWidth / 2;            // Record 1/2 of the lander's width.
+
+// We'll next define variables whose value can change after
+// assignment.
+let thrustPressed = false;                          // Is the player pressing space?
+let landerCenterY = 0;                              // Where is the lander vertically?
+let landerVelocityY = 0;                            // The current velocity (speed 
+                                                    // and direction) of the lander.
+let time0 = undefined;                              // The time that the previous 
+                                                    // animation frame began.
+
+const onPress = function(event) { // We take one input named event. This is similar to
+                                  // the MCxxxx having an input named p0.
+  console.log(event);             // Still display the input to the web console.
+  if (event.keyCode === 32) {     // Check if the player pressed the spacebar…
+    thrustPressed = true;         // …if they did, update the value of thrustPressed.
+    // document.write("We can't use this anymore!");        // What happens if we try?
+    output.innerHTML = "<strong>Spacebar: Thrust</strong>"; // Player feedback to indicate
+                                                            // that we know they're pressing
+                                                            // the spacebar, even if the 
+                                                            // lander doesn't move right
+                                                            // away.
+  }
+};
+
+const onRelease = function(event) { // This is the opposite of onPress. It's called
+                                    // when a key is released. It clears thrustPressed
+                                    // and resets our instructions if the spacebar was
+                                    // released.
+  console.log(event);
+  if (event.keyCode === 32) {
+    thrustPressed = false;
+    output.innerHTML = "Spacebar: Thrust";
+  }
+}
+
+const drawFrame = function(time1) { // We now take an input, time1, that tells us when
+                                    // this frame starts drawing.
+  // Everything here is for a real-time game. The DEFT projects are all turn based,
+  // so you'll want to update the world and display new scenes in onPress.
+
+  // We're going to start by determining how long it's been since we've
+  // drawn a frame. Ideally, this is 1/60 of a second. If we don't do this,
+  // then a monitor that refreshes more quickly (e.g., 120 frames per second)
+  // will also move the lander more quickly instead of more smoothly (e.g., it'd 
+  // move twice as fast at 120 frames per second).
+  if (time1 === undefined) {        // If we receive an invalid value, set the time to 0.
+    time1 = 0;
+  }
+  if (time0 === undefined) {        // If we haven't updated time0, then set it equal
+    time0 = time1;                  // to time1.
+  }
+  const timeDelta = time1 - time0;  // Now we know how long it's been since we last drew
+                                    // a frame. Record the difference in timeDelta.
+  time0 = time1;                    // And assign time0 the value of time1 so these
+                                    // calculations work correctly for the next frame.
+
+  // Process user input.
+  let acceleration = gravity;                           // The lander is affected by gravity.
+  if (thrustPressed) {                                  // And if the spacebar is held…
+    acceleration = acceleration + thrustAcceleration;   // add the lander's thrust, too.
+  }
+
+  // Update our game world.
+  landerVelocityY = landerVelocityY + acceleration * timeDelta; // Both the acceleration
+  landerCenterY = landerCenterY + landerVelocityY * timeDelta;  // and velocity changes
+                                                                // depend on how long it's
+                                                                // been since we drew a
+                                                                // frame. This is what 
+                                                                // makes the animation
+                                                                // smoother on faster 
+                                                                //displays.
+  // Next, we'll check if the lander has, well, landed.
+  if (landerCenterY + landerHeightHalf >= canvas.height) {      // Is it touching the bottom?
+    if (thrustPressed) {                                        // If so, is it taking off?
+      landerVelocityY = (gravity + thrustAcceleration) * timeDelta; // Yes to both, so apply
+                                                                // gravity and thrust.
+    }
+    else {                                                      // Just touching the surface…
+      landerVelocity = 0;                                       // so set velocity to 0 so
+                                                                // the lander doesn't sink.
+    }
+    landerCenterY = canvas.height - landerHeightHalf;           // Ensure the lander rests on
+                                                                // the surface.
+  }
+
+  // Diplay the game world.
+  ctx.clearRect(0, 0, canvas.width, canvas.height);             // Clears the canvas.
+  ctx.fillStyle = '#ffffff';                                    // Set our color to white.
+  ctx.fillRect(landerCenterX - landerWidthHalf,                 // Draw our simple lander
+    landerCenterY - landerHeightHalf,                           // from the upper-left
+    landerWidth,                                                // corner. The width and
+    landerHeight);                                              // height are the constants
+                                                                // from before.
+  // Prepare for the next frame.
+  requestAnimationFrame(drawFrame);
+};
+
+window.addEventListener('keydown', onPress, false);
+window.addEventListener('keyup', onRelease, false);             // "Wire" keyup events to
+                                                                // onRelease.
+window.addEventListener('mousedown', onPress, false);
+drawFrame();
+    </script>
+    <footer>version 1.0</footer>
+  </body>
+</html>
+

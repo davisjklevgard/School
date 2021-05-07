@@ -1,0 +1,178 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 6: Unary Operators</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 4: Operators and Functions</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+  
+       <h1>Lab 6: Unary Operators</h1>
+
+        <h4>File: unit4/labs/lab-06-unaryOperators.html</h4>
+        
+        <h3>Student Information</h3>
+        
+        
+        <ul>
+          <li>Name:  Davis Klevgard</li>
+        </ul>
+
+
+
+        <h3>Lab Steps</h3>
+
+
+        <ol>
+          <li>Open this file in Firefox and Notepad++.</li>
+          <li>Add your name in the appropriate area above.</li>
+          <li>Next, practice pronouncing "unary". Say it out loud! It is pronounced like "YEW-nair-y". You already can say "binary" (BI-nair-y) and unary is the same except for the "u".</li>
+          <li>Add code after the line: <code>YOUR CODE STARTS AFTER THIS LINE:</code> to complete this lab.</li>
+          <li>Your output should look like the <strong>Example Output</strong> below.</li>
+          <li><strong>Variable declarations section</strong>
+            <ol>
+              <li>Write a comment that identifies this coding section.</li>
+              <li>Add the following variables:
+                <ol>
+                  <li><code class="varname">dayOfMonth</code></li>
+                  <li><code class="varname">myCount</code></li>
+                  <li><code class="varname">whatAmIOne</code></li>
+                  <li><code class="varname">whatAmIThree</code></li>
+                  <li><code class="varname">whatAmITwo</code></li>
+                  <li><code class="varname">year</code></li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li><strong>Assignments section</strong>
+            <ol>
+              <li>Write a comment that identifies this coding section.</li>
+              <li>Assign the following data to the variables created in the previous section.
+                <ol>
+                <li>dayOfMonth --&gt; <code>21</code> </li>
+                <li>myCount --&gt; <code>10</code></li>
+                <li>whatAmIOne --&gt; <code>&quot;this is just a test&quot;</code> </li>
+                <li>whatAmIThree --&gt; <code>(5 &gt;= &quot;5&quot;)</code></li>
+                <li>whatAmITwo --&gt; <code>25</code></li>
+                <li>year --&gt; <code>2009</code></li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li><strong>Calculations section</strong>
+            <ol>
+              <li>Write a comment that identifies this coding section.</li>
+              <li>Using <span class="caps"><strong>ONLY </strong></span><strong>unary operators </strong>change the value of each of the variables with the following:
+                <ol>
+                <li>adding <code>1</code> to myCount</li>
+                <li>subtracting <code>1</code> from dayOfMonth</li>
+                <li>subtracting <code>3</code> from year (<strong>use only the unary</strong> operators!)</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li><strong>Output section</strong>
+            <ol>
+              <li>Write a comment that identifies this coding section.</li>
+              <li>Output the myCount, dayOfMonth, and year variables with text as in the following example.</li>
+              <li>Using the <code class="varname">typeof</code> operator, output the data types of the three "whatAmI" variables with text as in the following example.</li>
+            </ol>
+          </li>
+        </ol>
+
+
+
+
+        <h3>Example Output</h3>
+
+
+
+<pre class="output">
+adding 1 to myCount: 11
+subtracting 1 from dayOfMonth: 20
+subtracting 3 from year: 2006
+whatAmIOne is a string
+whatAmITwo is a number
+whatAmIThree is a boolean</pre>
+
+
+	
+        <h3>Your Output:</h3>
+
+
+
+<pre class="output">
+<script id="student_code">
+// YOUR CODE STARTS AFTER THIS LINE:
+//Variable Declaration
+var dayOfMonth;
+var myCount;
+var whatAmIOne;
+var whatAmITwo;
+var whatAmIThree;
+var year;
+
+//Assignments
+dayOfMonth = 21;
+myCount = 10;
+whatAmIOne = "this is just a test";
+whatAmIThree = (5 >= "5");
+whatAmITwo = 25;
+year = 2009;
+
+//Calculations
+myCount++;
+dayOfMonth--;
+year--;
+year--;
+year--;
+
+//Output
+document.write("adding 1 to myCount: " + myCount);
+document.write("\n");
+document.write("subtracting 1 from dayOfMonth " + dayOfMonth);   
+document.write("\n"); 
+document.write("subtracting 3 from year: " + year);
+document.write("\n");
+document.write("whatAmIOne is a " + typeof(whatAmIOne));
+document.write("\n");
+document.write("whatAmITwo is a " + typeof(whatAmITwo));
+document.write("\n");
+document.write("whatAmIThree is a " + typeof(whatAmIThree));
+   
+// END OF YOUR CODE
+</script>
+</pre>
+
+        <h3>What you learned</h3>
+        <p>You learned how to use unary operators in your code. While unary operators aren't always useful, you'll encounter them frequently in loops later on, so you should be familiar with how they work.</p>
+        <p><a href="../unaryOperators.html">Back</a></p>
+
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest version: 1.2009
+        </p>
+      </footer>
+    </section>
+  </body>  
+<!-- InstanceEnd --></html>  

@@ -1,0 +1,124 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 7: The Ternary Conditional</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 5: Making Decisions</a></h2>
+      </header>
+      
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Lab 7: The Ternary Conditional</h1>
+
+        <h4>File: unit5/labs/lab-07-ternaryConditional.html</h4>
+
+        <h3>Student Information</h3>
+
+
+        <ul>
+          <li>Name:Davis Klevgard</li>
+        </ul>
+
+
+
+        <h3>Lab problem statement</h3>
+
+        <blockquote><p><em><strong>Write a program that asks a user for a number greater than or equal to 100. If the user enters a number that is greater than or equal to 100 then output, "Thank you!". If the entered number is not greater than or equal to 100 then output, "That number is not correct, please try again."</strong></em></p></blockquote>
+
+        <div class="notice">
+          <p>This program must be implemented using a ternary, not an <code>if..else</code> statement.</p>
+        </div>
+
+        <h3>Lab Steps</h3>
+
+
+        <ol>
+        <li>Open this file in Firefox and Notepad++.</li>
+        <li>Add your name in the appropriate area above.
+          <ol>
+            <li>Add code after the line: <code class="varname">YOUR CODE STARTS AFTER THIS LINE:</code> to complete this lab.</li>
+            <li>Your output should look like the <strong>Example Output</strong> below.</li>
+            <li>Remember to follow all coding standards and add appropriate comments!</li>
+            <li>Use the ternary operator for the program logic.</li>
+          </ol>
+        </li>
+        <li>Be sure to test your code.</li>
+        </ol>
+
+        <p><strong>For full points, your program should include only one output statement.</strong></p>
+
+
+        <h3>Example Output</h3>
+
+
+
+<pre class="output">
+Thank you!
+</pre>
+
+        <p>or</p>
+
+<pre class="output">
+That number is not correct, please try again.
+</pre>
+
+
+
+        <h3>Your Output:</h3>
+
+
+
+<pre class="output">
+<script id="student_code">
+// YOUR CODE STARTS AFTER THIS LINE:
+
+function GetNumber() {
+  var number = prompt("Enter a number 100 or more");
+  var output;
+  
+  output = (number >= 100) ? "Thank you!" : "That number is not correct, try again.";
+  document.write(output);
+
+}
+
+GetNumber();
+
+
+
+// END OF YOUR CODE
+</script>
+</pre>
+
+
+        <h3>What You Learned</h3>
+        <p>You learned how to use the ternary conditional operator in a program to reduce code.</p>
+        <p><a href="../ternaryConditional.html">Back</a></p>
+
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

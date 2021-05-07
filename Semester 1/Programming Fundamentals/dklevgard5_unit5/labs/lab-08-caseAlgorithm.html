@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 8: Case Structure Algorithm</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1> 
+        <h2><a href="../index.html">Unit 5: Making Decisions</a></h2>
+      </header>
+
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Lab 8: Case Structure Algorithm</h1>
+
+        <h4>File: unit5/labs/lab-08-caseAlgorithm.html</h4>
+
+        <h3>Student Information</h3>
+
+
+        <ul>
+          <li>Name:</li>
+        </ul>
+
+
+
+        <h3>Lab Steps</h3>
+
+
+        <ul>
+          <li>Open this file in Firefox and Notepad++.</li>
+          <li>Add your name in the appropriate area above.</li>
+          <li>Read the problem statement.</li>
+          <li>Complete the "Nouns and Verbs" section.</li>
+          <li>Complete the "Defining Diagram" section.</li>
+          <li>Complete the "Solution Algorithm" section.</li>
+          <li>Complete the "Checking the Solution Algorithm" section.</li>
+          <li>Code the JavaScript program.
+            <ol>
+              <li>Add code after the line: <code class="varname">YOUR CODE STARTS AFTER THIS LINE:</code> to complete this lab.</li>
+              <li>Your output should look like the <strong>Example Output</strong> at the bottom of this lab.</li>
+              <li>Your code should be efficient and you should avoid unnecessary repetition of code.</li>
+              <li>Remember to follow all coding standards and add appropriate comments!</li>
+            </ol>
+          </li>
+          <li>Test everything. How many test plans do you need to completely test this?</li>
+        </ul>
+
+        <h3>Problem Statement</h3>
+
+        <blockquote>
+          <p><strong><em>
+        A program is required that will prompt a user for the price of an article and a pricing code. The program then calculates a discount rate according to the pricing code and outputs to the page the original price of the article, the discount code, the discount amount, and the new discounted price. If an invalid pricing code was entered, state that they need to try again.</em></strong>        		</p>
+          <p><strong><em>Calculate the pricing code and accompanying discount amount as follows:</em></strong></p>
+        </blockquote><strong><em>
+
+
+        <table>
+          <tr>
+            <th>Pricing Code</th>
+            <th>Discount Rate</th>
+            </tr>
+          <tr>
+            <td>H</td><td>50%</td>
+            </tr>
+          <tr>
+            <td>F</td><td>40%</td>
+            </tr>
+          <tr>
+            <td>T</td><td>30%</td>
+            </tr>
+          <tr>
+            <td>Q</td><td>20%</td>
+            </tr>
+          <tr>
+            <td>Z</td>
+            <td>0%</td>
+            </tr>
+        </table>
+
+        </em></strong>
+        <p><strong><em>If the pricing code is 'Z' then output "No Discount" rather than 0. If anything other than H, F, T, Q, or Z are entered then output "Invalid Pricing Code".</em></strong></p>
+
+        <div class="notice">
+          <p>You must use a <code>switch</code> statement to implement the main logic of this program. You can use simple IF statements or ternary operators to handle specific outputs, but
+            the main logic should be implemented with a <code>switch</code> statement.</p>
+        </div>
+
+        <div class="notice">
+          <p>This program involves currency. Ensure precision is appropriately managed.</p>
+        </div>
+
+        <p><strong>For full points, your program should include only one output statement.</strong></p>
+
+        <h3>1. Nouns and Verbs</h3>
+        <ul>
+          <li>Copy the above problem statement and paste it below so it appears in the black box when you refresh the page, underneath the words <code class="varname">PROBLEM STATEMENT</code>.</li>
+          <li>Identify the nouns and verbs in the problem statement and write them in the appropriate locations so they appear in the black box below when you refresh the page.</li>
+        </ul>
+
+<pre class="pseudocode">PROBLEM STATEMENT:
+
+
+Nouns:
+
+Verbs:
+</pre>
+
+
+        <h3>2. Defining Diagram</h3>
+        <ul>
+          <li>Convert the nouns and verbs into variable names and processes and create a defining diagram.</li>
+          <li>Make your variable names <strong>valid JavaScript names</strong> that conform to the course JavaScript Coding Standards.</li>
+          <li>Write down the processes with very short statements, 2 or 3 words. Remember, this is not pseudocode. This is just the process.</li>
+        </ul>
+
+<pre class="pseudocode">
+INPUTS:
+
+
+PROCESSING:
+
+
+OUTPUTS:
+
+
+</pre>
+
+
+
+        <h3>3. Solution Algorithm</h3>
+        <ul>
+          <li>Create a solution algorithm (using Pseudocode) based on the defining diagram. Remember to give your algorithm a name and use proper indentation.</li>
+          <li>Ensure you include an appropriate level of detail for your input, processing, and output logic.</li>
+        </ul>
+
+
+
+<pre class="pseudocode">
+//YOUR SOLUTION ALGORITHM STARTS AFTER THIS LINE:
+
+
+</pre>
+
+        <h3>4. Checking the Solution Algorithm</h3>
+        <ul>
+          <li>Create a test plan for the algorithm.
+            <ul>
+              <li>Don't forget to fill in the <strong>VARIABLES</strong> section! That's easy to miss!</li>
+            </ul>
+          </li>
+          <li>Have <b>at least 3 test cases</b> that test different inputs and outputs. </li>
+        </ul>
+
+<pre class="pseudocode">
+VARIABLES:
+
+TEST CASE 1:
+
+  INPUT VALUES:
+
+  EXPECTED RESULT:
+
+  ACTUAL RESULT:
+
+TEST CASE 2:
+
+  INPUT VALUES:
+
+  EXPECTED RESULT:
+
+  ACTUAL RESULT:
+
+TEST CASE 3:
+
+  INPUT VALUES:
+
+  EXPECTED RESULT:
+
+  ACTUAL RESULT:
+
+</pre>
+
+
+
+        <h3>5. JavaScript Code</h3>
+        <ul>
+          <li>Write the JavaScript code based on everything you've done.</li>
+          <li>You will need to follow the coding standards for the course.</li>
+          <li>Once everything is working, go back and <strong>fill in</strong> the actual results sections in the test plan.</li>
+        </ul>
+
+
+<h3>Example Output</h3>
+
+<pre class="output">
+Price: $10.00
+
+Discount code: H
+
+Discount Amount: $5.00
+
+Discounted price: $5.00</pre>
+
+
+        <p>or</p>
+
+<pre class="output">
+Price: $10.00
+
+Discount code: Z
+
+Discount Amount: No Discount
+
+Discounted price: $10.00</pre>
+
+        <p>or</p>
+
+<pre class="output">
+Price: $10.00
+
+Discount code: A
+
+Invalid Pricing Code. Please try again.</pre>
+
+        <h3>Your Output</h3>
+
+
+<pre class="output">
+<script id="student_code">
+// YOUR CODE STARTS AFTER THIS LINE:
+
+
+
+// END OF YOUR CODE
+</script>
+</pre>
+
+        <h3>What You Learned</h3>
+        <p>You learned how to design a program that uses switch statements to decide what to do.</p>
+        <p><a href="../caseStructure.html">Back</a></p>
+
+<!-- InstanceEndEditable -->
+      </section>
+
+
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

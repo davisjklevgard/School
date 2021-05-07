@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Example 1</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head> 
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 3: Program Design and Debugging</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>Example 1</h1>
+        <p><strong>File: /Unit3/examples/example-01.html</strong></p>
+				<p>An example of the translation from Algorithm to JavaScript discussed in Unit 3.</p>
+<h3>Problem Statement</h3>
+        <blockquote>
+          <p><em><strong>A program is required to read three numbers, add them together and print their total in the following foramt::</strong></em></p>
+          <p><em><strong>The total of 1 + 2 + 3 = 6.</strong></em></p>
+        </blockquote>
+        <h3>1. Nouns and Verbs</h3>
+        <blockquote>
+          <p>Identify the nouns and verbs in the problem statement.</p>
+        </blockquote>
+
+<pre class="pseudocode">PROBLEM STATEMENT: A program is required to read three numbers, add
+them together and print their total.
+
+Nouns: three numbers, total
+
+Verbs: read, add, print
+</pre>
+
+        <h3>2. Defining Diagram</h3>
+        <blockquote>
+          <p>Convert the nouns and verbs into variable names and processes and create a defining diagram.</p>
+        </blockquote>
+
+<pre class="pseudocode">
+INPUTS:
+  number1
+  number2
+  number3
+
+PROCESSING:
+  read three numbers
+  add numbers together
+  print total number formatted as &quot;The total of 1 + 2 + 3 is 6.&quot;
+
+OUTPUTS:
+  total number formatted as &quot;The total of 1 + 2 + 3 is 6.&quot;
+
+</pre>
+        <h3>3. Solution Algorithm</h3>
+        <blockquote>
+          <p>Create a solution algorithm based on the defining diagram.</p>
+        </blockquote>
+
+<pre class="pseudocode">
+AddThreeNumbers
+  Initialize number1 to 0
+  Initialize number2 to 0
+  Initialize number3 to 0
+  Initialize total to 0
+
+  Prompt for number1 with "Enter the first number:"
+  Prompt for number2 with "Enter the second number:"
+  Prompt for number3 with "Enter the third number:"
+
+  Convert number1 to a number
+  Convert number2 to a number
+  Convert number3 to a number
+
+  Set total = number1 + number2 + number3
+
+  Display "The total of &quot; + number1 + &quot; + &quot; +
+          number2 + &quot; + &quot; + number3&quot; +
+          &quot; is " + total + &quot;.&quot;
+END
+</pre>
+
+        <h3>4. Checking the Solution Algorithm</h3>
+        <blockquote>
+          <p>Create a test plan for the algorithm. Remember to use this to discover if your algorithm needs work!</p>
+        </blockquote>
+
+<pre class="pseudocode">
+VARIABLES: number1, number2, number3, total
+
+TEST CASE 1:
+
+  INPUT VALUES: 10, 20, 30
+
+  EXPECTED RESULT: &quot;The total of 10 + 20 + 30 is 60.&quot;
+
+  ACTUAL RESULT: &quot;The total of 10 + 20 + 30 is 60.&quot;
+
+TEST CASE 2:
+
+  INPUT VALUES: 40, 41, 42
+
+  EXPECTED RESULT: &quot;The total of 40 + 41 + 42 is 123.&quot;
+
+  ACTUAL RESULT: &quot;The total of 40 + 41 + 42 is 123.&quot;
+
+TEST CASE 3
+
+  INPUT VALUES: "A", "B", "C"
+
+  EXPECTED RESULT: &quot;The total of NaN + NaN + NaN is NaN.&quot;
+
+  ACTUAL RESULT: &quot;The total of NaN + NaN + NaN is NaN.&quot;
+
+TEST CASE 4
+
+  INPUT VALUES: "A", 2, 3
+
+  EXPECTED RESULT: &quot;The total of NaN + 2 + 3 is NaN.&quot;
+
+  ACTUAL RESULT: &quot;The total of NaN + 2 + 3 is NaN.&quot;
+</pre>
+
+        <h3>5. JavaScript Code</h3>
+        <blockquote>
+          <p>Write the JavaScript code based on everything you've done.</p>
+        </blockquote>
+        <ul>
+          <li><strong>Here's the code:</strong></li>
+        </ul>
+
+<pre><code class="js">
+// Add three numbers
+
+//Declare the variables
+var number1 = 0;
+var number2 = 0;
+var number3 = 0;
+
+// we'll need the total later, but we declare it here.
+var total = 0;
+
+// Get the numbers from the user
+number1 = prompt(&quot;Enter the first number:&quot;, &quot;1&quot;);
+number2 = prompt(&quot;Enter the second number:&quot;, &quot;2&quot;);
+number3 = prompt(&quot;Enter the third and last number:&quot;, &quot;3&quot;);
+
+// Convert the inputed strings to numbers
+number1 = Number(number1);
+number2 = Number(number2);
+number3 = Number(number3);
+
+// Calculate the total
+total = number1 + number2 + number3;
+
+// Display the total. You can split the line of code at a + sign
+document.write(&quot;The total of &quot; + number1 + &quot; + &quot; + number2 + &quot; + &quot; +
+               number3 + &quot; is &quot; + total + &quot;.&quot;);
+</code></pre>
+
+        <h3>Your Output</h3>
+
+<pre class="output">
+<script>
+// YOUR CODE STARTS AFTER THIS LINE:
+
+// Add three numbers
+
+//Declare the variables
+var number1 = 0;
+var number2 = 0;
+var number3 = 0;
+var total = 0;
+
+// Get the numbers from the user
+number1 = prompt("Enter the first number:", "1");
+number2 = prompt("Enter the second number:", "2");
+number3 = prompt("Enter the third and last number:", "3");
+
+// Convert the inputed strings to numbers
+number1 = Number(number1);
+number2 = Number(number2);
+number3 = Number(number3);
+
+// Calculate the total
+total = number1 + number2 + number3;
+
+// Display the total. You can split the line of code at a + sign
+document.write("The total of " + number1 + " + " + number2 + " + " +
+							 number3 + " is " + total + ".");
+
+
+// END OF YOUR CODE
+
+</script>
+</pre>
+        <p><a href="../algoToJS.html">Back</a></p>
+
+      <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

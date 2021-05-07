@@ -1,0 +1,177 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Arrays and Hashes</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head> 
+  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 6: Loops, Functions, and Data Structures</a></h2>
+      </header>
+      
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+
+        <h2>Encapsulating Logic With Functions</h2>
+
+        <p>You've learned how to create your own functions, but let's look one more time at how we can use
+          functions to take a program and break it into functions.
+        </p>
+
+        <p>Let's take the simple &quot;Are You Old Enough To Drive&quot; program and break it up into functions. </p>
+
+        <blockquote>
+          A program should prompt for the age and calculate if the person
+          can legally drive a car. The program should print out an
+          appropriate message based on the result of the program's logic.
+        </blockquote>
+
+        <p>Let's think about how this works. First, we'll want to prompt for the age. Then we'll need
+          to  compare the age to the legal driving age. Then we'll have to evaluate the result of
+          that comparison and display a message.
+        </p>
+
+<pre class="pseudocode">
+MainProgram
+  initialize drivingAge to 16
+
+  Prompt for userAge with "What is your age?"
+
+  IF userAge >= 16 then
+    output = "You can drive."
+  ELSE
+    output = "You can't drive."
+  ENDIF
+
+  display output
+END
+</pre>
+
+        <p>This program seems simple enough, but we can convey the logic in a better way.</p>
+        <p>
+          First, we'll create a canDrive() function that accepts an age. That function will return either true or false, depending on whether or not the driver is of the legal age.
+        </p>
+
+<pre><code language="js">// Returns true if they can drive, false if they can&#39;t.
+function canDrive(age){
+  var legalDrivingAge = 16;
+  var result;
+
+  age = Number(age);
+  result = age &gt;= legalDrivingAge;
+  return(result);
+}
+</code></pre>
+        <p>
+          Notice that our <code>legalDrivingAge</code> and <code>result</code>
+          variables are declared <b>inside</b> of this function. We
+          do not need these variables <i>anywhere else in our program.</i> so
+          we declare them inside of our function..
+          These are <b>local variables</b>. The rest of our
+          program cannot see them and doesn't need to see them.
+          We use <code>return</code> to send an output from our function
+          back to the part of the program that called the function.
+        </p>
+
+        <div class="notice">
+          <p>Up to this point, we've declared all of our variables
+            as <b>global</b> variables. That means they are visible
+            throughout our entire program.  This is fine for tiny programs
+            but as things get more complex, you'll avoid using global
+            variables in your programs. You'll start putting variables inside
+            of functions, or you'll pass data from one function to another, avoiding
+            variables altogether.
+          </p>
+
+        </div>
+
+        <p>Then we'll create another function that displays the message
+        to the user. It'll take in the message we want to display
+        and wrap it in paragraph tags so it will be suitable for
+        use on the screen. We're making a <code>document.write()</code> on steroids here.</p>
+
+<pre><code language="js">
+// Wraps the given message with paragraph
+// tags and uses document.write to display
+// it to the screen.
+function displayMessageToUser(message){
+  document.write(&quot;&lt;p&gt;&quot; + message + &quot;&lt;/p&gt;&quot;);
+}
+
+</code></pre>
+
+        <p>Then, with these functions defined, we can write our main program that uses them:</p>
+
+<pre><code language="javascript">
+// main program
+
+var userAge;
+
+userAge  = prompt(&quot;What is your age?&quot;);
+
+if ( canDrive(userAge) ){
+  displayMessageToUser(&quot;You can drive!&quot;);
+} else {
+  displayMessageToUser(&quot;You can&#39;t drive.&quot;);
+}
+</code></pre>
+
+<pre class="output"><script>
+function displayMessageToUser(message){
+  document.write("<p>" + message + "</p>");
+}
+
+function canDrive(age){
+  var legalDrivingAge = 16;
+  var result;
+
+  age = Number(age);
+  result = age >= legalDrivingAge;
+  return(result);
+}
+
+var userAge;
+
+userAge  = prompt("What is your age?");
+
+if(canDrive(userAge)){
+  displayMessageToUser("You can drive!");
+}else{
+  displayMessageToUser("You can't drive.");
+}
+</script></pre>
+
+        <p>In this code, we wrap up the processing to compare the age in its own function that returns <code>true</code> if the user can drive, and <code>false</code> if they cannot drive. Since that function returns a true or false value, we can easily use that in an IF statement&#39;s condition.</p>
+
+        <p>We also wrap up our <code>document.write()</code> calls in a function called <code>displayMessageToUser</code> that always writes out the given message with paragraph tags around it. </p>
+
+        <p>Best of all, if we need to change how we want to display things, we could just change the <code>displayMessageToUser()</code> function and everything else changes. </p>
+
+        <p>Each function in a program should strive to do <strong>only one thing.</strong> Functions can call other functions, and so there's no limit to how you can organize your code.</p>
+
+        <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+   </section>
+ </body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Untitled Document</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 4: Operators and Functions</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+  
+        <h1>Operators That Multiply and Divide</h1>
+    		<p>Multiplication and division are typical mathematical operations used in everyday life...and used every day in programming. Check out the examples below to see how those operations are accomplished in JavaScript code. <strong>And be sure to type them out yourself to get practice.</strong></p>
+
+          
+        <h3>The Multiplicative Operators</h3>
+            
+        <ul>
+          <li>The asterisk <code>(*)</code> is used for multiplication</li>
+          <li>The forward slash <code>(/)</code> is used for division</li>
+          <li>The percent sign <code>(%)</code> is the modulo operator. It'll be how we deal with remainders when we divide.</li>
+        </ul>
+            
+          
+        <h3>Using the Multiplicative Operators</h3>
+          
+          
+        <h4>Multiplying</h4>
+        <p>You can multiply numbers and number variables.</p>
+        <p>Unlike the case with addition, strings are automatically converted to numbers in multiplication and division.  The <code>Number</code> function is not technically needed, <strong>but in this class you will be expected to convert strings to numbers anyway.</strong></p>
+        <p>When you multiply a number and a string the string will be converted to a number by JavaScript, provided that the string can actually be converted to a number.</p>
+        <p>Even when you multiply a string by a string JavaScript will convert the strings to numbers, if it can.</p>
+        <p>If JavaScript cannot figure out how to convert the string to a number - it will return an error message <strong>"NaN"</strong> to let you know that you attempted to multiply by a value that is "Not a Number"!</p>
+        <p>You might also note in the last code statement below that JavaScript does the calculations inside parentheses FIRST.  More about the "order of operations" later... </p>
+
+<pre><code class="js">
+// Multiplying numbers
+
+var numberOne = 25;
+var numberTwo = 100;
+var numberStringThree = &quot;20&quot;;
+var nameString = &quot;I am Brian.&quot;;
+
+var multiplyResult = numberOne * numberTwo;
+
+// Multiplying numbers directly
+document.write(&quot;You can just multiply numbers right here: &quot;);
+document.write(75 * 34);
+document.write(&quot;\n&quot;);
+
+// Multiplying number variables
+document.write(&quot;The result of multiplying &quot; + numberOne + &quot; times &quot; 
+        + numberTwo + &quot; is: &quot; + multiplyResult + &quot;\n&quot;);
+
+// Multiplying numbers and strings?
+multiplyResult = numberOne * numberStringThree;
+
+document.write(&quot;The result of multiplying &quot; + numberOne + &quot; times \&quot;&quot; 
+        + numberStringThree + &quot;\&quot; is: &quot; 
+        + multiplyResult + &quot; &lt;-- Huh? \n\n&quot;);
+
+document.write(&quot;What happens when you multiply two strings?\n&quot;);
+        
+document.write('&quot;200&quot; * &quot;34&quot; = ');
+document.write(&quot;200&quot; * &quot;34&quot;);
+
+// Multiplying a number and a string that does NOT contain a number
+document.write(&quot;\n&quot; );
+document.write(&quot;Multiply with a non-number string: &quot; + (2 * nameString));
+</code></pre>
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Multiplying numbers
+var numberOne = 25;
+var numberTwo = 100;
+var numberStringThree = "20";
+var nameString = "I am Brian."
+
+var multiplyResult = numberOne * numberTwo;
+
+// Multiplying numbers directly
+document.write("You can just multiply numbers right here: ");
+document.write(75 * 34);
+document.write("\n");
+
+// Multiplying number variables
+document.write("The result of multiplying " + numberOne + " times " 
+				+ numberTwo + " is: " + multiplyResult + "\n");
+
+// Multiplying numbers and strings?
+multiplyResult = numberOne * numberStringThree;
+
+document.write("The result of multiplying " + numberOne + " times \"" 
+				+ numberStringThree + "\" is: " 
+        + multiplyResult + "   &lt;-- Works WITHOUT the Number function!\n\n");
+
+document.write("What happens when you multiply two strings?\n");
+				
+document.write('"200" * "34" = ');
+document.write("200" * "34");
+document.write("\n");
+
+
+// Multiplying a string that does not contain a number
+document.write("Multiply with a non-number String:" + (2 * nameString));
+</script>
+</pre>
+
+
+        <h4>Dividing</h4>
+        <p>You can divide numbers and variables. To do this, you use the <code>/</code> symbol.</p>
+        <p>When you divide a number and a string the string will be converted to a number by JavaScript. Just like multiplication and subtraction, JavaScript will <strong>coerce</strong> the string into a number. <strong>Don't let it do that! Contert strings to numbers yourself!</strong></p>
+        <p>Even when you divide a string by a string JavaScript will convert the strings to numbers, if it can. If it cannot convert the string to a number, the "NaN" error message displays.</p>
+
+<pre><code class="js">
+// Dividing numbers
+var numberFour = 250;
+var numberFive = 7;
+var numberStringSix = &quot;25&quot;;
+
+var divisionResult = numberFour / numberFive;
+
+// Dividing numbers directly
+document.write(&quot;You can just divide numbers right here: &quot;);
+document.write(75/34);
+document.write(&quot;\n&quot;);
+
+// Dividing number variables
+document.write(&quot;The result of &quot; + numberFour + &quot; divided by &quot; 
+        + numberFive + &quot; is: &quot; + divisionResult + &quot;\n&quot;);
+
+// Dividing numbers and strings?
+divisionResult = numberFour / numberStringSix;
+
+document.write(&quot;The result of &quot; + numberFour + &quot; divided by \&quot;&quot; 
+        + numberStringSix + &quot;\&quot; is: &quot; 
+        + divisionResult + &quot; &lt;-- Hmm...\n\n&quot;);
+
+document.write(&quot;What happens when you divide two strings? \n&quot;);
+        
+document.write('&quot;200&quot; / &quot;34&quot; = ');
+document.write(&quot;200&quot; / &quot;34&quot;);
+
+</code></pre>
+
+        <p>The output looks like this:</p>
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Dividing numbers
+var numberFour = 250;
+var numberFive = 7;
+var numberStringSix = "25";
+
+var divisionResult = numberFour / numberFive;
+
+// Dividing numbers directly
+document.write("You can just divide numbers right here: ");
+document.write(75/34);
+document.write("\n");
+
+// Dividing number variables
+document.write("The result of " + numberFour + " divided by " 
+				+ numberFive + " is: " + divisionResult + "\n");
+
+// Dividing numbers and strings?
+divisionResult = numberFour / numberStringSix;
+
+document.write("The result of " + numberFour + " divided by \"" 
+				+ numberStringSix + "\" is: " 
+        + divisionResult + " &lt;-- Hmm...\n\n");
+
+document.write("What happens when you divide two strings? \n");
+				
+document.write('"200" / "34" = ');
+document.write("200" / "34");
+</script>
+</pre>
+
+          
+        <p>
+				  When you divide numbers, you sometimes get a decimal number 
+					instead of a whole number when things don't divide evenly. 
+					Sometimes it's nice to know how many leftovers you have.
+				</p>
+				<h4>Modulo Operator</h4>
+        <p>The modulo operator is very simple. Remember back in elementary school when you learned to do division manually? They called it "long division" in my era. The modulo operator just gives you the remainder when you divide two numbers.
+        </p>
+
+        <img src="resources/modulo.jpg" alt="" height="251" width="644">
+        <p>Look at it this way.  Divide a number into another number - for example, 12 divided by 5.  How many times can the whole number 5 go into 12?  Twice.  And what's left over??? Two.  AHA! Two is the remainder - and that's what the modulo operator returns!</p>
+        <ul>
+          <li>In business, we might use modulo to solve a problem like this: 
+            <ul><li>There are 15 bins in my warehouse. I want to store 2014 items.  If I divide them equally into the 15 bins, how many are left over? </li>
+              <li>My answer would be <strong>2014 modulo 15 is 4</strong>. (15 goes into 2014 an even 134 times...and then there are 4 left over.)</li></ul></li>
+          </ul>
+        <p>Here's how we code it in JavaScript</p>
+
+<pre><code class="js">
+// Modulo operator
+var result = 10 % 3;
+
+document.write(&quot;Ten modulo Three is: &quot; + result);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Modulo operator
+var result = 10 % 3;
+
+document.write("Ten modulo Three is: " + result);
+
+</script>
+</pre>
+
+        <p>And here are a few more examples:</p>
+
+<pre><code class="js">
+// Modulo examples
+var numberSeven = 45;
+var numberEight = 6;
+var numberNine = 4;
+
+var moduloResult = numberSeven % numberEight;
+
+document.write(&quot;The remainder of &quot; + numberSeven + &quot; divided by &quot; 
+        + numberEight + &quot; is: &quot; + moduloResult + &quot;\n&quot;);
+        
+var moduloResult = numberSeven % numberNine;
+
+document.write(&quot;The remainder of &quot; + numberSeven + &quot; divided by &quot; 
+        + numberNine + &quot; is: &quot; + moduloResult);
+
+</code></pre>
+
+
+        <p>The output looks like this:</p>
+
+<pre class="output">
+<script>
+// Modulo examples
+var numberSeven = 45;
+var numberEight = 6;
+var numberNine = 4;
+
+var moduloResult = numberSeven % numberEight;
+
+document.write("The remainder of " + numberSeven + " divided by " 
+				+ numberEight + " is: " + moduloResult + "\n");
+				
+var moduloResult = numberSeven % numberNine;
+
+document.write("The remainder of " + numberSeven + " divided by " 
+				+ numberNine + " is: " + moduloResult);
+
+
+</script>
+</pre>
+
+        <p>
+          Finally, we use modulo to find out if a number is odd or even.
+        </p>
+
+<pre><code language="js">
+var evenNumber;
+var evenResult;
+var oddNumber;
+var oddResult
+evenNumber = 14;
+evenResult = evenNumber % 2;
+oddNumber = 15;
+oddResult = oddNumber % 2;
+document.write(&quot;Any number is an even number if number % 2 is 0.\n&quot;);
+document.write(&quot;evenNumber % 2 is &quot; + evenResult + &quot;\n&quot;);
+document.write(&quot;oddNumber % 2 is &quot; + oddResult);
+</code></pre>
+
+<pre class="output"><script>
+var evenNumber;
+var evenResult;
+var oddNumber;
+var oddResult
+evenNumber = 14;
+evenResult = evenNumber % 2;
+oddNumber = 15;
+oddResult = oddNumber % 2;
+document.write("Any number is an even number if number % 2 is 0.\n");
+document.write("evenNumber % 2 is " + evenResult + "\n");
+document.write("oddNumber % 2 is " + oddResult);
+</script></pre>
+
+        <h3>Lab Time</h3>
+        
+        <p>This lab is all about multiplying and dividing. </p>
+        <p class="lab_link"><a href="labs/lab-03-multiplicativeOperators.html">Lab 3: Multiplicative Operators</a><strong>&nbsp;&nbsp;(THIS IS AN OPTIONAL LAB)</strong></p>
+        <p>
+          <a href="index.html">Back</a>
+        </p>
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest version: 1.2009
+        </p>
+      </footer>
+    </section>
+  </body>  
+<!-- InstanceEnd --></html>  

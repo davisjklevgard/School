@@ -1,0 +1,322 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>The Case Structure</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 5: Making Decisions</a></h2> 
+      </header>
+      
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>The Case Structure</h1>
+
+        <h3>The Case Structure</h3>
+
+        <p>Programming languages have many ways to do the same thing. This is another way to organize selection.</p>
+
+
+        <p>Remember this?</p>
+
+
+
+
+
+<pre  class="pseudocode">
+IF choice is &quot;A&quot; THEN
+  do the A things
+ELSE IF choice is &quot;B&quot; THEN
+  do the B things
+ELSE IF choice is &quot;C&quot; THEN
+  do the C things
+ELSE IF choice is &quot;D&quot; THEN
+  do the D things
+ELSE IF choice is &quot;E&quot; THEN
+  do the E things
+ELSE IF choice is &quot;F&quot; THEN
+  do the F things
+ELSE IF choice is &quot;G&quot; THEN
+  do the G things
+ELSE
+  do the default thing
+ENDIF
+</pre>
+
+
+
+        <p>This was better than what we tried before that but there is yet another way to do this. Sometimes we have to use the <code>if/else if/else if/else</code> structure, but the case structure works well too as long as we are checking the value of the <strong>same variable</strong>. Here is the above algorithm in case structure pseudocode.</p>
+
+
+
+
+<pre class="pseudocode">
+CASE OF choice
+  &quot;A&quot;: do the A things
+  &quot;B&quot;: do the B things
+  &quot;C&quot;: do the C things
+  &quot;D&quot;: do the D things
+  &quot;E&quot;: do the E things
+  &quot;F&quot;: do the F things
+  &quot;G&quot;: do the G things
+  default: do the default thing
+ENDCASE
+</pre>
+
+        <p>The preceding Case Structure compares the value of <code class="varname">choice</code> with all the values and does what comes after them. Here is the same thing in JavaScript.</p>
+
+
+<pre><code class="js">
+// switch statement
+
+switch(choice) {
+  case &quot;A&quot;:
+    do the A things;
+    break;
+  case &quot;B&quot;:
+    do the B things;
+    break;
+  case &quot;C&quot;:
+    do the C things;
+    break;
+  case &quot;D&quot;:
+    do the D things;
+    break;
+  case &quot;E&quot;:
+    do the E things;
+    break;
+  case &quot;F&quot;:
+    do the F things;
+    break;
+  case &quot;G&quot;:
+    do the G things;
+    break;
+  default:
+    do the default;
+}
+</code></pre>
+
+
+        <p>Let's look at the parts.</p>
+
+        <img src="resources/switchStatement.png" alt="" height="587" width="920">
+
+        <h3>Take a <code>break;</code> </h3>
+
+        <p>What does <code>break;</code> do? The <code>case</code> statements don't stop when they hit another <code>case</code>. They &quot;fall through&quot; to the next statement. This can lead to some wicked bugs, or some really cool behavior, depending on how you look at it! Here's an example.</p>
+
+
+<pre><code class="js">
+// No break statements
+
+var count = 0;
+
+switch(count) {
+  case 0:
+    document.write(&quot;It's 0\n&quot;);
+  case 4:
+    document.write(&quot;It's 4\n&quot;);
+  default:
+    document.write(&quot;It's neither&quot;);
+}
+</code></pre>
+
+<pre class="output">
+<script>
+// No break statements
+
+var count = 0;
+
+switch(count) {
+  case 0:
+	  document.write("It's 0\n");
+	case 4:
+		document.write("It's 4\n");
+	default:
+		document.write("It's neither");
+}
+
+</script>
+</pre>
+
+        <p>What happened? Without the <code>break;</code> it just keeps going. This is actually a feature! For some programming problems this is a very clear and efficient solution. However, most of the time we need to code like this:</p>
+
+<pre><code class="js">
+// With break statements
+
+var count = 0;
+
+switch(count) {
+  case 0:
+    document.write(&quot;It's 0\n&quot;);
+    break;
+  case 4:
+    document.write(&quot;It's 4\n&quot;);
+    break;
+  default:
+    document.write(&quot;It's neither&quot;);
+}
+</code></pre>
+
+
+<pre class="output">
+<script>
+// With break statements
+
+var count = 0;
+
+switch(count) {
+	case 0:
+		document.write("It's 0\n");
+		break;
+	case 4:
+	  document.write("It's 4\n");
+    break;
+	default:
+    document.write("It's neither");
+}
+
+</script>
+</pre>
+
+        <img src="resources/break.png" alt="" height="536" width="957">
+
+        <p>It ran the <code>case 0:</code> code and hit the <code>break;</code> and stopped.</p>
+        <p>If none of the <code>case</code> statements is true then it will run the optional <code>default:</code> section.</p>
+
+        <h3>Data Types and <code>switch</code> </h3>
+
+        <p>We can use any data type with switch statements. Here's an example with strings.</p>
+
+<pre><code class="js">
+// switch with strings
+
+var code = 'X';
+
+switch(code) {
+  case 'X':
+    document.write(&quot;It's X\n&quot;);
+    break;
+  case 'Y':
+    document.write(&quot;It's Y\n&quot;);
+    break;
+  default:
+    document.write(&quot;It's neither&quot;);
+}
+</code></pre>
+
+<pre class="output"> <script>
+// switch with strings
+var code = 'X';
+
+switch(code) {
+	case 'X':
+	  document.write("It's X\n");
+		break;
+	case 'Y':
+		document.write("It's Y\n");
+		break;
+	default:
+		document.write("It's neither");
+}
+</script>
+</pre>
+
+        <p>Even Booleans? Yes.</p>
+
+<pre><code class="js">
+// switch with booleans
+var test = true;
+
+switch(test) {
+  case true:
+    document.write(&quot;It's true\n&quot;);
+    break;
+  case false:
+    document.write(&quot;It's false\n&quot;);
+    break;
+}
+</code></pre>
+
+        <p>Note we still have a <code class="varname">break;</code> statement after the second one even though there's no other branches for this to "fall through" to. That's because we're planning for the future. If we added another option to this we might accidentally forget to add in the  <code class="varname">break;</code>.
+        </p>
+
+
+<pre class="output">
+<script>
+
+// switch with booleans
+var test = true;
+
+switch(test) {
+	case true:
+		document.write("It's true\n");
+		break;
+	case false:
+		document.write("It's false\n");
+		break;
+}
+
+</script>
+</pre>
+
+
+
+        <p>
+          Yep, that worked too. But we don't need a <code>default:</code> in
+          this situation.
+        </p>
+
+        <div class="notice">
+          <p>
+            Just because we can do something doesn't mean we should. Don't use
+            a switch statement to test if something is true or false. Use an IF/Else
+            statement.
+          </p>
+        </div>
+
+        <p><span class="caps">OK, </span>that's clear, what's next? How about a full example for your review?</p>
+
+        <p><a href="examples/example-6-3.html">Full Example: Process Customer Record with Case Structure</a></p>
+
+        <h3>Switch vs Nested IF</h3>
+
+        <p>The main advantage of using a Switch statement is to take advantage of the fact that we can &quot;drop through&quot; to other steps. Intentionally leaving out breaks in a switch statement can actually be a valuable tool in building more complex software.</p>
+
+        <p>Using switch statements instead of Nested IF statements is a common approach, but eventually, you'll learn how to do decisions in your program that don't require either. But to do that you'll need to understand object-oriented programming. For now, practice working with switch statements in the following labs.</p>
+
+        <h3>Lab Time</h3>
+
+        <p><em>I think and think for months and years. Ninety-nine times, the conclusion is false. The hundredth time I am right.</em> - Albert Einstein</p>
+
+        <p class="lab_link"><a href="labs/lab-08-caseAlgorithm.html">Lab 08: Case Structure Algorithm</a><strong>&nbsp;&nbsp;(THIS IS AN OPTIONAL LAB)</strong></p>
+        <p class="lab_link"><a href="labs/lab-09-caseStructure.html">Lab 09: Case Structure</a></p>
+
+        <p><a href="index.html">Back</a></p>
+
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Example: Process Customer Record</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 5: Making Decisions</a></h2>
+      </header>
+      
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Example: Process Customer Record</h1>
+
+        <h4>File: unit5/example-6-2.html</h4>
+        <h3>Problem Statement</h3>
+
+        <blockquote><p><strong><em>A program is required to read a customer's name, a purchase amount, and a tax code. The tax code has been validated and will be one of the following:</em></strong></p></blockquote>
+
+
+
+<pre>
+ 0 = tax exempt (0%)
+ 1 = state sales tax only (3%)
+ 2 = federal and state sales tax (5%)
+ 3 = special sales tax (7%)
+</pre>
+
+
+        <blockquote><p><strong><em>The program must then compute the sales tax and the total amount due, and print the customer's name, purchase amount, sales tax, and total amount due.</em></strong></p></blockquote>
+
+        <h3>1. Nouns and Verbs</h3>
+
+        <p>Identify the nouns and verbs in the problem statement.</p>
+
+<pre class="pseudocode">PROBLEM STATEMENT:
+  A program is required to read a customer's name, a purchase amount, and
+  a tax code. The program must then compute the sales tax and the total
+  amount due, and print the customer's name, purchase amount, sales tax,
+  and total amount due.
+
+Nouns: customer name, purchase amount, tax code, sales tax, total amount due
+
+Verbs:  read, compute, print
+</pre>
+
+
+
+        <h3>2. Defining Diagram</h3>
+
+        <p>Convert the nouns and verbs into variable names and processes and create a defining diagram.</p>
+
+<pre class="pseudocode">
+INPUTS:
+  customerName
+  purchaseAmount
+  taxCode
+
+PROCESSING:
+  read customer details
+  calculate sales tax
+  calculate total amount
+  print customer details
+
+OUTPUTS:
+  customerName
+  purchaseAmount
+  salesTax
+  totalAmount
+
+</pre>
+
+        <h3>3. Solution Algorithm</h3>
+
+        <p>Create a solution algorithm based on the defining diagram.</p>
+
+<pre class="pseudocode">
+ProcessCustomerRecord
+  Prompt for customerName with "Enter Customer Name:"
+  Prompt for purchaseAmount with "Enter Purchase Amount"
+  Prompt for taxCode with "Enter Tax Code"
+  Convert purchaseAmount to a number
+  Convert taxCode to a number
+  Convert purchaseAmount to cents (purchaseAmount = purchaseAmount * 100)
+  IF taxCode is 0 THEN
+    salesTax = 0
+  ELSE IF taxCode is 1 THEN
+    salesTax = purchaseAmount * 0.03
+  ELSE IF taxCode is 2 THEN
+    salesTax = purchaseAmount * 0.05
+  ELSE
+    salesTax = purchaseAmount * 0.07
+  ENDIF
+  Round salesTax up to nearest cent
+  totalAmount = purchaseAmount + salesTax
+
+  purchaseAmount = purchaseAmount / 100
+  salesTax = salesTax / 100
+  totalAmount = totalAmount / 100
+
+  Display &quot;Purchase for &quot; + customerName
+  Display &quot;Amount: $&quot; + purchaseAmount
+  Display &quot;Sales Tax: $&quot; + salesTax
+  Display &quot;Total: $&quot; + totalAmount
+END
+</pre>
+
+
+
+        <h3>4. Checking the Solution Algorithm</h3>
+
+        <p>Create a test plan for the algorithm.</p>
+
+<pre class="pseudocode">
+VARIABLES:
+  customerName
+  purchaseAmount
+  taxCode
+
+TEST CASE 1:
+
+  INPUT VALUES: &quot;Fred&quot;, &quot;10&quot;, &quot;0&quot;
+
+  EXPECTED RESULT: &quot;Fred&quot;, 10, 0, 10
+
+  ACTUAL RESULT: &quot;Fred&quot;, 10, 0, 10
+
+TEST CASE 2:
+
+  INPUT VALUES: &quot;Bill&quot;, &quot;100.00&quot;, &quot;1&quot;
+
+  EXPECTED RESULT: &quot;Bill&quot;, 100.00, 3.00, 103.00
+
+  ACTUAL RESULT: &quot;Bill&quot;, 100, 3, 103
+
+TEST CASE 3:
+
+  INPUT VALUES: &quot;Sue&quot;, &quot;149.99&quot;, &quot;2&quot;
+
+  EXPECTED RESULT: &quot;Sue&quot;, 149.99, 7.50, 157.49
+
+  ACTUAL RESULT: &quot;Sue&quot;, 149.99, 7.50, 157.49
+</pre>
+
+
+
+        <h3>5. JavaScript Output</h3>
+
+        <p>Write the JavaScript code based on everything you've done.</p>
+        <p><strong>Here's the code:</strong></p>
+
+<pre><code class="javascript">
+// Process Customer Record
+
+function ProcessCustomerRecord() {
+
+  // Variable Declarations
+  var customerName;
+  var purchaseAmount;
+  var output;
+  var salesTax;
+  var taxCode;
+  var totalAmount;
+
+  // Get input from user
+  customerName = prompt(&quot;Enter Customer Name&quot;);
+  purchaseAmount = prompt(&quot;Enter Purchase Amount&quot;);
+  taxCode = prompt(&quot;Enter Tax Code&quot;);
+
+  // Convert entered numbers
+  purchaseAmount = Number(purchaseAmount);
+  taxCode = Number(taxCode);
+
+  // convert purchase amount  to cents to avoid rounding errors
+  purchaseAmount = purchaseAmount * 100;
+
+  // Calculate sales tax
+  if (taxCode === 0) {
+    salesTax = 0;
+  } else if (taxCode === 1) {
+    salesTax = purchaseAmount * 0.03;
+  } else if (taxCode === 2) {
+    salesTax = purchaseAmount * 0.05;
+  } else {
+    salesTax = purchaseAmount * 0.07;
+  }
+
+  // round off cents to closest whole cent. Use Math.ceil to round up.
+  // Remember we&#39;ve already converted dollars to cents!
+  salesTax = Math.ceil(salesTax);
+
+  // Calculate purchase amount
+  totalAmount = purchaseAmount + salesTax;
+
+  // convert cents back to dollars for output
+  purchaseAmount = purchaseAmount / 100;
+  salesTax = salesTax / 100;
+  totalAmount = totalAmount / 100;
+
+  // Print the purchase to the page
+  // Use .toFixed(2) on dollar amounts so whole numbers get &quot;.00&quot; after them.
+  output += &quot;&lt;p&gt;Purchase for &quot; + customerName + &quot;:&lt;/p&gt;&quot;;
+  output += &quot;&lt;p&gt;Amount:      $&quot; + purchaseAmount.toFixed(2) + &quot;&lt;/p&gt;&quot;;
+  output += &quot;&lt;p&gt;Sales Tax:   $&quot; + salesTax.toFixed(2) + &quot;&lt;/p&gt;&quot;;
+  output += &quot;&lt;p&gt;Total:       $&quot; + totalAmount.toFixed(2) + &quot;&lt;/p&gt;&quot;;
+
+  document.write(output);
+}
+
+// run program
+ProcessCustomerRecord();
+
+</code></pre>
+
+        <p><strong>Here's the output:</strong></p>
+
+
+
+
+<pre class="output">
+<script>
+// YOUR CODE STARTS AFTER THIS LINE:
+// Process Customer Record
+
+function ProcessCustomerRecord() {
+
+  // Variable Declarations
+  var customerName;
+  var purchaseAmount;
+  var output;
+  var salesTax;
+  var taxCode;
+  var totalAmount;
+
+  // Get input from user
+  customerName = prompt("Enter Customer Name");
+  purchaseAmount = prompt("Enter Purchase Amount");
+  taxCode = prompt("Enter Tax Code");
+
+  // Convert entered numbers
+  purchaseAmount = Number(purchaseAmount);
+  taxCode = Number(taxCode);
+
+  // convert purchase amount  to cents to avoid rounding errors
+  purchaseAmount = purchaseAmount * 100;
+
+  // Calculate sales tax
+  if (taxCode === 0) {
+    salesTax = 0;
+  } else if (taxCode === 1) {
+    salesTax = purchaseAmount * 0.03;
+  } else if (taxCode === 2) {
+    salesTax = purchaseAmount * 0.05;
+  } else {
+    salesTax = purchaseAmount * 0.07;
+  }
+
+  // round off cents to closest whole cent. Use Math.ceil to round up.
+  // Remember we've already converted dollars to cents!
+  salesTax = Math.ceil(salesTax);
+
+  // Calculate purchase amount
+  totalAmount = purchaseAmount + salesTax;
+
+  // convert cents back to dollars for output
+  purchaseAmount = purchaseAmount / 100;
+  salesTax = salesTax / 100;
+  totalAmount = totalAmount / 100;
+
+  // Print the purchase to the page
+  // Use .toFixed(2) on dollar amounts so whole numbers get ".00" after them.
+  output += "<p>Purchase for " + customerName + ":</p>";
+  output += "<p>Amount:      $" + purchaseAmount.toFixed(2) + "</p>";
+  output += "<p>Sales Tax:   $" + salesTax.toFixed(2) + "</p>";
+  output += "<p>Total:       $" + totalAmount.toFixed(2) + "</p>";
+
+  document.write(output);
+}
+
+
+// run program
+ProcessCustomerRecord();
+
+// END OF YOUR CODE
+</script>
+</pre>
+
+        <h3>Think About It</h3>
+        <p>To get the right outputs from the program we had to round the answers. And to do that we converted all the dollar values to cents. Why would we do this?
+        </p>
+
+
+        <p><a href="../nestedIfs.html">Back</a></p>
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

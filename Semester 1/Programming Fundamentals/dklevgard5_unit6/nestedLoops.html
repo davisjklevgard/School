@@ -1,0 +1,221 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Nested loops</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+      <script src="jsFiles/nestedLoops.js"></script>
+
+    <!-- InstanceEndEditable -->
+  </head> 
+  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 6: Loops, Functions, and Data Structures</a></h2>
+      </header>
+      
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Nested loops</h1>
+
+        <h4>File: unit7/nestedLoops.html</h4>
+        
+        
+        
+        <h3>Loops Within Loops, oh my.</h3>
+        
+        <p><em>This is a powerful concept that is crucial for most modern programming. We'll start simply, though.</em></p>
+        <p>Sometimes a problem statement requires nested loops. Here's a Solution Algorithm that shows one.</p>
+
+<pre class="pseudocode">
+CreateGridOfXs
+  declare two variables for loop counters
+  set the outer loop counter to zero
+  WHILE outer loop counter is less than 5
+    set the inner loop counter to zero
+    WHILE inner loop counter is less than 5
+      Output an &quot;X&quot; to the page
+      Increment the inner loop counter
+    ENDWHILE
+    Output a line break to the page
+    Increment the outer loop counter
+  ENDWHILE
+END
+</pre>
+
+        <p>Any code can go inside a loop, even another loop. This gives us some interesting possibilities.</p>
+
+<pre><code class="js">
+/*
+  This is an example of nested looping 
+  with while loops.
+*/
+function firstNestedLoops() {
+    
+  // Declare variables
+  var innerCounter;
+  var outerCounter;
+  
+  // Outer loop
+  // Increment its counter first
+  outerCounter = 0;
+  while (outerCounter &lt; 5) {        
+      
+    // Inner loop
+    // Increment its counter first
+    innerCounter = 0;
+    while (innerCounter &lt; 5) {
+      document.write(&quot;X&quot;);
+      innerCounter++;
+    }
+    document.write(&quot;&lt;br /&gt;&quot;);
+    outerCounter++;
+  }
+}</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+  firstNestedLoops();
+</script>
+</pre>
+
+        
+        <h3>The Concept</h3>
+        
+        <p><em>Nested Loops (Nested Loops (Nested Loops (Nested Loops)))</em></p>
+        <p>Here's how this works. We need a loop counting variable for each of the <code>while</code> statements in our program. In this case that's two. There's no need to assign them a value yet.</p>
+
+<pre><code class="js">// Declare Variables
+
+var innerCounter;
+var outerCounter;
+</code></pre>
+
+        <p>Next, we create the outer loop, when means the loop that runs first. We have to make sure we assign the starting value to the counter just before the loop starts.</p>
+
+<pre><code class="js">// Outer loop
+
+outerCounter = 0;
+while (outerCounter &lt; 5) {
+  // This will run five times
+  ...
+  outerCounter++;  // &lt;-- Increment the outer loop counter.
+}
+</code></pre>
+
+        <p>This outer loop will run five times and all code in it will run five times, even another loop!</p>
+        <p>Now we'll put another loop inside the first loop. Assign the loop counter for this loop just before the loop starts. It has to be just before the loop so it will be reset to zero every time the loop starts.</p>
+
+<pre><code class="js">// Adding the inner loop
+
+outerCounter = 0;
+while (outerCounter &lt; 5) {
+  // This will run five times
+  
+  // This is a nested loop that is 
+  // completely inside the first loop.
+  innerCounter = 0;
+  while (innerCounter &lt; 5) {
+    // This will run five times for 
+    // every time the outer loop runs,
+    // or 25 times.
+    ...
+    innerCounter++;
+  }
+    
+  outerCounter++;  // &lt;-- Increment the inner loop counter.
+}
+</code></pre>
+
+        <p>Now let's do some work! We'll just do something simple like writing an "X" to the page. We only put this in the inner loop so it will run every time.</p>
+
+<pre><code class="js">
+// The full program
+
+outerCounter = 0;
+while (outerCounter &lt; 5) {
+  // This will run five times
+  
+  // This is a nested loop that is 
+  // completely inside the first loop.
+  innerCounter = 0;
+  while (innerCounter &lt; 5) {
+    // This will run five times for 
+    // every time the outer loop runs,
+    // or 25 times.
+    document.writing(&quot;X&quot;);  // &lt;-- 25 times!
+    innerCounter++;
+  }
+  document.write(&quot;&lt;br /&gt;&quot;);  // &lt;-- Go to the next line.
+  outerCounter++;  // &lt;-- Increment the inner loop counter.
+}
+</code></pre>
+
+        <p>Here's an active demonstration of this:</p>
+
+
+
+        <div style="
+                margin-left:50px;
+                width:250px;
+                font-family:arial,geneva,sans-serif;
+                border:medium solid gray;
+                padding: 10px;">
+          
+          <form action="nestedAnimationForm" method="put"
+                onsubmit="return false" id="nestedAnimationFormId">
+                <input type="button" 
+                       name="forwardOne" 
+                       onclick="moveLoopForward()" 
+                       value="Loop Once" 
+                />
+                <input type="button" 
+                       name="resetDemo" 
+                       onclick="resetLoopDemo()" 
+                       value="Reset" 
+                />
+
+
+<pre class="basicPre" id="outerInnerCountersId">
+Outer Counter: 0
+Inner Counter: 0
+</pre>
+
+
+<pre class="basicPre" id="nestedAnimationOutput">
+
+</pre>
+
+
+            </form>
+        </div>
+        <p>The possibilities this gives us are endless! </p>
+        <p>No, there's no lab for this. Nested loops are important to understand, but I'm not going to make you do them right now. Let's move on.</p>
+        <p><a href="index.html">Back</a></p>
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+   </section>
+ </body>
+<!-- InstanceEnd --></html>

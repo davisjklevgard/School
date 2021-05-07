@@ -1,0 +1,344 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Simple Assignment Operator</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 4: Operators and Functions</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Simple Assignment Operator</h1>
+
+        <h4>File: unit5/simpleAssignment.html</h4>
+        
+        <p>Let's look how we define a variable and then assign data to that variable. This data can then be accessed by our program.</p>
+<h3>What does data look like?</h3>
+              
+        <h4>Numbers:</h4>
+        <p>Here's what the number 7 looks like in the computer:</p>
+        <pre class="pseudocode">00000000000000000000000000000111</pre>
+        <p>That's 32 bits in a row, which is maybe a little overwhelming. So, we break up the bits into groups of 8 that we call <strong>bytes</strong>. (You've probably heard that term, like in a <em>250GB hard drive</em>. That's 250 billion bytes!)</p>
+              
+        <pre class="pseudocode">00000000 00000000 00000000 00000111</pre>
+        <p>For the sake of discussion, we'll not worry about the first 3 bytes since they are all zeros. We'll just look at the last byte.</p>
+        <pre class="pseudocode">00000111</pre>
+        <p>Now we'll blow it up and look at what it means. The computer only understands base 2 (binary) arithmetic. The rightmost bit is the ones position, the next one to the left is the twos positions, next is the fours, etc.<br />
+        </p>
+        <ul>
+          <li>
+            <div style="text-align: center;"><br />
+              <img src="resources/byte.jpg" alt="" height="382" width="823" /><br />
+            </div>
+          </li>
+        </ul>
+        <p>Here's what 10 looks like:</p>
+        <pre class="pseudocode">00001010</pre>
+              <p>Here's 255:</p>
+        <pre class="pseudocode">11111111</pre>
+        <p>And here's 682. But, since it takes more than 8 bits to store that number, we had to add another byte:</p>
+        <pre class="pseudocode">00000010 10101010</pre>
+        
+        
+        
+        <h4>Characters:</h4>
+        <p>What about letters? Here's what the letter <strong>A</strong> is in the computer:</p>
+        <pre class="pseudocode">01000001</pre>
+        <p>Huh? That looks like a number! Yep, that's what everything is in the computer. That's also the number 65.</p>
+        <p><em> So... how does the computer know that it's an <strong>A</strong> and not 65?</em></p>
+        <p>Because we tell it that it's an <strong>A</strong>. That's what <strong>Assignment</strong> means.</p>
+        <h3>Assignment</h3>
+        
+        <h4>"Assignment" is the process of putting a data value in a variable <em>and</em> telling the computer the value's <em>data type</em>. </h4>
+        <h4>What does the term "data type" mean?  A data type designates what kind of data will be stored in the variable.  For example, will the data be all numbers?  If so, it is a number data type...or a "numeric" data type.  But, if the value has letters or special characters...a first name, for example...then it's a string data type.</h4>
+        <p><strong>In JavaScript </strong>we do this by simply assigning a value to a variable. JavaScript figures out what data type based on how you write the value, using <strong>type inference</strong>:
+        </p>
+        <ul>
+          <li>Numbers: <strong>45</strong>, <strong>123.99</strong></li>
+          <li>Strings: <strong>"this is a string"</strong>, <strong>"Here's another"</strong>, <strong>"12.99"</strong></li>
+          <li>A number is declared by NOT using quotes.</li>
+          <li>A string is declared with the quotes, even if the value is a number.</li>
+          <li>That's why <strong>12.99 is a number</strong>...but, <strong>"12.99" is a string!</strong></li>
+          <li>Data types are SUPER important to JavaScript when doing math or comparing values!</li>
+        </ul>
+        <p>There are several ways to do assignment in JavaScript. The simplest is the <strong>Simple Assignment Operator</strong>.<br />
+        </p>
+
+        <div style="text-align: center;"><br />
+          <img src="resources/assignment.jpg" alt="" height="387" width="850" /><br />
+        </div>
+
+        <h3>Let's look at some examples of Simple Assignment Operators  </h3>
+        
+        <p>Here, on lines 2 and 3, are examples of a <strong> Simple Assignment in a variable declaration statement</strong>.  By the way, did you notice that <strong>Fred</strong> has quotes around it?  We want JavaScript to know Fred is a string.  But,<strong> 40000 </strong>has NO quotes, because we want JavaScript to see that it's a number.</p>
+          
+          
+<pre><code class="js">
+// Simple Assignment while declaring the variable
+var firstName = &quot;Fred&quot;;
+var income = 40000;
+
+document.write(&quot;First Name: &quot; + firstName);
+document.write(&quot;&lt;br /&gt;&quot;);
+document.write(&quot;Annual Income: &quot; + income);
+</code></pre>
+
+				<p>Here's our result...</p>
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+<!-- 
+// Simple Assignment while declaring the variable
+   var firstName = "Fred";
+   var income = 40000;
+ 
+   document.write("First Name: " + firstName);
+   document.write("<br />");
+   document.write("Annual Income: " + income); 
+// -->
+//]]>
+</script>
+</pre>
+
+        <p>Here's an example of a <strong>Simple Assignment after the variable has been declared.</strong> It's on line 4 of our code, but it can happen anywhere in your code after the declaration.</p>
+          
+<pre><code class="js">
+// Simple Assignment after declaring the variable
+var petName;
+
+petName = &quot;Fido&quot;;
+
+document.write(&quot;Pet Name: &quot; + petName);
+
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+
+// Simple Assignment after declaring the variable
+var petName;
+
+petName = "Fido";
+
+document.write("Pet Name: " + petName);
+	
+</script>
+</pre>
+
+
+				<p>Here's an example of a <strong>Simple Assignment with Math</strong>. Look at line 06. On the left side of the equal sign is the variable name...and on the right side of the equal sign is the formula. JavaScript will solve the formula (500 times 345), and place the answer into the variable.</p>
+
+
+<pre><code class="JScript">
+// Simple Assignment with Math
+var total;
+var countOne = 500;
+var countTwo = 345;
+
+total = countOne * countOne;
+
+document.write(&quot;The total is: &quot; + total);
+
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+
+// Simple Assignment with Math
+var total;
+var countOne = 500;
+var countTwo = 345;
+
+total = countOne * countOne;
+
+document.write("The total is: " + total);
+
+
+</script>
+</pre>
+
+
+        <p>Once a variable has a value assigned to it, you can still change it. Here's an example of a <strong>Simple Assignment by replacing the value of a variable.</strong> Notice that the <strong>address</strong> variable is assigned a value of "123 Some St." right away on line 2.  BUT, on line 7 the <strong>address</strong> variable is assigned a new value. The new assignment statement always replaces whatever value was assigned to the variable in previous assignment statements. <strong>Let me repeat: The old value is gone. Forever.</strong></p>
+
+
+<pre><code class="js">
+// Simple Assignment with replacement
+var address = &quot;123 Some St.&quot;;
+
+document.write(&quot;Address: &quot; + address);
+document.write(&quot;&lt;br /&gt;&quot;);
+
+address = &quot;456 Another St.&quot;;
+
+document.write(&quot;New Address: &quot; + address);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+
+// Simple Assignment with replacement
+var address = "123 Some St.";
+
+document.write("Address: " + address);
+document.write("<br />");
+
+address = "456 Another St.";
+
+document.write("New Address: " + address);
+
+</script>
+</pre>
+
+        <p>Let's look at a <strong>Simple Assignment to a new type</strong>. JavaScript is what is  called a "dynamically typed" language. This means that variables can be any type and you can change their type, because the type of a variable is determined by the data you store in that variable. </p>
+        <p>See how the variable called <strong>notSure</strong> is assigned as a String data type in line 02.  However...then in line 07, that same variable is assigned a number!  JavaScript let's you change the data type simply by assigning a different value to the variable.</p>
+          
+          
+<pre><code class="js">
+// Simple Assignment to a new type
+var notSure = &quot;I'm a string for now.&quot;;
+
+document.write(&quot;Here's notSure: &quot; + notSure);
+document.write(&quot;\n&quot;);
+
+notSure = 25.99;
+
+document.write(&quot;New value for notSure: &quot; + notSure);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+
+// Simple Assignment to a new type
+var notSure = "I'm a string for now.";
+
+document.write("Here's notSure: " + notSure);
+document.write("\n>");
+
+notSure = 25.99;
+
+document.write("New value for notSure: " + notSure);
+
+</script>
+</pre>
+
+        <p>Many other languages, like Java and C#, are "statically typed" languages. Their variables have to be declared with a specific data type and you can't store any other type of data in that variable. So, the preceding example would result in an error in those languages.</p>
+        <p>You can also accomplish <strong>Simple Assignment from the results of a function</strong>. This is very common, and you have already used this method of getting data into a variable!</p>
+          
+          
+<pre><code class="js">
+// Simple Assignment from a function
+var userName = prompt(&quot;Enter your user name&quot;);
+
+document.write(&quot;Your user name is: &quot; + userName);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Simple Assignment from a function
+var userName = prompt("Enter your user name");
+
+document.write("Your user name is: " + userName);
+</script>
+</pre>
+
+        <p>Here's our last example.  A <strong>Simple Assignment can be done to a variable "in-place", from itself to itself.</strong> Sounds strange, doesn't it? But, look at the example in line 08. There is an EXCELLENT reason for that line of code.</p>
+        <ul>
+          <li>Did you remember the tricky thing about the <strong>prompt</strong> function?  It is a rule in JavaScript that any variable that is assigned using the <strong>prompt</strong> function is assigned as a <strong>string</strong> - even if the value keyed in by the user is a number!</li>
+          <li>The <code>Number</code> function allows JavaScript to look at the value in a String variable, and to do the best it can to <strong>convert that value to a number</strong>. </li>
+          <li>The <code>Number</code> function is often used with the prompt function. For example, when you clicked the link to get to this page, you were prompted for your name and a price. When you keyed in the "Price", hopefully you keyed in a number. JavaScript sees that number as a string, since it came in from a prompt function. The Number function tells JavaScript to use the "number" value of whatever you keyed in.</li>
+          <li>The number keyed in may not display any differently when you use the Number function. BUT...(a big but)...<strong>any math you do with that number may have a VERY different result</strong>.  More about that later...</li>
+        </ul>
+
+
+
+
+<pre><code class="js">
+// Simple Assignment in place
+var priceOne = 15.80;
+var priceTwo;
+var priceTotal;
+
+priceTwo = prompt(&quot;Enter a price.&quot;);
+
+priceTwo = Number(priceTwo);
+
+priceTotal = priceOne + priceTwo;
+
+document.write(&quot;Total Price is: &quot; + priceTotal);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+
+// Simple Assignment in place
+var priceOne = 15.80;
+var priceTwo;
+var priceTotal;
+
+priceTwo = prompt("Enter a price.");
+
+priceTwo = Number(priceTwo);
+
+priceTotal = priceOne + priceTwo;
+
+document.write("Total Price is: " + priceTotal);
+
+</script>
+</pre>
+
+
+        <h3>Wow!  We just covered a lot of new territory in JavaScript.  Now you need some practice!</h3>
+              
+        <p>Here's a lab on Simple Assignment.</p>
+        <p class="lab_link"><a href="labs/lab-01-simpleAssignment.html">Lab 1: Simple Assignment</a></p>
+        <p>
+          <a href="index.html">Back</a>
+        </p>
+  
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest version: 1.2009
+        </p>
+      </footer>
+    </section>
+  </body>  
+<!-- InstanceEnd --></html>  

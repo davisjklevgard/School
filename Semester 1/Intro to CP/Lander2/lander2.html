@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar Lander 2</title>
+    <style>
+      body {
+        background-color: #000000;
+        color: #808080;
+        margin: 0px 0px 0px 0px;
+      }
+      canvas {
+        display: block;
+
+        border: 1px solid #808080;
+        margin: auto;
+      }
+      p, footer {
+        display: block;
+        margin: auto;
+        text-align: center;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500">
+      Enable JavaScript to play.
+    </canvas>
+    <p id="output">Spacebar: Thrust</p>
+    <script>
+const canvas = document.getElementById("canvas");
+const output = document.getElementById("output");
+const ctx = canvas.getContext("2d");
+const landerHeight = 20;
+const landerWidth = 20;
+const gravity = 0.00001;
+const thrustAcceleration = -0.000015;
+
+const landerCenterX = canvas.width / 2;
+const landerHeightHalf = landerHeight / 2;
+const landerWidthHalf = landerWidth / 2;
+
+let thrustPressed = false;
+let landerCenterY = 0;
+let landerVelocityY = 0;
+let time0 = undefined;<a href="lander2.html">Lunar Lander 2</a>
+
+const onPress = function(event) {
+  console.log(event);
+  if (event.keyCode === 32) {
+    thrustPressed = true;
+    //document.write("We can't use this anymore!");
+    output.innerHTML = "<strong>Spacebar: Thrust</strong>";
+  }
+};
+
+const onRelease = function(event) {
+  console.log(event);
+  if (event.keyCode === 32) {
+    thrustPressed = false;
+    output.innerHTML = "Spacebar: Thrust";
+  }
+}
+
+const drawFrame = function(time1) {
+  if (time1 === undefined) {
+    time1 = 0;
+  }
+  if (time0 === undefined) {
+    time0 = time1;
+  }
+  const timeDelta = time1 - time0;
+  time0 = time1;
+
+  // Process user input.
+  let acceleration = gravity;
+  if (thrustPressed) {
+    acceleration = acceleration + thrustAcceleration;
+  }
+
+  // Update our game world.
+  landerVelocityY = landerVelocityY + acceleration * timeDelta;
+  landerCenterY = landerCenterY + landerVelocityY * timeDelta;
+
+  if (landerCenterY + landerHeightHalf >= canvas.height) {
+    if (thrustPressed) {
+      landerVelocityY = (gravity + thrustAcceleration) * timeDelta;
+    }
+    else {
+      landerVelocity = 0;
+    }
+    landerCenterY = canvas.height - landerHeightHalf;
+  }
+
+  // Diplay the game world.
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(landerCenterX - landerWidthHalf,
+    landerCenterY - landerHeightHalf,
+    landerWidth,
+    landerHeight);
+
+  // Prepare for the next frame.
+  requestAnimationFrame(drawFrame);
+};
+
+window.addEventListener('keydown', onPress, false);
+window.addEventListener('keyup', onRelease, false);
+window.addEventListener('mousedown', onPress, false);
+drawFrame();
+    </script>
+    <footer>version 1.0</footer>
+  </body>
+</html>
+

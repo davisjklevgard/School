@@ -1,0 +1,333 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>If Statement With Multiple Boolean Expressions</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 5: Making Decisions</a></h2> 
+      </header>
+      
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>If Statement With Multiple Boolean Expressions</h1>
+
+        <h2>This <code>OR</code> That, This <code>AND</code> That</h2>
+
+        <p><em>Sometimes we want to have multiple conditions because one isn't enough.</em></p>
+
+
+        <ul>
+          <li>"If I were taller <code>or</code> that shelf was lower, I could reach that can of soup."</li>
+          <li>"Could I have 20 ones <code>or</code> a ten and 10 ones <code>or</code> even 2 fives and 10 ones?</li>
+          <li>"You have to wear a shirt <code>and</code> shoes to enter this premise!"</li>
+          <li>"If you are older than 5 <code>and</code> younger than 12 then the cost is $1"</li>
+        </ul>
+
+
+        <h3>The Logical <code>OR</code> (<code>||</code>)</h3>
+
+        <p>In JavaScript, as in many languages, the logical <code>OR</code>  is <code>||</code>. That's two vertical bars. That key is in different places depending on the keyboard. Where is it on yours? You use it like this:</p>
+        <p>In pseudocode we use the word <code>OR</code> in capital letters.</p>
+
+<pre class="pseudocode">
+IF number &gt; 10 OR number &lt; 0 THEN
+  display error message
+ENDIF
+</pre>
+
+        <p>In JavaScript we use two vertical bars, <code>||</code>.</p>
+
+<pre><code class="js">
+// Logical OR
+
+var number = 25;
+
+if (number &gt; 10 || number &lt; 1) {
+  alert(&quot;The number is not between 1 and 10!&quot;)
+}
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Logical OR
+
+var number = 25;
+
+if (number > 10 || number < 1) {
+  document.write("The number is not between 1 and 10!")
+}
+</script>
+</pre>
+
+
+
+        <ul>
+          <li>Either one of the expressions can be true and the whole thing is true!</li>
+          <li>Notice that you have to repeat the variable after the <code>||</code>. This is wrong:</li>
+        </ul>
+
+
+
+
+<pre><code class="js">
+// Wrong!
+if (number &gt; 10 || &lt; 1) { //&lt;-- Wrong, missing variable name!
+</code></pre>
+
+
+
+        <ul>
+          <li>This is correct:</li>
+        </ul>
+
+
+
+
+<pre><code class="js">
+// Right!
+
+if (number &gt; 10 || number &lt; 1) { //&lt;-- You always have to have
+                                       // a complete boolean expression
+                                       // on each side of the ||
+</code></pre>
+
+
+        <img src="resources/multipleBooleans.png" alt="" height="589" width="885" />
+
+
+        <h3>The Logical <code>AND</code> (<code>&amp;&amp;</code>)</h3>
+        <p>In pseudocode we use the <code>AND</code> in uppercase letters.</p>
+
+<pre class="pseudocode">
+IF it's the weekend AND I'm not tired THEN
+  We're going to the park
+ENDIF
+</pre>
+
+
+<pre class="pseudocode">
+IF numberOne &gt; 25 AND code is 5 THEN
+  Award bonus
+ENDIF
+</pre>
+
+        <p>In JavaScript the logical <code>AND</code> is <code>&amp;&amp;</code>, two ampersands. Here's how we use it:</p>
+
+<pre><code class="js">
+// Logical AND
+
+var code = 5;
+var numberOne = 30;
+
+if (numberOne &gt; 25 &amp;&amp; code === 5) {
+  document.write(&quot;Bonus time!&quot;);
+} else {
+  document.write(&quot;No bonus this year.&quot;);
+}
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Logical AND
+
+var code = 5;
+var numberOne = 30;
+
+if (numberOne > 25 && code === 5) {
+		document.write("Bonus time!");
+} else {
+		document.write("No bonus this year.");
+}
+</script>
+</pre>
+
+        <p>Both of the boolean expression has to be true. If either one is false then the whole thing is false.</p>
+
+
+
+        <div style="text-align: center;">
+          <img src="resources/multipleBooleansAND.png" alt="" height="589" width="885">
+        </div>
+
+        <h3>Examples</h3>
+
+
+
+<pre><code class="js">
+// Logical AND example
+
+function LogicalAndExample() {
+  var count;
+
+  count = Number(prompt(&quot;Enter a number between 1 and 10&quot;));
+
+  if (count &gt; 0 &amp;&amp; count &lt;= 10) {
+    document.write(&quot;The number is in the correct range&quot;);
+  }
+
+}
+
+LogicalAndExample();
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Logical AND example
+
+function LogicalAndExample() {
+  var count;
+
+  count = Number(prompt("Enter a number between 1 and 10"));
+
+  if (count > 0 && count <= 10) {
+    document.write("The number is in the correct range");
+  }
+}
+
+LogicalAndExample();
+</script>
+</pre>
+
+        <ul>
+          <li>Here's an <code>if/else</code></li>
+        </ul>
+
+
+
+
+<pre><code class="js">
+// Logical AND example with if/else
+function LogicalAndExampleWithIfElse() {
+
+  var code;
+  var output;
+  var size;
+
+  size = prompt(&quot;Enter a size in feet&quot;);
+  code = prompt(&quot;Enter a code: A, B, or C&quot;);
+
+  size = Number(size);
+
+  if (size &gt; 0 &amp;&amp; code === &quot;B&quot;) {
+    output = &quot;That is just right!&quot;;
+  } else {
+    output = &quot;That's not it, please try again.&quot;;
+  }
+
+  document.write(output);
+}
+
+LogicalAndExampleWithIfElse();
+</code></pre>
+
+
+<pre class="output">
+<script>
+
+// Logical AND example with if/else
+
+function LogicalAndExampleWithIfElse() {
+
+  var code;
+  var output = "";
+  var size;
+
+  //size = prompt("Enter a size in feet");
+  //code = prompt("Enter a code: A, B, or C");
+
+  size = Number(size);
+
+  if (size > 0 && code === "B") {
+    output = "That is just right!";
+  } else {
+    output = "That's not it, please try again.";
+  }
+
+  document.write(output);
+}
+
+LogicalAndExampleWithIfElse();
+</script>
+</pre>
+
+        <h3>Full Multiple Booleans Example</h3>
+
+        <p>Here's an example with a small twist: <a href="examples/example-multipleBooleans.html">Drivers License</a></p>
+        <h3>Short Circuiting</h3>
+        <p>Look at this code:</p>
+
+<pre><code language="javascript">
+(2 === 2) || (foo);
+</code></pre>
+
+        <p>This returns true. We didn't declare the variable foo, but because the first part of this condition is true, JavaScript &quot;short-circuits&quot; and returns true, never even trying to read the second part. It only reads the second part if the first part is false.</p>
+        <p>&nbsp;</p>
+
+<pre><code language="javascript">
+(2 === 3 ) || (foo);
+</code></pre>
+
+        <p>Since foo isn't defined, JavaScript gives us an error and the program stops running.</p>
+        <p>The important thing to remember is that if the first part is true, the rest is ignored. If the first part is not true, then the second part happens.</p>
+        <p>(Notice I don't say &quot;false&quot;, I say &quot;not true.&quot;)</p>
+        <p> Why would we do this?</p>
+        <p>We can use booleans to set default values. For example, instead of this: </p>
+
+<pre><code language="javascript">
+var defaultState;
+if(userValue === &quot;&quot;){
+  defaultState = "WI";
+}
+</code></pre>
+
+        <p> We can do this:</p>
+
+<pre><code language="javascript">
+var defaultState = userValue || "WI";
+</code></pre>
+
+        <p>This is an example of &quot;short circuiting&quot; and it's really important when understanding how booleans in JavaScript work. Not every language has short-circuiting, but many do. We won't do any short-circuiting in this class, but you should be aware of its existence.</p>
+        <h3>It's lab time</h3>
+
+        <p><em>I am not young enough to know everything.</em> - Oscar Wilde</p>
+
+
+        <p class="lab_link"><a href="labs/lab-03-multipleBooleansAlgorithm.html">Lab 3: Multiple Booleans Algorithm</a></p>
+        <p class="lab_link"><a href="labs/lab-04-multipleBooleans.html">Lab 4: Multiple Booleans</a></p>
+        <p><a href="index.html">Back</a></p>
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

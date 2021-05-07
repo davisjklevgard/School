@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Operators That Test Relationships</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 4: Operators and Functions</a></h2>
+      </header>
+
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Operators That Test Relationships</h1>
+        <p>Is the number or string <strong>bigger</strong>, <strong>smaller</strong>, or the <strong>same</strong>? In order to write software that makes decisions, we'll have to do comparisons, and to do that we'll need to test relationships between data. We do that with <strong>relational operators.</strong></p>
+        <h3>The Relational Operators</h3>
+
+        <table style="text-align:left; margin-left: 4em;" cellspacing="0">
+          <tr>
+            <td style="background:#ccc; font-weight:bold;">Operator</td>
+            <td style="background:#ccc; font-weight:bold;">Function</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;"><code>&lt;</code></td>
+            <td><strong>Less Than</strong> test</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;"><code>&gt;</code></td>
+            <td><strong>Greater Than</strong> test</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;"><code>&lt;=</code></td>
+            <td><strong>Less Than or Equal To</strong> test</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;"><code>&gt;=</code></td>
+            <td><strong>Greater Than or Equal To</strong> test</td>
+          </tr>
+        </table>
+
+        <h3>Using the Relational Operators</h3>
+
+        <p>Relationship testing is done very often in our code, especially in selection or repetition.</p>
+
+<pre><code class="js">
+// Relational Operators
+
+// if the count is less than 5...
+if (count &lt; 5) {
+  // do something
+}
+
+// while the count is greater than or equal to 10
+while (count &gt;= 10) {
+  // do something
+}
+</code></pre>
+
+
+
+        <h3>Relational Boolean Expressions</h3>
+
+        <p>Relational operators  make boolean expressions that are either true or false. </p>
+        <p>Testing Relationships</p>
+
+<pre><code class="js">
+// Is 10 bigger than 5?
+document.write(10 &gt; 5);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Is 10 bigger than 5?
+document.write(10 > 5);
+</script>
+</pre>
+
+        <p>Is 10 smaller than 10?</p>
+
+<pre><code class="js">
+// Is 10 smaller than 10?
+document.write(10 &lt; 10);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Is 10 less than 10?
+document.write(10 < 10);
+</script>
+</pre>
+
+        <p>This means "Is 10 smaller than OR equal to 10", which is true.</p>
+
+<pre><code class="js">
+// Is 10 smaller than or equal to 10?
+document.write(10 &lt;= 10);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Is 10 smaller than or equal to 10?
+document.write(10 <= 10);
+</script>
+</pre>
+
+        <p>What about strings? Can we use this for strings and how would it make any sense?</p>
+
+<pre><code class="js">
+// Is A smaller than B?
+document.write(&quot;A&quot; &lt; &quot;B&quot;); // Does this work and make sense?
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Is "A" smaller than "B"?
+document.write("A" < "B"); // Does this work and make sense?
+</script>
+</pre>
+
+        <p>Yes, it makes sense to compare the relationships of strings. Everything in the computer is a number, even characters like "A". Here's a chart showing the numbers in the computer for characters: <a href="asciiChart.html">What Are Characters?</a></p>
+
+<pre><code class="js">
+// Is &quot;F&quot; bigger than &quot;f&quot;?
+document.write(&quot;Fred&quot; &gt; &quot;fred&quot;);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Is "F" bigger than "f"?
+document.write("Fred" > "fred");
+</script>
+</pre>
+
+        <p>This is why "Fred" with an upper case "F" is smaller than "fred". All upper case letters are smaller than all lower case letters. Thus:</p>
+
+<pre><code class="js">
+// Is &quot;F&quot; smaller than &quot;f&quot;?
+document.write(&quot;fred&quot; &gt; &quot;Fred&quot;);
+</code></pre>
+
+
+
+<pre class="output">
+<script>
+// Is "F" smaller than "f"?
+document.write("fred" > "Fred");
+</script>
+</pre>
+
+        <p>So why would we ever compare strings? Well, suppose you had a list of names that you wanted to put things in alphabetical order. JavaScript compares strings character by character. So if you were to compare "Fred" and "Frank", which one would be bigger?</p>
+
+<pre><code class="js">
+// Is &quot;Fred&quot; bigger than &quot;Frank&quot;?
+document.write(&quot;Fred&quot; &gt; &quot;Frank&quot;);
+</code></pre>
+
+<pre class="output">
+<script>
+// Is "Fred" bigger than "Frank"?
+document.write("Fred" > "Frank");
+</script>
+</pre>
+
+        <h3>Less Than (<code>&lt;</code>) </h3>
+
+        <p>Is the first value smaller than the second?</p>
+        <p><strong>Numbers.</strong> Most of the time we compare numbers with "less than".</p>
+
+<pre><code class="js">
+// Is 1 less than 10?
+document.write(1 &lt; 10);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Is 1 less than 10?
+document.write(1 < 10);
+</script>
+</pre>
+
+        <p>This one catches people sometimes. What do you think the result will be?</p>
+
+<pre><code class="js">
+// Is 10 less than 10?
+document.write(10 &lt; 10);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Is 10 less than 10?
+document.write(10 < 10);
+</script>
+</pre>
+
+        <p>Are you surprised by that? </p>
+        <p>We can also use <code>&lt;</code> with strings. This will compare the numeric values of the strings. </p>
+
+<pre><code class="js">
+// Is &quot;b&quot; less than &quot;c&quot;?
+document.write(&quot;b&quot; &lt; &quot;c&quot;);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Is "b" less than "c"?
+document.write("b" < "c");
+</script>
+</pre>
+
+
+        <p>It works with larger strings, too. It will compare each character from left to right until it finds a difference or it reaches the end. Since the upper case "R" has a lower numeric value than the "r" this returns "true".</p>
+
+
+<pre><code class="js">
+// &quot;R&quot; is less than &quot;r&quot;.
+document.write(&quot;smalleR&quot; &lt; &quot;smaller&quot;);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// "R" is less than "r".
+document.write("smalleR" < "smaller");
+</script>
+</pre>
+
+
+        <p>Comparing string and numbers? Yes! JavaScript does type conversion
+        for us here too.</p>
+
+
+<pre><code class="js">
+// numbers and strings?
+document.write(10 &lt; &quot;100&quot;);
+document.write(&quot;\n&quot;);
+document.write(&quot;10&quot; &lt; 100);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// numbers and strings?
+document.write(10 < "100");
+document.write("\n");
+document.write("10" < 100);
+</script>
+</pre>
+
+         <p>
+				   There's never a good reason to let JavaScript do this kind
+					 of type coercion. Convert strings to numbers before doing
+					 comparisons, please. Just because the language will let
+					 you be lazy doesn't mean you should.
+				 </p>
+
+        <h3>Greater Than (<code>&gt;</code>)</h3>
+
+        <p>Is the first value bigger than the second value?</p>
+        <p><strong>Numbers.</strong> We frequently want to compare if some value
+         is bigger than another. For example, is the new salary bigger than the
+          maximum salary for that position?
+        </p>
+
+
+<pre><code class="js">
+// Greater than
+var newSalary = 37500.00;
+var maximumSalary = 40000.00;
+document.write(newSalary &gt; maximumSalary);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Greater than
+var newSalary = 37500.00;
+var maximumSalary = 40000.00;
+document.write(newSalary > maximumSalary);
+</script>
+</pre>
+
+
+        <p>Another example showing floating point numbers.</p>
+
+<pre><code class="js">
+// Greater than with floating point number
+document.write(12.555555557 &gt; 12.555555556);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Greater than with floating point number
+document.write(12.555555557 > 12.555555556);
+</script>
+</pre>
+
+        <p>This also works with strings</p>
+
+<pre><code class="js">
+// Greater than with strings
+document.write(&quot;ABC&quot; &gt; &quot;abc&quot;); // Why is this false?
+</code></pre>
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Greater than with strings
+document.write("ABC" > "abc"); // Why is this false?
+</script>
+</pre>
+
+         <p>
+				   Remember how JavaScript compares the characters.
+				 </p>
+
+
+        <h3>Less Than or Equal To (<code>&lt;=</code>)</h3>
+
+        <p>Is the first value smaller than or equal to the first value?</p>
+
+        <p>Adding an equal sign changes the meaning subtly. This can cause some
+         subtle bugs, too. We now have two questions to ask when we read a
+          statement. First: "Is the first value smaller than the second
+          value?". Second: "Is the first value the same as the second value?".
+           If either of the questions is true then the result will be true.
+        </p>
+        <p>Here's the same one from the less than section with the added equal
+           sign. It's true now because 10 is equal to 10. A way to read this
+           would be, "Is 10 the same or smaller than 10?". Yes, it is.
+        </p>
+
+<pre><code class="js">
+// Less than or equal to
+document.write(10 &lt;= 10);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Less than or equal to
+document.write(10 <= 10);
+</script>
+</pre>
+
+        <p>This one has the same result as above.</p>
+
+<pre><code class="js">
+// Less than or equal to
+document.write(1 &lt;= 10);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Less than or equal to
+document.write(1 <= 10);
+</script>
+</pre>
+
+        <p>It works with strings, just like we thought it would.</p>
+
+<pre><code class="js">
+// Less than or equal to with strings
+document.write(&quot;b&quot; &lt;= &quot;b&quot;);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Less than or equal to with strings
+document.write("b" < "c");
+</script>
+</pre>
+
+        <p>One situation that can be tricky is when using variables. What if we
+         really meant that when "count" was 10 the result should be false? It
+         is not immediately obvious that we've made a mistake. This becomes an
+          issue when we get to repetition and looping.
+        <strong>Keep this in mind for a future unit.</strong></p>
+
+
+<pre><code class="js">
+// Less than or equal to with variables
+var count = 10;
+document.write(count &lt;= 10);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Less than or equal to with variables
+var count = 10;
+document.write(count <= 10);
+</script>
+</pre>
+
+
+
+        <h3>Greater Than or Equal To (<code>&gt;=</code> )</h3>
+
+        <p>Is the first value bigger than or equal to the second value?</p>
+
+
+        <p>Just like the opposite operator this ones work like <code>&gt;</code>
+         with another question added to the test. With this example, the first
+         question is false but the second question is true. First: "Is 10
+         greater than 10?". Second: "Is 10 equal to 10?". If either of the
+         questions if true then the results is true.</p>
+
+
+<pre><code class="js">
+// Greater than or equal to
+document.write(10 &gt;= 10);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Greater than or equal to
+document.write(10 >= 10); // This passes the second question
+</script>
+</pre>
+
+
+
+
+<pre><code class="js">
+// Greater than or equal to with numbers
+document.write(12 &gt;= 14);
+document.write(&quot;\n&quot;);
+document.write(12 &gt;= 11);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Greater than or equal to with numbers
+document.write(12 >= 14);
+document.write("\n");
+document.write(12 >= 11);
+</script>
+</pre>
+
+        <p>Strings too.</p>
+
+<pre><code class="js">
+// Greater than or equal to with strings
+document.write(&quot;fred&quot; &gt;= &quot;Fred&quot;);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Greater than or equal to with strings
+document.write("fred" >= "Fred");
+</script>
+</pre>
+
+
+
+        <h3>Lab Time</h3>
+
+        <p>It's time for you to demonstrate your understanding of these operators. Before doing the following lab, make sure you've <strong>typed out all of the examples</strong> on this page in your own editor so you understand how they work.</p>
+        <p class="lab_link"> <a href="labs/lab-05-relationshipOperators.html">Lab 5: Relationship Operators</a></p>
+        <p><a href="index.html">Back</a></p>
+
+
+
+    <!-- InstanceEndEditable -->
+      </section>
+
+      <footer>
+        <p>
+          Latest version: 1.2009
+        </p>
+      </footer>
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

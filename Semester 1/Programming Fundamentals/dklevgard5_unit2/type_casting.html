@@ -1,0 +1,139 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Unit 2 - Type Casting</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" --> 
+    <!-- InstanceEndEditable -->
+  </head>  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 2: JavaScript Syntax and Variables</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>Type Casting</h1>
+
+        <p>
+          The <code class="keyword">prompt</code> keyword lets
+          us prompt for a value from the user. So if we write this
+          code:
+        </p>
+
+<pre><code class="js">var firstNumber = 0;
+firstNumber = prompt(&quot;What is the first number?&quot;);
+</code></pre>
+
+        <p>
+          The user will see this:
+        </p>
+
+        <div style="text-align: center;"> <img src="resources/prompt.png" alt="The prompt dialog"></div>
+
+        <p>
+          It's a nice simple way to get data into a JavaScript program. And it's perfect
+          for exploring the fundamentals of programs, including
+          data types.
+        </p>
+        <p>
+          Data that comes into a computer program from keyboard input is string data. If you are making a calculator
+          and you prompt for input, it will be a string, not a number.
+        </p>
+
+        <p>
+          The number <code>22</code> is <b>completely different</b> from the string <code>"22"</code>. Especially
+          to the computer.
+        </p>
+
+        <p>
+          To solve this problem, we use <b>type casting.</b> This is the process of converting
+          data from one type to another.
+        </p>
+
+<pre><code class="js">var firstNumber = 0;
+var secondNumber = 0;
+var total = 0;
+
+firstNumber = prompt(&quot;What is the first number?&quot;);
+secondNumber = prompt(&quot;What is the second number?&quot;);
+
+total = firstNumber + secondNumber;
+
+document.write(total);
+</code></pre>
+
+        <p>
+          The value that comes back from the prompt will be a string, not a
+          number. If we run the program above, you'll get a very unexpected
+          result. Try it out for yourself. Write up the program, run it, and
+          enter two numbers. You'll find they have been concatenated instead of
+          added!
+        </p>
+
+        <p>So we have to convert the values from strings to numbers before we can use it.
+        </p>
+
+        <p>
+          We do that with the <code class="keyword">Number</code> function.
+        </p>
+
+<pre><code class="js">var firstNumber = 0;
+var secondNumber = 0;
+var total = 0;
+
+firstNumber = prompt(&quot;What is the first number?&quot;);
+secondNumber = prompt(&quot;What is the second number?&quot;);
+
+// Added these two lines
+firstNumber = Number(firstNumber); // convert from string to number
+secondNumber = Number(secondNumber); // convert from string to number
+
+total = firstNumber + secondNumber;
+
+document.write(total);
+</code></pre>
+
+
+        <p>
+          The values are strings, but then we use the <code class="keyword">Number</code>
+          function to convert the values from strings to numbers, and we save the result
+          of the conversion back to the original variable, overwriting its original
+          value.
+        </p>
+
+        <p>
+          In some languages, you will need separate variables for
+          the string and the number. You'll learn more about data
+          types in a future lesson.
+        </p>
+
+        <p>
+          For now, just understand that data from the keyboard comes in as
+          strings, and if you want to do math on it, you need to convert that data
+          to numbers.
+        </p>
+        <p>Go back to the main page... there's still more to do.</p>
+        <p><a href="index.html">Back</a></p>
+        <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

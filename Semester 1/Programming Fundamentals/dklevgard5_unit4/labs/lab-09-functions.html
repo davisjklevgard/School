@@ -1,0 +1,320 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 09: Functions</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 4: Operators and Functions</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>Lab 09:  Functions</h1>
+        <h4>File: /Unit4/labs/lab-09-functions.html</h4>
+        <h3>Student Information</h3>
+        <ul>
+          <li>Name: Davis Klevgard</li>
+        </ul>
+        <h3>Lab Steps</h3>
+        <ul>
+          <li>Open this file in Firefox and Notepad++</li>
+          <li>Add your name in the appropriate place</li>
+          <li>Complete all sections of this lab in Notepad++, and test your results in Firefox. It is important to do them all in order, from 1 through 6. Follow the instructions for each section.</li>
+        </ul>
+        <h3>Problem Statement</h3>
+        <blockquote>
+          <p><em><strong>A program is needed that computes the sum, difference, product, and quotient of two numbers. Prompt the user for both numbers and compute each result. Each result should be displayed to the user on its own line.</strong></em></p>
+          <p>Create a <code class="keyword">CalculateSum</code> function, a <code class="keyword">CalculateDifference</code> function,
+              a <code class="keyword">CalculateProduct</code> function and a
+              <code class="keyword">CalculateQuotient</code> function.
+              Each function should perform its own calculation, taking in the two numbers as
+              arguments and returning the answer back to the main program.<strong> Don't forget to convert user input to numbers.</strong></p>
+        </blockquote>
+        <h3>Additional Requirements</h3>
+        <ul>
+          <li>The user inputs must be passed to the functions as arguments.</li>
+          <li>The functions must return the result and must not store the result
+            in a global variable.</li>
+          <li>The part of the program that calls the functions must store the result of those
+            functions in variables.</li>
+          <li>Your functions must not display results to the screen.  </li>
+          <li>Your functions must not prompt for input.  </li>
+          <li>Your functions must not access any variables not declared inside of the function.</li>
+          <li>You may choose to encapsulate your main program in a main function.</li>
+        </ul>
+
+        <h3>1. Nouns and Verbs</h3>
+        <ul>
+          <li>Copy the above problem statement and paste it below so it appears in the black box when you refresh the page, underneath the words <code class="varname">PROBLEM STATEMENT</code>.</li>
+          <li>Identify the nouns and verbs in the problem statement and write them in the appropriate locations so they appear in the black box below when you refresh the page.</li>
+        </ul>
+
+<pre class="pseudocode">PROBLEM STATEMENT:
+A program is needed that computes the sum, difference, product, and quotient of two numbers. 
+Prompt the user for both numbers and compute each result. Each result should be displayed 
+to the user on its own line.
+Nouns:
+sum, difference, product, quotient, numbers
+
+Verbs:
+compute, prompts, displayed
+</pre>
+
+      <h3>2. Defining Diagram</h3>
+      <ul>
+        <li>Convert the nouns and verbs into variable names and processes and create a defining diagram.</li>
+        <li>Make your variable names <strong>valid JavaScript names</strong> that conform to the course JavaScript Coding Standards.</li>
+        <li>Write down the processes with very short statements, 2 or 3 words. Remember, this is not pseudocode. This is just the process.</li>
+      </ul>
+
+<pre class="pseudocode">
+INPUTS:
+number1
+number2
+sum
+diff
+product
+quotient
+
+PROCESSING:
+prompt for first number
+prompt for second number
+calculate sum
+calculate difference
+calculate product 
+calculate quotient
+
+OUTPUTS:
+sum, difference, product, quotient
+
+</pre>
+
+        <h3>3. Solution Algorithm</h3>
+        <ul>
+          <li>Create a solution algorithm (using Pseudocode) based on the defining diagram. Remember to give your algorithm a name and use proper indentation.</li>
+        </ul>
+
+<pre class="pseudocode">
+SOLUTION ALGORITHM:
+
+CalculateSum(number1, number2)
+  initialize result
+  convert number1 to a number
+  convert number2 to a number
+  result = number1 + number2
+  return result
+END
+
+CalculateDiff(number1, number2)
+  initialize result
+  convert number1 to a number
+  convert number2 to a number
+  result = number1 - number2
+  return result
+END
+
+CalculateProduct(number1, number2)
+  initialize result
+  convert number1 to a number
+  convert number2 to a number
+  result = number1 * number2
+  return result
+END
+
+CalculateQuotient(number1, number2)
+  initialize result
+  convert number1 to a number
+  convert number2 to a number
+  result = number1 / number2
+  return result
+END
+
+Main
+  initialize number1
+  initialize number2
+  initialize sum
+  initialize diff
+  initialize product
+  initialize quotient
+  
+  prompt for number1
+  prompt for number2
+  
+  Call CalculateSum with 
+    number1 and number2
+    and set result to sum
+  
+  Call CalculateDiff with 
+    number1 and number2
+    and set result to diff
+    
+  Call CalculateProduct with 
+    number1 and number2
+    and set result to product
+    
+  Call CalculateQuotient with 
+    number1 and number2
+    and set result to quotient
+    
+  Display "Sum: " + sum + "\nDifference: " + diff + "\nProduct: " + product + "\nQuotient: " + quotient
+END
+</pre>
+
+        <h3>4. Checking the Solution Algorithm</h3>
+        <ul>
+          <li>Create a test plan for the algorithm.
+            <ul>
+              <li>Don't forget to fill in the <strong>VARIABLES</strong> section! That's easy to miss!</li>
+            </ul>
+          </li>
+          <li>Have <b>at least 3 test cases</b> that test different inputs and outputs. </li>
+        </ul>
+
+<pre class="pseudocode">
+VARIABLES:
+number1, number2
+
+TEST CASE 1:
+
+  INPUT VALUES: 2 ,4
+
+  EXPECTED RESULT:
+    Sum: 5
+    Difference: -1
+    Product: 6
+    Quotient: 0.6666666666666666
+  ACTUAL RESULT:
+    Sum: 5
+    Difference: -1
+    Product: 6
+    Quotient: 0.6666666666666666
+TEST CASE 2:
+
+  INPUT VALUES:8, 5
+
+  EXPECTED RESULT:
+    Sum: 13
+    Difference: 3
+    Product: 40
+    Quotient: 1.6
+  ACTUAL RESULT:
+    Sum: 13
+    Difference: 3
+    Product: 40
+    Quotient: 1.6
+
+TEST CASE 3:
+
+  INPUT VALUES:56, 3 
+
+  EXPECTED RESULT:
+    Sum: 59
+    Difference: 53
+    Product: 168
+    Quotient: 18.666666666666668
+  ACTUAL RESULT:
+    Sum: 59
+    Difference: 53
+    Product: 168
+    Quotient: 18.666666666666668
+</pre>
+
+        <h3>5. JavaScript Code</h3>
+        <ul>
+          <li>Write the JavaScript code based on everything you've done.</li>
+          <li>You will need to follow the coding standards for the course.</li>
+          <li>Once everything is working, go back and <strong>fill in</strong> the actual results sections in the test plan.</li>
+        </ul>
+        <h3>Your Output:</h3>
+
+<pre class="output">
+<script id="student_code">
+// YOUR CODE STARTS AFTER THIS LINE:
+// Math Functions
+function CalculateSum(number1, number2){
+  var result;
+  number1 = Number(number1);
+  number2 = Number(number2);
+  result = number1 + number2;
+  return result;
+}
+
+function CalculateDiff(number1, number2){
+  var result;
+  number1 = Number(number1);
+  number2 = Number(number2);
+  result = number1 - number2;
+  return result;
+}
+
+function CalculateProduct(number1, number2){
+  var result;
+  number1 = Number(number1);
+  number2 = Number(number2);
+  result = number1 * number2;
+  return result;
+}
+
+function CalculateQuotient(number1, number2){
+  var result;
+  number1 = Number(number1);
+  number2 = Number(number2);
+  result = number1 / number2;
+  return result;
+}
+// Main Function
+function Main() {
+  var number1;
+  var number2;
+  var sum;
+  var diff;
+  var product;
+  var quotient;
+  
+  number1 = prompt("Enter number");
+  number2 = prompt("Enter number");
+  
+  sum = CalculateSum(number1, number2);
+  diff = CalculateDiff(number1, number2);
+  product = CalculateProduct(number1, number2);
+  quotient = CalculateQuotient(number1, number2);
+    
+  document.write("Sum: " + sum + "\nDifference: " + diff + "\nProduct: " + product + "\nQuotient: " + quotient);
+}
+
+Main();
+
+// END OF YOUR CODE
+</script>
+</pre>
+
+        <h3>What You Did</h3>
+        <p>You just went through the full process of developing an
+          application again, this time using functions to break up
+          the code.. You found the nouns and verbs, you did a Defining Diagram, you created a solution algorithm with pseudocode, you devised a test plan, you wrote your code with documentation, and you tested your code, checking it against your testing plan.    <strong>You did remember to go back and fill in the actual results in your testing plan, right?</strong></p>
+        <p><a href="../breakingUpCodeWithFunctions.html">Back</a></p>
+      <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest version: 1.2009
+        </p>
+      </footer>
+    </section>
+  </body>  
+<!-- InstanceEnd --></html>  

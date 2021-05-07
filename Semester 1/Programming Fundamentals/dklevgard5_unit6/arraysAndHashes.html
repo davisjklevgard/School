@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Arrays and Hashes</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 6: Loops, Functions, and Data Structures</a></h2>
+      </header>
+
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+        <h1>Arrays and Hashes </h1>
+        <p>Arrays are a simple structure in programming that let us store more than one value in a variable. They're often used for lists of data.<br>
+        </p>
+        <p>A  typical variable, like a string or a number, is an alias for a piece of  the computer's memory. An array is that piece of memory divided up into  partitions.</p>
+        <p>Arrays are "data types" just like Numbers and  Strings. But because an array can hold many values, it also takes up  more memory than a Number or a String would.</p>
+        <p>We create an array in JavaScript by assigning a value to a variable using square brackets, like this:</p>
+        <pre><code language="js">var names = [];</code></pre>
+        <p>This  creates an empty array of names. That's not terribly useful though, so  instead we can create our array with three names in it when we define  it.</p>
+        <pre><code language="js">var names = ["Homer", "Bart", "Lisa"];</code></pre>
+        <p>This creates an array called names with three Strings inside.</p>
+        <p>So  now we have an array of three names, but we need some way to  differentiate between the individual slots. To do this we use something  called an <strong>index</strong> to grab an element in the array. We use the index like this:</p>
+        <pre><code language="js">names[0];</code></pre>
+        <p>This  would fetch "Homer" from the array. In most programming languages, the  index is zero based. In other words, the index of the first item is [0]  and the index to the last item is [number of elements - 1]. Here's how  our array of names looks as represented by a table.</p>
+        <table border="1" cellpadding="1" cellspacing="1">
+        		<tbody>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Homer</td>
+              <td>Lisa</td>
+              <td>Bart</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>So, to get "Lisa" from our array, we'd use</p>
+        <pre><code language="js">names[1];</code></pre>
+        <p> Array indexes start at zero because the index is actually an offset from the start of the location of the data in the computer's memory. The first entry in the array is right at the start of the memory block. Therefore it has no offset, so it's index is 0. The second entry in the array is one position away from the start. It's index is 1.</p>
+        <p>Many  programming languages will throw an error if we try to access an index  in an array that doesn't exist. For example, if we try to access&nbsp;</p>
+        <pre><code language="js">names[3];</code></pre>
+        <p>we  might get an error like "Subscript out of Range" or "Index out of  range". &nbsp; In JavaScript, we don't get an error - we just don't get  anything back. In either case, we want to avoid accessing an index  that's not in our array.</p>
+        <p>We can, however, add more entries to our array. In JavaScript, to add a fourth name to our names array, we simply assign it like this:</p>
+
+<pre><code language="js">
+names[3] = "Marge";</code></pre>
+
+        <table border="1" cellpadding="1" cellspacing="1">
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Homer</td>
+              <td>Lisa</td>
+              <td>Bart</td>
+              <td>Marge</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>In some languages, we can't resize the array. Other languages, like JavaScript don't care. However, JavaScript does something funny if we skip an index.  Our array currently has 4 names in it. If I add a fifth name, but I use index 9 instead of index 4, like this:</p>
+        <pre><code language="js">names[9] = "Barney";</code></pre>
+        <p>then JavaScript fills in the entries in-between:</p>
+        <table border="1" cellpadding="1" cellspacing="1">
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td>Homer</td>
+              <td>Lisa</td>
+              <td>Bart</td>
+              <td>Marge</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>Barney</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>So, don't do that. Keep track of how you add things to your arrays! Maybe use a loop.</p>
+        <p>Arrays  let us group related data together, and they're great for things like  lists. But arrays can hold any data type we want. We
+        can create arrays of numbers, arrays of strings, and even arrays of arrays!</p>
+        <h2>Nested Arrays</h2>
+        <p>That's right, we can put arrays within arrays, creating what we call &quot;two-dimensional&quot; arrays. Each entry in the array has another array inside of it. This lets us represent a matrix of information. For example, say we have a table of characters, like this:</p>
+        <table width="200" border="0">
+          <tr>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">0</th>
+            <th scope="col">1</th>
+            <th scope="col">2</th>
+            <th scope="col">3</th>
+            <th scope="col">4</th>
+            <th scope="col">5</th>
+            <th scope="col">6</th>
+          </tr>
+          <tr>
+            <th scope="row">0</th>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+            <td>E</td>
+            <td>F</td>
+            <td>G</td>
+          </tr>
+          <tr>
+            <th scope="row">1</th>
+            <td>H</td>
+            <td>I</td>
+            <td>J</td>
+            <td>K</td>
+            <td>L</td>
+            <td>M</td>
+            <td>N</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>O</td>
+            <td>P</td>
+            <td>Q</td>
+            <td>R</td>
+            <td>S</td>
+            <td>T</td>
+            <td>U</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>V</td>
+            <td>W</td>
+            <td>X</td>
+            <td>Y</td>
+            <td>Z</td>
+            <td>.</td>
+            <td>!</td>
+          </tr>
+        </table>
+        <p>We represent this in JavaScript like this:</p>
+
+<pre><code language="js">
+var letters = [
+  ["A", "B", "C", "D", "E", "F", "G"],
+  ["H", "I", "J", "K", "L", "M", "N"],
+  ["O", "P", "Q", "R", "S", "T", "U"],
+  ["V", "W", "X", "Y", "Z", ".", "!"]
+];
+</code></pre>
+
+        <p>We know that &quot;H&quot; is at coordinates [1, 0] - row 1, column 0. So to get that, we first have to get the row, then the column</p>
+
+<pre><code language="js">
+// this gets another array.
+var row = letters[1];
+// this gets the letter from that row.
+var theLetterH = row[0];    </code></pre>
+
+        <p>But that's too much code for such a simple thing... the shortcut is to simply skip the intermediate variable. Since we have arrays within arrays, we can do this:</p>
+
+<pre><code language="js">var theLetterH = letters[1][0];  // [row][column]
+</code></pre>
+
+        <p>The first square brackets section gets the row, the second gets the column. This works because the first square brackets section fetches the array, which we can then immediately use.</p>
+
+        <p>Here's a short program that uses 2-dimensional arrays to represent this character table, and then uses the array to write out the word &quot;HELLO!&quot;</p>
+        <p>Study the code carefully. Someday you'll need to do something like this.</p>
+
+<pre><code language="js">
+var letters = [
+  ["A", "B", "C", "D", "E", "F", &quot;G&quot;],
+  ["H", "I", "J", "K", "L", &quot;M&quot;, &quot;N&quot;],
+  ["O", "P", "Q", "R", &quot;S&quot;, &quot;T&quot;, &quot;U&quot;],
+  ["V", "W", "X", &quot;Y&quot;, &quot;Z&quot;, &quot;.&quot;, &quot;!&quot;]
+];
+
+// display &quot;HELLO!&quot; using the array!<br>document.write(letters[1][0]);<br>document.write(letters[0][4]);<br>document.write(letters[1][4]);<br>document.write(letters[1][4]);<br>document.write(letters[2][0]);<br>document.write(letters[3][6]);</code>
+</pre>
+
+        <p>Here's the program in action:</p>
+
+<pre class="output">
+<script>
+var letters = [
+	["A", "B", "C", "D", "E", "F", "G"],
+	["H", "I", "J", "K", "L", "M", "N"],
+	["O", "P", "Q", "R", "S", "T", "U"],
+	["V", "W", "X", "Y", "Z", ".", "!"]
+];
+
+// display "HELLO!" using the array!
+document.write(letters[1][0]);
+document.write(letters[0][4]);
+document.write(letters[1][4]);
+document.write(letters[1][4]);
+document.write(letters[2][0]);
+document.write(letters[3][6]);
+
+</script>
+</pre>
+        <p> While simple, arrays are extremely  powerful and you'll encounter them everywhere, in every programming  language.</p>
+        <h3>Strings are Arrays?!</h3>
+        <p>Strings, in many languages, are just arrays of characters. Some languages hide it from you. Languages like C make you face it head on.</p>
+
+<pre><code language="c">
+// an array, with each entry a &quot;character&quot;.
+char name[] = "Homer";</code>
+    </pre>
+
+        <p>
+          Arrays are just lists of data associated with a place in memory, but
+          unlike simple variables, we can get more information about the
+          contents of an array and do interesting things with that information.
+        </p>
+
+        <h3>Finding the number of entries in an array.</h3>
+
+        <p>We use the <code>.length</code> property of an
+          array to find out how many entries are in an array. Here's an example:
+        </p>
+
+<pre><code language="js">
+var numberOfItems;
+var fruit = ["Apple", "Pear", "Orange"];
+
+numberOfItems = fruit.length; // gets the number of fruit
+document.write("There are " + numberOfItems + " fruit in the list.");
+</code></pre>
+        <p>We have an array of fruit, and <code>fruit.length</code> will
+          tell us exactly how many fruits are in that array.</p>
+        <p>Here's the output:</p>
+
+<pre class="output"><script>
+var numberOfItems;
+var fruit = ["Apple", "Pear", "Orange"];
+
+numberOfItems = fruit.length; // gets the number of fruit
+document.write("There are " + numberOfItems + " fruit in the list.");
+</script></pre>
+
+        <p>The length of an array is a vital piece of information to us as
+          developers. Often we'll be required to do something with the items
+          in the array. For example, we may be asked to print out each item
+          in the array to the screen as a list with each item on its own line.  So how would you do
+          that? You'd use a <code>for</code> loop!</p>
+
+        <p>You'd create a counter variable and you'd initialize it to <code>0</code>
+          because that's the index of the first entry in the array. Remember,
+          our array of fruit looks like this:</p>
+
+        <table>
+          <tr>
+            <th>0</th>
+            <th>1</th>
+            <th>2</th>
+          </tr>
+          <tr>
+            <td>Apple</td>
+            <td>Pear</td>
+            <td>Orange</td>
+          </tr>
+        </table>
+
+        <p>So we have to count from 0 (the first index) to 2 (the last index.)
+          But there's an easier way. The <code>length</code> property will
+          tell us that there's 3 total entries. If we use the condition:</p>
+
+        <pre><code>index < fruit.length</code></pre>
+
+        <p>Then our loop will iterate exactly three times. Can you see how?</p>
+
+        <p>Examine the code and run it through in your head.</p>
+
+<pre><code language="js">
+var fruit = ["Apple", "Pear", "Orange"];
+
+for(var index=0; index < fruit.length; index++){
+  document.write(fruit[index] + "\n");
+}
+</code></pre>
+
+        <p>Here's the output:</p>
+<pre class="output"><script>
+var fruit = ["Apple", "Pear", "Orange"];
+
+for(var index=0; index < fruit.length; index++){
+  document.write(fruit[index] + "\n");
+}
+</script></pre>
+
+        <p>The first time through the loop, the index is 0. So that's less than
+          the length of the array of fruit, which is 3. We then use the
+          <code>index</code> variable to access the value in the array. So
+          instead of hard-coding <code>fruit[0]</code> we use <code>fruit[index]</code>
+          which, in this case should be <code>0</code>.</p>
+        <p>Then the loop ends and <code>index</code> gets incremented by one. Its
+          value is now <code>1</code> and that's definitely less than the length
+          of the array (<code>3</code>), so we print out the value at index 1, which would be <code>Pear</code>.
+        </p>
+        <p>Then the loop ends and we increment <code>index</code> by one again.
+          <code>index</code> is now 2, and it's less than the length of the array
+          (<code>3</code>. So we print out the value at index 2, which
+          would be <code>Orange.</code>
+        </p>
+        <p>Then the loop ends and we increment <code>index</code> by one again.
+          But this time <code>index</code> is <code>3</code> and it's no
+          longer less than the length of the array, so the loop doesn't run
+          again.
+        </p>
+
+        <h3>"Pushing" into arrays</h3>
+
+        <p>We can add another piece of fruit into our array by using
+          the <code>push</code> method.</p>
+
+<pre><code language="js">
+var fruit = ["Apple", "Pear", "Orange"];
+document.write("There are" + fruit.length + " fruits in the array.\n");
+
+fruit.push("Cherry");
+
+document.write("There are now " + fruit.length + " fruits in the array.\n");
+
+fruit.push("Grape");
+
+document.write("There are now " + fruit.length + " fruits in the array.\n");
+
+</code></pre>
+
+<pre class="output"><script>
+var fruit = ["Apple", "Pear", "Orange"];
+document.write("There are" + fruit.length + " fruits in the array.\n");
+
+fruit.push("Cherry");
+
+document.write("There are now " + fruit.length + " fruits in the array.\n");
+
+fruit.push("Grape");
+
+document.write("There are now " + fruit.length + " fruits in the array.\n");
+</script></pre>
+
+        <p>Each time we use <code>push</code> we are adding something
+          on to the end of the array. This works really well for situations
+          where you want to programmatically add things to an array. For
+          example, you could prompt for numbers and total them up using
+          loops:
+        </p>
+
+<pre><code language="js">
+var input;
+var keepLooping = true;
+var numbers = [];
+var total = 0;
+
+while(keepLooping){
+  input = prompt("Enter a number or leave blank to stop.");
+  if(input === ""){
+    // they left the input blank so stop.
+    keepLooping = false;
+  }else{
+    if(isNaN(input)){
+      alert("Enter a number, please.");
+    }else{
+      // they put in a number so push it onto the end
+      // of the list.
+      input = Number(input);
+      numbers.push(input);
+    }
+  }
+}
+
+// loop through the array of numbers and sum them up!
+for(var index=0; index < numbers.length; index++){
+  total += numbers[index];
+}
+
+document.write("The total is " + total + ".");
+
+</code></pre>
+
+
+        <p>Arrays are extremely powerful and you'll use them constantly
+          in your programs in the future. </p>
+
+        <p>Ready for a lab?</p>
+        <p class="lab_link"><a href="labs/lab11arrays.html">Lab 11: Arrays</a></p>
+
+
+        <h3>Operations On Arrays</h3>
+
+        <p>Arrays often hold important data that we need to manipulate. For example, we
+          can reverse the order of the entries in an array:</p>
+
+<pre><code class="js">
+var numbers = [1,2,3,4,5];
+var reversedNumbers = numbers.reverse();
+</code></pre>
+
+        <p>Or we can sort them in order:</p>
+
+<pre><code class="js">
+var numbers = [1,5,4,2,3];
+var sortedNumbers = numbers.sort();
+</code></pre>
+
+        <p>And you can think of Strings like <code>hello</code> as an <b>array
+            of characters</b>.  JavaScript lets us split
+          a string into an array of characters using <code>split()</code>
+        </p>
+
+<pre><code class="js">
+var word = "hello";
+var letters = word.split("");
+
+// print out each letter in the array
+for(var index = 0, length = letters.length; index &lt; length; index++){
+  document.write(letters[index] + "\n");
+}
+</code></pre>
+<pre class="output"><script>
+var word = "hello";
+var letters = word.split("");
+
+// print out each letter in the array
+for(var index = 0, length = letters.length; index < length; index++){
+  document.write(letters[index] + "\n");
+}
+</script></pre>
+
+        <p>The <code>split()</code> function takes an argument
+          that specifies the character we should use
+          to break up the string. If we use <code>split("")</code>, we're
+          passing an empty string, and that's enough
+          to make JavaScript just split the string
+          apart into an array of characters. </p>
+
+        <p>If we wanted to break up entries in a string by
+          commas, we would use <code>split(",")</code>.
+          Here's an example:</p>
+
+<pre><code class="js">
+var stringOfNames = "Homer,Marge,Lisa";
+var names = stringOfNames.split(",");
+
+// print out each name in the array
+for(var index = 0, length = names.length; index &lt; length; index++){
+  document.write(names[index] + "\n");
+}
+</code></pre>
+<pre class="output"><script>
+var stringOfNames = "Homer,Marge,Lisa";
+var names = stringOfNames.split(",");
+
+// print out each name in the array
+for(var index = 0, length = names.length; index < length; index++){
+  document.write(names[index] + "\n");
+}
+</script></pre>
+
+        <p>
+          Other ways you might see this used is in working with
+          data files. You might see a programmer take the whole
+          text of the file and split it into an array by splitting
+          on the <code>\n</code> character. Each line of the file
+          would be an entry in the array.
+        </p>
+
+        <p>We can turn arrays into strings, too. If we had an array of characters, we could join
+          them together as a string using <code>join</code></p>
+
+
+<pre><code class="js">
+var letters = ["H", "e", "l", "l", "o"];
+var word = letters.join("");
+document.write(word);
+</code></pre>
+
+<pre class="output"><script>
+var letters = ["H", "e", "l", "l", "o"];
+var word = letters.join("");
+document.write(word);
+</script></pre>
+
+       <p>The <code>join()</code> function
+         takes an argument that contains the
+         character that should be <b>placed between
+           each array entry</b>. So by saying
+         <code>join("")</code>, we're saying
+         that we want an empty string inserted between
+         each one.  But if we changed the code
+         and put a newline <code>\n</code> in
+         there, we'd get different results:
+       </p>
+
+<pre><code class="js">
+var letters = ["H", "e", "l", "l", "o"];
+var word = letters.join("\n");
+document.write(word);
+</code></pre>
+
+<pre class="output"><script>
+var letters = ["H", "e", "l", "l", "o"];
+var word = letters.join("\n");
+document.write(word);
+</script></pre>
+
+        <p>See? The resulting string ends up being:</p>
+
+        <code>h\ne\nl\nl\no</code>
+
+        <p>And notice that <code>join()</code> doesn't place the character
+          after the last entry in the array!</p>
+
+        <p>Many times in programming you'll have a list of data you'll get
+          from some other source, and you'll need to manipulate it.
+        </p>
+
+        <h3>Lab time</h3>
+        <p>Put some of these skills to use. See if you
+          can figure out how to solve the following puzzle
+          in the lab. <strong>In addition, you'll need to use functions to organize the code for this program</strong> so be sure you've reviewed <a href="encapsulating.html">Encapsulation</a>.</p>
+        <p class="lab_link"><a href="labs/lab12arraymethods.html">Lab 12: Array Methods</a><strong>&nbsp;&nbsp;(THIS IS AN OPTIONAL LAB)</strong></p>
+
+        <h2>Hashes</h2>
+        <p>Arrays are great for lists, but sometimes they're not robust enough to store records. If we had to store the first name, last name, and age of a person, we could certainly use an array:</p>
+
+<pre><code language="js">
+var person = ["Homer", "Simpson", 42];
+</code></pre>
+
+
+        <p>but then we have to know that the first name is at index 0, the last name is at index 1, and the age is at index 2. And what if we insert something in the middle, like a middle name? Then everything gets thrown off. Any code we used would now have to be altered. That's not at all what we want!</p>
+        <p>This example isn't really a list of data - it's data about data. It's &quot;names&quot; and &quot;values&quot; and that's what a Hash is for. Now, some languages call these <strong>Dictionaries</strong> or <strong>Associative Arrays</strong>. in JavaScript, they're actually the simplest form of a JavaScript Object. But you can think of them as a Hash because it's a more universal term across languages.</p>
+        <p>In JavaScript, we declare a Hash using curly braces instead of square braces:</p>
+
+<pre><code language="js">
+var person = {};
+</code></pre>
+
+        <p>Or we can fill it with data right away by using this format:</p>
+
+<pre><code language="js">
+var person = {"firstName": "Homer", "lastName": "Simpson", "age": 42}
+</code></pre>
+
+        <p>Each entry in a hash is a key-value pair. the key, a colon, then a value. These pairs are then separated by commas, just like arrays. Here's a visual representation:</p>
+        <table width="200" border="0">
+          <tr>
+            <th scope="row">firstName</th>
+            <td>Homer</td>
+          </tr>
+          <tr>
+            <th scope="row">lastName</th>
+            <td>Simpson</td>
+          </tr>
+          <tr>
+            <th scope="row">age</th>
+            <td>42</td>
+          </tr>
+        </table>
+
+        <p>So now to get the first name, we use the key instead of the index:</p>
+
+<pre><code language="js">
+document.write(person["firstName"]);
+</code></pre>
+
+        <p>And like arrays, we can set values using the = sign:</p>
+
+<pre><code language="js">
+person["firstName"] = "Bart";
+person["age"] = 10;
+</code></pre>
+
+        <p>This is super handy. We can easily represent a <strong>thing</strong> in our programs using a Hash. But this is just the beginning.
+        <h2>Combining Hashes and Arrays</h2>
+        <p>One of the best ways to leverage these technologies together is to place hashes inside of Arrays. When you get records from a database, you're almost always looking at an array with hashes inside. The entry in the array represents the row, and the hash represents all of the data in the row. So, imagine we have a table like this:</p>
+        <table width="200" border="0">
+          <tr>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">firstName</th>
+            <th scope="col">lastName</th>
+            <th scope="col">age</th>
+          </tr>
+          <tr>
+            <th scope="row">0</th>
+            <td>Homer</td>
+            <td>Simpson</td>
+            <td>42</td>
+          </tr>
+          <tr>
+            <th scope="row">1</th>
+            <td>Marge</td>
+            <td>Simpson</td>
+            <td>42</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Bart</td>
+            <td>Simpson</td>
+            <td>10</td>
+          </tr>
+        </table>
+
+        <p>We'd represent this with an array for the rows, with each entry in the array as a hash for the data.</p>
+
+<pre><code language="js">
+var people = [
+  {
+    &quot;firstName&quot;: &quot;Homer&quot;,
+    &quot;lastName&quot;: &quot;Simpson&quot;,
+    &quot;age&quot;: 42
+  },
+  {
+    &quot;firstName&quot;: &quot;Marge&quot;,
+    &quot;lastName&quot;: &quot;Simpson&quot;,
+    &quot;age&quot;: 42
+  },
+  {
+    &quot;firstName&quot;: &quot;Bart&quot;,
+    &quot;lastName&quot;: &quot;Simpson&quot;,
+    &quot;age&quot;: 10
+  },
+];
+
+document.write(&quot;firstName in row 1 is &quot; + people[1][&quot;firstName&quot;]);
+document.write(&quot; and age in row 2 is &quot; + people[2][&quot;age&quot;]);
+
+</code></pre>
+
+<pre class="output">
+<script>
+var people = [
+  {
+    "firstName": "Homer",
+    "lastName": "Simpson",
+    "age": 42
+  },
+  {
+    "firstName": "Marge",
+    "lastName": "Simpson",
+    "age": 42
+  },
+  {
+    "firstName": "Bart",
+    "lastName": "Simpson",
+    "age": 10
+  },
+];
+
+document.write("firstName in row 1 is " + people[1]["firstName"]);
+document.write(" and age in row 2 is " + people[2]["age"]);
+
+</script></pre>
+
+        <p>
+        This is a really handy method for representing and working with data, and there's a good chance you'll encounter it in more complex programs. Here's a short lab that will test your knowledge of arrays and hashes. Think about what you
+      learned about arrays and loops as you attempt it.</p>
+        <p class="lab_link"><a href="labs/lab13hashes.html">Lab 13: Hashes</a><strong>&nbsp;&nbsp;(THIS IS AN OPTIONAL LAB)</strong></p>
+        <p><a href="index.html">Back</a></p>
+
+		<!-- InstanceEndEditable -->
+      </section>
+
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+   </section>
+ </body>
+<!-- InstanceEnd --></html>

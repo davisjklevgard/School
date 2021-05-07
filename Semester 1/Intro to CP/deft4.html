@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking the dog</title>
+    <style>
+      body {
+        background-color: #182739;
+        color: #808080;
+        margin: 0px 0px 0px 0px;
+      }
+      canvas {
+        display: block;
+
+        border: 1px solid #808080;
+        margin: auto;
+      }
+      p, footer {
+        display: block;
+        margin: auto;
+        text-align: center;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>WalkTheDog</h1>
+    <main id="output">
+    </main>
+    <script>
+    let sceneId = "start";
+    const newScene = function(theDescription) {
+        let result = {};
+        let aChoice = {};
+        result.description = theDescription;
+        result.choices = [];
+        
+        let i = 1;
+        while (i < arguments.length){
+          aChoice.label = arguments [i];
+          aChoice.onChoose = arguments[i + 1];
+          result.choices[(i - 1)/2] = aChoice;
+          aChoice = {};
+          i = i + 2;
+        }
+        return result; 
+      }
+    const scenes = {
+      start: newScene(  "<p>You are sitting in your chair. It feels" 
+           + "so great to be able to sit down, you dont want to move." 
+           + "Your dog comes up to you, pining and holding their leash." 
+           + "Oh no, do you need to go for a walk?"
+           + "Your dog nods its head.</p>",
+           "Walk the dog", "walkDog",
+           "Wait 5 minutes", "wait"
+           ),
+           
+      walkDog: newScene( "<p>You grab the leash and start the walk.</p>",
+        "Go left", "left",
+        "Go right", "right",
+      ),
+      
+      wait: newScene( "<p> Oops too late. They no longer need the walk.</p>",
+          "Clean it up. Refresh to start over.",      
+      ),
+      
+      left: newScene( "<p> You went left and  are heading downtown.</p>",
+          "Go to the park", "park",
+          "Go to the bistro areas", "bistro",      
+      ),
+      
+      right: newScene( "<p> You are heading to the river.</p>",
+        "Walk along the river", "river",
+        "Walk across the bridge", "bridge",      
+      ),
+      
+      }; 
+      
+      
+    const onPress = function(event) {
+    console.log(event);
+      if (event.keyCode > 47 && event.keyCode < 58) {
+        let choice = event.keyCode - 49;
+        if (choice < 0){
+          choice = choice + 10; 
+        }
+      if (scenes [sceneId].choices.length > choice) {
+          sceneId = scenes [sceneId].choices[choice].onChoose
+          updateDisplay();
+        }
+      }
+     }
+     
+     const updateDisplay = function() {
+       let i = 0;
+       let text = "";
+       text = scenes[sceneId].description + "<ol>";
+         while (i < scenes[sceneId].choices.length){
+           text = text + "<li>" + scenes[sceneId].choices[i].label +"</li>"
+           i = i + 1;
+         }
+       output.innerHTML= text + "</ol>"
+    };
+    
+    
+    
+    
+    
+updateDisplay()
+window.addEventListener('keydown', onPress, false);
+window.addEventListener('mousedown', onPress, false);
+    </script>
+    <footer>version 1.0</footer>
+  </body>
+</html>

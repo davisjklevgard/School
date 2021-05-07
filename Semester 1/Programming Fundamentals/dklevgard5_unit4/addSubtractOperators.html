@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Operators That Add and Subtract</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 4: Operators and Functions</a></h2>
+      </header>
+
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Operators That Add and Subtract</h1>
+        <p>You have been adding and subtracting numbers since grade school. It seems just logical that you would need to be able to add and subtract in JavaScript code, doesn't it? That's what this part of the unit is all about...the operators used to add and subtract. They may seem simple at first but there are a few surprises!</p>
+      <h3>The Additive Operators</h3>
+
+        <p>In math, <em>additive</em> refers to both addition and subtraction. You can think of subtraction as just adding with negative numbers.</p>
+
+
+        <ul>
+          <li>The plus sign (<code>+</code>) is used for math addition and string concatenation.</li>
+          <li>The minus sign (<code>-</code>) is used for math subtraction.</li>
+        </ul>
+
+
+
+        <h3>Examples of Using the Additive Operators</h3>
+
+
+        <ul>
+          <li>Here's an example of <strong>Adding and Subtracting Directly into Variables</strong>.</li>
+          <li>Notice line 04 in the code example below. It's adding two numbers, and assigning the result of that calculation (the sum) directly into the totalCount variable. So, at the end of line 04, the value in totalCount is 766.</li>
+          <li>Also, look at line 09, which is subtracting 200 from the value assigned to the totalCount variable (back in line 04). When line 09 in the code is completed, the result of that calculation (566) now <strong>replaces </strong> the value previously assigned to the totalCount variable back in line 04.</li>
+        </ul>
+
+
+
+
+<pre><code class="js">
+// Additive operators into variables
+var totalCount;
+
+totalCount = 223 + 543;
+
+document.write(&quot;totalCount: &quot; + totalCount);
+document.write(&quot;\n&quot;);
+
+totalCount = totalCount - 200;
+
+document.write(&quot;New totalCount: &quot; + totalCount);
+
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Additive operators into variables
+var totalCount;
+
+totalCount = 223 + 543;
+
+document.write("totalCount: " + totalCount);
+document.write("\n");
+
+totalCount = totalCount - 200;
+
+document.write("New totalCount: " + totalCount);
+
+</script>
+</pre>
+
+        <p>Here are more examples of <strong>Adding and Subtracting with Variables</strong>.</p>
+        <ul>
+          <li>Notice line 07 below. JavaScript knows that the value assigned to the highPrice variable is 1000.99 (see line 04). And, JavaScript knows that the lowPrice variable has been assigned a value of 0.99 (line 03). </li>
+          <li>Therefore, when we tell JavaScript that totalPrice should be the result of lowPrice + highPrice, it knows that we mean 1000.99 + 0.99.</li>
+          <li><strong>NOTE:  </strong>If we made a mistake in our code, and FORGOT to assign a value to a variable, JavaScript assumes its value is 0 (ZERO)! Another situation where a variable may have a value of zero...if you SPELL the variable name incorrectly in the var statement or in the assignment statement!</li>
+        </ul>
+
+
+<pre><code class="js">// Additive operators with variables
+var differencePrice = 0;
+var highPrice = 1000.99;
+var lowPrice = 0.99;
+var mediumPrice = 199.95;
+var totalPrice = 0;
+
+totalPrice = lowPrice + highPrice;
+differencePrice = highPrice - mediumPrice;
+
+document.write(&quot;totalPrice: &quot; + totalPrice + &quot;\n&quot;);
+document.write(&quot;differencePrice: $&quot; + differencePrice);
+</code></pre>
+
+
+<pre class="output">
+<script>
+// Additive operators with variables
+var differencePrice = 0;
+var highPrice = 1000.99;
+var lowPrice = 0.99;
+var mediumPrice = 199.95;
+var totalPrice = 0;
+
+totalPrice = lowPrice + highPrice;
+differencePrice = highPrice - mediumPrice;
+
+document.write("totalPrice: " + totalPrice + "\n");
+document.write("differencePrice: $" + differencePrice);
+</script>
+</pre>
+
+        <p>Let's review the <strong>Concatenation of strings</strong>. It may seem like this is a strange place to do that. But, it's the PERFECT place!</p>
+        <p>As you recall, Concatenation is where we add strings together. Like adding a first name together with a last name, along with a space in betwen. Or
+          a name with an age. We often do this for building up output like text or HTML. Or to format money.</p>
+
+
+
+        <p>The plus sign (<code>+</code>) is used to add numbers together.  But, it is also used for concatenation, which is the process of combining strings with other strings (or numbers) to form a new longer string. In fact, you'll notice in the code below, that the <code>&lt;p&gt;</code> tags can be concatenated too. </p>
+        <p>This is where a variable's data type becomes SUPER important!
+        </p>
+        <ul>
+          <li>If you use the plus sign with number variables, it adds them together.</li>
+          <li>If you use the plus sign, and one or more of your variables is a string data type, it concatenates!!!</li>
+        </ul>
+
+         <p>In the example that follows, the firstName and lastName <strong>variables are both strings</strong>.
+         </p>
+         <ul>
+           <li>Line 06 in the code is concatenating three strings. It's taking the value of the firstName variable (which is "Fred") and placing next to it a string that contains only one space (looks like this: " "). After the space it's placing the value of the lastName variable ("Flintstone"). Then the new string, "Fred Flintstone" is assigned to the variable called fullName.</li>
+           <li>Hence, the result is this string:   Fred Flintstone   , which you can see displayed as a result of the document.write command on line 10.</li>
+         </ul>
+
+
+<pre><code class="js">
+// Concatenation with +
+var firstName;
+var fullName;
+var lastName;
+
+firstName = &quot;Homer&quot;;
+lastName = &quot;Simpson&quot;;
+
+// put a space between the first and last name.
+fullName = firstName + &quot; &quot; + lastName;
+
+document.write(&quot;&lt;p&gt;firstName: &quot; + firstName + &quot;&lt;/p&gt;&quot;);
+document.write(&quot;&lt;p&gt;lastName: &quot; + lastName + &quot;&lt;/p&gt;&quot;);
+document.write(&quot;&lt;p&gt;The fullName: &quot; + fullName + &quot;&lt;/p&gt;&quot;);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Concatenation with +
+var firstName;
+var fullName;
+var lastName;
+
+firstName = "Homer";
+lastName = "Simpson";
+
+// put a space between the first and last name.
+fullName = firstName + " " + lastName;
+
+document.write("<p>firstName: " + firstName + "</p>");
+document.write("<p>lastName: " + lastName + "</p>");
+document.write("<p>The fullName: " + fullName + "</p>");
+</script>
+</pre>
+
+        <p>Let's look at examples of concatentation with the variables are both <strong> strings and numbers</strong>, mixed together.</p>
+        <ul>
+          <li>When the plus sign has one string to its left OR right and a number on the other side, the number will be converted to a string and concatenated to the string.</li>
+          <li>In the code below, <code class="variable">petWeight</code> is a number variable.  But, since it's being concatenated with other strings in the document.write statement, JavaScript will NOT try to do addition, even though petWeight is a number.  Rather, it will just concatenate the 10 as directed.</li>
+        </ul>
+
+
+
+
+<pre><code class="js">
+// Concatenation with numbers
+var petName = &quot;Santa's Little Helper&quot;;
+var petWeight = 10;
+
+document.write(&quot;My pet, &quot; + petName + &quot;, weighs &quot;
+        + petWeight + &quot; lbs.&quot;);
+
+</code></pre>
+
+
+<pre class="output">
+<script>
+// Concatenation with numbers
+var petName = "Santa's Little Helper";
+var petWeight = 10;
+
+document.write("My pet, " + petName + ", weighs "
+				+ petWeight + " lbs.");
+</script>
+</pre>
+
+        <p>How about an example of <strong>concatenation when you don't expect it!</strong>. </p>
+        <p>When you have a string that contains just numbers and you try to add it to a true number JavaScript will concatenate it and <strong>not</strong> do addition.</p>
+        <ul>
+          <li>In line 5 below, JavaScript inspects the value of <code class="varname">invoiceTwo</code> and immediately determines that the <code class="varname">invoiceTwo</code> variable is a STRING datatype, even though it  has the number 599 inside. <strong>However, that's not the number 599. It's the characters &quot;5&quot;, &quot;9&quot;, and &quot;9&quot; put togehter.</strong> Looks can be deceiving!</li>
+          <li>In the output, you would have expected the number 1599 if addition had been performed successfully.  But, instead the 599 was CONCATENATED (or placed next to) the 1000...so the result is 1000599.</li>
+        </ul>
+
+
+
+
+<pre><code class="js">
+// Whoops!
+var accountTotal;
+var invoiceOne = 1000;
+var invoiceTwo = &quot;599&quot;;
+
+accountTotal = invoiceOne + invoiceTwo;
+
+document.write(&quot;Account Total: &quot; + accountTotal + &quot; &lt;-- ???&quot;);
+
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Whoops!
+var accountTotal;
+var invoiceOne = 1000;
+var invoiceTwo = "599";
+
+accountTotal = invoiceOne + invoiceTwo;
+
+document.write("Account Total: " + accountTotal + " <-- ???");
+</script>
+</pre>
+
+        <h2>Converting from a string to a number. </h2>
+        <p>When you have string that contains a valid number, and you want to use the number in a calculation, you CAN convert it to a number by using the <code>Number()</code> function. We've done this a few times already.</p>
+        <ul>
+          <li>The <code class="varname">numberString</code> variable in the code below is assigned value of 56.999 as a string (see the quotes?). Because of that, the <strong>total </strong>variable in line 06 is assigned the concatenation of 67.884 and 56.999. The <code>document.write</code> statement in line 08 displays the result: 67.88456.999.  No addition happening there!!!</li>
+        </ul>
+
+
+
+
+<pre><code class="js">
+// Converting a string to a number
+var numberString = &quot;56.999&quot;;
+var number = 67.884;
+var total;
+
+total = number + numberString;
+
+document.write(&quot;total: &quot; + total + &quot; &lt;-- String concatenation&quot;);
+document.write(&quot;\n&quot;);
+
+total = number + Number(numberString);
+
+document.write(&quot;total: &quot; + total + &quot; &lt;-- That's better!&quot;);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Converting a string to a number
+var numberString = "56.999";
+var number = 67.884;
+var total;
+
+total = number + numberString;
+
+document.write("total: " + total + " <-- String concatenation");
+document.write("\n");
+
+total = number + Number(numberString);
+
+document.write("total: " + total + " <-- That's better!");
+</script>
+</pre>
+
+
+        <h3> Let's finish this section with a Lab!</h3>
+
+        <p>Now that you have some exposure to addition and concatenation, it's time to demonstrate your proficiency with a lab.</p>
+        <p class="lab_link"><a href="labs/lab-02-additiveOperators.html">Lab 2: Additive Operators</a></p>
+        <p><a href="index.html">Back</a></p>
+<!-- InstanceEndEditable -->
+      </section>
+
+      <footer>
+        <p>
+          Latest version: 1.2009
+        </p>
+      </footer>
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

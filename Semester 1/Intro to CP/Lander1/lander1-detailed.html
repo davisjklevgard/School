@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- This is an HTML comment. The line above tells browsers that we're using HTML5.  -->
+<!-- Ensure your text editor is wide enough to see the final > on this line:           !-->
+<!-- This document has many comments in it to explain each aspect of the file.
+     You don't need to include as many in your own file. Instead, your comments
+     should explain *why* you're doing something if needed. Also, note that HTML
+     comments can span multiple lines, just like this one.  -->
+<html lang="en">            <!-- Start our HTML document -->
+  <head>                    <!-- Specify information about the document. -->
+    <meta charset="utf-8">  <!-- Specify the text is UTF-8. It defaults to ASCII. -->
+    <!-- The following is for mobile devices. Don't worry about it for now. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar Lander 1</title> <!-- This appears on tabs, in search results, etc. -->
+    <!-- The following defines our CSS rules. Note that how we write comments
+         also changes. -->
+    <style>
+      /* <-- This indicates the start of a CSS comment.
+      The style element contains CSS (Cascading Style Sheets) rules.
+      Each rule consists of the following:
+        a selector name, {, a list of properties and values, }
+      Each property has a name followed by a colon (:), a value, and a semicolon (;).
+      
+      For now, note that selectors match HTML elements (e.g.,
+      do you see <body> and </body> later in the page? <canvas>
+      and </canvas>? <footer> and </footer>?
+      This indicates the end of a CSS comment --> */
+      body {                        /* Apply the enclosed rules to body elements. */
+        background-color: #000000;  /* Set the background to a 24-bit color. */
+        color: #808080;             /* Set the foreground to a 24-bit color. */
+        margin: 0px 0px 0px 0px;    /* Clear the top, right, bottom, and left */
+                                    /*   margins to 0 pixels in that order. There */
+                                    /*   are abbreviations you'll learn to use in */
+                                    /*   Web 1, but I'll use this more explicit */
+                                    /*   form for clarity during this course. */
+      }                             /* End of rules for body. */
+      canvas {                      /* Apply the enclosed rules to canvas elements. */
+        display: block;             /* Treat the canvas like a paragraph instead of 
+                                    /*   a word. */
+        border: 1px solid #808080;  /* Draw a 1px solid line in gray around the canvas. */
+        margin: auto;               /* Automatically calculate margins, which centers */
+                                    /*   the canvas. */
+      }                             /* End of rules for canvas. */
+      p, footer {                   /* Apply the enclosed rules to p & footer elements. */
+        display: block;             /* Treat the footer like a paragraph instead
+                                    /*   of a word. */
+        margin: auto;               /* Center the whole footer layout rectangle. */
+        text-align: center;         /* Center the text inside the footer. */
+        width: 500px;               /* The footer is 500 pixels wide. Without this, */
+                                    /*   the footer would take up all horizontal space */
+                                    /*   and not be centered under the canvas. But where */
+                                    /*   is the canvas width specified? */
+      }                             /* End of rules for p and footer. */
+      /* End of our CSS rules. */
+    </style>                        <!-- And we're back to HTML. -->
+  </head>                           <!-- End information about the document. -->
+  <body>                            <!-- Define what appears in the browser window. -->
+    <canvas id="canvas" width="500" height="500"> <!-- Here we specify the width -->
+                                                  <!-- and height in pixels. Note that -->
+                                                  <!-- there's no unit, unlike CSS. -->
+      Enable JavaScript to play the game.         <!-- Shown if JavaScript is disabled. -->
+    </canvas>
+    <!-- The following defines our JavaScript program. Again, the style of
+         comment changes. The different commenting styles is an unfortunate
+         cause of bugs, so be careful. -->
+    <script>
+// <-- This indicates a JavaScript comment.
+// Begin after this line //////////////////////////////////////////////////////////////////
+// Create a function with one parameter; assign the function to the onPress constant 
+// (i.e., we won't be able to resassign onPress another value):
+const onPress = function(event) {                     // How to process presses:
+  // NOTE:    v--same words--^ This is a variable we're using in the next line. 
+  console.log(event);                                 // Print the event on the console.
+};                                                    // All done! Note the ;.
+
+// Create a function with no parameters. Assign the function to the drawFrame constant.
+const drawFrame = function() {                        // How to draw an animation frame:
+  console.log("Tick");                                // Write "Tick" to the console
+  requestAnimationFrame(drawFrame);                   // Register to draw another frame.
+};                                                    // All done. Note the ;.
+
+// Next, we'll call two functions specifying what events we want to capture
+// and what function to call after capturing an event. Do you recognize
+// the constant?
+window.addEventListener('keydown', onPress, false);   // Capture key presses.
+window.addEventListener('mousedown', onPress, false); // Capture mouse button presses.
+
+// This calls the function we assigned to the drawFrame constant earlier.
+drawFrame();                                          // Draw an animation frame.
+
+// This is another pre-defined function.
+document.write("<p>Loaded.</p>");                     // Writes HTML to the document
+                                                      //   specified by the script
+                                                      //   element.
+// End //////////////////////////////////////////////////////////////////////////////////
+    </script>                       <!-- Back to HTML again. -->
+    <footer>version 1.0</footer>    <!-- Display a version in our footer. -->
+  </body>                           <!-- Done with the document body. -->
+</html>                             <!-- Done with HTML. -->
+

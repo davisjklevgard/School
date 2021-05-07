@@ -1,0 +1,307 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Unit 2 - JavaScript Coding Standards</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" --> 
+    <!-- InstanceEndEditable -->
+  </head>  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 2: JavaScript Syntax and Variables</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>JavaScript Coding Standards</h1>
+        <p>Here are the coding standards for the course. Your projects and labs will be graded partially on conformance to these rules. This document will be expanded as the semester progresses. </p>
+        <p>One of the most important aspects of modern programming is <strong>readability</strong>. To be able to read code written by other people and understand it has become much more important than having condensed, optimal code. Modern programming languages can optimize your code better than you can. So, the number one criteria for the way we write is for other human beings to read it. </p>
+        <h3>Indentation</h3>
+        <p>The unit of indentation of JavaScript source code will be <strong>two (2) spaces. </strong><strong>Do not use the tab character for indenting</strong>. The course editor (Notepad++) should be configured so that when you press the tab key it will insert spaces instead of a tab character. Keep this setting and if you use another text editor make sure you are not inserting tab characters into your code. </p>
+        <p>All of the code examples in these learning units are formatted with 2 spaces. Code in videos or code from the web may have different indentation. Text editors are often set up to use tabs instead of spaces. <strong>Code that you write should use spaces, not tabs, and it should be consistent. </strong>
+        <p>Here's an example of poorly formatted JavaScript code using no indentation.:</p>
+<pre><code class="js">
+var age = 16;
+
+if(age &gt;= 16){
+document.write(&quot;You can drive a car!&quot;);
+}else{
+document.write(&quot;You are not old enough to drive.&quot;);
+}
+</code></pre>
+
+          <p>Here's an example of poorly indented JavaScript code using both two and four spaces. <strong>Don't do this!</strong>:</p>
+<pre><code class="js">
+var age = 16;
+if(age &gt;= 16){
+    document.write("You can drive a car!");
+}else{
+  document.write("You are not old enough to drive.");
+}
+</code></pre>
+
+        <p>Notice how things don't line up at all?? Be consistent with your indentation and ensure things line up.</p>
+        <p>Here's an example of properly indented JavaScript code with two spaces:</p>
+
+<pre><code class="js">
+var age = 16;
+if (age >= 16) {
+  document.write("You can drive a car!");
+} else {
+  document.write("You are not old enough to drive.");
+}
+</code></pre>
+
+        <p>At the end of the course, indentation will be very important in terms of code readability because your code will become much more complex. You'll have multiple levels of indentation, much like an HTML page's code. You'll be reminded of indentation throughout the course.</p>
+        <h3>Line Length</h3>
+        <p>Avoid making any line of JavaScript code more than 80 characters. This improves readability. Sometimes this can't be avoided but when possible it is required to have 80 or fewer characters in a line of code. </p>
+        <p>On today's monitors, which are very wide, you might be wondering why we'd use this artificial constraint. The reason is that other developers might want to place the code editor <strong>next</strong> to the browser to see both at once, and horizontal scrolling is annoying.</p>
+        <p>The course editor should be configured to show a vertical line at column 80 to help you with this standard:</p>
+        <div style="text-align: center;"> <img src="resources/column80.png" alt="" height="309" width="734" /><br />
+        </div>
+        <h3>Variable Declarations</h3>
+<p>Good variable naming and usage is very important when learning to program computers. Here is a list of the rules for variables:</p>
+        <ol>
+          <li>Variables must follow the naming conventions outlined below.</li>
+          <li>All variables must be declared before they are used. Many programming languages require this as part of their syntax. However, JavaScript does not require this so you need do this intentionally.</li>
+          <li>All variables must be declared with the <strong><code>var</code></strong> keyword.</li>
+          <li><strong><code>var</code></strong> statements should be at the top of your JavaScript code, or at the top of the function if the variable is used only inside of the function.</li>
+          <li>Every variable should be declared on its own line. While JavaScript allows you to declare more than one variable on a single line, our convention will be one variable declaration per line.</li>
+          <li>Variables should be listed in alphabetical order.</li>
+          <li>Every variable should have a descriptive name that defines its purpose. See section on Variable names.</li>
+        </ol>
+        <h3>Function Declarations</h3>
+        <p>We will be covering this and adding to the course standards when we get to functions. I will leave this out for now so as not to confuse.</p>
+        <h3>Naming Conventions</h3>
+        <p>How things are named in a computer program is very important. In the early days of programming names were very short and cryptic to save on <span class="caps">RAM </span>usage. You may have seen variables with names like "i", "fnme", and "cal_prc". These days our computers all have lots and lots of <span class="caps">RAM </span>and we can stop this old confusing habit. Here are the course rules for naming things:</p>
+        <ol>
+          <li>Names should be created with the 26 upper and lower case letters (A..Z, a..z) and the 10 digits (0..9).</li>
+          <li>Do not use spaces, the dollar sign "$", or slashes "/ \" in names. Underscores are acceptable, but not widely used in JavaScript.</li>
+          <li>Variables and functions should start with a lower case letter.</li>
+          <li>Constructor plain functions should start with an upper case letter.</li>
+          <li>Abbreviations should be avoided, use complete words wherever possible, which is the vast majority of the time. What does "cal_prc" mean? Calculate Price? Calculate Percentage? Calender Perfection? Names need to be very clear, for others and for you. You won't remember your own cryptic names in the future.</li>
+          <li>Names that have more than one word should use the camelCase ("camel case") convention. The name starts with a lower case letter and then each new word in the name starts with an upper case letter. Examples:</li>
+        </ol>
+
+<pre><code class="js">
+// Good Names
+
+var firstName;
+var totalPrice = ;
+calculateTotalPrice();
+getUserInputAndCalculateUnitPriceAndTotalPrice(); // do programmers
+                                                  // really do this?
+// Yes, we do!!
+</code></pre>
+
+
+        <h3>Comments</h3>
+				<p><em>Good documentation will be required in your labs and projects files. Here is a minimal list of what the instructor will be looking for. Quality counts!</em></p>
+				<ol>
+          <li>The student's name at the top of lab and project files.</li>
+          <li>All functions need to have a block of comments describing what the function does. More details later when we get to functions.</li>
+          <li>All loop constructions will have a comment block immediately preceding the loop. The comments should describe what the loop accomplishes and why it exists<strong>. </strong></li>
+          <li>Use descriptive variable names for everything and keep comments to a minimum, expressing <strong>why</strong> things are there and <strong>what your thoughts are</strong>, not <strong>what the code does.</strong></li>
+				</ol>
+				<p><strong>Here's an example of bad comments:</strong></p>
+				<pre><code class="js">
+// This loops 5 times and prints "Hello World" each time.
+for (var x = 0; x < 5; x++) {
+  document.write("Hello World\n");
+}
+</code></pre>
+				<p>First, we know it's a loop. The use of <code>for</code> tells us that. Second, we don't know what <code>x</code> is. This could be better expressed this way:</p>
+				<pre><code class="js">
+// we need to display "Hello World" five times per the program's requirements.
+for (var counter = 0; counter < 5; counter++) {
+  document.write("Hello World\n");
+}
+</code></pre>
+				<p>This comment expresses <b>why</b> we're doing something.  It also has much more clear variable names.</p>
+        <h3>Semicolons</h3>
+        <p>Semicolons are used in JavaScript to end a line. Most of the time they are not required by JavaScript. However, they are required in a few places so as a course standard, that is also a convention in the industry, the use of semicolons at the end of statements is required.</p>
+        <p>Examples:</p>
+
+<pre><code class="js">// use of Semicolons
+
+var name;
+name = &quot;Fred&quot;;
+return name;
+
+var total = 0;
+total = total + 100;</code></pre>
+
+
+        <p>There are exceptions to the rule!</p>
+        <p>There are some statements that should not have semicolons. These are usually compound statements like this:</p>
+
+<pre><code class="js">
+// semicolons in &quot;if&quot; statements
+
+if (something === 1) {   //&lt;-- No semicolons here!
+  // Code in here will have semicolons.
+} else {   //&lt;-- No semicolons here!
+  // Code in here will have semicolons too!
+} //&lt;-- No semicolons here!
+</code></pre>
+
+
+        <p>A semicolon would cause an error if they are added here where it says they shouldn't:</p>
+
+
+<pre><code class="js">
+// Incorrect semicolons
+
+if (something === 1) {
+  x = 5;
+  name = &quot;Fred&quot;;
+} else {;   // &lt;-- A semicolon here will cause an error
+  x = 10;
+  name = &quot;Bill&quot;;
+}
+</code></pre>
+
+        <h3>Statements</h3>
+        <p>The way we write statements is critical for code that is readable and easy to understand. Here is how we're going to write JavaScript statements.</p>
+        <h4>Simple Statements</h4>
+        <ul>
+          <li>Every simple statement must end with a semicolon.</li>
+          <li>Every simple statement must be on its own line. This code will work but it fails the course standards in a couple of ways:</li>
+        </ul>
+
+<pre><code class="js">
+// WRONG WAY!
+
+var name = &quot;Fred&quot;; var city = &quot;Madison&quot;;
+
+document.write(name + &quot;, &quot; + city)
+
+</code></pre>
+
+        <ul>
+          <li>On <strong>line 3</strong> there are two statements. JavaScript doesn't care but your instructor and future professional teammates will.</li>
+          <li>On <strong>line 5</strong> the statement is missing the semicolon at the end. JavaScript won't remind you to put them there. You will just have to get in the habit.</li>
+        </ul>
+        <p>Here's the correct version:</p>
+
+<pre><code class="js">
+// Right way!
+var city = &quot;Eau Claire&quot;;
+var name = &quot;Homer&quot;;
+
+document.write(name + &quot;, &quot; + city);
+
+</code></pre>
+
+        <h4>Compound Statements</h4>
+        <p>Compound statements are different than simple statements. They are statements that contain lists of other statements enclosed in curly braces "<code>{}</code>".</p>
+        <ul>
+          <li>Enclosed statements should be indented.</li>
+          <li>The left <code>{</code> should be at the end of the line that starts the compound statement <strong>and should have a space in front of it.</strong></li>
+          <li>The right <code>}</code> should begin a line and should line up with the <strong>beginning</strong> of the compound statement.</li>
+          <li>Braces (<code>{}</code>) should be used on all enclosed statements, even if there is only one enclosed statement.</li>
+        </ul>
+        <p>Here are some examples:</p>
+
+<pre><code class="js">
+// &quot;if&quot; statements
+
+if (condition) {
+  // statements
+}
+
+if (condition) {
+  // statements
+} else {
+  // statements
+}
+
+if (condition) {
+  // statements
+} else if (condition) {
+  // statements
+} else {
+  //statements
+}
+
+// for loops
+for (count = 0; count &lt; 5; count ++) {
+  // statements
+}
+
+// while loops
+while (count &lt; 5) {
+  // statements
+  count++;
+}
+
+
+// function
+function printName(theName) {
+  document.write(theName);
+}</code></pre>
+
+
+        <h3>Whitespace</h3>
+        <p>Whitespace can improve the readability of code. Here are the course standards for whitespace.</p>
+        <ul>
+          <li>Use blank lines liberally, your code shouldn't be all bunched together.</li>
+          <li>A keyword followed by a left parenthesis "(" should be separated by a space.</li>
+          <li>Left braces should have a space in front as well.</li>
+        </ul>
+
+
+<pre><code class="js">
+// Spaces in logic statements
+
+if (condition) {
+
+while (true) {
+
+</code></pre>
+
+
+        <ul>
+          <li>Most operators should have a space on either side.</li>
+        </ul>
+
+
+<pre><code class="js">
+// Operator spacing
+
+var name = &quot;Fred&quot;;
+var x = 1;
+
+x = x + 1;
+
+if (name === &quot;Fred&quot;) {
+
+</code></pre>
+
+        <ul>
+          <li>A space should follow every comma ","</li>
+        </ul>
+        <p>Those are the coding standards for the course. You are expected to know them and be able to demonstrate them on every assignment.</p>
+        <p><a href="introToJavaScript.html">Back</a></p>
+    <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Operators That Test For Equality</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 4: Operators and Functions</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+  
+        <h1>Operators That Test for Equality</h1>
+        <p>This area is not as straightforward as it seems at first.</p>
+
+        <img src="resources/notEquality.png" alt="" height="199" width="410" /><br />
+
+        <p>
+          In the JavaScript language the equal sign " = " is used in assignment statements.  In fact, you have already practiced writing assignment statements.  Here's an example: <code> yearBirth = 1996;</code> where the variable is <code>yearBirth</code> and the value assigned to it is <code>1996</code>.
+        </p>
+
+        <p>The " = " does NOT mean equal, though.  In JavaScript we use other operators to designate various levels of equality. It takes a little time to get used to them, but after a few examples you'll begin to see the importance of the variety of equality operators.
+        </p>
+        <h3>The Equality Operators</h3>
+
+        <table style="text-align:left; margin-left: 4em;" cellspacing="0">
+          <tr>
+            <td style="background:#ccc; font-weight:bold;">Operator</td>
+            <td style="background:#ccc; font-weight:bold;">Function</td>
+          </tr>
+          <tr>
+            <td><code>==</code></td>
+            <td>Tests whether two expressions are equal</td>
+          </tr>
+          <tr>
+            <td><code>!=</code></td>
+            <td>Tests whether two expressions are not equal</td>
+          </tr>
+          <tr>
+            <td><code>===</code></td>
+            <td>Tests whether two expressions are <strong>really</strong> equal</td>
+          </tr>
+          <tr>
+            <td><code>!==</code></td>
+            <td>Tests whether two expressions are <strong>really not</strong> equal</td>
+          </tr>
+        </table>
+
+        <h3>Using the Equality Operators</h3>
+        <p>These operators are used in "if" and "while" statements. We'll add those in the next unit but here are some samples showing what they look like.</p>
+        <p>The sample code on line 02 tests to see if the value in the variable <code>count</code> is EXACTLY equal to 5; whereas, the code on line 06 tests to see if the value in the variable <code>count</code> is EXACTLY not equal to 10. But, rather than getting into the "if" and "while" statements in detail right now...let's look at some basic Boolean Expressions to try to get a better feel for the equality operators.</p>
+
+
+
+
+<pre><code class="js">
+// Using Equality Operators
+if (count === 5) {
+  // do something 
+}
+
+while (count !== 10) {
+  // do something
+}
+</code></pre>
+
+
+
+        <h3>Boolean Expressions</h3>
+        
+        <p>Boolean expressions are just statements that are either true or false.</p>
+        <p>Does 5 equal 5?</p>
+          
+<pre><code class="js">
+(5 === 5)    True!
+</code></pre>
+
+        <p>Does "Homer" equal "Barney"?</p>
+
+<pre><code class="js">
+(&quot;Homer&quot; === &quot;Barney&quot;)   False!
+</code></pre>
+
+        <p>If a variable named 'count' has a value of 3. What is result of this expression?</p>
+
+<pre><code class="js">
+(count === 3)    True!
+</code></pre>
+
+        <p>How about this?</p>
+
+<pre><code class="js">
+(100 === &quot;100&quot;)   ???
+</code></pre>
+
+        <p>We can see the results of an equality test with a simple <code>document.write();</code></p>
+          
+<pre><code class="js">
+// Displaying a Boolean expression
+document.write(5 === 5);
+document.write(&quot;\n&quot;);
+document.write(&quot;Homer&quot; === &quot;Homer&quot;);
+</code></pre>
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+
+// Displaying a Boolean expression
+document.write(5 == 5);
+document.write("<\n>");
+document.write("Homer" == "Homer");
+</script>
+</pre>
+
+
+
+        <h3>Testing for Equality with Type Conversion (<code>==</code>)</h3>
+        
+        <p>The <code>==</code> operator has a trick. It will convert types to match before it does the equality test.</p>
+          
+<pre><code class="js">
+(100 == &quot;100&quot;)   What will this be? It's true!
+</code></pre>
+
+        <p>The "100" will first be converted to the number 100 and then compared to 100.</p>
+
+
+<pre><code class="js">
+// Automatic number conversion
+document.write(100 == &quot;100&quot;);
+</code></pre>
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Automatic number conversion
+document.write(100 == "100");
+</script>
+</pre>
+
+        <p>It does <span class="caps">NOT </span>convert the case of strings</p>
+
+<pre><code class="js">
+// No case conversion
+document.write(&quot;Fred&quot; == &quot;FRED&quot;);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// No case conversion
+document.write("Fred" == "FRED");
+</script>
+</pre>
+
+					<p>You can use variables in the test</p>
+
+<pre><code class="js">
+// Using variables with equality tests
+var count;
+var currentNumber;
+var enteredName;
+var firstName;
+
+firstName = &quot;Fred&quot;;
+enteredName = &quot;fred&quot;;
+count = 10;
+currentNumber = 10;
+
+document.write(firstName == enteredName);
+document.write(&quot;\n&quot;);
+document.write(count == currentNumber);
+</code></pre>
+
+
+<pre class="output">
+<script>
+
+// Using variables with equality tests
+// Using variables with equality tests
+var count;
+var currentNumber;
+var enteredName;
+var firstName;
+
+firstName = "Fred";
+enteredName = "fred";
+count = 10;
+currentNumber = 10;
+
+document.write(firstName == enteredName);
+document.write("\n");
+document.write(count == currentNumber);
+</script>
+</pre>
+
+
+				
+        <h3>Testing for Inequality With Type Conversion (<code>!=</code> )</h3>
+        
+        <p>The <code>!=</code> operator will convert types and then test to see if the values are <strong>not</strong> equal. This can be confusing, if the values are not equal then the test returns <code>true</code>.</p>
+        
+        
+        <p>The 25 will be converted to "25" and then tested for inequality with the "25". Because they are equal the test will return <code>false</code>.</p>
+
+
+<pre><code class="js">
+// Not Equal with conversion
+document.write(&quot;25&quot; != 25);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Not Equal with conversion
+document.write("25" != 25);
+</script>
+</pre>
+
+				<p>This expression will return true because 10 is not equal to 11. (Get it?)</p>
+
+<pre><code class="js">
+// A true example
+document.write(10 != 11);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// A true example
+document.write(10 != 11);
+</script>
+</pre>
+
+			<p>Just convert ("Bob" != "Bill") into a question: "Is 'Bob' different from 'Bill'?" Yes, they are different.</p>
+
+<pre><code class="js">
+// Not Equal?
+document.write(&quot;Bob&quot; != &quot;Bill&quot;);    
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Not Equal?
+document.write("Bob" != "Bill");
+</script>
+</pre>
+
+
+
+        <h3>Testing for Equality Without Type Conversion (<code>===</code>)</h3>
+        
+        <p>The <code>===</code> operator will not do any conversions, it will just do a strict comparison. If the types don't match then you get <code>false</code>. This is the equality operator that we'll use most of the time.</p>
+        <p>If they are the same type then it's just the same as <code>==</code></p>
+          
+<pre><code class="js">
+// Same as ==
+document.write(5 === 5);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Same as ==
+document.write(5 === 5);
+</script>
+</pre>
+
+        <p>But this will now return <code>false</code>.</p>
+
+<pre><code class="js">
+// Strict comparison
+document.write(100 === &quot;100&quot;);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Strict comparison
+document.write(100 === "100");
+</script>
+</pre>
+          
+        <p><strong>Note:</strong> This is called "Strict Equality" and is usually what you should use. Only use the non-strict <code>==</code> when you know that's what you want.</p>
+        
+        <p class="notice">It is a course standard that you use <code>===</code> whenever possible, unless directed to do otherwise. </p>
+        <h3>Testing for Inequality Without Type Conversion (<code>!==</code>)</h3>
+        
+        <p>The <code>!==</code> tests for inequality with no type conversion. </p>
+        <p>This works like <code>!=</code> with no type conversion so we often get different results.</p>
+
+<pre><code class="js">
+// Are they different types? Then it's true.
+document.write(&quot;25&quot; !== 25); // It's true that &quot;25&quot; is different from 25
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Are they different types? Then it's true.
+document.write("25" !== 25); // It's true that "25" is different from 25
+</script>
+</pre>
+
+        <p>For numbers it's just the same as <code>!=</code>.</p>
+
+<pre><code class="js">
+// Comparing number for inequality
+document.write(10 !== 11); // 10 is different from 11
+</code></pre>
+
+
+<pre class="output">
+<script>
+// Comparing number for inequality
+document.write(10 !== 11); // 10 is different from 11
+</script>
+</pre>
+
+
+
+        <h3>Lab Time</h3>
+        
+        <p>Here's a quick lab just to practice these </p>
+        <p class="lab_link"><a href="labs/lab-04-testingEquality.html">Lab 4: Testing For Equality</a></p>
+        <p><a href="index.html">Back</a></p>
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest version: 1.2009
+        </p>
+      </footer>
+    </section>
+  </body>  
+<!-- InstanceEnd --></html>  

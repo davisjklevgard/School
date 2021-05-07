@@ -1,0 +1,202 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Processing Data Records</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+      <script src="jsFiles/unitData.js" language="javascript" type="text/javascript"> </script>
+      <script src="jsFiles/processingDataRecords.js" language="javascript" type="text/javascript"> </script>
+    <!-- InstanceEndEditable -->
+  </head> 
+  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 6: Loops, Functions, and Data Structures</a></h2>
+      </header>
+      
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Processing Data Records</h1>
+        <h3>Records</h3>
+    
+        <p><em>This is so common!</em></p>
+        <p>In lots of programming tasks we need to be able to process records sequentially. The records can be in files, databases, entered live, or even from data on a distant server that was brought to your program with <span class="caps">AJAX.</span></p>
+        <ul>
+          <li>A <strong>record</strong> is like a row in a spreadsheet. Here's an example of an employee record:</li>
+        </ul>
+
+
+
+
+<pre class="pseudocode">
+1000, &quot;John&quot;, &quot;Smith&quot;, &quot;Engineer&quot;, &quot;555-1234&quot;
+</pre>
+
+        <p>The <code>record</code> has discrete pieces of data that have been separated with commas. Each of the pieces of data in the record is called a <code>field</code>. </p>
+        <p>In information technology we sometimes call the comma a <code>delineator</code>.</p>
+        <p>A <code>Record Set</code> (also called a <code>File</code>) is a collection of records (like the record above). How many can vary from a few to many millions. Here's an example of an employee file:</p>
+
+<pre class="pseudocode">
+1000, &quot;John&quot;, &quot;Smith&quot;, &quot;Engineer&quot;, &quot;555-1234&quot;
+1100, &quot;Katherine&quot;, &quot;Vang&quot;, &quot;Engineer&quot;, &quot;555-3234&quot;
+1200, &quot;Ruger&quot;, &quot;Janeway&quot;, &quot;Web Master&quot;, &quot;555-8009&quot;
+1300, &quot;Kelly&quot;, &quot;Gale&quot;, &quot;Programmer/Analyst&quot;, &quot;555-0091&quot;
+1400, &quot;Pat&quot;, &quot;Lopez&quot;, &quot;Programmer/Analyst&quot;, &quot;555-4576&quot;
+</pre>
+        <p>Records can exist in many ways and you will learn more about that in future classes. It is noteworthy, however, that the most important way that organizations store data records these days is in databases. That is why there are two semesters of database courses in our programming degree, and why most of our classes work with databases of some sort.</p>
+        <h3>Record Processing</h3>
+        
+        <blockquote><p><em>One step at a time.</em></p></blockquote>
+        
+        
+        <p>JavaScript has an important security feature, it can't access your local hard drive in any way. This is to prevent malicious JavaScript code from doing damage to your computer. This is a really good thing when you are creating applications for real use, but it makes learning how to process records more difficult.</p>
+        <p>Because browser-based JavaScript has no file Input/Output (I/O) capabilities - <strong> it has no built-in method of record processing.</strong> So, we will be using a record processing system that has been custom made for the course. It allows us to learn to process records and data in a way that is similar to what you will be using in your future programming courses, and the rest of your career.</p>
+        <p>In the <code>unit7/jsFiles/</code> directory there is a special JavaScript file that contains all the data and some code which allows you to use the data to emulate (or pretend) that JavaScript is processing records in a recordset. Feel free to find it and look it over, but you won't need to edit the file in any way. It also might be a little difficult to understand at this point in your programming knowledge. You'll understand all of it before you are done with the degree.</p>
+        <p>Here's a quick overview of how it works in some languages.<strong> Don't focus too much on how we're doing it in JavaScript. Focus on the concepts of retrieving and working with data.</strong></p>
+        <p>When you are writing a program that needs to process records from a database you might do so using a library that connects to the database and gives you easy access to the data. Languages like ASP and PHP do something like this. </p>
+        <p>You will create a variable that stores all the records you need.</p>
+
+<pre><code class="js">
+var records;
+</code></pre>
+
+        <p>You then often use a function to pull the data into your application for use. It'll &quot;pull&quot; the data into your variable. After this function has been run your program will have access to the first record in the set. Here's an example:</p>
+
+<pre><code class="js">
+records = openSampleDataRecords();
+</code></pre>
+
+        <p>You'd then grab the fields and work with them. Some languages store records in an array that you loop over. Other languages give you an array wrapped in an Object that you can use to manage the records.</p>
+        <p>Finally, you use a function to read the next record. This makes the next record available if there are any more to be read. If there aren't anymore records then the function returns <code>false</code>. If there are more records then the function returns <code>true</code>. This is typically used as the loop conditional.</p>
+
+<pre><code class="js">
+records.readNextRecord();
+</code></pre>
+
+        <p>Let's see how this all works with a little demonstration.</p>
+        <h3>Record Processing Demo</h3>
+        <p>We have a database of inventory records. Remember, for the purposes of this lab I've created a fake database in JavaScript that will &quot;emulate&quot; a real database. The purpose of this is so you can see that sometimes we use loops to iterate over data from a database, not just for trivial purposes.</p>
+        <p>Here's what a record in the inventory table looks like:</p>
+
+        <table>
+          <tr>
+            <th>Field 1</th>
+            <th>Field 2</th>
+            <th>Field 3</th>
+          </tr>
+          <tr>
+            <td>Item Number</td>
+            <td>Item Description</td>
+            <td>Item Stock Amount</td>
+          </tr>
+        </table>
+        <h3>Using the Inventory Items Records</h3>
+        <p>The records are made available to your programs with this function:</p>
+
+<pre><code class="js">
+openInventoryItemsRecords();
+</code></pre>
+
+        <p>The function returns the records so you need to store them in a variable:</p>
+
+<pre><code class="js">
+var itemRecords;
+
+itemRecords = openInventoryItemsRecords();
+</code></pre>
+
+        <p>After the <code>openInventoryItemsRecords()</code> function has been run you have access to the first record's data. You will retrieve each part of one record with a different function. Here are the functions:</p>
+
+<pre><code class="js">
+itemRecords.getItemNumber();
+itemRecords.getItemDescription();
+itemRecords.getItemStockAmount();
+</code></pre>
+
+        <p>Notice that you need to have "itemRecords." in front of each of the functions. This is what's called an object, and it has methods. We'll talk about those later.</p>
+        <p>When you want to read the next record you use the following function. It will make the next record available and you then use the above functions to retrieve the data. This function returns <code>true</code> if there was a next record and <code>false</code> if the end of the record set has been reached.</p>
+
+<pre><code class="js">
+itemRecords.readNextRecord();
+</code></pre>
+
+        <p>Here's a full example of how this works. This simple loop just reads through all the inventory records in our fake database and prints them to the screen.</p>
+
+<pre><code class="JScript">
+/*
+  This is file /unit7/processingDataRecords.js 
+  It contains the JavaScript code for
+  
+  &quot;Processing Data Records&quot; File: /unit4/processingDataRecords.html
+*/
+function processingDataRecords() {
+
+  // Declare Variables
+  var currentNumber;
+  var currentDescription;
+  var currentStockAmount;
+  
+  var itemRecords;
+  
+  // Open the Inventory Items Records and make them 
+  // available to the script
+  itemRecords = openInventoryItemsRecords();
+  
+  document.write(&quot;The Inventory Items Record Set:&lt;br /&gt;&lt;br /&gt;&quot;);
+  
+  // Read the next record, test to see if there 
+  // is a next record and then output it
+  while (itemRecords.readNextRecord()) {
+
+    currentNumber      = itemRecords.getItemNumber();
+    currentDescription = itemRecords.getItemDescription();
+    currentStockAmount = itemRecords.getItemStockAmount();
+    
+    document.write(currentNumber + &quot;\t&quot; + currentDescription 
+            + &quot;\t&quot; + currentStockAmount + &quot;&lt;br /&gt;&quot;);
+  } 
+}
+</code></pre>
+
+        <p>Here's the program's output, once we call this <code>processingDataRecords()</code> function.</p>
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+   processingDataRecords();
+</script>
+</pre>
+
+
+
+        <h3 class="notice">Again, this is just ONE approach programmers use to process data records. Other approaches simply give the records as arrays of data you loop over. Either way, the theory is the same - you have a set of data you need to loop over and display on the screen.</h3>
+        <h3>Lab Time</h3>
+        <p>Take a bit to see if you can work with this logic. All the records have been handled for you. You'll just need to do some counting and totalling.</p>
+        <p class="lab_link"><a href="labs/lab06recordSetProcessing.html">Lab 6: Record Set Processing</a><strong>&nbsp;&nbsp;(THIS IS AN OPTIONAL LAB)</strong></p>
+        <p><a href="index.html">Back</a></p>
+
+
+    <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+   </section>
+ </body>
+<!-- InstanceEnd --></html>

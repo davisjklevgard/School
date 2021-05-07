@@ -1,0 +1,385 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Unit 2 - Variables in JavaScript</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" --> 
+    <!-- InstanceEndEditable -->
+  </head>  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 2: JavaScript Syntax and Variables</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>Variables in JavaScript</h1>
+        <p>Computer programs mostly deal with  data. In this section we're going to look at what data is and how we use a VARIABLE to store it and manipulate it.</p>
+        <h3>Computers</h3>
+        <p>Computer programs do three basic things from our perspective. </p>
+        <ul>
+          <li><strong>They get data into the program</strong></li>
+          <li><strong>They process the data</strong></li>
+          <li><strong>They output the data</strong></li>
+        </ul>
+        <h3>So What's Data?</h3>
+        <p>Let's first look inside the computer at <strong><span class="caps">RAM</span></strong>. <strong><span class="caps">RAM</span></strong> stands for <strong>R</strong>andom <strong>A</strong>ccess <strong>M</strong>emory. This means that the computer can go get something in <strong><span class="caps">RAM</span></strong> from anywhere very quickly. <strong><span class="caps">RAM</span></strong> is where the computer stores its data, including the operating system and the programs themselves. How do we imagine <strong><span class="caps">RAM</span></strong>? Here's one favorite way:</p>
+        <div style="text-align: center;"> <img src="resources/tapeMeasure.jpg" alt="" height="280" width="772" />
+        </div>
+        <p><strong><span class="caps">RAM</span></strong> is one long linear chain of <strong>bits</strong>. And a bit is a very simple thing, it's just a <strong>0</strong> or a <strong>1</strong>. Think of each mark on the tape measure as a single bit. Data is just a collection of bits in a known spot. Say, starting at 5" on the tape measure and going for 10 marks. </p>
+        <h3>What's a Variable?</h3>
+        <p> A computer program has to have a way to find and use the data that it needs. It does this with variables. A <strong>Variable</strong> is a spot in <strong><span class="caps">RAM</span></strong> that has been given a name. You can think of variables as a container. But, this container doesn't hold water, it holds bits.</p>
+        <div style="text-align: center;"> <img src="resources/cupMedium.jpg" alt="" height="247" width="154" />
+        </div>
+        <p>Here's how we do that in JavaScript:</p>
+
+<pre><code class="js">
+// Variables in JavaScript
+
+var count;
+</code></pre>
+
+        <ul>
+          <li>We start with the word <code>var</code>. This tells JavaScript that you are about to create a named variable. It is required by JavaScript in order to correctly make a variable.
+            <ul>
+              <li>Omitting the <code>var</code> keyword causes the variable to be declared in what's called the &quot;global scope.&quot; Without going into too much detail now, just know that it's bad, it wastes memory, and can slow down some web browsers. Just don't do it. Always use the <code>var</code> keyword.</li>
+            </ul>
+          </li>
+          <li>Then we have the name of the variable, in this case <code>count</code>.</li>
+          <li>And, finally, we have a semicolon (<code>;</code>), which is required at the end of simple statements like this, per our coding standards.</li>
+        </ul>
+        <p>However, at this point the variable doesn't have any value in it. <strong>Its value is &quot;null.&quot; </strong>Here's the variable declaration over again with a small addition.</p>
+
+<pre><code class="js">
+// A variable with an initial value
+
+var count = 1;
+</code></pre>
+
+
+        <ul>
+          <li>We've added the <code>= 1</code> (a space, an equal sign, and the number 1).</li>
+          <li>This line creates the variable and puts the value 1 into it. <strong>This is called an assignment statement.</strong></li>
+        </ul>
+
+        <p>
+          Declaring a variable and assigning it a value at the same time is
+          called "initializing" a variable. And you saw that terminology in
+          your pseudocode:
+
+        </p>
+
+<pre class="pseudocode">
+  Initialize count to 1
+</pre>
+        <h3>Displaying output</h3>
+        <p>Before we can dive into the labs, we need to be able to see what is going on in our programs. </p>
+        <p>Here's a piece of JavaScript that you've seen already. We'll explain it in more detail now.</p>
+
+<pre><code class="js">
+// Our first way to display output on a web page
+
+document.write(&quot;This is a string&quot;);
+</code></pre>
+
+        <ul>
+          <li>The word <code>document</code> refers to the <span class="caps">HTML </span>page that contains this JavaScript program. It's actually a reference to an <strong>object</strong> called the <strong>DOM</strong>, or <strong>Document Object Model</strong> which is a tree of elements on a web page. HTML tags create elements on the <strong>DOM</strong>, and we can use the <code>document</code> object to manipulate that tree.</li>
+          <li>The period (<code>.</code>), called the dot, is a way to access things inside of your document. </li>
+          <li>The word <code>write</code> is a function that causes text to be displayed on a web page. It actually modifies the <strong>DOM.</strong></li>
+          <li>Next is a set of parentheses with some quoted words inside. The words inside the quotes are the words that get displayed. The quotes don't get displayed though.</li>
+          <li>And, finally, a semicolon to end the command...sort of like the way a period ends a sentence.</li>
+        </ul>
+        <p>What happens when this is run by JavaScript? </p>
+        <ul>
+          <ul>
+            <li>When this function is run it takes whatever is in the parentheses and outputs it to the <span class="caps">HTML </span>page right in the same location where the "write" code happens to be. In our labs that will be just after the opening &lt;script&gt; tag ends.</li>
+          </ul>
+        </ul>
+        <p>What can I put in a "write"? </p>
+        <ul>
+          <li>Everything that we are creating in our programs can go in there. It's
+          the most simple way to output things from our program, and is
+        very similar to constructs in other languages.</li>
+        </ul>
+
+        <p>Let's look at a demo of the document.write command. But, be sure to look at the SOURCE CODE section and compare it to the lines in the DEMO OUTPUT section, which shows the results of the code. The EXPLANATION section will describe line-by-line what's happening! Here is the document.write demo:</p>
+        <p> <a href="demos/demo-documentWrite.html">Demo: <code>document.write()</code></a></p>
+
+        <p>Now, if you think you've got a good handle on how this works, go do the lab:</p>
+        <p class="lab_link"> <a href="labs/lab-03-variables1.html">Lab 3: First Variables</a></p>
+        <h3>Data Types</h3>
+        <p><em>How a computer keeps its data straight</em></p>
+        <p>All data in a computer is really the same, it's all just
+          zeros and ones. However, your programs will need to think
+          of different pieces of data as different <em>types</em> of
+        data. For example, you can't add the word "Bob" to the number
+        1000 mathematically. They are two different TYPES of data
+      values! All programming languages have a set of "data types".
+      Here's JavaScript's: </p>
+        <ul>
+          <li><strong>Numbers</strong></li>
+          <li><strong>Strings</strong></li>
+          <li><strong>Booleans</strong></li>
+          <li><strong>Null</strong></li>
+          <li><strong>Undefined</strong></li>
+          <li><strong>Objects</strong></li>
+        </ul>
+        <p> We will focus on the first three for most of the semester. This is a very simple list, some languages have a much bigger list. JavaScript is simpler in this area. Let's look at more details about the data types</p>
+        <h3>Numbers</h3>
+        <blockquote>
+          <p><em>Some of the most important things we do with computers involve numbers.</em></p>
+        </blockquote>
+        <p>The number data type in JavaScript holds, well, numbers. Numbers are things we can do math operations on. We can count with them, have them be prices, add them together, divide them, etc. These are all numbers:</p>
+
+<pre><code class="js">4
+$1.50
+-14
+1000000
+</code></pre>
+
+        <ul>
+          <li> Numbers can be big or small, positive or negative, have decimals or not. In JavaScript they are all just numbers. There aren't different data types for different kinds of numbers. </li>
+        </ul>
+        <p>How do we make a variable that's a number?</p>
+        <ul>
+          <li>That's easy, just declare a variable and put a number in it. Just make sure you type the number <strong>with no quotes around it</strong>.</li>
+        </ul>
+
+<pre><code class="js">
+// Numbers in JavaScript
+
+var count = 1;
+var price = 12.99;
+var priceString = &quot;12.99&quot;; // This is not a number!
+</code></pre>
+
+        <ul>
+          <li>We don't have to tell JavaScript that the variable is a number? Nope.
+            <ul>
+              <li> That's not true in some other languages like C# and Java though. JavaScript is a dynamically-typed language, and the data type is controlled by the variable. JavaScript programs use <strong>type inference</strong> to determine the data type. That means the program looks at the data and figures out its type. In other languages we have to explicitly declare the type when we code the program.</li>
+            </ul>
+          </li>
+          <li>Here's a demo of numbers; explore it carefully: <a href="demos/demo-numberVariables.html">Demo: Number Variables</a></li>
+        </ul>
+
+
+        <p><strong>Numbers Lab</strong>: </p>
+        <p>Let's test your knowledge in a lab by working with some JavaScript number variables: </p>
+        <p class="lab_link"><a href="labs/lab-04-numberVariables.html">Lab 4: Number Variables</a></p>
+        <h3>Strings</h3>
+        <p>We often have to process strings of text - not just numbers - in programs too.</p>
+        <p>Strings are a series of characters surrounded by double or single quotes.</p>
+
+<pre><code class="js">
+&quot;This is a string&quot;
+&quot;This isn't a number&quot;
+'This is a string too'
+'The cow says, &quot;moo&quot;'
+&quot;Fred&quot;
+&quot;Bert&quot;
+&quot;Ernie&quot;
+</code></pre>
+
+        <p>You must have quotes around a string. </p>
+        <ul>
+          <li>If a string is surrounded by double quotes then you can have single quotes inside the string.</li>
+          <li>If a string is surrounded by single quotes then you can have double quotes inside the string.</li>
+          <li>But, sometimes we need to put a character into a string that is special, like a tab. How do we do that?</li>
+        </ul>
+        <h4><strong>Escape Characters</strong>. </h4>
+        <p>Here's a list of characters that we occasionally need to be able to embed into strings</p>
+        <table>
+          <tr>
+            <td><code>\b</code></td>
+            <td>Backspace</td>
+          </tr>
+          <tr>
+            <td><code>\t</code></td>
+            <td>tab</td>
+          </tr>
+          <tr>
+            <td><code>\n</code></td>
+            <td>newline</td>
+          </tr>
+          <tr>
+            <td><code>\v</code></td>
+            <td>vertical tab</td>
+          </tr>
+          <tr>
+            <td><code>\f</code></td>
+            <td>form feed</td>
+          </tr>
+          <tr>
+            <td><code>\r</code></td>
+            <td>Carriage return</td>
+          </tr>
+          <tr>
+            <td><code>\</code></td>
+            <td>Literal backslash</td>
+          </tr>
+          <tr>
+            <td><code>\&quot;</code></td>
+            <td>Double Quote</td>
+          </tr>
+          <tr>
+            <td><code>\'</code></td>
+            <td>Single Quote</td>
+          </tr>
+        </table>
+        <p>To embed these characters in a string you just type the corresponding code with the backslash. Here's an example:</p>
+
+<pre><code class="js">
+// Embedding special characters
+
+var tabInThisVariable = &quot;This is a tab\tand this is after it&quot;;
+var aNewLineInTheMiddle = &quot;This line has a newline\nin its middle.&quot;;
+</code></pre>
+
+        <h3>Concatenation</h3>
+
+        <p>Concatenation is the process of placing things right next to each
+          other...so close that they are touching.  For example, imagine that
+          you placed a brick on your coffee table.  You then place a second
+          brick on the coffee table, and slide it right up next to the first
+          brick so that they're touching end-to-end. You could say that you
+          "concatenated" those two bricks!</p>
+        <p>In programming, we often concatenate pieces of data. We may need to
+          do it just to make our output look nice. (For example, putting first
+          and last names together with a space between them makes names easier
+          for humans to read.) But, sometimes we need to concatenate smaller
+          pieces of data into larger strings to change or clarify the meaning
+          of data, too. (For example, you could concatenate a string like
+          "Salary: " next to a number so that a user understands that the
+          number is a salary.) Or you can put a name with an age:</p>
+
+<pre><code language="js">
+  var age = 42;
+  var name = &quot;Homer&quot;;
+  document.write(name + &quot; is &quot; + age + &quot; years old.&quot;);
+</code></pre>
+
+          <p>
+            which results in this output:
+          </p>
+
+<pre class="output"><script>
+  var age = 42;
+  var name = "Homer";
+  document.write(name + " is " + age + " years old.");
+</script></pre>
+
+          <p>You'll do a <em>lot</em> of concatenation in your code, especially
+            when constructing your program's output. This would be a good time to practice
+            string concatenation by typing out the code in the previous example
+            in your own file.
+          </p>
+
+          <h3>Separating processing from output</h3>
+          <p>Concatenation is technically a processing step. You're adding
+            strings together.
+          </p>
+          <p>
+            Separating processing from output is important. There are better ways to output things to a page using JavaScript, but we'll
+            stick with <code>document.write()</code> for now.
+          But to prepare for later, you may consider turning code like this:.</p>
+
+
+<pre><code language="js">
+var age = 42;
+var name = &quot;Homer&quot;;
+document.write(name + &quot; is &quot; + age + &quot; years old.&quot;);
+</code></pre>
+
+
+        <p>into something like this:</p>
+
+<pre><code language="js">var age = 42;
+var name = &quot;Homer&quot;;
+var output = &quot;&quot;
+
+output = name + &quot; is &quot; + age + &quot; years old.&quot;;
+
+document.write(output);
+</code></pre>
+
+<pre class="output"><script>
+var age = 42;
+var name = "Homer";
+var output = ""
+
+output = name + " is " + age + " years old.";
+
+document.write(output);
+</script></pre>
+
+
+        <p>
+          In the second version, we use a variable to build up the message.
+          Then we use <code>document.write()</code> to display that
+          message. In small programs it might not matter, but in larger
+          programs it'll matter a great deal, as you'll need to build
+          up an output message over the course of your program. So
+          try to get into the habit of doing outputs separate from
+          string concatenation.
+        </p>
+
+
+        <p>There are lots of routines, or functions, included in JavaScript that let us manipulate strings. Here is one of them.</p>
+        <ul>
+          <li><strong>Length of a string</strong>: You use the "<code>.length</code>" function to have JavaScript determine the size of a string in bytes. In other words, how many characters are in a specific string? In this code example, JavaScript will count the number of characters in &quot;Homer Simpson&quot;, and assign that number to the variable called whatWillThisBe. Note that it even counts the SPACE between the first and last name as a character!</li>
+        </ul>
+
+<pre><code class="js">
+// The length of a string
+
+var output = "";
+var whatWillThisBe = &quot;Homer Simpson&quot;.length;
+
+output = &quot;The number of characters is &quot; + whatWillThisBe;
+document.write(output);
+
+</code></pre>
+
+        <p>Here's the output from the above code:</p>
+
+<pre class="output">
+<script>
+var output = "";
+var whatWillThisBe = "Homer Simpson".length;
+
+output = ("The number of characters is " + whatWillThisBe);
+document.write(output);
+</script>
+</pre>
+
+        <p>Here's a demo that goes into strings a little deeper. Pay special attention
+          to the string concatenation at the end. <a href="demos/demo-stringVariables.html">Demo: String Variables</a></p>
+        <p>We'll learn more string functions as we go along.</p>
+
+        <p><strong>Strings Lab</strong>: Let's  use strings in JavaScript: </p>
+        <p class="lab_link"><a href="labs/lab-05-stringVariables.html">Lab 05: String Variables</a> </p>
+
+
+        <p>Go back to the main page when you're done with this last lab.</p>
+        <p><a href="index.html">Back</a></p>
+        <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

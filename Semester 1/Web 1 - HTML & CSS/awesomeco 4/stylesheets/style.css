@@ -1,0 +1,151 @@
+/* Global styles */
+body {
+  color: #777;
+}
+
+.content {
+  padding: 1%;
+}
+
+.wrapper > footer {
+  color: #fff;
+  background-color: #BC7277;
+  padding: 2em;
+  text-align: center;
+}
+
+/* text styles */
+
+header > h1 {
+  text-indent: -9999px;
+}
+
+h2 {
+  border-bottom: 1px solid #BC7277;
+  text-align: center;
+}
+
+/* link styles */
+a { 
+  color: #A32630;
+}
+
+a:hover, a:focus {
+  color: #BC7277;
+}
+
+a:visited {
+  color: #999;
+}
+
+/* Navigation styles */
+nav {
+float: left;
+width: 100%;
+margin-bottom: 1em;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav > li {
+border: 1px solid #999;
+text-align: center;
+}
+
+nav > a {
+display: block;
+text-decoration: none;
+width: 100%;
+}
+
+nav a:hover {
+background-color: #ddd;
+}
+
+
+/* Tablet and up */
+
+@media only screen and (min-width: 768px){
+h1 {
+background-image: url(images/awesomeco_logo.png);
+background-position: 2%;
+height: 100px;
+}
+
+section img { 
+float: left;
+margin-right: 1%;
+}
+
+nav {
+border-top: 1px solid #999;
+border-bottom: 1px solid #999;
+}
+
+nav li {
+border: none;
+float: left;
+margin-right: 0;
+width: 33%;
+}
+
+nav li:last-child {
+width: 33.3%;
+}
+
+nav a {
+padding: 1%;
+}
+
+nav a:hover {
+background-color: #ddd;
+}
+
+/* handle bullets appearing under floated images */
+ul {
+overflow: hidden;
+}
+}
+
+/* small screens up to tablets */
+@media only screen and (max-width: 768px) {
+
+h1 {
+background-image: url(/images/awesomeco_logo_mobile.png);
+height: 60px;
+}
+
+section img {
+display: block;
+margin: 0px auto;
+}
+
+header {
+margin: 0 auto;
+width: 90%;
+}
+
+nav li {
+width: 50%;
+margin: 2px auto;
+}
+
+h3{ text-align: center; }
+
+}
+
+/* Small screens 480px and lower */
+@media only screen and (max-width :480px) {
+
+header > h1 {
+background-size: 80%;
+}
+
+section >img {
+display: none;
+}
+}

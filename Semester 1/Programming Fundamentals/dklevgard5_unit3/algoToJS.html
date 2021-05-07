@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Converting Algorithms to JavaScript</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head> 
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 3: Program Design and Debugging</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>Converting Algorithms to JavaScript</h1>
+        <p><strong>Finally - we get to write real code! </strong> For this course, we use JavaScript, but all of the design work we've done so far in Unit 3 could be used with any programming language. Our task is to translate our inputs, outputs, and algorithm into JavaScript. </p>
+        <h2>Algorithm to JavaScript</h2>
+        <p>Here's how we translate our algorithm verbs into JavaScript code.</p>
+        <h3>Getting Input From Users </h3>
+        <p>Algorithm statements like: <strong>read, get, prompt</strong> that ask for strings that a user must key in (like first name). In JavaScript, the code would look like this:</p>
+
+<pre><code class="js">
+var name = &quot;&quot;;
+name = prompt(&quot;Enter a name:&quot;);
+</code></pre>
+
+        <p>This code opens a dialog box with a message that will say:
+          "Enter a name:". The user then keys in a name and clicks
+          the OK button. JavaScript will take the value keyed in by
+        the user and store that value in the variable called: "name".
+        Note that we defined the variable before we used it with the
+      <code>var</code> statement. We also gave it an initial value. While
+        we're not required to do that in JavaScript, it's a Very Good Idea.</p>
+
+
+        <h4>Handling Numeric Input<br />
+        </h4>
+        <p>Algorithm statements like <strong>get number value</strong>, <strong>prompt</strong> for numbers, <strong>accept as integers</strong>, anything meant to ask the user to key in numbers (like age) need to be handled differently:</p>
+
+<pre><code class="js">
+var age = 0;
+age = prompt(&quot;Enter your age in years:&quot;);
+age = Number(age);  // Convert the entered string to a number!
+</code></pre>
+
+
+        <p>This is a really important part of translation from algorithm to JavaScript. <strong>When you enter something to program from a prompt dialog box - JavaScript sees it as a string.</strong> Even if you enter "27" it is still a string composed of the letters "2" and "7". But - that could cause a BIG problem, because we can't do addition with strings in JavaScript! </p>
+        <p>So, we have to tell JavaScript to convert the strings that we entered into numbers. To do this we use the convenient function "<strong>Number()</strong>". You put a string, or a variable containing a string, in between the parentheses and it is converted to a number. </p>
+        <p>The code line above <code>age = Number(age);</code> is a perfect example! When the user keys in the age, even if it is a "22", JavaScript thinks it is a string.  So the "Number()" function turns it back into a number.</p>
+
+        <div class="notice">
+          <p>Everything that comes from the keyboard is a string. If you want to do math on
+            data you got from the keyboard, convert it to numbers.</p>
+        </div>
+        <h3>Handling Output <br />
+        </h3>
+        <p>Algorithm statements like: <strong>print, output, display</strong> mean that we have to display something on the screen. We have a few options in JavaScript:</p>
+
+<pre><code class="js">
+document.write(&quot;Hello, &quot; + name + &quot;!&quot;);
+</code></pre>
+
+        <p>We've used this already. This will add what's inside the parentheses to the <span class="caps">HTML </span>page.</p>
+        <p>We can also use alert boxes:</p>
+
+<pre><code class="js">
+alert(&quot;Hello, &quot; + name + &quot;!&quot;);
+</code></pre>
+
+        <p>Although this is more annoying to users because an alert box pops up
+          on the screen and the user has to make it go away.</p>
+
+        <p>Finally, we can inject text into an existing region of the page. Say
+          we have a <span class="keyword">div</span> element on the page like this:</p>
+
+<pre><code class="html">&lt;div id=&quot;message&quot;&gt;
+&lt;/div&gt;</code></pre>
+
+        <p>We can use JavaScript to inject text into that region:</p>
+
+<pre><code class="js">
+var messageArea = document.getElementById(&quot;message&quot;);
+messageArea.innerHTML(&quot;Hello, &quot; + name + &quot;!&quot;);
+</code></pre>
+
+
+        <p>We use <code>document.getElementById()</code> to grab a page element
+          with JavaScript. We then use the <code>innerHTML</code> property to
+          set the new text that goes inside of that element. We won't use this
+        approach in this class, <strong>but this is the preferred method for
+          working with HTML and JavaScript</strong>; we use HTML to structure
+        the content and use JavaScript to alter it. This is called DOM
+        manipulation.        </p>
+
+        <div class="notice">
+          <p>
+            You won't use DOM manipulation in these learning units. You will use
+            <code>document.write</code> and <code>prompt</code> as they will
+            keep the exercises simple and will resemble patterns you'll use
+            in other programming languages that don't interact with HTML. For
+            example, in Java you'll use <code>System.out.println()</code> instead
+            of <code>document.write()</code> to display things to the screen.
+          </p>
+          <p>
+            However, for additional practice, I encourage you to to rewrite
+            the programs using DOM manipulation. This will allow you to make
+            more professional-looking programs.
+          </p>
+        </div>
+
+
+        <h3>Processing Data</h3>
+        <p>Algorithm statements like: <strong>compute, average, summarize, accumulate, calculate, increment, decrement, math operators (add, subtract, divide, multiply)</strong> <code>+</code> and <code>-</code> (plus and minus) are asking us to do computations. We do those in JavaScript code like this:</p>
+
+<pre><code class="js">
+total = number1 + number2 + number3;
+counter = counter + 1;
+averageAge = (age1 + age2 + age3 + age4)/4;
+</code></pre>
+
+        <p>These math operators in JavaScript are the same as in English! But, the trick in JavaScript is that the name of the variable that will hold the answer must be on the LEFT side of the equal sign!</p>
+        <p>The examples above are also called "assignment statements" because we are assigning a value to each of the variables.  For example, if number1 = 5 and number2 = 4 and number3 = 3, then JavaScript will assign a value of 12 to the variable called: total.</p>
+        <h4>Comments</h4>
+        <p>We'll want a minimum amount of comments in our code, but one thing we'll try to do </p>
+
+<pre><code class="js">
+// We are going to use comments to name our coded algorithms.
+// Here's an example:
+
+// Add three numbers
+...
+</code></pre>
+
+        <blockquote>
+          <p>Nothing fancy, but we need to identify our algorithms. We will have more ways to do this as we get farther along.</p>
+        </blockquote>
+        <h4>Writing Our JavaScript Code</h4>
+        <p>As you recall, our algorithm in Pseudocode looks like this...</p>
+
+<pre class="pseudocode">
+AddThreeNumbers
+  Initialize number1 to 0
+  Initialize number2 to 0
+  Initialize number3 to 0
+  Initialize output to 0
+  Initialize total to 0
+
+  Prompt for number1 with "Enter the first number"
+  Prompt for number2 with "Enter the second number"
+  Prompt for number3 with "Enter the third number"
+
+  Convert number1 to a number
+  Convert number2 to a number
+  Convert number3 to a number
+
+  Set total = number1 + number2 + number3
+
+  output =  "The total of &quot; + number1 + &quot; + &quot; +
+          number2 + &quot; + &quot; + number3&quot; +
+          &quot; is " + total + &quot;.&quot;
+
+  Display output
+END</pre>
+
+        <p>...and so we translate it into JavaScript like this:</p>
+
+<pre><code class="js">
+
+// Add three numbers
+
+// Declare the variables
+var number1 = 0;
+var number2 = 0;
+var number3 = 0;
+var output = &quot;&quot;
+var total = 0;
+
+// Get the numbers from the user
+number1 = prompt(&quot;Enter the first number:&quot;);
+number2 = prompt(&quot;Enter the second number:&quot;);
+number3 = prompt(&quot;Enter the third number:&quot;);
+
+// Convert the inputed strings to numbers
+number1 = Number(number1);
+number2 = Number(number2);
+number3 = Number(number3);
+
+// Calculate the total
+total = number1 + number2 + number3;
+
+// Display the total. You can split the line of code at a + sign
+output = &quot;The total of &quot; + number1 + &quot; + &quot; + number2 + &quot; + &quot; +
+               number3 + &quot; is &quot; + total + &quot;.&quot;;
+
+document.write(output);
+</code>
+</pre>
+
+<pre class="output"><script>
+// Add three numbers
+
+// Declare the variables
+var number1 = 0;
+var number2 = 0;
+var number3 = 0;
+var output = "";
+var total = 0;
+
+// Get the numbers from the user
+number1 = prompt("Enter the first number");
+number2 = prompt("Enter the second number");
+number3 = prompt("Enter the third number");
+
+// Convert the inputed strings to numbers
+number1 = Number(number1);
+number2 = Number(number2);
+number3 = Number(number3);
+
+// Calculate the total
+total = number1 + number2 + number3;
+
+// Display the total. You can split the line of code at a + sign
+output = "The total of " + number1 + " + " + number2 + " + " +
+               number3 + " is " + total + ".";
+
+document.write(output);
+</script></pre>
+
+        <p>That's some good looking code! Do you get the impression that there will often be more JavaScript code than pseudcode? <strong>You're right!</strong></p>
+        <p>Let's see what the application will actually  look like when it runs. To do that, click on the Example 1 link below. You will be prompted to key in three numbers. Key in any three numbers, then be sure to scroll down to the bottom of the web page that displays to verify that the total of the three numbers displays.</p>
+        <p>Be sure to look carefully at the example. Notice how it starts with NOUNS and VERBS, then uses a DEFINING DIAGRAM, develops into a SOLUTION ALGORITHM, includes TEST CASES, and finishes with the JAVASCRIPT CODE. <strong>And notice that you write the test cases before you get to write the JavaScript code.</strong><br />
+        </p>
+        <p>If you open the example-1.html page in Notepad++ and scroll down to the <code>// YOUR CODE STARTS AFTER THIS LINE:</code> section, you can see the actual JavaScript code.</p>
+        <ul>
+          <li><a href="examples/example-01.html">Example 1 (The example we just looked at above!)</a></li>
+          <li>Example 1 would be an <strong>excellent</strong> example for you to use as you complete assignments in the upcoming Labs for this unit and for future units!!! </li>
+        </ul>
+        <h3>Additional Examples</h3>
+        <p>Here are two additional examples for your reference. We'll go through the whole process for each one. They are just for you to look at and use for reference in the future. For each example, begin by keying in any numbers you like.  But, after you read the test cases on the resulting pages, try some of the numbers from the test cases as well.</p>
+        <ul>
+          <li><a href="examples/example-02.html">Example 2</a></li>
+          <li><a href="examples/example-03.html">Example 3</a></li>
+        </ul>
+        <p><strong>Note:</strong> Each of these three examples shows how we want your labs and project files to look when you turn them in. </p>
+        <h3>Your Turn!</h3>
+        <p>Here's a lab that lets you demonstrate that you can do all of this. All the structure is done for you as usual. You just have to look for where everything goes. <strong>Before you start, make sure you've looked at the examples on this page.</strong> It might be worth trying to do them in your own text editor as well so you get <strong>practice.</strong></p>
+        <p class="lab_link"> <a href="labs/lab-04-fullProcess.html">Lab 4: Full Process</a></p>
+        <p><a href="index.html">Back</a></p>
+        <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

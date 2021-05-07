@@ -1,0 +1,300 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Repetition Programming</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head> 
+  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 6: Loops, Functions, and Data Structures</a></h2>
+      </header>
+      
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Repetition Programming</h1>
+        <p><em>Repetition is the last of three main computer concepts that we're learning. Sequence, Selection, and now Repetition.</em></p>
+        <h3>Repetition means Looping</h3>
+
+        <p><em>In programming we always use a loop when we want our program to repeat something.</em></p>
+        <p>We have three main looping structures that we're going to learn in this course.
+        </p>
+        <ul>
+          <li>Leading Decision Loop</li>
+          <li>Trailing Decision Loop</li>
+          <li>Counted Loop</li>
+        </ul>
+        <h3>Leading Decision Loop</h3>
+
+        <p><strong>Test the condition - and make the decision FIRST.</strong></p>
+        
+        
+        <p>We saw this pseudocode earlier in the semester</p>
+
+<pre class="pseudocode">
+WHILE condition p is true
+  statement block
+ENDWHILE</pre>
+          
+        <p>What we didn't emphasize is that "condition p is true" is checked first, before the code inside the loop is run. If the condition is true then the code is run. </p>
+        <p>After all the statements in the loop are run then "condition p is true" is tested again. If it is still true then the code in the loop is run again. </p>
+        <p>Then the condition is checked again and we continue that process (called a loop) until condition p is NOT true.</p>
+        <p>Interesting...that if the condition is NEVER true - the statements are NEVER run!</p>
+        <p>In JavaScript the syntax would look like this:</p>
+
+<pre><code class="js">
+// JavaScript &quot;while&quot; loop
+while (condition === true) {
+  // statement block here
+}
+</code></pre>
+
+        <p>Here's an actual code example:</p>
+
+<pre><code class="js">// JavaScript &quot;while&quot; loop
+// Declare variables.
+
+var city;
+var moreCities = 'no';
+
+// prompt for and display cities until there are no more
+
+moreCities = prompt("Are there more cities?");
+
+while (moreCities === 'yes') {  //begin loop
+  city = prompt("Please enter a WI city: ");
+  document.write("Printing WI cities: " + City);
+  document.write("<br />");
+  moreCities = prompt("Are there more cities?");
+}
+
+//display final message after loop ends
+document.write("That's all of the cities in WI.");    
+document.write("<br />");
+</code></pre>
+
+
+        <h3>Trailing Decision Loop</h3>
+        
+        <p>Test the condition - and make the decision AFTER the fact. .</p>
+        <p>Here's the pseudocode for this concept:</p>
+
+<pre class="pseudocode">
+DO 
+  statement block
+WHILE condition p is true</pre>
+
+        <p>With this loop the statement block is run <strong>before</strong> the test is done. This allows us to guarantee that the statement will run at least one time.</p>
+        <p>Interesting...that means the code statements are ALWAYS run at least once - even if the condition is never true!</p>
+        <p>After the statement block is run the test will be run. If "condition p is true" then the statement block will be run.</p>
+        <p>Then the test is done again.</p>
+        <p>Then the statement block is run again.</p>
+        <p>This continues until "condition p is true" is now false.</p>
+        <p>This is the JavaScript syntax:</p>
+
+<pre><code class="js">// JavaScript &quot;do while&quot; loop
+do {
+  // statement block here
+} while (condition === true);
+</code></pre>
+
+        <p>Notice the semicolon at the end of the code. Because this statement doesn't end with a <code>}</code> we need the semicolon.</p>
+        <p>And, here is an actual JavaScript code example:</p>
+
+<pre><code class="js">// JavaScript &quot;do while&quot; loop
+// Declare variables
+var city;
+var moreCities = 'yes';
+
+//Loop as long as there are more cities
+do {
+    city = prompt("Please enter a WI city: ");
+    document.write("Printing WI cities: " + City + "\n");
+    moreCities = prompt("Are there more cities?");
+} while (moreCities === 'yes'); 
+
+//Display message after loop ends
+document.write("That's all of the cities in WI.\n"); 
+</code></pre>
+
+
+        <h2>Counted Loops</h2>
+        
+        <p><strong>Repeat the statement block a specific number of times.</strong></p>
+        <p>The concept of counted looping is simple, you do something a specified number of times. There are different ways to specify the number. Here's the first way in pseudocode:</p>
+
+<pre class="pseudocode">set counter to zero
+WHILE counter &lt; 10
+  statement block
+  add 1 to counter
+ENDWHILE
+</pre>
+
+        <p>We create a variable and initialize it to 0.</p>
+        <p>We start the loop by testing our variable against the number of times we want to loop. In this case we want to loop 10 times.</p>
+        <p>Then we run the statement block, this will be our working code.</p>
+        <p>At the end of the loop we have to add 1 to our "counter" variable. If this step is forgotten our loop will run forever.</p>
+        <p>There is more than one way to code this in JavaScript. Here's the syntax that matches the pseudocode.</p>
+
+<pre><code class="js">
+// Looping a fixed number of times
+
+var counter = 0;
+
+while (counter &lt; 10) {
+  // statement block here        
+  // add 1 to counter at the end of the loop
+}
+</code></pre>
+
+        <p> Here's an actual code example:</p>
+
+<pre><code class="js">// Looping a fixed number of times
+// Declare variable
+var myCounter = 0;
+
+// Loop 10 times and display the counter's value  
+  
+while (myCounter < 10) {
+  document.write("The value of the counter is: " + myCounter + &quot;\n&quot;);     
+  myCounter++;  // add 1 to counter at the end of the loop
+}  
+</code></pre>
+
+        <h3>Infinite Loops!</h3>
+        <p>&quot;Pete and RePeat went to the lake. Pete fell in. Who's left? RePeat!&quot;<br>
+          &quot;Pete and RePeat went to the lake. Pete fell in. Who's left? RePeat!&quot;..<br>
+        ....</p>
+        <p><code>while</code> loops are great, but if you're not careful you'll create the dreaded Infinite Loop! When using the <code>while</code> loop like this, you can't forget to have a condition that will eventually not be <code>true</code>. If you forget to increment your counter variable, you'll loop forever.</p>
+        <h3>For Loops</h3>
+        <p><code>while</code> loops are better suited for loops where we don't know how many times we need to repeat. For a counted loop, we <strong><em>usually</em></strong> use a <code>for loop</code>. Here's an actual code example:</p>
+
+<pre><code class="js">
+// JavaScript counted loop using the &quot;for&quot; loop
+
+for (var myCounter = 0; myCounter &lt; 10; myCounter++) {
+  document.write("The value of the counter is: " + myCounter + &quot;\n&quot;);
+}
+</code></pre>
+
+<pre class="output"><script>
+for (var myCounter = 0; myCounter < 10; myCounter++) {
+  document.write("The value of the counter is: " + myCounter + "\n");
+}
+</script>
+</pre>
+
+        <p>The <code>for</code> loop does exactly the same thing as the previous <code>while</code> loop. However, managing the loop counter is built in which makes it easier to use.  For example, you can't forget to have a counter variable or it won't run. And, you can't forget to increment the counter either!</p>
+        <p>Here are the basics of how a <code>for</code> loop works. </p>
+        <ul>
+          <li>The <code>for</code> statement has three parts in between the parentheses, initialization, test, increment. 
+            <ul>
+              <li>(<code class="varname">myCounter = 0;</code> MyCounter &lt; 10; myCounter++) - First the myCounter variable is set to zero. This initialization happens only once before the loop starts.</li>
+              <li>(myCounter = 0; <code class="varname">myCounter &lt; 10;</code> myCounter++) - This middle part is the test, it's just the same as inside a <code>while</code> loop's parentheses. It's the last thing checked before the loop starts again.</li>
+              <li>(myCounter = 0; myCounter &lt; 10; <code class="varname">myCounter++</code>) - At the end is the increment step, which is run <strong>after</strong> the loop statements are run.</li>
+              </ul>
+          </li>
+          </ul>
+        <p><strong>The <code>for loop</code> is more concise and is preferred when we know how many times a loop should be run.</strong></p>
+        <p>However, it's also easy to goof up. You need to be mindful that you declare your variable and give it the correct initial value. You need to be mindful that your stop condition is correct. </p>
+        <p>You need to watch your semicolons too. Look at this code:</p>
+
+<pre><code class="js">
+for (var myCounter = 0; myCounter &lt; 10; myCounter++);
+{
+  document.write("The value of the counter is: " + myCounter + &quot;\n&quot;);
+}
+</code></pre>
+
+<pre class="output"><script>
+for (var myCounter = 0; myCounter < 10; myCounter++);
+{
+  document.write("The value of the counter is: " + myCounter + "\n");
+}
+</script>
+</pre>
+
+        <p>Can you guess why that only prints one result?</p>
+        <p>It turns out that <code>for</code> loops don't have to have a body. The statements in the <code>for</code> loop's declaration still run even if there's no declared body. So the <code>myCounter</code> variable is initialized to 0 at the beginning, and then it  still gets incremented. Since  <code>myCounter</code> is incremented at the <strong>end</strong> of each iteration, the value of  <code>myCounter</code> will be one more than the number of times it loops.</p>
+        
+        <p>Also, be sure you keep your for loops consistent with your program's requirements. If the program says to count from 1 to 5, be careful. Look at this code:</p>
+
+<pre><code language="js">
+for (var myCounter = 0; myCounter < 5; myCounter++) {
+  document.write("The value of the counter is: " + myCounter + "\n");
+}
+</code></pre>
+
+<pre class="output"><script>
+for (var myCounter = 0; myCounter < 5; myCounter++) {
+  document.write("The value of the counter is: " + myCounter + "\n");
+}
+</script></pre>
+
+        <p>This loops 5 times, but the variable is initialized to 0, so it only prints out  0 to 4. Since the problem calls for 1 to 5, just do that in the code.</p>
+
+
+<pre><code language="js">
+for (var myCounter = 1; myCounter <= 5; myCounter++) {
+  document.write("The value of the counter is: " + myCounter + "\n");
+}
+</code></pre>
+
+<pre class="output"><script>
+for (var myCounter = 1; myCounter <= 5; myCounter++) {
+  document.write("The value of the counter is: " + myCounter + "\n");
+}
+</script></pre>
+
+        <p>See? The loop uses 1 and 5. We use <code>&lt;=</code> because that makes sure we include 5. If we simply used <code>&lt; 5</code>, we'd only get 1 to 4 printed. We call these &quot;off by one errors&quot;</p>
+        
+        <p class="notice">&quot;There are two hard problems in software development: Naming things, expiring caches, and off-by-one errors.&quot;</p>
+        
+        
+        <p>You can keep the off-by-one errors at bay by working hard to keep the program's code in sync with the problem you're solving. If it asks for 1 to 5, use 1 to 5. Don't use  0 &lt; 5 or 1 &lt; 6. Use logic to express exactly what has to happen while keeping the numbers consistent.</p>
+        <h3>Infinite for Loops</h3>
+        <p><code>for</code> loops can be infinite too. </p>
+
+<pre><code language="js">
+for(;;){
+ // do this forever.
+}
+</code></pre>
+
+        <p>
+        Leaving all of the statements off of a 
+        
+          <code>for</code> loop sets it to run infinitely. And this is actually the preferred method for doing an infinite loop in some languages. (Yes, there are reasons to write infinite loops. But those are intentional, not accidental.
+        
+        <h3>Lab Time</h3>
+        <p class="lab_link"><a href="labs/lab02basicLoopingAlgorithm.html">Lab 2: Basic Looping Algorithms</a></p>
+        <p class="lab_link"><a href="labs/lab03forLoopAlgorithm.html">Lab 3: For Loop Algorithm</a></p>
+        <p class="lab_link"><a href="labs/lab04firstWhileLoop.html">Lab 4: Your First While Loop</a></p>
+        <p class="lab_link"><a href="labs/lab05firstForLoop.html">Lab 5: Your First For Loop</a></p>
+        <p><a href="index.html">Back</a></p>
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+   </section>
+ </body>
+<!-- InstanceEnd --></html>

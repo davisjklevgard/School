@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Breaking Code Up With Functions</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 4: Operators and Functions</a></h2>
+      </header>
+
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>Breaking Up Code With Functions</h1>
+
+        <p>Throughout this lab, you've been placing your code inside of pre-made functions. It's time to branch out and create your own functions now.</p>
+
+        <h1>Functions</h1>
+
+        <p>Up till now, we&#39;ve placed all our code in a step-by-step flow, all together. But it&#39;s better to break up our program into reusable functions.</p>
+
+        <p>Functions break up our processing steps into smaller units. Some functions take values and spit out results, like the <code>sin</code> or <code>log</code> functions on a calculator. You pass in a value to the function, and it gives you an answer.</p>
+
+        <p>Other functions just make it easier to break up the code. These functions may or may not take inputs and outputs. Let&#39;s look at functions in more detail.</p>
+
+        <h2>A basic function</h2>
+
+        <p>Let&#39;s say we wanted to write a bit of code that we could use over and over again. Every time we typed out the code</p>
+
+        <pre><code class="javascript" language="javascript">helloWorld();</code></pre>
+
+        <p>we&#39;d get</p>
+
+        <pre><code>&lt;h1&gt;Hello World&lt;/h1&gt; </code></pre>
+
+        <p>printed to the screen with <code>document.write()</code>. We can do this with simple functions.</p>
+
+        <p>We declare a function using the <code>function</code> keyword:</p>
+
+
+<pre><code class="javascript" language="javascript">
+function helloWorld(){
+  document.write(&quot;&lt;h1&gt;Hello World&lt;/h1&gt;&quot;);
+}
+</code></pre>
+
+<script>
+function helloWorld(){
+  document.write("<h1>Hello World</h1>");
+}
+</script>
+
+        <p>We follow the <code>function</code> keyword with the name of the function, and then a list of parameters. Not every function needs to take in parameters though. Sometimes we just want a function to do something when we call it.  This function needs no parameters, so we leave the list of parameters empty, using <code>()</code> right after the function name. We&#39;ll get to parameters shortly, but what you need to know right now is that even if you don&#39;t have parameters, you must always use the parentheses after the function name when you declare it.</p>
+
+        <p>We follow the closing parentheses with a <code>{</code>. Then we go to a new line. This signifies the start of the <code>body</code> of the function. </p>
+
+        <p>Then, on the next line, we write the actual body of the function. This is the code that will be run when our function is <strong>called</strong> by another part of our program. The  code  in the function's body is  indented to
+          make it more clear that this is the code within the function.</p>
+
+        <p>Finally, we use the <code>}</code> to define the end of the function. </p>
+
+        <p>This closely models the solution algorithms you&#39;ve been writing:</p>
+
+<pre class="pseudocode">
+helloWorld
+  display &quot;&lt;h1&gt;Hello World&lt;/h1&gt;&quot;
+END
+</pre>
+
+        <p>Our little <code>helloWorld</code> function is, effectively, a tiny little
+          program. And that's how you want to think about functions; we use them to break
+          our large programs into smaller, reusable components.</p>
+
+        <p>We've defined this function, but it won't ever get run unless we <em>invoke</em> or <em>call</em> the function.
+          When we want to use our function, we call it from our JavaScript code by using the function's name, followed by
+          opening and closing parentheses, like this:
+        </p>
+
+<pre><code language="javascript">helloWorld();</code></pre>
+
+        <p>And here's the output!</p>
+
+<pre class="output"><script>helloWorld();</script></pre>
+
+        <p>Note that we need to use the <code>()</code> after the function name.
+          This tells JavaScript to actually run the function. If we leave the
+          parentheses off, our program will run without issue, but our function won't be invoked.
+          See, functions in JavaScript are stored as variables. The <code>()</code> part says
+          "run the function associated with this name.</p>
+
+        <p>The function we just wrote is an example of a simple function that
+          executes its code when invoked. It takes no input and returns
+          no output. We see the text "Hello World" because there's a
+          <code>document.write()</code> statement inside of the function. When
+          we run our function, the statements inside that function get executed.
+          This type of function is good for breaking up long chunks of code
+          into smaller pieces, but it's not very flexible.</p>
+
+        <p>
+          By using <em>parameters</em> and <em>arguments</em> we can turn
+          functions into little programs that take input.</p>
+
+        <h2>Functions and Paramenters.</h2>
+
+        <p>You&#39;ve used the <code>Number()</code> and <code>prompt()</code> functions before. When you use those, you pass an argument to those functions. This argument is a value.</p>
+
+        <p>Think of the <code>sin</code> function on a calculator. It takes in a value and gives you the answer. That&#39;s how this works. To make a function take in a value, or an <code>argument</code>, we define the function to take in <code>parameters</code>. </p>
+
+        <p>Let&#39;s make a simple function that takes a number and squares it. </p>
+
+<pre><code language="javascript">
+function squareNumber(numberToSquare){
+  var square;
+  square = numberToSquare * numberToSquare;
+}
+</code></pre>
+
+        <p>This function has one parameter, <code>number</code>. This tells
+          JavaScript that, if we want to use this function, we have to pas
+          in a value when we call it. Like this:
+        </p>
+
+<pre><code language="javascript">
+squareNumber(5);
+</code></pre>
+
+        <p>
+          When we
+          call the function and pass a value, the value we pass will be
+          stored into the <code>numberToSquare</code> parameter, as if
+          we were assigning it to a variable. We can then use the parameter to work with
+          the value. Parameters define our &quot;inputs.&quot; to our
+          function.</p>
+
+        <p>Of course, we can declare other variables inside the function.
+          Declaring variables inside a function is good, because they&#39;ll
+          only get defined if the function is called. Variables we define
+          inside of a function <em>are not visible to the rest of our program.</em></p>
+
+        <p>In this function, we just take in a number and multiply it by
+          itself, saving the result to the <code>square</code> variable.
+          But we have a problem. We don't have any statements that print
+          out the value in the function. So we will never see the function's
+          result. Let's look at what we should do.
+        </p>
+
+        <h2>Returning Values</h2>
+
+        <p>This function takes input, and it does processing, but it
+          doesn&#39;t have output. We could add a <code>document.write()</code>
+          statement, but that&#39;s not the best way. See, we want to keep
+          the output of our program separate from the processing of our program,
+          and we may not want to depend on <code>document.write</code>.
+          Instead, we should &quot;return&quot; a value from the function. This
+          way we can "send" the result of our function back to the rest
+          of our program, which can print out the value.
+
+        <p>We do that with the <code>return</code> keyword:</p>
+
+<pre><code language="javascript">
+function squareNumber(numberToSquare){
+  var square;
+  square = numberToSquare * numberToSquare;
+  return(square);
+}
+</code></pre>
+<script>
+function squareNumber(numberToSquare){
+  var square;
+  square = numberToSquare * numberToSquare;
+  return(square);
+}
+</script>
+        <p>Using the <code>return</code> keyword lets us pass the value of
+          <code>square</code> back to the program that called the function.
+        </p>
+
+        <p>Confused?</p>
+
+        <p>Think back to the <code>Number()</code> function.</p>
+
+        <pre><code>age = Number(&quot;42&quot;);
+        </code></pre>
+
+        <p>We pass the value &quot;42&quot; to the <code>Number()</code>
+          function as an argument. Inside that function, some processing
+          happens that converts the string we sent in to a number. In order for
+          us to get the value back, the <code>Number</code> function returns
+          the converted value. We then &quot;collect&quot; the return value,
+          assigning it to our <code>age</code> variable.</p>
+
+        <div class="notice">
+          <p>If you forget the <code>return</code> keyword in your function,
+            you will never get the result back to the rest of your program.
+          </p>
+
+        </div>
+        <p>Since we have a <code>return</code> statement in our function, we
+          can call our function like this, assigning its result to a variable
+          of our choosing:</p>
+
+<pre><code>
+// call our function, passing in the number 5
+// and catch the returned value from the function
+// saving it to the 'answer' variable:
+var answer = squareNumber(5);
+
+// print out the answer.
+document.write(answer);  // should be 25;
+</code></pre>
+
+<pre class="output"><script>
+// call our function, passing in the number 5
+// and catch the returned value from the function
+// saving it to the 'answer' variable:
+var answer = squareNumber(5);
+
+// print out the answer.
+document.write(answer);  // should be 25;
+</script></pre>
+
+        <p>This lets us hide the complexity of the <code>squareNumber</code>
+          function behind a nice name. It also separates the processing
+          logic from the display logic.
+        </p>
+
+        <h2>Subroutines and Functions</h2>
+
+        <p>Generally speaking, subroutines are functions that don&#39;t return
+          values. Some languages like Visual Basic make an explicit
+          differentiation between the two; VB has <code>sub</code> and
+          <code>function</code> keywords. Other languages make you specify that
+          the function has a return type. Java, for example, uses the
+          <code>void</code> keyword to say that a function doesn&#39;t return a
+          value.</p>
+
+        <p>Other languages like Ruby always return values, even if you
+          don&#39;t want one.</p>
+
+        <p>But just remember - functions help you break up your code into
+          reusable components that can interact with each other. Sometimes
+          you'll need these functions to send you back a value. Other times you
+          just need it to do something like print things to the screen.</p>
+
+        <div class="notice">
+          <p>A <code>void</code> function is a function that does not return
+            a value. </p>
+
+        </div>
+
+        <h2>Reducing Duplication</h2>
+
+        <p>Another reason to use functions is to reduce duplication in our code. Look at this code that uses our <code>squareNumber()</code> function:</p>
+
+<pre><code language="javascript">
+var answer1 = squareNumber(2);
+var answer2 = squareNumber(&quot;2&quot;);
+var answer3 = squareNumber(&quot;3&quot;);
+
+document.write(answer1 + &quot;\n&quot;);
+document.write(answer2 + &quot;\n&quot;);
+document.write(answer3 + &quot;\n&quot;);
+</code></pre>
+
+<pre class="output"><script>
+var answer1 = squareNumber(2);
+var answer2 = squareNumber("2");
+var answer3 = squareNumber("3");
+
+document.write(answer1 + "\n");
+document.write(answer2 + "\n");
+document.write(answer3);
+</script></pre>
+
+        <p>We&#39;re using strings and numbers here. Where do we convert the strings to numbers? We're not. Now, our code currently works because JavaScript will coerce strings into numbers when we multiply them, but it really is best if we cast strings to numbers ourselves instead of relying on JavaScript to do that for us.
+        We can do the conversion in the function itself! We just open our <code>squareNumber</code> function and change the code:</p>
+
+<pre><code language="javascript">
+function squareNumber(number){
+  var square;
+
+  number = Number(number);
+
+  square = number * number;
+  return(square);
+}
+
+</code></pre>
+
+<pre class="output"><script>
+
+function squareNumber_fixed(number){
+  var square;
+  number = Number(number);
+
+  square = number * number;
+  return(square);
+}
+// calling squareNumber_fixed because
+// I can't use two functions with the same name.
+
+var answer1 = squareNumber_fixed(2);
+var answer2 = squareNumber_fixed("2");
+var answer3 = squareNumber_fixed("3");
+
+document.write(answer1 + "\n");
+document.write(answer2 + "\n");
+document.write(answer3);
+</script></pre>
+
+
+        <p>And now we get the answers we want without changing any of the other lines of  code.</p>
+
+
+        <h2>Putting It All Together</h2>
+
+        <p>Remember our function at the beginning, that printed out <code>Hello World</code>
+          inside of <code>&lt;h1&gt;</code> tags? Let's make a function
+          that wraps a given string with a given HTML tag.
+        </p>
+
+        <p>
+          We want to call our function like this:
+        </p>
+
+<pre><code language="js">
+output = wrapWithTag(&quot;Hello World&quot;, &quot;h1&quot;);
+</code></pre>
+
+        <p>
+          Our <code>wrapWithTag</code> function takes in two arguments:
+          the string that contains our text we want to wrap,
+          and another string that represents the HTML element that should
+          wrap it.
+        </p>
+
+<pre><code language="javascript">
+function wrapWithTag(message, tag){
+  return(
+    &quot;&lt;&quot; + tag + &quot;&gt;&quot; + message + &quot;&lt;/&quot; + tag + &quot;&gt;&quot;
+  );
+}
+</code></pre>
+
+        <p>We take the tag in and create the opening and closing
+          tags as part of the string. We then return the
+          output we concatenate together.
+
+        </p>
+        <p>Then we can call the function and print out the value to the screen:</p>
+
+
+<pre><code language="js">
+output = wrapWithTag(&quot;Hello World&quot;, &quot;h1&quot;);
+document.write(output);
+</code></pre>
+
+        <p>And we'll see our result:</p>
+
+<pre class=output><script>
+function wrapWithTag(message, tag){
+  return(
+    "<" + tag + ">" + message + "</" + tag + ">"
+  );
+}
+output = wrapWithTag("Hello World", "h1");
+document.write(output);
+</script></pre>
+
+        <p>
+          In this example, we used a function that takes in two arguments
+          and constructs a value that we return. You'll create
+          lots of functions in your own applications, and soon
+          you'll learn how to break larger programs into many smaller
+          functions that all work together.
+        </p>
+
+        <h2>Expressing Functions in Pseudocode</h2>
+
+        <p>
+          So far, we've talked only about functions in JavaScript. But you may
+          need to think about functions when desgining a solution algorithm
+          using pseudocode so you can reason about the code you want to write.
+          So here's how you might represent a program that cubes a number:
+        </p>
+
+<pre class="pseudocode">
+CubeNumber(number)
+  initialize result to 0
+  result = number * number * number
+  return result
+End
+
+Main
+  initialize cubedNumber to 0
+  initialize userNumber to 0
+
+  prompt for userNumber with "What is the number I should cube?"
+
+  Call CubeNumber with userNumber and set result to cubedNumber
+
+  Display "The answer is + " cubedNumber + "."
+
+End</pre>
+
+        <p>
+          In this example, we define the <code class="keyword">CubeNumber</code>
+          function that does the work of cubing the number. We then define
+          a <code class="keyword">Main</code> function that prompts for
+          the input value and calls the <code class="keyword">CubeNumber</code>
+          function. The function executes, and the return value is stored
+          in our <code class="keyword">cubedNumber</code> variable.
+        </p>
+
+        <p>
+          Notice the variable names. In
+          <code class="keyword">Main</code> we have a <code class="keyword">userNumber</code>
+          variable which we use to hold the variable the user gives us. But the
+          <code class="keyword">CubeNumber</code> doesn't use this variable.  Instead,
+          <code class="keyword">CubeNumber</code> has its own variable called
+          <code class="keyword">numbertoCube</code> which is defined as its
+          argument. When this function is called, the value passed as an argument
+          is stored in the <code class="keyword">numbertoCube</code> variable.
+        </p>
+        <p>
+          This forces us to carefully pass data from our main part of our
+          program to the function. Also notice the
+          <code class="keyword">CubeNumber</code> doesn't try to access any
+          variables in the <code class="keyword">Main</code> function. It
+          returns a value.
+        </p>
+        <p>
+          Variables declared outside of functions are called "global" variables
+          and they are only really used in rare situations. It's considered
+          bad practice to access or set global variables from inside of
+          functions.
+        </p>
+
+        <div class="notice">
+          <p>You will lose points for accessing global variables in your
+            functions. JavaScript will allow this but other languages will
+            not. So don't get into the habit.
+          </p>
+        </div>
+
+        <p>So how might this look in JavaScript? </p>
+
+
+
+<pre><code class="js">/*
+Takes a number and cubes it.
+*/
+function CubeNumber(numberToCube) {
+  var result = 0;
+  result = numberToCube * numberToCube * numberToCube;
+  return(result);
+}
+
+var cubedNumber = 0;
+var userNumber = 0;
+var output = &quot;&quot;;
+
+userNumber = prompt(&quot;What is the number I should cube?&quot;);
+
+cubedNumber = CubeNumber(userNumber);
+
+output = &quot;The answer is &quot; + cubedNumber + &quot;.&quot;;
+
+document.write(output);
+
+</code></pre>
+
+        <p>
+          In this example, we just declare the
+          <code class="keyword">CubeNumber</code> function and then declare
+          the rest of our variables and code globally. This is a decent
+          approach. Our <code class="keyword">CubeNumber</code> function
+          still encapsulates our logic and doesn't grab or set any global
+          variables.
+        </p>
+
+        <p>
+          But we can do better by making a <code class="keyword">Main</code>
+          function that encapsulates the main program:
+        </p>
+
+<pre><code class="js">/*
+Takes a number and cubes it.
+*/
+function CubeNumber(numberToCube) {
+  var result = 0;
+  result = numberToCube * numberToCube * numberToCube;
+  return(result);
+}
+
+/*
+Our main function that encapsulates our code.
+Now we no longer have ANY global variables.
+*/
+function Main() {
+  var cubedNumber = 0;
+  var userNumber = 0;
+  var output = &quot;&quot;;
+
+  userNumber = prompt(&quot;What is the number I should cube?&quot;);
+
+  cubedNumber = CubeNumber(userNumber);
+
+  output = &quot;The answer is &quot; + cubedNumber + &quot;.&quot;;
+
+  document.write(output);
+}
+
+// We have to call our Main function explicitly or it won&#39;t work.
+Main();
+
+</code></pre>
+          <p>
+            With this version of the program, we have a new <code class="keyword">Main</code>
+            function that encapsulates the input and output statements, as well
+            as the variables. Best of all, this version of the program results
+            in no global variables that may collide with other programs or take
+            up memory.
+          </p>
+          <p>
+            It also more closely mirrors the way you'll write programs in other
+            languages.
+          </p>
+
+          <p>here's the output of the program, by the way...</p>
+
+<pre class="output">
+<script id="student_code">
+// YOUR CODE STARTS AFTER THIS LINE:
+
+/*
+Takes a number and cubes it.
+*/
+function CubeNumber(numberToCube) {
+  var result = 0;
+  result = numberToCube * numberToCube * numberToCube;
+  return(result);
+}
+
+function Main() {
+  var cubedNumber = 0;
+  var userNumber = 0;
+  var output = "";
+
+  userNumber = prompt("What is the number I should cube?");
+
+  cubedNumber = CubeNumber(userNumber);
+
+  output = "The answer is " + cubedNumber + ".";
+
+  document.write(output);
+}
+
+// Call Main function explicitly or it won't work.
+Main();
+
+</script>
+</pre>
+
+
+
+        <h2>A larger example</h2>
+
+        <p>
+          As things get more complex, we can use functions to break our code
+          into components, separating our logic from our input and output
+          pieces. Review the following example.
+        </p>
+
+        <ul>
+          <li>Example 2: <a href="examples/02_functions.html">Functions In Practice</a></li>
+        </ul>
+
+        <h2>Review </h2>
+
+        <ul>
+          <li>
+            Functions are like little programs within your program. They let
+            you encapsulate logic and variables and let you take parts of your
+            program and reuse them.
+          </li>
+          <li>Functions don't have to return values. These are called <code>void</code> functions</li>
+          <li>
+            We <em>call</em> or <em>invoke</em> functions by using the function
+            name followed by opening and closing parentheses.
+          </li>
+          <li>
+            Functions can have arguments, which means we can send
+            input values into the function. To do this, we define the
+            function with <em>parameters</em> which hold the values that your
+            program passes in. These parameters are like variables inside of
+            the function.
+          </li>
+          <li>
+            Functions can access variables you define outside of the
+            function.  But code outside of the function cannot access variables
+            you define inside the function. <b>But accessing variables declared
+              outside of a function from within a function is bad practice
+              and should be avoided unless you have a really good reason to
+              do so.</b>
+          </li>
+          <li>
+            You can use functions to break your programs into more manageable
+            parts.
+          </li>
+          <li>
+            Defining a <code class="keyword">Main</code> function is a good
+            strategy in JavaScript to organize your code.
+          </li>
+        </ul>
+
+
+
+        <h3>Lab time!</h3>
+        <p>When you've thoroughly reviewed the material here, begin the next lab.</p>
+        <p class="lab_link"><a href="labs/lab-09-functions.html">Lab 9: Functions</a></p>
+        <p>&nbsp;</p>
+        <p><a href="index.html">Back</a></p>
+        <!-- InstanceEndEditable -->
+      </section>
+
+      <footer>
+        <p>
+          Latest version: 1.2009
+        </p>
+      </footer>
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

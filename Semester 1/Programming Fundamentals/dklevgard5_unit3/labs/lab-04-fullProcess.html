@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 4: Full Process</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head> 
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 3: Program Design and Debugging</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Lab 4:  Full Process</h1>
+
+        <h4>File: /Unit3/labs/lab-04-fullProcess.html</h4>
+
+        <h3>Student Information</h3>
+
+
+        <ul>
+          <li>Name: Davis Klevgard</li>
+        </ul>
+
+
+
+        <h3>Lab Steps</h3>
+
+
+        <ul>
+          <li>Open this file in Firefox and Notepad++</li>
+          <li>Add your name in the appropriate place</li>
+          <li>Using the three examples you just reviewed, complete all sections of this lab in Notepad++, and test your results in Firefox. It is important to do them all in order. Follow the instructions for each section.</li>
+          <li><strong>You will follow this approach for the rest of the learning units in this course.</strong></li>
+        </ul>
+
+
+
+        <h3>Problem Statement</h3>
+
+        <blockquote>
+          <p><em><strong>A program is required to prompt the user for a first name and a last name. The program will create a greeting that starts with "Hi, " followed by the first name, followed by a space, followed by the last name. The application will then display the greeting on the page.</strong></em></p></blockquote>
+
+        <h3>1. Nouns and Verbs</h3>
+
+
+        <ul>
+          <li>Copy the above problem statement and paste it below so it appears in the black box when you refresh the page, underneath the words <code class="varname">PROBLEM STATEMENT</code>.</li>
+          <li>Identify the nouns and verbs in the problem statement and write them in the appropriate locations so they appear in the black box below when you refresh the page.</li>
+        </ul>
+
+
+
+
+
+<pre class="pseudocode">PROBLEM STATEMENT:
+  A program is required to prompt the user for a first name and a last name. 
+  The program will create a greeting that starts with "Hi, " 
+  followed by the first name, followed by a space, followed by the last name. 
+  The application will then display the greeting on the page
+
+Nouns: first name, last name, greeting
+
+Verbs: prompt, create, display
+</pre>
+
+
+
+        <h3>2. Defining Diagram</h3>
+
+
+        <ul>
+          <li>Convert the nouns and verbs into variable names and processes and create a defining diagram.</li>
+          <li>Make your variable names <strong>valid JavaScript names</strong> that conform to the course JavaScript Coding Standards.</li>
+          <li>Write down the processes with very short statements, 2 or 3 words. Remember, this is not pseudocode. This is just the process.</li>
+        </ul>
+
+
+
+
+
+<pre class="pseudocode">
+INPUTS:
+  firstName
+  lastName
+
+
+PROCESSING:
+  read firstName
+  read lastName
+  create greeting
+  display greeting
+
+OUTPUTS:
+  greeting
+
+</pre>
+
+
+
+        <h3>3. Solution Algorithm</h3>
+
+
+        <ul>
+          <li>Create a solution algorithm (using Pseudocode) based on the defining diagram.</li>
+          <li>Follow the pattern of the Examples, including indentation, a name for your solution algorithm, and an "END".<strong> Don't just use BEGIN or START. Give it an actual name, starting with a capital letter, using camelCase naming conventions like in the demos.</strong></li>
+        </ul>
+
+
+
+
+
+<pre class="pseudocode">
+SOLUTION ALGORITHM:
+CreateGreeting
+  Initialize firstName to ""
+  Initialize lastName to ""
+  Initialize greeting to ""
+  
+  Prompt for firstName
+  Prompt for lastName
+  
+  Set greeting to "Hi, " + firstName + " " + lastName + "." 
+  
+  Display greeting
+
+END
+
+</pre>
+
+
+
+        <h3>4. Checking the Solution Algorithm</h3>
+
+
+        <ul>
+          <li>Create a test plan for the algorithm.
+            <ul>
+              <li>Don't forget to fill in the <strong>VARIABLES</strong> section! That's easy to miss!</li>
+            </ul>
+          </li>
+          <li>Have <b>at least three</b> test cases that test different inputs and outputs.
+            <ul>
+              <li>Have some interesting test cases where the first and last names are not just one simple word.</li>
+            </ul>
+          </li>
+        </ul>
+
+
+
+
+
+<pre class="pseudocode">
+VARIABLES: firstName, lastName, output
+
+TEST CASE 1:
+
+  INPUT VALUES: John, Smith
+
+  EXPECTED RESULT: 
+    Hi, John Smith.
+
+  ACTUAL RESULT:
+    Hi, John Smith.
+    
+TEST CASE 2:
+
+  INPUT VALUES: Liz, Conner
+
+  EXPECTED RESULT:
+    Hi, Liz Conner.
+
+  ACTUAL RESULT:
+    Hi, Liz Conner.
+
+TEST CASE 3:
+
+  INPUT VALUES: 22, 44
+
+  EXPECTED RESULT:
+    Hi, 22 44.
+
+  ACTUAL RESULT:
+    Hi, 22 44.
+
+</pre>
+
+
+
+        <h3>5. JavaScript Code</h3>
+
+
+        <ul>
+        <li>Write the JavaScript code based on everything you've done.</li>
+        <li>You will need to follow the coding standards for the course.</li>
+        <li>Once everything is working, go back and <strong>fill in</strong> the actual results sections in the test plan.</li>
+        </ul>
+        <h3>Your Output:</h3>
+
+
+
+
+
+<pre class="output">
+<script id="student_code">
+// YOUR CODE STARTS AFTER THIS LINE:
+
+//Declare variables
+var firstName = "";
+var lastName = "";
+var output = ""; 
+
+//Prompt user for names
+firstName = prompt("Enter first name");
+lastName = prompt("Enter last name");
+
+output = "Hi, " + firstName + " " + lastName + ".";
+
+document.write(output); 
+
+
+// END OF YOUR CODE
+</script>
+</pre>
+
+
+        <h3>What You Did</h3>
+        <p>You just went through the full process of developing an application! You found the nouns and verbs, you did a Defining Diagram, you created a solution algorithm with pseudocode, you devised a test plan, you wrote your code with documentation, and you tested your code, checking it against your testing plan.</p>
+        <p>We will be doing this over and over again in this class.</p>
+        <p><a href="../algoToJS.html">Back</a></p>
+        <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

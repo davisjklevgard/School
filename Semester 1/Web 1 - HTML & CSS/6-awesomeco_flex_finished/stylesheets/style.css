@@ -1,0 +1,176 @@
+/*Mobile*/
+
+/* Added 5e */
+* { box-sizing: border-box; }
+
+h1, h2, h3, h4 {
+  margin-top: 0;
+}
+
+header > h1 {
+  background-color: #fff;
+  background-image: url(../images/awesomeco_logo_mobile.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-bottom: 1px solid #300;
+  height: 70px;
+  margin-bottom: 0;
+  text-indent: -9999px;
+}
+
+footer {
+  color: #FFF;
+  text-align: center;
+}
+
+nav > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav > ul > li {
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin: 10px auto;
+  text-align: center;
+  width: 90%;
+}
+
+nav > ul > li > a {
+  background-color: #600;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+
+#wrapper {
+  background-color: #BC7277;
+}
+
+main {
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 1%;
+  width: 88%;
+}
+
+/*Only Mobile*/
+@media only screen and (max-width: 767px) {
+  main > img {
+    /* display: none; */
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1, h2, h3, h4 {
+    text-align: center;
+  }
+}
+
+/*Tablet or Desktop*/
+@media only screen and (min-width: 768px) {
+
+  header > h1 {
+    background-image: url(../images/awesomeco_logo.png);
+    background-size: auto;
+    height: 100px;
+  }
+  
+  nav ul  { 
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around; 
+    }
+    
+	nav li { border-bottom: none; }
+   
+  main > img {
+    float: left;
+    margin-right: 1%;
+  }
+
+  main ul {
+    overflow: hidden;
+	
+  section { 
+    padding-left: 2em;
+		padding-right: 2em; 
+    }
+    
+	 .content main { 
+      /*Added 5e*/
+      display: grid;  
+      grid-template-rows: auto ; 
+      grid-template-columns: 1fr 1fr 1fr; 
+      }
+
+    /*Added 5e*/
+		h2 { grid-row: 1 / 2; grid-column: 1 / 5; }
+		section { grid-row: 2 / 3; grid-column: auto; }
+		footer { grid-row: auto; grid-column: 1 / 5; } 		
+}
+
+/*Only Tablet*/
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  nav {
+    text-align: center;
+  }
+
+  nav > ul > li {
+    display: inline-block;
+    width: 20%;
+  }
+}
+
+/*Desktop*/
+@media only screen and (min-width: 960px) {
+
+  nav { 
+    text-align: left;
+    padding-left: 1em;
+  }	
+  
+  nav ul  { 
+    /*Added 5e*/
+    display: flex;
+    flex-flow: column;
+    padding-top: 1em; 
+  }
+  
+  
+  #wrapper { 
+    margin: auto; 
+    width: 80%;	
+    border-radius: 5px;
+    box-shadow: 5px 5px #555;
+    overflow: hidden;
+    /*Added 5e*/
+    display: grid;
+    grid-template-columns: 180px auto;
+    grid-template-rows: auto;
+  }	
+
+  header > h1 {
+    background-position: left;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  body {
+    background-color: #ddd;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom, #888, #DDD);
+  }
+  
+   /*Added 5e*/
+   header  { grid-row: 1 / 2; grid-column: 1 / 3; }
+   nav     { grid-row: 2 / 5; grid-column: 1 / 2; }
+   main    { grid-row: 3 / 4; grid-column: 2 / 3; }
+   footer  { grid-row: 4 / 5; grid-column: 2 / 3; }
+
+}

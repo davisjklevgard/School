@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar Lander 1</title>
+    <style>
+      body {
+        background-color: #000000;
+        color: #808080;
+        margin: 0px 0px 0px 0px;
+      }
+      canvas {
+        display: block;
+
+        border: 1px solid #808080;
+        margin: auto;
+      }
+      p, footer {
+        display: block;
+        margin: auto;
+        text-align: center;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500">
+      Enable JavaScript to play the game.
+    </canvas>
+    <script>
+const onPress = function(event) {
+  console.log(event);
+};
+
+const drawFrame = function() {
+  console.log("Tick");
+  requestAnimationFrame(drawFrame);
+};
+
+window.addEventListener('keydown', onPress, false);
+window.addEventListener('mousedown', onPress, false);
+drawFrame();
+document.write("<p>Loaded.</p>");
+    </script>
+    <footer>version 1.0</footer>
+  </body>
+</html>
+

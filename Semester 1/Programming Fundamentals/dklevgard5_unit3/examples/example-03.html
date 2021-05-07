@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Example 3</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head> 
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 3: Program Design and Debugging</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>Example 3</h1>
+        <p><strong>File: /Unit3/examples/example-03.html</strong></p>
+        <p>A third example of converting a problem statement into pseudocode.</p>
+        <h3>Problem Statement</h3>
+        <blockquote>
+          <p><em><strong>A program is required to read from the screen the length and width of a rectangular yard, and the length and width of the rectangular house that has been built on the yard. The algorithm should then compute  the mowing time required to cut the grass around the house, at the rate of two square yards per minute. The program should display the length and width of the yard, the area of the yard, the length and width of hte house, the area of the house, the mowing area, and the mowing time.</strong></em></p>
+        </blockquote>
+        <h3>1. Nouns and Verbs</h3>
+        <p>Identify the nouns and verbs in the problem statement.</p>
+
+<pre class="pseudocode">PROBLEM STATEMENT: A program is required to read from the screen the
+length and width of a rectangular yard, and the length and width of the
+rectangular house that has been built on the yard. The algorithm should
+then compute the mowing time required to cut the grass around
+the house, at the rate of two square yards per minute. The program should display
+the length and width of the yard, the area of the yard, the length and withd
+of the house, the area of the house, the mowing area, and the mowing time.
+
+Nouns: length and width of house, length and width of yard, mowing time
+
+Verbs: read, compute, display
+</pre>
+
+        <h3>2. Defining Diagram</h3>
+        <p>Convert the nouns and verbs into variable names and processes and create a defining diagram.</p>
+
+<pre class="pseudocode">
+INPUTS:
+  yardLength
+  yardWidth
+  houseLength
+  houseWidth
+
+PROCESSING:
+  prompt for yard measurements
+  prompt for house measurements
+  calculate mowingArea
+  calculate mowingTime
+  display mowingTime
+
+OUTPUTS:
+  yardLength
+  yardWidth
+  yardArea
+  houseLength
+  houseWidth
+  houseArea
+  mowingArea
+  mowingTime
+
+</pre>
+
+        <h3>3. Solution Algorithm</h3>
+        <p>Create a solution algorithm based on the defining diagram.</p>
+
+<pre class="pseudocode">
+CalculateMowingTime
+  Initialize houseArea to 0
+  Initialize houseLength to 0
+  Initialize houseWidth to 0
+  Initialize mowingArea to 0
+  Initialize mowingTime to 0
+  Initialize output to &quot;&quot;
+  Initialize yardArea to 0
+  Initialize yardLength to 0
+  Initialize yardWidth to 0
+
+  Prompt for yardLength with &quot;Enter the length of the yard&quot;
+  Prompt for yardWidth with &quot;Enter the width of the yard&quot;
+  Prompt for houseLength with &quot;Enter the length of the house&quot;
+  Prompt for houseWidth with &quot;Enter the width of the house&quot;
+
+  Convert yardLength to number
+  Convert yardWidth to number
+  Convert houseLength to number
+  Convert houseWidth to number
+
+  Set yardArea = yardLength * yardWidth
+  Set houseArea = houseLength * houseWidth
+  Set mowingArea = yardArea - houseArea
+  Set mowingTime = mowingArea divided by 2
+
+  Set output to output + &quot;Your yard is &quot; + yardLength + &quot; yards by &quot; + yardWidth&quot; + yards.&quot;
+  Set output to output + &quot;Your yard area is &quot; + yardArea + &quot; square yards.&quot;
+  Set output to output + &quot;Your house is &quot; + houseLength + &quot; yards by &quot; + houseWidth + &quot; yards.&quot;
+  Set output to output + &quot;Your house area is &quot; + houseArea + &quot; square yards.&quot;
+  Set output to output + &quot;The mowing area is &quot; + mowingArea + &quot; square yards.&quot;
+  Set output to output + &quot;The mowing time is &quot; + mowingTime + &quot; minutes.&quot;
+
+  Display output
+END
+</pre>
+
+        <h3>4. Checking the Solution Algorithm</h3>
+        <p>Create a test plan for the algorithm. Remember to use this to discover if your algorithm needs work!</p>
+
+<pre class="pseudocode">
+VARIABLES: yardLength, yardWidth, yardArea, houseLength, houseWidth,
+           houseArea, mowingArea, mowingTime
+
+TEST CASE 1:
+
+  INPUT VALUES: yardLength = 30, yardWidth = 30, houseLength = 20,
+                  houseWidth = 20
+
+  EXPECTED RESULT:
+    &quot;Your yard is 30 yards by 30 yards.&quot;
+    &quot;Your yard area is 900 square yards.&quot;
+    &quot;Your house is 20 yards by 20 yards.&quot;
+    &quot;Your yard area is 400 square yards.&quot;
+    &quot;The mowing area is 500 square yards.&quot;
+    &quot;The mowing time is 250 minutes.&quot;
+
+  ACTUAL RESULT:
+    &quot;Your yard is 30 yards by 30 yards.&quot;
+    &quot;Your yard area is 900 square yards.&quot;
+    &quot;Your house is 20 yards by 20 yards.&quot;
+    &quot;Your yard area is 400 square yards.&quot;
+    &quot;The mowing area is 500 square yards.&quot;
+    &quot;The mowing time is 250 minutes.&quot;
+
+TEST CASE 2:
+
+  INPUT VALUES: yardLength = 40, yardWidth = 20, houseLength = 20,
+                  houseWidth = 10
+
+  EXPECTED RESULT:
+    &quot;Your yard is 40 yards by 20 yards.&quot;
+    &quot;Your yard area is 800 square yards.&quot;
+    &quot;Your house is 20 yards by 10 yards.&quot;
+    &quot;Your yard area is 200 square yards.&quot;
+    &quot;The mowing area is 600 square yards.&quot;
+    &quot;The mowing time is 300 minutes.&quot;
+
+  ACTUAL RESULT:
+    &quot;Your yard is 40 yards by 20 yards.&quot;
+    &quot;Your yard area is 800 square yards.&quot;
+    &quot;Your house is 20 yards by 10 yards.&quot;
+    &quot;Your yard area is 200 square yards.&quot;
+    &quot;The mowing area is 600 square yards.&quot;
+    &quot;The mowing time is 300 minutes.&quot;
+</pre>
+
+        <div id="notice">
+          <p>
+            There aren't enough test plans to accurately test this
+            program. What additional tests could you write to ensure
+            this program handles data correctly?
+          </p>
+        </div>
+
+        <h3>5. JavaScript Code</h3>
+        <p>Write the JavaScript code based on everything you've done.</p>
+        <p><strong>Here's the code:</strong></p>
+
+<pre><code class="js">
+// Calculate Mowing Time
+
+// Declare variables
+var houseArea = 0;
+var houseLength = 0;
+var houseWidth = 0;
+var mowingArea = 0;
+var mowingTime = 0;
+var output = &quot;&quot;;
+var yardArea = 0;
+var yardLength = 0;
+var yardWidth = 0;
+
+// inputs
+
+// Prompt user for yard dimensions
+yardLength = prompt(&quot;Enter the length of the yard&quot;);
+yardWidth = prompt(&quot;Enter the width of the yard&quot;);
+
+// Prompt user for house dimensions
+houseLength = prompt(&quot;Enter the length of the house&quot;);
+houseWidth = prompt(&quot;Enter the width of the house&quot;);
+
+// processing
+
+// Convert yard data to numbers
+yardLength = Number(yardLength);
+yardWidth = Number(yardWidth);
+
+// Convert house data to numbers
+houseLength = Number(houseLength);
+houseWidth = Number(houseWidth);
+
+// Calculate yard area
+yardArea = yardLength * yardWidth;
+
+// Calculate house area
+houseArea = houseLength * houseWidth;
+
+// Calculate mowing area
+mowingArea = yardArea - houseArea;
+
+// Calculate mowing time
+mowingTime = mowingArea/2.0;
+
+// output
+
+// Display the data and calculations
+output = output + &quot;Your yard is &quot; + yardLength + &quot; yards by &quot; +
+                  yardWidth + &quot; yards.\n&quot;;
+
+output = output + &quot;Your yard area is &quot; + yardArea + &quot; square yards.\n\n&quot;;
+
+
+output = output + &quot;Your house is &quot; + houseLength + &quot; yards by &quot; +
+                  houseWidth + &quot; yards.\n&quot;;
+
+output = output + &quot;Your house area is &quot; + houseArea + &quot; square yards.\n\n&quot;;
+
+output = output + &quot;The mowing area is &quot; + mowingArea + &quot;\n&quot;;
+
+output = output + &quot;The calculated mowing time is &quot; + mowingTime;
+
+document.write(output);
+
+</code></pre>
+
+
+    			<h3>Your Output</h3>
+<pre class="output">
+<script>
+
+// YOUR CODE STARTS AFTER THIS LINE:
+
+// Calculate Mowing Time
+
+// Declare variables
+var houseArea = 0;
+var houseLength = 0;
+var houseWidth = 0;
+var mowingArea = 0;
+var mowingTime = 0;
+var output = "";
+var yardArea = 0;
+var yardLength = 0;
+var yardWidth = 0;
+
+// inputs
+
+// Prompt user for yard dimensions
+yardLength = prompt("Enter the length of the yard");
+yardWidth = prompt("Enter the width of the yard");
+
+// Prompt user for house dimensions
+houseLength = prompt("Enter the length of the house");
+houseWidth = prompt("Enter the width of the house");
+
+// processing
+
+// Convert yard data to numbers
+yardLength = Number(yardLength);
+yardWidth = Number(yardWidth);
+
+// Convert house data to numbers
+houseLength = Number(houseLength);
+houseWidth = Number(houseWidth);
+
+// Calculate yard area
+yardArea = yardLength * yardWidth;
+
+// Calculate house area
+houseArea = houseLength * houseWidth;
+
+// Calculate mowing area
+mowingArea = yardArea - houseArea;
+
+// Calculate mowing time
+mowingTime = mowingArea/2.0;
+
+// output
+
+// Display the data and calculations
+output = output + "Your yard is " + yardLength + " yards by " +
+                  yardWidth + " yards.\n";
+
+output = output + "Your yard area is " + yardArea + " square yards.\n\n";
+
+
+output = output + "Your house is " + houseLength + " yards by " +
+                  houseWidth + " yards.\n";
+
+output = output + "Your house area is " + houseArea + " square yards.\n\n";
+
+output = output + "The mowing area is " + mowingArea + "\n";
+
+output = output + "The calculated mowing time is " + mowingTime;
+
+document.write(output);
+
+// END OF YOUR CODE
+</script>
+</pre>
+
+        <p><a href="../algoToJS.html">Back</a></p>
+
+        <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 7: Pseudocode</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable --> 
+  </head>  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 1</a>: Introduction and Program Design</h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h2>Lab 7: Pseudocode</h2>
+        <h4>File: /unit1/lab-07-pseudocode.html</h4>
+        <h3>Student Information</h3>
+        <ul>
+          <li>Name: Davis Klevgard</li>
+        </ul>
+        <h3>Lab Steps</h3>
+        <ol>
+          <li>Open this file in both Firefox and Notepad++</li>
+          <li>Add your information to the file</li>
+          <li>Test that you added your information correctly</li>
+          <li>Write pseudocode for the following procedure:
+            <ol>
+              <li>For every employee in the company
+                <ul>
+                  <li>Ask for his or her last name and store it in a variable.</li>
+                  <li>Ask for his or her weekly salary and store it in a variable.
+                    <ul>
+                      <li>If the salary is <strong>not greater than 1000</strong>, display a message that says &ldquo;Evaluate employee <strong>name</strong> for a raise.&rdquo; (where <strong>name</strong> is the name of the employee you stored.)
+                      </li>
+                    </ul>
+                  </li>
+                  <ul>
+                    <li>Also, increment a variable that keeps track of the number of employees that need evaluation.</li>
+                  </ul>
+                </ul>
+              </li>
+              <li>
+                At  the end of the program, after all of the employees have been scanned,
+                display a final message that shows the total number of employees that need to have their salaries
+                evaluated. For  example, if there were 100 employees, but only 20 employees that needed evaluation, the program should say: <br><br>
+                &ldquo;The  total number of employees that need to be evaluated is 20.&rdquo; 
+              </li>
+            </ol>
+            <p><strong>HINT:</strong> You will need a WHILE statement and inside the WHILE you will have one IF statement.</p>
+            <p>Think about the keywords you'd use for each step and include those, but remember
+              that <span data-scayt_word="pseudocode" data-scaytid="12">pseudocode</span> isn't a real programming language -
+              it's just a loose way of expressing how your program might work. <br>
+            </p>
+            <p>Pay special attention to the algorithm. What <span data-scayt_word="pseudocode" data-scaytid="15">pseudocode</span> keywords do you use to <strong>compare and make a choice?</strong> What about <strong>asking for input</strong> and <strong>storing</strong> values?</p>
+</li>
+          <li>Add your pseudocode so it appears in the black box, after the line: <code class="keyword">YOUR PSEUDOCODE STARTS AFTER THIS LINE:</code></li>
+          <li>Save your lab and take some extra time to try to run through the logic in your head.
+          </li>
+        </ol>
+        <h3>&nbsp;</h3>
+        <h3>Your Pseudocode:</h3>
+
+<pre class="student pseudocode">
+YOUR PSEUDOCODE STARTS AFTER THIS LINE:
+BEGIN
+  initialize empCount to 0
+  initialize employee to ""
+  initialize salary to 0 
+  
+  WHILE there are employees DO
+    prompt for lastName
+    employee = lastName
+    prompt for weeklySalary
+    salary = weeklySalary
+    
+      IF salary < 1000
+        display "Evaluate employee " + employee +  " for a raise."
+        add 1 to empCount
+      ENDIF
+  ENDWHILE
+  
+  display "The total number of employees that need to be evaluated is " + empCount + "."
+  
+END  
+    
+
+
+END YOUR PSEUDOCODE BEFORE THIS LINE
+</pre>
+
+
+        <h3>What You Did</h3>
+        <p>You took a program specification and wrote the pseudocode for it, practicing programming logic.</p>
+        <p><a href="../pseudocode.html">Back</a></p>
+        <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>When Things Go Wrong - Introducing Debugging</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head> 
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 3: Program Design and Debugging</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+  
+        <h1>When Things Go Wrong - Introducing Debugging</h1>
+        <p>Here's how we're going to try to debug our JavaScript programs.</p>
+        <h3>The Issue</h3>
+        <p>JavaScript is not very good about telling us something is wrong. Look at this demo <em><strong>(don't change anything - just look at it)</strong></em> to see what I mean: <a href="examples/example-04-JSerror.html">Example 4: Typical JavaScript Error</a></p>
+        <h3>Using the Firefox Error Console</h3>
+        <p>Next time we look at Demo 1, you will be using the Firefox Web Console to help you debug the JavaScript code.
+          Once you get the Demo 1 page open in your browser, you will follow these steps to turn on the Web Console.</p>
+        <p>Click on the <strong>Firefox</strong> menu, select <strong>Web Developer</strong>, and then select <strong>Web Console</strong>, like this:</p>
+        <div style="text-align: center;">
+          <img src="resources/errorConsole.png" alt="The Firefox Web console  can be opened with Control Shift K on Windows, or through its menu item." height="502" width="491" /><br />
+        </div>
+        <hr>
+        <p>The console appears at the bottom of the window, showing you the errors in your code.</p>
+        <p> Web Console will show JavaScript errors as well as CSS errors. </p>
+        <p><img src="resources/consoleErrorsOnly.png" alt="Selecting only the Errors" /></p>
+        <p>Look to the far right of the error, each error listed shows the error and the file and line number where the error occurred:</p>
+        <div style="text-align: center;">
+          <img src="resources/errorConsole2.png" alt="The error message displayed in the console gives an idea of what's wrong." /><br />
+        </div>
+        <hr>
+        <p> If you click on the error line link, the error console will take you directly to that line in the code:</p>
+        <div style="text-align: center;"> 
+          <img src="resources/errorConsoleJSCode.png" alt="The problem code is highlighted in the popup code window."  /><br />
+        </div>
+        <p>You can't make changes to your file in this window, but now you know what to fix. Now you can return to the Notepad++ editor to fix the error.</p>
+        <p>That's it! That's the process we use to debug web pages using he Firefox Web Console.</p>
+        <h3>Let's Try it!</h3>
+        <p>Using the technique you just learned for turning on the Firefox Error Console, use the console now to debug  <a href="examples/example-04-JSerror.html">Example 4: Typical JavaScript Error</a> <br />
+          Once you find the error, be sure to proceed to Notepad++ and fix it. And, of course, load the page in the browser and test it again to make sure it's working.</p>
+        <h3>Using Comments to Help Debug</h3>
+        <p>You may have noticed that sometimes when your JavaScript code doesn't return output, it's not because of the "document.write" statements. Sometimes even the Error Console can't tell you where the problem is. Any syntax error on any line of your code can prevent your output from displaying, and the Error Console has to make its best guess as to what the error is.</p>
+        <p>One effective method of pinpointing where the error is, is to eliminate or "comment out" lines of code until you find the one line that's causing the error. Take a look at Demo 2 for an example: <a href="examples/example-05-debugComments.html">Example 5: Using Comments to Debug</a></p>
+        <p>Now go back to the main page to continue...</p>
+        <p><a href="index.html">Back</a></p>
+
+        <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2011
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

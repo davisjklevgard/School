@@ -1,0 +1,132 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 4: Number Variables</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" --> 
+    <!-- InstanceEndEditable -->
+  </head>  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 2: JavaScript Syntax and Variables</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>Lab 4: Number Variables</h1>
+        <h4>File: /Unit2/lab-04-numberVariables.html</h4>
+        <h3>Student Information</h3>
+        <ul>
+          <li>Name:  Davis Klevgard</li>
+        </ul>
+        <h3>Lab Steps</h3>
+        <ul>
+          <li>Open this file in Firefox and Notepad++</li>
+          <li>Add your name</li>
+          <li>In the coding section below, where it says: <code>YOUR CODE STARTS AFTER THIS LINE</code> add these variables:
+            <ul>
+              <li>a variable that holds a page count, put the number 100 in it</li>
+              <li>a variable that holds another page count, put the number 200 in it</li>
+              <li>a variable that holds the total of both page counts. Take a guess on how to add the two other variables together and put the total in this variable.</li>
+              <li>Then use the variables to display the output.</li>
+              <li><strong>Do not do math in the output section!</strong></li>
+            </ul>
+          </li>
+          <li>Create output that looks like this:</li>
+        </ul>
+
+<pre class="output">
+Book one has 100 pages.
+Book two has 200 pages.
+There are a total of 300 pages.
+</pre>
+
+
+        <p class="notice">You can't just type these numbers in! You have to use the (three) variables and a little math along with your document.write() statements.</p>
+
+        <p>You also have to output some text, then a number, then some text. How do we do that? Here's a hint (well, its more than a hint). Here's the output example:</p>
+
+<pre class="output">
+Fred is 25 years old.
+</pre>
+
+        <p>And, here's the code we would use to produce that output example.</p>
+
+<pre><code class="js">
+// Output on one line
+
+var name = &quot;Fred&quot;;
+var age = 25;
+
+document.write(name);
+document.write(&quot; is &quot;);
+document.write(age);
+document.write(&quot; years old.&quot;);
+
+// You could also do it in one line of code.
+document.write(name + &quot; is &quot; + age + &quot; years old.&quot;);
+
+</code></pre>
+
+
+        <p>So now, use this example and what you've already learned about
+          variables to create your program. </p>
+
+        <div class="notice">
+          <p>Remember, you must use variables for the page counts. You must
+            use math to compute the total. You must use variables to build
+            up the output statement.
+          </p>
+
+        </div>
+        <h3>Your Output</h3>
+
+<pre class="output">
+<script>
+// YOUR CODE STARTS AFTER THIS LINE:
+//variables of the numbers
+var book1 = 100;
+var book2 = 200;
+var totalPages; 
+
+//math to count pages
+totalPages = book1 + book2;
+
+document.write("Book one has " + book1 + " pages.");
+document.write("<br>");
+document.write("Book two has " + book2 + " pages.");
+document.write("<br>");
+document.write("There are a total of " + totalPages + " pages.");
+
+
+// END OF YOUR CODE
+</script>
+</pre>
+
+
+        <h3>What You Did</h3>
+        <p>You practiced creating some JavaScript number variables and then displaying their values on the lab page. You also guessed at how to add two numbers together. Were you right? If not, be sure to check the examples on the previous page.<br />
+        </p>
+        <p><a href="../variables.html">Back</a></p>
+        <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

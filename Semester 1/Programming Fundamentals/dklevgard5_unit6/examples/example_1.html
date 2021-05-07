@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Example: Fahrenheit-Celsius Conversion</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+
+    <!-- InstanceEndEditable -->
+  </head>
+
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 6: Loops, Functions, and Data Structures</a></h2>
+      </header>
+
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Example: Fahrenheit-Celsius Conversion</h1>
+
+        <h4>File: unit6/example_1.html</h4>
+
+        <h3>Problem Statement</h3>
+
+        <blockquote><p><strong><em>
+          A program is to be written that will accept 5 Fahrenheit temperatures,
+          convert each one to Celsius, and display the converted temperatures on the
+          page. After all 5 have been processed, the program will display the words,
+          The program should only accept numerical input and should force the user to
+          retry any values that are not numerical.
+        </em></strong></p></blockquote>
+
+        <h3>1. Nouns and Verbs</h3>
+
+        <p>Identify the nouns and verbs in the problem statement.</p>
+
+<pre class="pseudocode">PROBLEM STATEMENT:
+  A program is to be written that will accept 5 Fahrenheit temperatures,
+  convert each one to Celsius, and display the converted temperatures on the
+  page. After all 5 have been processed, the program will display the words,
+  The program should only accept numerical input and should force the user to
+  retry any values that are not numerical.
+  &quot;All temperatures processed.&quot; on the page.
+
+Nouns: 5 Fahrenheit temperatures, converted temperatures, &quot;All temperatures processed&quot;
+
+Verbs: accept, convert, display, retry
+</pre>
+
+
+
+        <h3>2. Defining Diagram</h3>
+
+        <p>Convert the nouns and verbs into variable names and processes and create a defining diagram.</p>
+
+<pre class="pseudocode">
+INPUTS:
+  currentFahrenheitTemperature
+  finalMessage
+
+PROCESSING:
+  prompt user for 5 temperatures in a loop
+  convert the inputs to numbers
+  display each input temperature
+  display each converted temperature
+  display finalMessage
+
+OUTPUTS:
+  currentFahrenheitTemperature
+  currentCelsiusTemperature
+  finalMessage
+
+</pre>
+
+
+
+        <h3>3. Solution Algorithm</h3>
+
+        <p>
+          The algorithm for this can be solved by breaking it apart into two
+          components. First, a function that converts a temperature from
+          Fahrenheit to Celsius. Then a main algorithm that asks for inputs
+          in a loop.
+        </p>
+
+        <p>
+          While prompting for input, we check the current input to see
+          if it's a number. If it is a number, we hand that number off
+          to our conversion function, get the value back, and increment
+          our counter by one.
+        </p>
+        <p>
+          If it's not a number, we state that it's not a number. We <b>do not</b>
+          increment the counter. This makes the user enter the number again.
+          The program will not proceed until they get it right.
+        </p>
+        <p>
+          When all the numbers are entered successfully, the output is displayed.
+        </p>
+        <p>Here's how it looks:</p>
+
+<pre class="pseudocode">
+ConvertFahrenheitToCelsius (fahrenheitTemperature)
+  convert fahrenheitTemperature to number
+  return (fahrenheitTemperature - 32) * (5/9)
+END
+
+ConvertFiveTemperatures
+  Initialize counter to 0
+  Initialize currentFahrenheitTemperature to 0
+  Initialize currentCelsiusTemperature to 0
+  Initialize finalMessage to "All temperature processed"
+  Initialize loopLimit to 5
+  Initialize outputString to ""
+
+  WHILE counter &lt; loopLimit
+    prompt for currentFarenheightTemperature with
+      "Enter Fahrenheit Temperature number " + counter + " of " + loopLimit
+
+    IF currentFarenheightTemperature is not a number THEN
+      display "That's not a number. Please enter only numbers"
+    ELSE
+      currentCelciusTemperature = ConvertFahrenheitToCelsius(currentCelsiusTemperature)
+
+      outputString = outputString + currentFahrenheitTemperature +
+        &quot; degrees Fahrenheit &quot; + &quot;is &quot; +
+        currentCelsiusTemperature +
+        &quot; degrees Celsius.\n&quot;;
+
+      add 1 to counter
+    ENDIF
+  ENDWHILE
+  display outputString + finalMessage
+END
+</pre>
+
+
+
+        <h3>4. Checking the Solution Algorithm</h3>
+        <p>
+          Here are a couple test plans. How might you improve them?
+        </p>
+
+
+<pre class="pseudocode">
+VARIABLES: currentCelsiusTemperature, currentFahrenheitTemperature
+
+TEST CASE 1:
+
+  INPUT VALUES: 66,67,68,69,70
+
+  EXPECTED RESULT:
+  66 degrees Fahrenheit is 18.88888888888889 degrees celsius.
+  67 degrees Fahrenheit is 19.444444444444446 degrees celsius.
+  68 degrees Fahrenheit is 20 degrees celsius.
+  69 degrees Fahrenheit is 20.555555555555557 degrees celsius.
+  70 degrees Fahrenheit is 21.11111111111111 degrees celsius.
+  All temperatures processed
+
+  ACTUAL RESULT:
+  66 degrees Fahrenheit is 18.88888888888889 degrees celsius.
+  67 degrees Fahrenheit is 19.444444444444446 degrees celsius.
+  68 degrees Fahrenheit is 20 degrees celsius.
+  69 degrees Fahrenheit is 20.555555555555557 degrees celsius.
+  70 degrees Fahrenheit is 21.11111111111111 degrees celsius.
+  All temperatures processed
+
+
+TEST CASE 2:
+
+  INPUT VALUES: a, 1,2,3,4,5
+
+  EXPECTED RESULT:
+  That's not a number. Please enter only numbers.
+  1 degrees Fahrenheit is -17.22222222222222 degrees celsius.
+  2 degrees Fahrenheit is -16.666666666666668 degrees celsius.
+  3 degrees Fahrenheit is -16.11111111111111 degrees celsius.
+  4 degrees Fahrenheit is -15.555555555555557 degrees celsius.
+  5 degrees Fahrenheit is -15 degrees celsius.
+  All temperatures processed
+
+  ACTUAL RESULT:
+  That's not a number. Please enter only numbers.
+  1 degrees Fahrenheit is -17.22222222222222 degrees celsius.
+  2 degrees Fahrenheit is -16.666666666666668 degrees celsius.
+  3 degrees Fahrenheit is -16.11111111111111 degrees celsius.
+  4 degrees Fahrenheit is -15.555555555555557 degrees celsius.
+  5 degrees Fahrenheit is -15 degrees celsius.
+  All temperatures processed
+</pre>
+
+
+
+        <h3>5. JavaScript Output</h3>
+
+        <p><strong>Here's the code:</strong></p>
+
+<pre><code class="JScript">
+/*
+  This is file /unit6/example_1.js
+  It contains the JavaScript code for
+
+  &quot;Fahrenheit-Celsius Conversion&quot; File: /unit6/example_1.html
+*/
+function ConvertFahrenheitToCelsius(fahrenheitTemperature) {
+  var result = 0;
+  fahrenheitTemperature = Number(fahrenheitTemperature);
+  result = (fahrenheitTemperature - 32) * (5 / 9);
+  return(result);
+}
+
+function ConvertFiveTemperatures() {
+
+  // Declare variables
+  var counter = 0;
+  var currentFahrenheitTemperature;
+  var currentCelsiusTemperature;
+  var finalMessage = &quot;All temperatures processed&quot;;
+  var loopLimit = 5;
+  var outputString = "";
+
+  // Get user data, convert to Celsius and display
+  while (counter &lt; loopLimit) {
+    currentFahrenheitTemperature = prompt(&quot;Enter Fahrenheit &quot; +
+      &quot;temperature number &quot; + (counter + 1) +
+      &quot; of &quot; + loopLimit);
+    if (isNAN(currentFahrenheitTemperature)) {
+      alert("That's not a number. Please enter numbers only.");
+    } else {
+      currentCelsiusTemperature = ConvertFahrenheitToCelsius(currentFarenheightTemperature);
+      outputString += currentFahrenheitTemperature + &quot; degrees Fahrenheit &quot; +
+        &quot;is &quot; + currentCelsiusTemperature + &quot; degrees Celsius.\n&quot;;
+      counter++;
+    }
+  }
+
+  // Output the final message
+  document.write(outputString + finalMessage);
+}
+
+
+// Run the program
+ConvertFiveTemperatures();
+</code></pre>
+
+        <p><strong>Here's the output:</strong></p>
+
+<pre class="output">
+<script src="../jsFiles/example_1.js"></script>
+</pre>
+
+        <p><a href="../whileKnownCount.html">Back</a></p>
+
+<!-- InstanceEndEditable -->
+      </section>
+
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+   </section>
+ </body>
+<!-- InstanceEnd --></html>

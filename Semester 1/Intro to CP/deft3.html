@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking the dog</title>
+    <style>
+      body {
+        background-color: #182739;
+        color: #808080;
+        margin: 0px 0px 0px 0px;
+      }
+      canvas {
+        display: block;
+
+        border: 1px solid #808080;
+        margin: auto;
+      }
+      p, footer {
+        display: block;
+        margin: auto;
+        text-align: center;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>WalkTheDog</h1>
+    <main id="output">
+    </main>
+    <script>
+    let sceneId = "start";
+    const scenes = {
+      start: {
+        description:  "<p>You are sitting in your chair. It feels" 
+           + "so great to be able to sit down, you dont want to move." 
+           + "Your dog comes up to you, pining and holding their leash." 
+           + "Oh no, do you need to go for a walk?"
+           + "Your dog nods its head.</p>",
+          choices: [
+          {
+            label: "Walk the dog.",
+            onChoose: "walkDog"
+          },
+          {
+            label: "Wait five minutes",
+            onChoose: "wait"
+         }
+        ]
+      },
+      walkDog: {
+        description: "<p>You grab the leash and start the walk.</p>",
+        choices: [
+          {
+            label: "Go left",
+            onChoose: "left"
+          },
+          {
+            label: "Go right",
+            onChoose: "right"
+          }
+        ]
+      }
+      }; 
+    const onPress = function(event) {
+    console.log(event);
+      if (event.keyCode === 49 && scenes [sceneId].choices.length > 0) {
+        sceneId = scenes [sceneId].choices[0].onChoose 
+        updateDisplay();
+      }
+      if (event.keyCode === 50 && scenes [sceneId].choices.length > 1) {
+          sceneId = scenes [sceneId].choices[1].onChoose
+          updateDisplay();
+      }
+     }
+     const updateDisplay = function() {
+       let text = "";
+       text = scenes[sceneId].description + "<ol>";
+         if (scenes[sceneId].choices.length > 0) {
+           text = text +  "<li>" + scenes[sceneId].choices[0].label 
+         }
+        if (scenes[sceneId].choices.length > 1){
+            text = text + "<li>" + scenes[sceneId].choices[1].label 
+         }
+      output.innerHTML= text +"</ol>"
+      
+    };
+updateDisplay()
+window.addEventListener('keydown', onPress, false);
+window.addEventListener('mousedown', onPress, false);
+    </script>
+    <footer>version 1.0</footer>
+  </body>
+</html>

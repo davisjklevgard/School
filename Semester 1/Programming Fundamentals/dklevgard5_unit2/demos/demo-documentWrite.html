@@ -1,0 +1,133 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Demo: document.write()</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 2: JavaScript Syntax and Variables</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>Demo: document.write()</h1>
+        <h4>File: /Unit2/demos/demo-documentWrite.html</h4>
+        <h3>Source Code:</h3>
+
+<pre><code class="js">
+// Print some text to the page
+document.write(&quot;Printing some text to the page.&quot;);
+
+// Print 2 newline characters to the page.
+document.write(&quot;\n\n&quot;);
+
+// Print more text to the page.
+document.write(&quot;Printing some more text to the page.&quot;);
+
+// Print 2 HTML &lt;br&gt; tags to the page.
+document.write(&quot;&lt;br&gt;&lt;br&gt;&quot;);
+
+// Print a number to the page
+document.write(123);
+
+// Print 2 HTML &lt;br&gt; tags to the page.
+document.write(&quot;&lt;br&gt;&lt;br&gt;&quot;);
+
+// Print a number with decimals to the page.
+document.write(123.99);
+
+// Print a string that's really long using concatenation.
+document.write("Here's a really really really really really really really " +
+               "long line of text that uses one document.write but " +
+               "breaks the code into multiple lines.");
+
+
+// Print a string that's really long using concatenation but use a variable.
+var message = "Here's a really really really really really really really " +
+              "long line of text that uses one document.write but " +
+              "breaks the code into multiple lines.";
+
+document.write(message);
+
+</code></pre>
+
+        <h3>Demo Output:</h3>
+
+<pre class="output">
+<script>
+// DEMO CODE STARTS AFTER THIS LINE:
+
+// Print some text to the page
+document.write("Printing some text to the page.");
+
+// Print 2 newline characters to the page.
+document.write("\n\n");
+
+// Print more text to the page.
+document.write("Printing some more text to the page.");
+
+// Print 2 HTML <br> tags to the page.
+document.write("<br><br>");
+
+// Print a number to the page
+document.write(123);
+
+// Print 2 HTML <br> tags to the page.
+document.write("<br><br>");
+
+// Print a number with decimals to the page.
+document.write(123.99);
+
+// Print a string that's really long using concatenation.
+document.write("Here's a really really really really really really really " +
+               "long line of text that uses one document.write but " +
+               "breaks the code into multiple lines.");
+
+// Print a string that's really long using concatenation but use a variable.
+var message = "Here's a really really really really really really really " +
+              "long line of text that uses one document.write but " +
+              "breaks the code into multiple lines.";
+
+document.write(message);
+// END OF YOUR CODE
+</script>
+</pre>
+        <h3>Explanation:</h3>
+        <ul>
+          <li><strong>Line 2</strong> prints some text to the page.</li>
+          <li><strong>Line 5</strong> prints some newline characters to the page, causing a blank line before the next line of text prints.</li>
+          <li><strong>Line 8</strong> prints some more text to the page.</li>
+          <li><strong>Line 11</strong> prints two <span class="caps">HTML </span><code>&lt;br&gt;</code> tags to the page - another way to get a blank line before the next line of text, <strong>but only in the web browser! The \n approach is universal across programming languages. Browsers don't understand \n characters unless you output the results in a &lt;pre&gt; tag which this code does.</strong></li>
+          <li><strong>Line 14</strong> prints a number to the page. The "write" function converts the number to a string automatically.<strong> Be wary of this! This is converting a data type and may not give you what you expect.</strong></li>
+          <li><strong>Line 17</strong> prints more <code>&lt;br&gt;</code> tags for another blank line.</li>
+          <li><strong>Line 20</strong> prints a number with decimal places to the page.</li>
+          <li><strong>Line 23</strong> prints a very long string using string concatenation to keep the line under 80 characters.</li>
+          <li><strong>Line 28</strong> prints a very long string that we place in a variable. This lets us separate our output from our processing.</li>
+        </ul>
+        <p>Be sure to go back after this Demo to continue your work in Unit 2. </p>
+        <p><a href="../variables.html">Back</a></p>
+    <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

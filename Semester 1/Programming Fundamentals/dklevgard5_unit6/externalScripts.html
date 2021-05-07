@@ -1,0 +1,302 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>A Quick Introduction to External Scripts and Functions</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+  </head> 
+  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 6: Loops, Functions, and Data Structures</a></h2>
+      </header>
+      
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>A Quick Introduction to External Scripts and Functions</h1>
+
+        <h3>It's Moving Day!</h3>
+
+        <blockquote><p><em><strong>We're moving on. We liked it in our old place but it got to be too cramped. We want space.</strong></em></p></blockquote>
+
+        <p>We're going to move our JavaScript code out of our <span class="caps">HTML </span>files. This is done with external JavaScript files. So far, we've done all our code in the HTML file but this isn't really something that works for more complex applications. Let's get our JavaScript code out of our HTML and into a separate file like we would with our CSS.				</p>
+        <p>All we have to do is create a new file with a <code>.js</code> extension and link it up to our HTML page using</p>
+
+<pre><code>
+&lt;script src=&quot;path/to/our/file.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>When the browser sees that line, it <strong>immediately stops</strong> and runs the JavaScript code inside of that file. However, we can go a step further and organize our code into <strong>functions</strong></p>
+
+        <h3>Wrapping Code With Functions</h3>
+        <p>Remember that a function is a block of code that has a name. They are self-contained modules of code. Typically, a function is a block of code that performs a certain task. Often times functions take in input, do some processing, and spit out some output. In that way, functions are like tiny programs. Your main program can &quot;call&quot; your function, passing control of the program over to the function, and then resuming when the function is done.</p>
+        <p>When we place JavaScript code into our page in a &lt;script&gt; tag, the browser stops what it's doing and immediately executes that code. But sometimes we don't want to have the JavaScript run. We might need to do some other things first.</p>
+        <p>We're going to use functions throughout this learning unit to ensure that our code only runs when we tell it to run. We'll start out slow, by taking our code and pulling it out of our HTML pages and placing it into functions.</p>
+        <h3>Breaking Up Is Easy</h3>
+
+
+<p>Here's an example of JavaScript code that is like the code we've been including in the HTML files in our Units.</p>
+<pre><code class="js">
+// Before
+var subTotalPrice = 54.99;
+var discountLimit = 49.95;
+var discount = 0.05;
+var totalPrice;
+
+if (subTotalPrice &lt; discountLimit) {
+  totalPrice = subTotalPrice;
+  document.write(&quot;Total: &quot; + totalPrice);
+} else {
+  totalPrice = subTotalPrice - (subTotalPrice * discount);
+  document.write(&quot;Total with discount: &quot; + totalPrice);
+}
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Before
+var subTotalPrice = 54.99;
+var discountLimit = 49.95;
+var discount = 0.05;
+var totalPrice;
+
+if (subTotalPrice < discountLimit) {
+	totalPrice = subTotalPrice;
+	document.write("Total: " + totalPrice);
+} else {
+	totalPrice = subTotalPrice - (subTotalPrice * discount);
+	document.write("Total with discount: " + totalPrice);
+}
+</script>
+</pre>
+
+        <p>To make this a function we add just two lines of code, one before and one after.</p>
+
+<pre><code class="js">
+function myNewShinyFunction() {  // &lt;-- This line before...
+  var subTotalPrice = 24.99;
+  var discountLimit = 49.95;
+  var discount = 0.05;
+  var totalPrice;
+
+  if (subTotalPrice &lt; discountLimit) {
+    totalPrice = subTotalPrice;
+    document.write(&quot;Total: &quot; + totalPrice);
+  } else {
+    totalPrice = subTotalPrice - (subTotalPrice * discount);
+    document.write(&quot;Total with discount: &quot; + totalPrice);
+  }
+}  // &lt;-- This line after!
+</code></pre>
+
+
+
+        <p>That's it, it's a function. This has the following important
+        benefits:</p>
+
+        <ol>
+          <li>The code is no longer automatically executed. It'll only
+          be executed when we invoke the function</li>
+          <li>
+            All the variables we declared are no longer global variables.
+            There is no chance these variables will collide with other
+            variables in the program, or variables from external scripts
+            we may want to add in.
+          </li>
+        </ol>
+
+
+        <h3>Moving the code to an external file.</h3>
+        <p>Our JavaScript code doesn't have to be in the same file
+          as the HTML. In fact, just like CSS, it should actually be
+          in its own file, separated.  Here are the steps to do that
+        </p>
+        <p>We create a new text file; it can go anywhere but we want it stored
+          close by and as a part of our web site. The JavaScript file that's associated with
+          this page is located in the <code>jsFiles</code> folder of this learning
+          unit:
+        </p>
+        <div style="text-align: center;">
+          <img src="resources/javascriptFiles.png" alt="Location of JavaScript files is in jsFiles ">
+        </div>
+
+        <p>
+          For the labs, you'll find a <code>js</code> folder inside of the <code>labs</code> folder.
+        </p>
+        <div style="text-align: center;">
+          <img src="resources/javascriptFilesForLabs.png" alt="Location of lab files is in labs/js ">
+        </div>
+        <p>I've already created files in the <code>labs/js</code> folder for you. Use Notepad++ to take a look in there, if you like. There's a bunch of files that end in <code>.js</code> (for JavaScript). There's one for each page, project part, and lab. Here's what the one for this page looks like.
+          I added a <code>document.write</code> command just so you can see how the code will look inside the function:</p>
+
+<pre><code class="js">
+/*
+  This is the JavaScript code for
+  &quot;A Quick Introduction to Functions&quot;
+  File: /unit6/externalScripts.html
+*/
+function externalScripts() {
+  // Your code goes in here.
+  document.write(&quot;The JavaScript file for this page is: &quot; +
+    &quot;\&quot;/unit7/jsFiles/externalScripts.js\&quot;&quot;);
+}
+
+externalScripts();
+</code></pre>
+
+        <p>
+          Notice that last line. In order for our JavaScript code to work we
+          have to <code>call</code> the function we wrapped it in. It's
+          also called <code>invoking</code> the function. Whatever we call it
+          we need to make the code run somehow, and that's how we do it.
+        </p>
+        <div class="notice">
+          <p>Code in external JavaScript files does not need to be placed in
+            functions. Code not placed in functions will just run immediately.</p>
+          <p>That's exactly how the function call works. The actual program
+            code is placed in a function so the variables and logic are
+            encapsulated, and then at the bottom of the file, we kick off
+            the program.
+          </p>
+        </div>
+
+        <p>
+
+
+
+        <p>The name of the function is <code>externalScripts</code>, and it
+          happens to be the same as the name of the page you're reading. It
+          doesn't have to be that name, it can be any valid JavaScript name. In
+          our course coding standards we'll use the same approach we use for
+          variable names to name our functions.</p>
+        <p>We have to use the name
+            of our function when we call it. And it has to be spelled EXACTLY
+            the same as it is in the function declaration. And when we call the function, we
+            have to <strong>use the parentheses after the name!!!</strong></p>
+
+          <h3>Including The Script</h3>
+        <p>
+          In order to use the code in our script we have to include it on the page,
+          like this:
+        </p>
+
+<pre><code class="html">
+&lt;script src="jsFiles/introToFunctions.js">&lt;/script&gt;</code></pre>
+</code></pre>
+
+        <p>That line lets the browser know where to look for the file containing the function. It is also a <code class="keyword">&lt;script&gt;</code> tag but this one just refers to a file. When the browser sees a JavaScript function call it looks for the function on the page. If it can't find it there then it looks for all the pages referred to by tags like this. It works a lot like a css file. All the files in this unit have this script tag in the head tag already. You don't need to do anything.</p>
+
+        <p>
+          We can place this script anywhere within our HTML page, just like
+          we've been doing with our inline scripts.
+          The external script's content is run as if it were placed right in
+          our HTML document, and so we see the results:
+        </p>
+
+<pre class="output">
+<script src="jsFiles/externalScripts.js"></script>
+</pre>
+
+
+
+        <p>
+          Script include tags have to be included before you try to use
+          anything that the script includes. So most web developers just
+          include the files in the <code class="keyword">&lt;head&gt;</code>
+          section to be safe, and then they would invoke the functions in these
+          external scripts elsewhere in the document. But times have changed.
+          It's now common practice to load scripts at the bottom of the page,
+          as this can improve web page performance by making it load content
+          faster. Typically, you load external JavaScript files right above the
+          closing <code class="keyword">&lt;body&gt;</code> tag.
+        </p>
+
+        <h2>Why Functions?</h2>
+        <p>
+          So why do we use functions? Well, we use them to break up our code
+          into logical, reusable units. As programs get bigger, we want to
+          separate things so we can test them and develop them separately.
+          We'll also want the ability to use code over and over again without
+          having to duplicate effort. Functions let us create reusable, modular
+          components for our code.
+        </p>
+        <p>
+          Taking all the program code and placing it in a single function is
+          only something that works for the smallest programs.  A program can
+          have as many functions as we want, and a function can even call other
+          functions. So typically you will create a main function that
+          kicks off your program, and that main function will call other functions
+          you've created that handle certain parts of your logic.
+        </p>
+        <p>
+          For example, you may have a program that calculates interest rates.
+          You might write a function called <code>calculateInterest:</code>
+        </p>
+<pre><code language="js"> function calculateInterest(amount, rate) {
+  var result = 0;
+  // some complex calculation goes here....
+  return(result);
+}
+</code></pre>
+
+
+        <p>
+          Then the main part of your program would use that function:
+        </p>
+<pre><code language="javascript"> function main() {
+  var userAmount = dollarprompt("What is the principal amount?");
+  var interestEarned = calculateInterest(userAmount, 0.043);
+  document.write("The amount earned is $" + interestEarned.toFixed(2));
+}
+</code></pre>
+        <p>
+          And then at the bottom of the file, you invoke the main function:
+        </p>
+<pre><code language="javascript"> main(); </code></pre>
+
+        <p>
+          We use functions to contain our program code
+          because in JavaScript, any variables not defined inside of a function
+          become global and can interfere with other scripts. Modern web
+          applications make use of many different JavaScript libraries, and
+          if we don't write our code to play nice with those libraries, we
+          can have a very bad time. Encapsulating our own code inside of
+          functions keeps our code from interfering with other people's code.
+        </p>
+        <p>
+          As you move on with programming you'll get more exposure
+          to functions. But right now you need some practice moving code into
+          functions.
+        </p>
+
+
+        <h3>Lab Time</h3>
+        <p class="lab_link"><a href="labs/lab01movingJavaScript.html">Lab 1: Moving your JavaScript</a> </p>
+        <p><a href="index.html">Back</a></p>
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+   </section>
+ </body>
+<!-- InstanceEnd --></html>

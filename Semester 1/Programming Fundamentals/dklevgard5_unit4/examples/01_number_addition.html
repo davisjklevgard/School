@@ -1,0 +1,248 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Example 1: Number Addition</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 4: Operators and Functions</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>Example 1: Number Addition</h1>
+        <h4>File: /Unit4/examples/01_number_comparison.html</h4>
+
+        <h3>Problem Statement</h3>
+        <blockquote>
+          A program is needed that adds two decimal numbers. The program must add them together
+          correctly and avoid rounding issues as much as possible.
+          The program should prompt for the two decimal numbers, add them together, and print
+          out the sum of the decimal numbers.
+        </blockquote>
+        <h3>1. Nouns and Verbs</h3>
+        <ul>
+          <li>Copy the above problem statement and paste it below so it appears in the black box when you refresh the page, underneath the words <code class="varname">PROBLEM STATEMENT</code>.</li>
+          <li>Identify the nouns and verbs in the problem statement and write them in the appropriate locations so they appear in the black box below when you refresh the page.</li>
+        </ul>
+
+<pre class="pseudocode">PROBLEM STATEMENT:
+
+A program is needed that adds two decimal numbers. The program must add them together
+correctly and avoid rounding issues as much as possible.
+The program should prompt for the two decimal numbers, add them together, and print
+out the sum of the decimal numbers.
+
+Nouns:
+2 decimal numbers, sum
+
+Verbs:
+prompt, add, print out
+</pre>
+
+      <h3>2. Defining Diagram</h3>
+      <ul>
+        <li>Convert the nouns and verbs into variable names and processes and create a defining diagram.</li>
+        <li>Make your variable names <strong>valid JavaScript names</strong> that conform to the course JavaScript Coding Standards.</li>
+        <li>Write down the processes with very short statements, 2 or 3 words. Remember, this is not pseudocode. This is just the process.</li>
+      </ul>
+
+<pre class="pseudocode">
+INPUTS:
+  2 decimal numbers
+
+
+PROCESSING:
+  prompt for 2 decimal numbers
+  add decimal numbers together
+  print out sum
+
+
+OUTPUTS:
+  sum
+
+</pre>
+
+        <h3>3. Solution Algorithm</h3>
+        <ul>
+          <li>Create a solution algorithm (using Pseudocode) based on the defining diagram. Remember to give your algorithm a name and use proper indentation.</li>
+        </ul>
+
+<pre class="pseudocode">
+SOLUTION ALGORITHM:
+
+AddTwoDecimalNumbers
+
+  initialize number1 to 0.0
+  initialize number2 to 0.0
+  initialize sum to 0
+
+  prompt for number1 with "What is the first decimal number?"
+  prompt for number2 with "What is the second decimal number?"
+
+  convert number1 to a number
+  convert number2 to a number
+
+  number1 = number1 * 100
+  number2 = number2 * 100
+
+  sum = number1 + number 2
+
+  sum = sum / 100
+
+  Display "The sum is " + sum
+
+END
+
+</pre>
+
+        <h2>Explanation of Algorithm</h2>
+        <p>Note this section of the pseudocode:</p>
+
+<pre class="pseudocode">
+  number1 = number1 * 100
+  number2 = number2 * 100
+
+  sum = number1 + number 2
+
+  sum = sum / 100
+</pre>
+
+        <p>
+          Because decimals can't be added together with precision, we
+          are multiplying the numbers by 100 to shift the decimal. This
+          will help us preserve some precision.
+        </p>
+        <p>
+          When we get the sum, we then divide by 100 to move the decimal
+          back.
+        </p>
+
+        <h3>4. Checking the Solution Algorithm</h3>
+
+<pre class="pseudocode">
+VARIABLES: number1, number2
+
+TEST CASE 1:
+
+  INPUT VALUES:  0.1, 0.2
+
+  EXPECTED RESULT: 0.3
+
+  ACTUAL RESULT: 0.3
+
+TEST CASE 2:
+
+  INPUT VALUES: 0.243, 0.344
+
+  EXPECTED RESULT: 0.587
+
+  ACTUAL RESULT: 0.5870000000000001
+
+TEST CASE 3:
+
+  INPUT VALUES: 0, 2
+
+  EXPECTED RESULT: 2
+
+  ACTUAL RESULT: 2
+
+TEST CASE 4:
+
+  INPUT VALUES: -2.0. -2.5
+
+  EXPECTED RESULT: -4.5
+
+  ACTUAL RESULT: -4.5
+
+</pre>
+
+        <h3>5. JavaScript Code</h3>
+        <ul>
+          <li>Write the JavaScript code based on everything you've done.</li>
+          <li>You will need to follow the coding standards for the course.</li>
+          <li>Once everything is working, go back and <strong>fill in</strong> the actual results sections in the test plan.</li>
+        </ul>
+
+<pre><code class="js">var number1 = 0.0;
+var number2 = 0.0;
+var output = &quot;&quot;;
+var sum = 0;
+
+// prompts
+number1 = prompt(&quot;What is the first decimal number?&quot;);
+number2 = prompt(&quot;What is the second decimal number?&quot;);
+
+// numerical conversions
+number1 = Number(number1);
+number2 = Number(number2);
+
+number1 *= 100;  // shorthand compound operator
+number2 *= 100;  // shorthand compound operator
+
+sum = (number1 + number2) / 100;
+
+output = &quot;The sum is &quot; + sum;
+
+document.write(output);
+
+</code></pre>
+        <h3>Your Output:</h3>
+
+<pre class="output">
+<script id="student_code">
+// YOUR CODE STARTS AFTER THIS LINE:
+
+var number1 = 0.0;
+var number2 = 0.0;
+var output = "";
+var sum = 0;
+
+// prompts
+number1 = prompt("What is the first decimal number?");
+number2 = prompt("What is the second decimal number?");
+
+// numerical conversions
+number1 = Number(number1);
+number2 = Number(number2);
+
+number1 *= 100;  // shorthand compound operator
+number2 *= 100;  // shorthand compound operator
+
+sum = (number1 + number2) / 100;
+
+output = "The sum is " + sum;
+
+document.write(output);
+
+// END OF YOUR CODE
+</script>
+</pre>
+
+        <h3>What You Did</h3>
+        <p>You just went through the full process of developing an application again, using a function to encapsulate the business logic of your program.. You found the nouns and verbs, you did a Defining Diagram, you created a solution algorithm with pseudocode, you devised a test plan, you wrote your code with documentation, and you tested your code, checking it against your testing plan.    <strong>You did remember to go back and fill in the actual results in your testing plan, right?</strong></p>
+        <p><a href="../index.html">Back</a></p>
+      <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest version: 1.2009
+        </p>
+      </footer>
+    </section>
+  </body>  
+<!-- InstanceEnd --></html>  

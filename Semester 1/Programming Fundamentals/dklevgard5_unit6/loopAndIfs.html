@@ -1,0 +1,402 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Combining loop and if structures</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+        
+				
+				<script src="jsFiles/loopAndIfs.js"></script>
+
+    <!-- InstanceEndEditable -->
+  </head> 
+  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 6: Loops, Functions, and Data Structures</a></h2>
+      </header>
+      
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Combining loop and if structures</h1>
+
+        <p>&nbsp;</p>
+        <h3>Combining Loops and Ifs - It's getting interesting now!</h3>
+        
+        <p>Making decisions over and over again.</p>
+        <p>When we combine loops and if statements we can start doing some serious work. Here's a quick example.</p>
+
+<pre><code class="js">
+/*
+  This function asks for entries from a user
+  and displays the entry on the page. It will
+  continue asking for entries until the user
+  enters &quot;quit&quot;.
+*/
+function quickLoopsIfs() {
+var entry;
+var loopAgain = true;
+
+while (loopAgain) {
+  entry = prompt(&quot;Please enter something or &quot; 
+              + &quot; \&quot;quit\&quot; to stop.&quot;);
+  
+  if (entry === &quot;quit&quot;) {
+      loopAgain = false;
+      document.write(&quot;Good, bye!&quot;);
+  } else {
+      document.write(&quot;You entered: &quot; + entry + &quot;\n&quot;);
+  }
+}
+}
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+  quickLoopsIfs();
+</script>
+</pre>
+
+        <p>Let's look at some small but detailed examples of things we can do.</p>
+        <h3>How do I stop this thing?</h3>
+        
+        <p>Shutting down a loop when you want to.</p>
+        <p>There are several ways to stop a loop. Some of them require that we do some type of test inside the loop. Here's the most basic example with the test being the while() test. This is very common.</p>
+
+<pre><code class="js">
+/*
+  The simple test to stop a loop
+*/
+function firstStop() {
+    
+  // Declare variables
+  var entry;
+  
+  while (entry !== &quot;quit&quot;) {
+    entry = prompt(&quot;Enter a word, \&quot;quit\&quot; to stop.&quot;);
+    document.write(&quot;You entered: &quot; + &quot;&lt;br /&gt;&quot;);
+  }
+}
+</code></pre>
+
+
+<pre class="output">
+<script>
+   firstStop();
+</script>
+</pre>
+
+        <ul>
+          <li>Sometimes we need to test a condition and then quit before we do some task. We don't want to add something to a total if they entered "quit", for instance. We can do this with an <code>if</code> statement like this:</li>
+        </ul>
+
+<pre><code class="js">
+function secondStop() {
+    
+  // Declare variables
+  var entry;
+  var total = 0;
+  
+  while (entry !== &quot;quit&quot;) {
+    entry = prompt(&quot;Enter a number or \&quot;quit\&quot; to stop.&quot;);
+    if (entry !== &quot;quit&quot;) {
+      entry = Number(entry);
+      total += entry;
+    }
+  }
+  document.write(&quot;Total: &quot; + total);
+}
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+  secondStop();
+</script>
+</pre>
+
+        <p>We can also take different paths depending on what was entered. </p>
+
+<pre><code class="js">
+/*
+  Take one of 2 paths depending on what is entered.
+  Or quit when &quot;quit&quot; is entered.
+*/
+function thirdStop() {
+
+  // Declare variables
+  var shortWords = 0;
+  var longWords = 0;
+  var entry;
+  var wordLength;
+
+  while (entry !== &quot;quit&quot;) {
+    entry = prompt(&quot;Enter a word or \&quot;quit\&quot; to stop.&quot;);
+    if (entry !== &quot;quit&quot;) {
+      wordLength = entry.length;
+      if (wordLength &lt;= 5) {
+        shortWords++;
+      } else {
+        longWords++;
+      }
+    }
+  }
+  document.write(&quot;You entered &quot; + longWords + &quot; Long words and &quot; 
+          + shortWords + &quot; Short words.&quot;);
+}
+</code></pre>
+
+
+
+
+<pre class="output">
+The JavaScript file for this script is: &quot;/unit7/jsFiles/loopAndIfs.js&quot;
+This is the thirdStop() function. uncomment it to see it work.
+
+<script>
+   thirdStop();
+</script>
+</pre>
+
+        <h3>Stopping Loops with a Boolean</h3>
+        
+        <p><em>This technique gives the developer more control and is very handy when we start using functions.</em></p>
+        
+        
+        <p>This technique requires a boolean variable to work. When we want to stop we just set the variable to <code>false</code> like this:</p>
+
+<pre><code class="js">
+/*
+  Stop a loop with a boolean variable
+*/
+function stopWithBooleanVar() {
+    
+  // Declare variables
+  var loopTest = true;
+  var entry;
+  
+  while (loopTest) {
+   entry = prompt(&quot;Enter a number greater than 10&quot;);
+   entry = Number(entry);
+   if (entry &gt; 10) {
+     alert(&quot;You entered: &quot; + entry);
+   } else {
+     loopTest = false;
+     alert(&quot;Good, bye!&quot;)
+   }
+  }
+    
+}
+
+</code></pre>
+
+
+
+
+<pre class="output">
+
+<script language="JavaScript" type="text/javascript">
+  stopWithBooleanVar();
+</script>
+</pre>
+
+        <p>This is what we did in the above code.</p>
+        <ul>
+          <li>We created a boolean variable and set it to <code>true</code>.</li>
+          <li>We made a <code>while</code> loop with the variable as its test.</li>
+          <li>Then we set the variable to <code>false</code> when we wanted to quit the loop.</li>
+        </ul>
+        <p>Does this look odd to you?</p>
+
+<pre><code class="js">// There's no equality test
+
+while (loopTest) {
+</code></pre>
+
+        <p>Why didn't we have to do this?</p>
+
+<pre><code class="js">// There is an equality test
+
+while (loopTest === true) {
+</code></pre>
+
+        <p>If a variable has been set to <code>true</code> or <code>false</code> then it is already a <code>boolean expression</code>. We don't have to test its value, it's already <code>true</code> or <code>false</code>. So, this is correct and is what you will see in books and on the job:</p>
+
+<pre><code class="js">while (loopTest) { //means the same as the previous example!!!
+</code></pre>
+
+        <p>Here's a bigger example that just might help you on the project:</p>
+
+<pre><code class="js">
+/*
+  This function prompts the user for a series of 
+  numbers and stores how many even and odd numbers 
+  were entered. It also checks the data to make 
+  sure it is a number. The function displays 
+  the results and ends when the user enters &quot;quit&quot;.
+*/
+function aLittleBiggerExample() {
+    
+  // Declare variables
+  var evens = 0;
+  var odds = 0;
+  var entry;
+  var loopAgain = true;
+  
+  // loop and get input
+  while (loopAgain) {
+    entry = prompt(&quot;Enter a number, any number, &quot; 
+            + &quot;or \&quot;quit\&quot; to stop.&quot;);
+    if (entry === &quot;quit&quot;) {
+      loopAgain = false;
+    } else if (isNaN(entry)) {
+      alert(entry + &quot; is not a number, &quot; 
+                + &quot;please try again.&quot;);
+    } else if (Number(entry) % 2 === 0) {
+      evens++;
+    } else if (Number(entry) % 2 === 1) {
+      odds++;
+    } else {
+      alert(&quot;What kind of number did you &quot; 
+                + &quot;enter? Please try again.&quot;)
+    }
+  }
+  
+  // Display the results
+  document.write(&quot;You entered &quot; + evens 
+          + &quot; even number(s).&lt;br /&gt;&quot;);
+  document.write(&quot;You entered &quot; + odds 
+          + &quot; odd number(s).&lt;br /&gt;&quot;);
+}
+
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+   aLittleBiggerExample();
+</script>
+</pre>
+
+        <p>There's a little bit of new code in that example:</p>
+
+<pre><code class="js">
+// isNaN function
+
+else if (isNaN(entry)) {
+</code></pre>
+
+        <p>Let's take a closer look at that.</p>
+        <h3>Testing Input Data</h3>
+        
+        <p>If a user can enter the wrong thing then they will enter the wrong thing.</p>
+        <p>So far, we have been relying on the user of our applications (you and me) to enter what we asked them to. But, they won't always do it right and we don't want our programs to just fail. The first technique for checking data that we'll learn is to make sure that they did enter a number when we ask them to. For that we use this function:</p>
+
+<pre><code class="js">
+isNaN(&quot;100&quot;);
+</code></pre>
+
+        <p><code>NaN</code> means <code>N</code>ot <code>a</code> <code>N</code>umber. The <code>isNaN()</code> function returns <code>true</code> if what the user entered was <strong><span class="caps">NOT</span></strong> a number. It returns <code>false</code> if it <strong><span class="caps">CAN</span></strong> be converted to a number with the <code>Number()</code> function.</p>
+        <p>Here's some examples with some live code:</p>
+
+
+
+
+<pre class="output">
+
+<script>
+  isNaNDemos();
+</script>
+</pre>
+
+        <p>You can use it like this. This is just a snippet, your programs will need more code (like a loop, maybe).</p>
+
+<pre><code class="js">// Useful snippet
+
+var entry;
+
+entry = prompt(&quot;Enter a Number.&quot;);
+
+if (isNaN(entry)) {
+  alert(&quot;Not a number&quot;);
+} else {
+  entry = Number(entry);
+  break;
+}
+</code></pre>
+
+
+
+        <h3>Breaking News!</h3>
+        <p>There is one more way of stopping loops that is very useful and is used occasionally, even though it's widely considered "sloppy coding". It's the <code>break;</code> statement.</p>
+        <p>If JavaScript encounters a <code>break;</code> statement inside of a <code>while</code> or a <code>for</code> loop, it just stops the loop. Just like that!</p>
+        <p>This allows us to stop a loop whenever we want to, not just at the top or bottom of the loop.</p>
+        <p>We can also avoid the sometimes tricky logic of using a boolean variable for stopping. Once the <code>break;</code> is encountered the loop just stops!</p>
+
+<pre><code class="js">
+/*
+  Stop a loop with the break; statement
+*/
+function breakIt() {
+  // Declare variables
+  var count = 0;
+  var loopMaximum = 25;
+  var countSquared;
+  
+  while (true) {
+    document.write(count);
+    
+    if (count &gt; loopMaximum) {
+      document.write(&quot; is too big!&quot;);
+      break;
+    }
+    
+    countSquared = count * count;
+    document.write(&quot; squared is &quot; + countSquared + &quot;&lt;br /&gt;&quot;);
+    count++;
+  }
+}
+</code></pre>
+
+
+<pre class="output">
+<script>
+  breakIt();
+</script>
+</pre>
+
+        <h3>Lab Time</h3>
+        <p class="lab_link"><a href="labs/lab10firstLoopStopIf.html">Lab 10: Stopping Loops 1</a></p>
+        <p>&nbsp;</p>
+        <p><a href="index.html">Back</a></p>
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+   </section>
+ </body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,33 @@
+
+    body {
+      background-color: #FFF;
+      color: #333;
+    }
+    body > header, body > footer, nav{
+      text-align: center;
+    }
+    nav>a{
+      color: #F00;
+      padding: 0 10px;
+      text-decoration: none;
+      font-size: 1.5em;
+    }
+    nav > a:visited{
+      color: #FF7373;
+    }
+    nav > a:hover, nav > a:focus {
+      background-color: #DDD;
+      color: #990000;
+    }
+    nav{
+      border-bottom: 1px solid #DDD;
+    }
+    h1,h2,h4 p {
+      margin: 0 0 20px 0;
+    }
+    body > footer{
+      background-color: #BC7277;
+      color: #FFF;
+      font-size: 12px;
+    }
+    

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 6: Pseudocode</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 1</a>: Introduction and Program Design</h2>
+      </header>
+
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h2>Lab 6: Pseudocode Problem 1</h2>
+        <h4>File: /unit1/lab-06-pseudocode.html</h4>
+        <h3>Student Information</h3>
+        <ul>
+          <li>Name: Davis Klevgard</li>
+        </ul>
+        <h3>Lab Steps</h3>
+        <ol>
+          <li>Open this file in both Firefox and Notepad++</li>
+          <li>Add your information to the file</li>
+          <li>Test that you added your information correctly</li>
+          <li>Read through my problem statement</li>
+          <li>Review my example solution</li>
+          <li>Add your lab after the line: <code class="keyword">YOUR PSEUDOCODE STARTS AFTER THIS LINE:</code></li>
+          <li>Add pseudocode for the following scenario.</li>
+        </ol>
+        <h3>My Turn:</h3>
+        <p>A customer deposits 2 checks and wants a receipt printed for the entire amount of the deposit. If the entire deposit is greater than $1000.00 then the customer earns a $5.00 bonus. The receipt should display the customer's name and total deposit.  If the customer has a bonus the receipt should include the $5.00 in the total deposit and alert the customer. </p>
+        <p>Here's my pseudocode.</p>
+
+<pre class="pseudocode">
+Customer Deposit Receipt Pseudocode
+
+BEGIN
+  initialize check1 to 0
+  initialize check2 to 0
+  initialize customerName to ""
+  initialize output to ""
+
+  prompt for customerName
+  prompt for check1 with "What is the first check?"
+  prompt for check2 with "What is the second check?"
+
+  totalDeposit = check1 + check2
+
+  output = customerName + "\n"
+  output = output +  totalDeposit + "\n"
+
+  IF totalDeposit > 1000 THEN
+    totalDeposit = totalDeposit + 5
+    output = output +  "Congratulations - you earned a $5.00 bonus!"
+  ENDIF
+
+  display output
+END
+
+</pre>
+
+        <div class="notice">
+          <p>Pay attention to all the things I did in my example. Look at the indentation. Look
+            at how specific I was. As you write pseudocode, strive for that
+            level of clarity.
+          </p>
+        </div>
+
+        <h3>Your Turn: </h3>
+        <p>Your Scenario: </p>
+        <blockquote>An instructor needs to key in three grades.  The grades need to be averaged.  Then the letter grade should be determined. An average score between 70 and 100 earns a grade of "P", whereas any average score  <strong>below 70</strong> earns an "F". The average and the letter grade should display on a screen. </blockquote>
+
+
+<pre class="student pseudocode">
+YOUR PSEUDOCODE STARTS AFTER THIS LINE:
+
+BEGIN
+  initialize grade1 to 0
+  initialize grade2 to 0
+  initialize grade3 to 0
+  initialize average to 0
+  initialize letterGrade to ""
+  
+  prompt for grade1 with "First grade"
+  prompt for grade2 with "Second grade"
+  prompt for grade3 with "Third grade"
+  
+  average = (grade1 + grade2 + grade3) / 3
+  
+  IF  average >= 70 THEN
+    letterGrade = "P"
+  ELSE
+    letterGrade = "F"
+  ENDIF
+  
+  display average
+  display letterGrade
+END
+
+END YOUR PSEUDOCODE BEFORE THIS LINE
+</pre>
+
+
+        <h3>What You Did</h3>
+        <p>You started practicing writing pseudocode by following an example that was provided. You also got some exposure to basic programming logic.</p>
+        <p><a href="../pseudocode.html">Back</a></p>
+        <!-- InstanceEndEditable -->
+      </section>
+
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

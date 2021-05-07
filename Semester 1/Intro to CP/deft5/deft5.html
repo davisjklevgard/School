@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking the dog</title>
+    <style>
+      body {
+        background-color: #FFCBBA;
+        color: #266150;
+        margin: 0px 0px 0px 0px;    
+      }
+      canvas {
+        display: block;
+
+        border: 1px solid #808080;
+        margin: auto;
+      }
+      
+      
+      
+      p, footer {
+        display: block;
+        margin: auto;
+        text-align: center;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>WalkTheDog</h1>
+    <main id="output">
+    </main>
+    <script>
+    let sceneId = "start";
+    const newScene = function(theDescription) {
+        let result = {};
+        let aChoice = {};
+        result.description = theDescription;
+        result.choices = [];
+        
+        let i = 1;
+        while (i < arguments.length){
+          aChoice.label = arguments [i];
+          aChoice.onChoose = arguments[i + 1];
+          result.choices[(i - 1)/2] = aChoice;
+          aChoice = {};
+          i = i + 2;
+        }
+        return result; 
+      }
+    const scenes = {
+      start: newScene(  
+          "<img src=\"huskydog.jpeg\" alt=\"Husky Dog\" height= \"400\" width= \"350\">"
+           +"<p>You are sitting in your chair. It feels" 
+           + "so great to be able to sit down, you dont want to move." 
+           + "Your dog comes up to you, pining and holding their leash." 
+           + "Oh no, do you need to go for a walk?"
+           + "Your dog nods its head.</p>",
+           "Walk the dog", "walkDog",
+           "Wait 5 minutes", "wait"
+           ),
+           
+      walkDog: newScene( 
+      "<img src=\"walkdog.jpeg\" alt=\"Walk Dog\" height= \"400\" width= \"350\">"
+      +"<p>You grab the leash and start the walk.</p>",
+        "Go left", "left",
+        "Go right", "right",
+      ),
+      
+      wait: newScene(
+      "<img src=\"waitdog.jpeg\" alt=\"Wait Dog\" height= \"400\" width= \"350\">"
+      +"<p> Oops too late. They no longer need the walk.</p>",
+          "Clean it up. Refresh to start over.",      
+      ),
+      
+      left: newScene( 
+      "<img src=\"leftdog.jpeg\" alt=\"Left Dog\" height= \"400\" width= \"550\">"
+      +"<p> You went left and  are heading downtown.</p>",
+          "Go to the park", "park",
+          "Go to the bistro areas", "bistro",      
+      ),
+      
+      right: newScene( 
+      "<img src=\"rightdog.jpeg\" alt=\"Right Dog\" height= \"400\" width= \"550\">"
+      +"<p> You are heading to the river.</p>",
+        "Walk along the river", "river",
+        "Walk across the bridge", "bridge",      
+      ),
+      
+      park: newScene( 
+      "<img src=\"parkdog.jpeg\" alt=\"Park Dog\" height= \"400\" width= \"550\">"
+      +"<p> You guys went to the park and your dog had a great time.</p>" 
+      ),
+      
+      bistro: newScene( 
+      "<img src=\"coffeedog.jpeg\" alt=\"Coffee Dog\" height= \"400\" width= \"350\">"
+      +"<p> The trip to the bistro areas allowed you to get a coffee. Today is a good day"
+      ),
+      
+      river: newScene (
+      "<img src=\"riverdog.jpeg\" alt=\"River Dog\" height= \"400\" width= \"350\">"
+      +"<p> The trip along the river was wet and wild. </p>" 
+      ),
+      
+      bridge: newScene (
+      "<img src=\"bridgedog.jpeg\" alt=\"Bridge Dog\" height= \"400\" width= \"350\">"
+      +"<p> You two just kept on walking. The walk through nature made you both feel very peaceful. </p>"
+      ),
+    }; 
+      
+      
+    const onPress = function(event) {
+    console.log(event);
+      if (event.keyCode > 47 && event.keyCode < 58) {
+        let choice = event.keyCode - 49;
+        if (choice < 0){
+          choice = choice + 10; 
+        }
+      if (scenes [sceneId].choices.length > choice) {
+          sceneId = scenes [sceneId].choices[choice].onChoose
+          updateDisplay();
+        }
+      }
+     }
+     
+     const updateDisplay = function() {
+       let i = 0;
+       let text = "";
+       text = scenes[sceneId].description + "<ol>";
+         while (i < scenes[sceneId].choices.length){
+           text = text + "<li>" + scenes[sceneId].choices[i].label +"</li>"
+           i = i + 1;
+         }
+       output.innerHTML= text + "</ol>"
+    };
+    
+    
+    
+    
+    
+updateDisplay()
+window.addEventListener('keydown', onPress, false);
+window.addEventListener('mousedown', onPress, false);
+    </script>
+    <footer>version 1.0</footer>
+  </body>
+</html>

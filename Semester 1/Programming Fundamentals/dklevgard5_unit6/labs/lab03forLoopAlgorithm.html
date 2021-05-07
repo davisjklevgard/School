@@ -1,0 +1,146 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 3: A For Loop Algorithm</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head> 
+  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 6: Loops, Functions, and Data Structures</a></h2>
+      </header>
+      
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Lab 3: A For Loop Algorithm</h1>
+
+        <h4>File: unit6/labs/lab03forLoopAlgorithm.html</h4>
+
+        <h3>Student Information</h3>
+
+
+        <ul>
+          <li>Name:Davis Klevgard</li>
+        </ul>
+
+
+
+        <h3>Lab Steps</h3>
+
+
+        <ul>
+          <li>Open this file in Firefox and Notepad++</li>
+          <li>Add your name in the appropriate spot</li>
+          <li>Locate the <code class="keyword">calculateAverage</code> algorithm in Notepad++ </li>
+          <li>Complete the Solution Algorithm based on the following problem statement, nouns and verbs, and defining diagram. All you need to do is replace the question marks with the appropriate code!</li>
+        </ul>
+
+
+
+        <h3>Problem Statement</h3>
+
+        <blockquote><p><strong><em><br />
+            A program is required that asks a user to enter a number for a "counter". The program then asks the user to enter numbers, one at a time, in a loop for the number of times specified in the "counter". The program will output the "counter" number, each entered number, and after all the numbers are entered, then output the average of the entered numbers.<br />
+        </em></strong></p></blockquote>
+
+        <h3>1. Nouns and Verbs</h3>
+
+        <blockquote>
+          <p>I've already identified the nouns and verbs in the problem statement for you, but please study it carefully.</p></blockquote>
+
+
+
+<pre class="pseudocode">PROBLEM STATEMENT:
+  A program is required that asks a user to
+  enter a number for a "counter". The program then asks the
+  user to enter numbers, one at a time, in a loop for the number of
+  times specified in the counter.
+  The program will output the counter number, each entered number, and
+  after all numbers are entered, then output the average of the
+  entered numbers.
+
+Nouns: loop counter number, entry number, average
+
+Verbs: ask, output, calculate average
+</pre>
+
+
+
+        <h3>2. Defining Diagram</h3>
+        <p>I've already converted the nouns and verbs into variable names and processes and created a defining diagram for you. Study this diagram though and be sure you nderstand how it works.</p>
+
+<pre class="pseudocode">
+INPUTS:
+  loopCounter
+  number
+
+PROCESSING:
+  prompt a user for a loopCounter
+  convert loopCounter to a number
+  prompt a user for a numberIn for the loopCounter number of times
+  convert each numberIn
+  add each number to numberTotal
+  output the loopCounter, and each numberIn
+  calculate numberAverage after loop is done
+  output numberAverage
+
+OUTPUTS:
+  loopCounter
+  numberIn
+  numberAverage
+
+</pre>
+
+
+
+        <h3>3. Solution Algorithm</h3>
+        <p>This is the solution algorithm. <strong>Replace</strong> <strong>the </strong><span class="pseudocode">???????</span> in the pseudocode below to complete the algorithm. </p>
+
+<pre class="pseudocode">
+calculateAverage
+  prompt user for loopCounter
+  convert loopCounter to a number
+  LOOP starting at 0 to increase in increments of 1
+    prompt user for numberIn
+    convert numberIn to a number
+    add numberIn to numberTotal
+    output loopCounter and numberIn
+  END LOOP
+  numberAverage = numberTotal / loopCounter
+  output numberTotal and numberAverage
+END
+</pre>
+
+
+        <h2>What You Did</h2>
+        <p>You learned how you could use loops and a counter to repeat a process a fixed number of times, and you expressed this in pseudocode.
+        </p>
+
+        <p><a href="../repetition.html">Back</a></p>
+
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+   </section>
+ </body>
+<!-- InstanceEnd --></html>

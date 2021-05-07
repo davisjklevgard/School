@@ -1,0 +1,225 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Unary Operators</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 4: Operators and Functions</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+  
+        <h1>Unary Operators</h1>
+
+        <p>Unary operators offer "short cuts" when we are writing code.  They seems a little strange at first. But, after you've practiced with them, you'll find them easy and quick to use. They are really handy and programmers use them all the time. Any trick to save typing and time makes a programmer more productive!</p>
+
+
+        <h3>The Unary Operators</h3>
+        
+        <table style="text-align:left; margin-left: 4em;" cellspacing="0">
+          <tr>
+            <td width="83" style="background:#ccc; font-weight:bold;">Operator</td>
+            <td width="276" style="background:#ccc; font-weight:bold;">Function</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;"><code>++</code></td>
+            <td>Increments a Number</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;"><code>--</code></td>
+            <td>Decrements a Number</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;"><code>typeof</code></td>
+            <td>Returns a string representing the data type</td>
+          </tr>
+        </table>
+
+        <h3>Using the Unary Operators</h3>
+        <p>Here's the first way we've seen to add one to a number. The value in <code>myCount</code> is set to 5 in code line 02. Then in line 06, 1 is added to the 5 to make 6...and the 6 replaces the 5 as the new value in <code>myCount</code>.</p>
+
+<pre><code class="js">
+// Addition with the +
+var myCount = 5;
+
+document.write(&quot;myCount: &quot; + myCount + &quot;\n&quot;);
+
+myCount = myCount + 1;
+
+document.write(&quot;myCount: &quot; + myCount);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Addition with the +
+var myCount = 5;
+
+document.write("myCount: " + myCount + "\n");
+
+myCount = myCount + 1;
+
+document.write("myCount: " + myCount);
+
+</script>
+</pre>
+
+        
+        <p>But that is too much typing! There is a shortcut we can use...</p>
+        <p>"Unary" actually means that there is only one variable or value involved with the operator. Usually we have to have something on either side of the operator, like the code statement below. </p>
+
+
+<pre><code class="js">
+myCount = myCount + 1;
+</code></pre>
+
+
+        <p>But, a unary operator has just one. This code is SHORTER and does the same thing. (The comment just reminds us that we're adding 1, just like we did in the previous satement.)</p>
+
+
+<pre><code class="js">
+myCount++; // Increment, or add one, to myCount
+</code></pre>
+
+
+
+
+<pre><code class="js">
+// Incrementing with ++
+var myCount = 5;
+
+document.write(&quot;myCount: &quot; + myCount + &quot;\n&quot;);
+
+myCount++;
+
+document.write(&quot;myCount: &quot; + myCount);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Incrementing with ++
+var myCount = 5;
+
+document.write("myCount: " + myCount + "\n");
+
+myCount++;
+
+document.write("myCount: " + myCount);
+</script>
+</pre>
+<p>I bet you can guess what this one does!</p>
+<pre><code class="js">
+myCount--; // ???
+</code></pre>
+<p>That's right, it subtracts one from myCount</p>
+<pre><code class="js">
+// Decrementing with --
+var myCount = 5;
+
+document.write(&quot;myCount: &quot; + myCount + &quot;\n&quot;);
+
+myCount--;
+
+document.write(&quot;myCount: &quot; + myCount);
+</code></pre>
+
+
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Decrementing with --
+var myCount = 5;
+
+document.write("myCount: " + myCount + "\n");
+
+myCount--;
+
+document.write("myCount: " + myCount);
+</script>
+</pre>
+
+
+
+        <p>We're only going to look at one other unary operator: <code>typeof()</code>. It looks like a call to a function with parentheses. It tells us what type of data we have. It actually returns the strings "<code>number</code>", "<code>string</code> ", and "<code>boolean</code> ".</p>
+
+
+<pre><code class="js">
+    typeof(5) &lt;-- this will be &quot;number&quot;
+</code></pre>
+
+
+          
+        <p> The <code>typeof()</code> operator is useful for programmers when they are attempting to find out what TYPE of data is currently stored in a variable. But, here are some sample lines of code to help you understand how it works.</p>
+          
+          
+<pre><code class="js">
+// Demo of typeof()
+var myName = "Homer";
+document.write(&quot;The type of the myName variable is:\&quot;&quot; + 
+                                            typeof(myName) + &quot;\&quot;&quot;);
+document.write(&quot;\n&quot;);    
+document.write(&quot;The type of 10 is: \&quot;&quot; + typeof(10) + &quot;\&quot;&quot;);
+document.write(&quot;\n&quot;);
+document.write(&quot;The type of \&quot;10\&quot; is: \&quot;&quot; + typeof(&quot;10&quot;) + &quot;\&quot;&quot;);
+document.write(&quot;\n&quot;);
+document.write(&quot;The type of (5 == 5) is: \&quot;&quot; + typeof(5 == 5) + &quot;\&quot;&quot;);
+</code></pre>
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Demo of typeof()
+var myName = "Homer";
+document.write("The type of the myName variable is: \"" + typeof(myName)+ "\"");
+document.write("\n");    
+document.write("The type of 10 is: \"" + typeof(10) + "\"");
+document.write("\n");
+document.write("The type of \"10\" is: \"" + typeof("10") + "\"");
+document.write("\n");
+document.write("The type of (5 == 5) is: \"" + typeof(5 == 5) + "\"");
+
+</script>
+</pre>
+
+
+
+        <h3>Lab Time</h3>
+        
+        <p>Here's some unary practice:</p>
+        <p class="lab_link"> <a href="labs/lab-06-unaryOperators.html">Lab 6: Unary Operators</a></p>
+        <p><a href="index.html">Back</a></p>
+
+
+
+    <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest version: 1.2009
+        </p>
+      </footer>
+    </section>
+  </body>  
+<!-- InstanceEnd --></html>  

@@ -1,0 +1,122 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 1: JavaScript Intro</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 2: JavaScript Syntax and Variables</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>Lab 1: JavaScript Intro</h1>
+        <h4>File: /unit2/lab-01-javascriptIntro.html</h4>
+        <h3>Student Information</h3>
+        <ul>
+          <li>Name: Davis Klevgard</li>
+        </ul>
+        <h3>Lab Steps</h3>
+        <ol>
+          <li>Open this file in Firefox and Notepad++.</li>
+          <li>Add your name.</li>
+          <li>In Notepad++, go to this spot in the code, within the <code>&lt;script&gt; </code>block: <br>
+            <br>
+            <code class="keyword">// YOUR CODE STARTS AFTER THIS LINE:</code>
+            <!-- You don't want to put your code here. Scroll down to the <script> block below. :) -->
+
+            <br>
+            <br>
+            and add a line of text describing your favorite food. The text you key in is NOT JavaScript code, so it will be ignored by JavaScript. You will see the text in your code, but it will not display on the web page.</li>
+          <li>Save the file.</li>
+          <li>Refresh the page in Firefox.</li>
+          <li>Scroll down to the dark gray box labeled: YOUR OUTPUT.  Do you see anything? (No? Good!). Remember this...if it's not code that JavaScript recognizes...it just won't show up!</li>
+          <li>Now add this line to the code:<br>
+            <br>
+            <pre><code class="js">document.write(&quot;JavaScript is fun.&quot;);</code></pre>
+            <br>
+            <ul>
+              <li><em>Just type it, don't copy and paste, it helps you learn.</em></li>
+            </ul>
+          </li>
+          <li>Save, Refresh, and View</li>
+          <li>Hey, that line was valid JavaScript code, so why didn't it work?!?!?!</li>
+          <li>It didn't work because of the "non-JavaScript" code you typed in first. It caused the GOOD JavaScript code to fail! And, sometimes when JavaScript fails, it doesn't tell you why - it just doesn't display any output.  That can make it kind of hard to "debug".</li>
+          <li>Now add two forward slashes to the beginning of your line of "non-JavaScript" code, so it looks like this:<br />
+            <code>//the line of text describing your favorite food</code></li>
+          <li>Save, Refresh, and View</li>
+          <li>What happened? You SHOULD see the "JavaScript is fun." text in that gray output box on the web page now!</li>
+          <li>Sometimes we like to hide lines of code or other text on purpose. We want the code in the HTML file - but we don't want it to display on the web page.  We call those hidden lines "comments".</li>
+          <li>Now add two forward slashes to your line of code, so it looks like this:
+            <ul>
+              <li><code>//document.write(&quot;JavaScript is fun.&quot;);</code></li>
+            </ul>
+          </li>
+          <li>Save, Refresh, and View</li>
+          <li>What happened? You DO NOT see the "JavaScript is fun." text on the web page any more...but we know it's there in the code.  We just learned that by using comments, the programmer has control over what displays and what does not!</li>
+          <li>Now, remove those two slashes (the comment characters)...and save, refresh, and view again.  There it is...our output is back.</li>
+          <li>But, what if we'd made a mistake, a syntax error? Try changing the "d" in the document.write command to an "x"...just to see what happens. Your code should look like this:</li>
+          <ul>
+            <li><code>xocument.write(&quot;JavaScript is fun.&quot;);</code></li>
+            <li><em>Sometimes we make errors...just to see what happens! It's a great way to LEARN!</em></li>
+          </ul>
+          <ul>
+            <li>Save, Refresh, and View</li>
+            <li>What happened? The "JavaScript is fun." text is gone! If JavaScript doesn't understand the command, it just ignores it.</li>
+          </ul>
+          <li>Okay, now replace the "x" with a "d" again to fix the syntax error.  And then add this line of code after the first one:
+            <ul>
+              <li><code>document.write(&quot;&lt;h1&gt;A Big Hello&lt;/h1&gt;&quot;);</code></li>
+            </ul>
+          </li>
+          <li>Refresh the page and look for the big hello</li>
+          <li>Interesting observation here...the document.write command causes text to display right on the web page, whereas the alert command that we used earlier results in a popup message box.  Hmmm...that may be good to know in the future.</li>
+          <li>All done.</li>
+        </ol>
+        <h3>Your Output</h3>
+
+<pre class="output">
+<script>
+// YOUR CODE STARTS AFTER THIS LINE:
+//My favorite food is pasta, and it has multiple different forms that can be made that would be defimned as pasta
+
+document.write("Javascript is fun");
+document.write("<h1>A Big Hello</h1>");
+
+
+
+
+
+// END OF YOUR CODE
+</script>
+</pre>
+
+        <h3>What You Did</h3>
+        <p>You practiced typing JavaScript commands. You also learned about comments in JavaScript code. You looked at how different your results are if you make one little mistake. </p>
+        <p><a href="../introToJavaScript.html">Back</a></p>
+
+    <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009 
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

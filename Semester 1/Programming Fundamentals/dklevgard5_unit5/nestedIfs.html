@@ -1,0 +1,466 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Nested if Statements</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 5: Making Decisions</a></h2> 
+      </header>
+      
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Nested if Statements</h1>
+
+        <img src="resources/800px-7babushkadolls.jpg" alt="russian dolls" height="600" width="800">
+
+        <h3>Nested <code>if/else</code> Statements</h3>
+        
+        <p>What if you want to answer more than one question in a series? Or you want to test a variable for one of many options? We frequently have situations like this in programs. Here's some pseudocode that illustrates a common problem</p>
+
+<pre class="pseudocode">
+IF choice1 is &quot;A&quot; THEN
+  IF choice2 is &quot;2&quot; THEN
+    IF choice3 is &quot;X&quot; THEN
+      IF choice4 is &quot;Blue&quot; THEN
+        Do a really important task!
+      ENDIF           
+    ENDIF
+  ENDIF
+ENDIF
+</pre>
+
+        <p>This is the same as using multiple logical <span class="caps">AND </span>(<code>&amp;&amp;</code>) expressions, with one important difference: we can use <span class="caps">ELSE </span>statements, too.</p>
+
+<pre class="pseudocode">
+IF choice1 is &quot;A&quot; THEN
+  IF choice2 is &quot;2&quot; THEN
+    IF choice3 is &quot;X&quot; THEN
+      IF choice4 is &quot;Blue&quot; THEN
+        Do a really important task!
+      ELSE
+        Do a not so important task.
+      ENDIF           
+    ELSE
+      This is if choice3 isn't X. 
+      We bypass choice4 altogether.
+    ENDIF
+  ELSE
+    We're here because choice2 is not &quot;2&quot;. 
+    We'll do something else instead.
+  ENDIF
+ELSE
+    choice1 is not &quot;A&quot;
+ENDIF
+</pre>
+
+        <p>How's this look? A bit complicated? It can get worse...</p>
+
+<pre class="pseudocode">
+IF boolean THEN
+  IF boolean THEN
+    IF boolean THEN
+      IF boolean THEN
+        do something
+      ELSE
+        do something
+      ENDIF
+    ELSE
+      IF boolean THEN
+        do something
+      ELSE
+        do something
+      ENDIF
+    ENDIF
+  ELSE
+    IF boolean THEN
+      IF boolean THEN
+        do something
+      ELSE
+        do something
+      ENDIF
+    ELSE
+      IF boolean THEN
+        do something
+      ELSE
+        do something
+      ENDIF
+    ENDIF
+  ENDIF
+ELSE
+  IF boolean THEN
+    IF boolean THEN
+      IF boolean THEN
+        do something
+      ELSE
+        do something
+      ENDIF
+    ELSE
+      IF boolean THEN
+        do something
+      ELSE
+        do something
+      ENDIF
+    ENDIF
+  ELSE
+    IF boolean THEN
+      IF boolean THEN
+        do something
+      ELSE
+        do something
+      ENDIF
+    ELSE
+      IF boolean THEN
+        do something
+      ELSE
+        do something
+      ENDIF
+    ENDIF
+  ENDIF
+ENDIF           
+</pre>
+
+        <p>But, this kind of coding is not that typical. Over time programmers have figured out that this is very fragile and you never really know if it works right. We now have lots of ways to avoid this type of monster. But before we can dig into those advanced methods, you need to understand how nested IF statements work and how they're used.</p>
+        <p>We'll start with some basic patterns of <code>nesting our logic</code>.</p>
+        <h3>Testing One Variable for Different Values</h3>
+        
+        <p>We frequently need to test one variable for many different values and do something different for each value.</p>
+        <p>We have a choice variable and the user is asked to make a selection from a list. Doing this with deeply nested if/else statements is ugly! So most languages have better ways. This is usually called the "if, else if, else if, else" pattern among programmers. It looks like this in pseudocode.</p>
+
+<pre  class="pseudocode">
+IF choice is &quot;A&quot; THEN
+  do the A things
+ELSE IF choice is &quot;B&quot; THEN
+  do the B things
+ELSE IF choice is &quot;C&quot; THEN
+  do the C things
+ELSE IF choice is &quot;D&quot; THEN
+  do the D things
+ELSE IF choice is &quot;E&quot; THEN
+  do the E things
+ELSE IF choice is &quot;F&quot; THEN
+  do the F things
+ELSE IF choice is &quot;G&quot; THEN
+  do the G things
+ELSE
+  do the default thing
+ENDIF
+</pre>
+
+        <p>That's looks a little better! And here is a JavaScript version of the concept.</p>
+
+<pre><code class="javascript">
+// One variable, many choices
+
+var choice = &quot;G&quot;;
+
+if (choice === &quot;A&quot;) {
+  document.write(&quot;The choice was A&quot;);
+} else if (choice === &quot;B&quot;) {
+  document.write(&quot;The choice was B&quot;);
+} else if (choice === &quot;C&quot;) {
+  document.write(&quot;The choice was C&quot;);
+} else if (choice === &quot;D&quot;) {
+  document.write(&quot;The choice was D&quot;);
+} else if (choice === &quot;E&quot;) {
+  document.write(&quot;The choice was E&quot;);
+} else if (choice === &quot;F&quot;) {
+  document.write(&quot;The choice was F&quot;);
+} else if (choice === &quot;G&quot;) {
+  =document.write(&quot;The choice was G&quot;);
+} else {
+  document.write(&quot;The choice was none of the above&quot;);
+}
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// One variable, many choices
+var choice = "G";
+
+if (choice === "A") {
+  document.write("The choice was A");
+} 
+else if (choice === "B") {
+	document.write("The choice was B");
+} else if (choice === "C") {
+	document.write("The choice was C");
+} else if (choice === "D") {
+	document.write("The choice was D");
+} else if (choice === "E") {
+	document.write("The choice was E");
+} else if (choice === "F") {
+	document.write("The choice was F");
+} else if (choice === "G") {
+	document.write("The choice was G");
+} else {
+	document.write("The choice was none of the above");
+}
+</script>
+</pre>
+
+        <p>This is a very useful and commonly used structure. The above code replaces what's below and does exactly the same work. Which would you rather do?</p>
+
+<pre><code class="javascript">
+// Long version. Yuck!
+
+if (choice === &quot;A&quot;) {
+  document.write(&quot;The choice was A&quot;);
+} 
+else {
+  if (choice === &quot;B&quot;) {
+    document.write(&quot;The choice was B&quot;);
+  } else {
+    if (choice === &quot;C&quot;) {
+      document.write(&quot;The choice was C&quot;);
+    } else {
+      if (choice === &quot;D&quot;) {
+        document.write(&quot;The choice was D&quot;);
+      } else {
+        if (choice === &quot;E&quot;) {
+          document.write(&quot;The choice was E&quot;);
+        } else {
+          if (choice === &quot;F&quot;) {
+              document.write(&quot;The choice was F&quot;);
+          } else {
+            if (choice === &quot;G&quot;) {
+              document.write(&quot;The choice was G&quot;);
+            } else {
+              document.write(&quot;The choice was none&quot;);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+</code></pre>
+
+
+
+        <p class="notice">Please don't write code like this. Ever. It's unsightly and there are better ways to express this. </p>
+        <h3>Testing Different Conditions With <code>if/else</code> structures.</h3>
+        
+        <p>Sometimes we <strong> have</strong> to nest <code>if/else</code> statements as it won't work any other way. We try to limit it and make it concise.</p>
+
+<pre><code class="javascript">
+// Nested ifs
+
+// Variables
+var city = &quot;Eau Claire&quot;;
+var county = Eau Claire&quot;;
+var state = &quot;WI&quot;;
+
+//state = prompt(&quot;What State do you live in?&quot;);
+
+if (state === &quot;WI&quot;) {
+  county = prompt(&quot;What county do you live in?&quot;);
+  if (county === &quot;Dane&quot;) {
+    city = prompt(&quot;What city in Dane county do you live in?&quot;);
+    if (city === &quot;Madison&quot;) {
+      document.write(&quot;Madison is a nice place&quot;);
+    } else {
+      document.write(&quot;There are other cities in Dane County?&quot;);
+    }
+  } else {
+    city = prompt(&quot;What city do you live in?&quot;);
+    if (city === &quot;Milwaukee&quot;) {
+      document.write(&quot;That's too big for me.&quot;);
+    } else {
+      document.write(&quot;I don't know much about that city.&quot;);
+    }
+  }
+} else {
+  document.write(&quot;Goodbye!&quot;);
+}
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Nested ifs
+
+var city = "Eau Claire";
+var county = "Eau Claire";
+var state = "WI";
+
+
+state = prompt("What State do you live in?");
+
+if (state === "WI") {
+	//county = prompt("What county do you live in?");
+	if (county === "Dane") {
+		//city = prompt("What city in Dane county do you live in?");
+		if (city === "Madison") {
+				document.write("Madison is a nice place");
+		} else {
+				document.write("There are other cities in Dane County?");
+		}
+	} else {
+		city = prompt("What city do you live in?");
+		if (city === "Milwaukee") {
+				document.write("That's too big for me.");
+		} else {
+				document.write("I don't know much about that city.");
+		}
+	}
+} else {
+		document.write("Goodbye!");
+}
+</script>
+</pre>
+
+        <p>If we limit the complexity we can manage.</p>
+        
+        <h3>Range Testing</h3>
+        
+        <p>We frequently need to test to see if a value is within a range. The technique to solve this combines nested <code>if/else</code> with multiple booleans.</p>
+        <p>Pick a number between 1 and 10</p>
+
+<pre><code class="javascript">
+// Range Testing
+
+var number;
+
+//number = prompt(&quot;Pick a number between 1 and 10&quot;);
+
+number = Number(number);
+
+if (number &gt;= 1 &amp;&amp; number &lt;= 10) {
+  document.write(&quot;You got it right: &quot; + number);
+} else {
+  document.write(&quot;Your entry was out of range.&quot;);
+}
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Range Testing
+
+var number;
+
+number = prompt("Pick a number between 1 and 10");
+
+number = Number(number);
+
+if (number >= 1 && number <= 10) {
+	document.write("You got it right: " + number);
+} else {
+	document.write("Your entry was out of range.");
+}
+</script>
+</pre>
+
+        <p>Using this technique we can pick from multiple ranges.</p>
+
+<pre><code class="js">
+// Multiple ranges
+
+var number = 0;
+
+//number =  prompt(&quot;Pick a number between 1 and 50&quot;);
+
+number = Number(number);
+
+if (number &lt; 0) {
+  document.write(&quot;That number is negative, I don't do negative.&quot;);
+} else if (number &gt;= 0 &amp;&amp; number &lt;= 10) {
+  document.write(number + &quot; is between 1 and 10&quot;);
+} else if (number &gt; 10 &amp;&amp; number &lt;= 20) {
+  document.write(number + &quot; is between 10 and 20&quot;);
+} else if (number &gt; 20 &amp;&amp; number &lt;= 30) {
+  document.write(number + &quot; is between 20 and 30&quot;);
+} else if (number &gt; 40 &amp;&amp; number &lt;= 50) {
+  document.write(number + &quot; is between 40 and 50&quot;);
+} else {
+  document.write(number + &quot; is bigger than 50.&quot;);
+}
+
+</code></pre>
+
+
+
+
+<pre class="output">
+<script>
+// Multiple ranges
+
+var number = 0;
+
+number =  prompt("Pick a number between 1 and 50");
+
+number = Number(number);
+
+if (number < 0) {
+	document.write("That number is negative, I don't do negative.");
+} else if (number >= 0 && number <= 10) {
+	document.write(number + " is between 0 and 10");
+} else if (number > 10 && number <= 20) {
+	document.write(number + " is between 10 and 20");
+} else if (number > 20 && number <= 30) {
+	document.write(number + " is between 20 and 30");
+} else if (number > 40 && number <= 50) {
+	document.write(number + " is between 40 and 50");
+} else {
+  document.write(number + " is bigger than 50.");
+}
+
+</script>
+</pre>
+
+
+
+        <h3>Full Example</h3>
+        
+        
+        <ul>
+          <li>Here's an example that's much more complicated: <a href="examples/example-6-2.html">Process Customer Record</a></li>
+        </ul>
+
+
+
+        <h3>Lab Time</h3>
+        
+        <p><em>Anyone who has never made a mistake has never tried anything new.</em> -Albert Einstein</p>
+        
+        
+        <p class="lab_link"><a href="labs/lab-05-nestedIfsAlgorithm.html">Lab 5: Nested Ifs Algorithm</a><strong>&nbsp;&nbsp;(THIS IS AN OPTIONAL LAB)</strong></p>
+        <p class="lab_link"><a href="labs/lab-06-nestedIfs.html">Lab 6: Nested Ifs</a></p>
+        <p><a href="index.html">Back</a></p>
+
+
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 5: Relationship Operators</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 4: Operators and Functions</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Lab 5: Relationship Operators</h1>
+        
+        <h4>File: unit4/labs/lab-05-relationshipOperators.html</h4>
+        
+        <h3>Student Information</h3>
+        
+        
+        <ul>
+          <li>Name:  Davis Klevgard</li>
+        </ul>
+
+
+
+        <h3>Lab Steps</h3>
+
+
+        <ol>
+          <li>Open this file in Firefox and Notepad++.</li>
+          <li>Add your name in the appropriate area above.</li>
+          <li> Add code after the line: <code>YOUR CODE STARTS AFTER THIS LINE:</code> to complete this lab.</li>
+          <li>Your output should look like the <strong>Example Output</strong> below.</li>
+          <li><strong>Variable declarations section</strong>
+            <ol>
+              <li>Write a comment that identifies this coding section.</li>
+              <li>Add the following variables:
+                <ol>
+                  <li><code class="varname">results1</code></li>
+                  <li><code class="varname">results2</code></li>
+                  <li><code class="varname">results3</code></li>
+                  <li><code class="varname">results4</code></li>
+                  <li><code class="varname">results5</code></li>
+                  <li><code class="varname">results6</code></li>
+                  <li><code class="varname">results7</code></li>
+                  <li><code class="varname">results8</code></li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li><strong>Assignments section</strong>
+            <ol>
+              <li>No assignments section this time! They will get values in the calculations section.</li>
+            </ol>
+          </li>
+          <li><strong>Calculations section</strong>
+            <ol>
+              <li>Write a comment that identifies this coding section.</li>
+              <li>Assign <code class="varname">true</code> or <code class="varname">false</code> to each variable with the following boolean expressions. Alter each of the following expressions by replacing the ??? with a relational operator. The variables must be assigned what is after each item.
+                	<ol>
+                  <li>(7 ??? 5) --&gt; <code class="keyword">true</code></li>
+                  <li>(5 ??? 5) --&gt; <code class="keyword">false</code></li>
+                  <li>("a" ??? "b") --&gt; <code class="keyword">true</code></li>
+                  <li>(100 ??? 99) --&gt; <code class="keyword">false</code></li>
+                  <li>("100" ??? 100) --&gt; <code class="keyword">true</code></li>
+                  <li>(0 ??? 10) --&gt; <code class="keyword">false</code></li>
+                  <li>("100" ??? "99") --&gt; <code class="keyword">true</code></li>
+                  <li>("A" ??? 92) --&gt; <code class="keyword">false</code></li>
+                </ol>
+              </li>
+            </ol>
+           </li>
+           <li><strong>Output section</strong>
+            <ol>
+              <li>Write a comment that identifies this coding section.</li>
+              <li>Output each expression with a <code  class="keyword">document.write();</code></li>
+            </ol>
+          </li>
+          <li>Here's an example:
+            <ol>
+              <li>Boolean Expression: (7 ??? 5) --&gt; <code class="keyword">true</code>
+<pre><code class="js">
+//variable declarations section
+var resultsExample;
+...
+// calculation section
+resultsExample = 7 &gt; 5;
+...
+// output section
+document.write("1. (7 &gt; 5) --&gt; " + resultsExample);</code></pre> 
+              </li>
+            </ol>
+          </li>
+        </ol>
+          
+          
+          
+        <h3>Example Output (First line only...)</h3>
+
+<pre class="output">
+1. (7 &gt; 5) --&gt; true
+</pre>
+
+
+
+        <h3>Your Output (...the first one is done for you!):</h3>
+
+<pre class="output">
+<script id="student_code">
+// YOUR CODE STARTS AFTER THIS LINE:
+
+// Variable Declarations
+var results1;
+var results2;
+var results3;
+var results4;
+var results5;
+var results6;
+var results7;
+var results8;
+
+// Calculations
+results1 = (7 > 5);
+results2 = (5 < 5);
+results3 = ("a" < "b");
+results4 = (100 < 99);
+results5 = ("100" <= 100);
+results6 = (0 > 5);
+//I do not understand why this works the way that is asked
+//because it produces true but I believe that it should be false
+results7 = ("100" < "99");
+results8 = ("A" > 92); 
+// Output
+// Here's the first one done for you.
+document.write ("1. (7 > 5)    --> " + results1 + "\n" );
+document.write ("2. (5 < 5)    --> " + results2 + "\n" );
+document.write ("3. (\"a\" < \"b\")    --> " + results3 + "\n" );
+document.write ("4. (100 < 99)    --> " + results4 + "\n" );
+document.write ("5. (\"100\" <= 100)    --> " + results5 + "\n" );
+document.write ("6. (0 > 5)    --> " + results6 + "\n" );
+document.write ("7. (\"100\" < \"99\")    --> " + results7 + "\n" );
+document.write ("8. (\"A\" > 92)    --> " + results8 + "\n" );
+
+
+
+
+
+// END OF YOUR CODE
+
+</script>
+</pre>
+
+        <h3>What You Learned</h3>
+        <p>You learned how to compare values with relationship operators. In the next learning unit you'll need to apply this knowledge to make decisions in your programs.</p>
+        <p><a href="../relationshipOperators.html">Back</a></p>
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest version: 1.2009
+        </p>
+      </footer>
+    </section>
+  </body>  
+<!-- InstanceEnd --></html>  

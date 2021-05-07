@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>JavaJam Coffee House-Jobs</title>
+    <link rel="stylesheet" href= "css/javajam.css">
+  <meta name="generator" content="BBEdit 13.5" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="wrapper">
+  <header>
+    <h1>JavaJam Coffee House</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a>
+      <li><a href="menu.html">Menu</a>
+      <li><a href="music.html">Music</a>
+      <li><a href="jobs.html">Jobs</a>
+    </ul>
+  </nav>
+  <main>
+    <h2>Jobs at JavaJam</h2>
+    <p>Want to work at JavaJam? Fill out the form below to start your application.</p>
+    <form method="post" action="https://webdevbasics.net/scripts/javajam.php">
+      <label for="myName">*Name:</label>
+      <input required type="text" name="myName" id="myName">
+      
+      <label for="myEmail">*Email:</label>
+      <input required type="email" name="myEmail" id="myEmail">
+      
+      <label for="myStart">Start Date:</label>
+      <input type="date" name="myStart" id="myStart">
+      
+      <label for="myExperience">*Experience:</label>
+      <textarea required id="myExperience" name="myExperience" rows="4" cols="50">
+      </textarea>
+      
+      <input type="submit" value="Apply Now">
+    </form>
+  </main>
+    <footer>
+      <small> Copyright &copy; 2021 JavaJam Coffee House<br> 
+        <a href="mailto:davis@klevgard.com">davis@klevgard.com</a>
+      </small>
+    </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 7 - Specifications</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head> 
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 3: Program Design and Debugging</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1> Lab 7 - Specifications</h1>
+        <h4>File: /Unit3/labs/lab-07-practice.html</h4>
+        <h3>Student</h3>
+        <ul>
+          <li>Name: Davis Klevgard</li>
+        </ul>
+        <h3>Specifications</h3>
+        <ul>
+          <li>Open this file in Firefox and Notepad++</li>
+          <li>Add your name in the usual spot</li>
+          <li>Read the following problem statement and complete all 5 steps in the development process.
+            <ul>
+              <li>Remember, you'll fill in the nouns and verbs, create the defining diagram, build the solution algorithm, create test plans, and then write the code.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Problem Statement</h3>
+        <blockquote>
+          <p><em><strong>A program is required that will receive two numbers from a user, calculate the sum, difference, product, and quotient of the numbers. The program will display the two input numbers and the calculated results with identifying text.</strong></em></p>
+        </blockquote>
+        <h3>1. Nouns and Verbs</h3>
+        <p>Identify the nouns and verbs in the problem statement. Concentrate on the important nouns and verbs that are relevant to the problem.</p>
+
+
+<pre class="pseudocode">PROBLEM STATEMENT:
+
+Nouns: two numbers, sum, difference, product, quotient, identifying text
+
+Verbs: receive, calculate, display 
+</pre>
+
+
+
+        <h3>2. Defining Diagram</h3>
+        <p>Convert the nouns and verbs into variable names and processes and create a defining diagram. Follow the course naming standards for inputs and outputs.</p>
+
+<pre class="pseudocode">
+INPUTS:
+  firstNumber
+  secondNumber
+
+PROCESSING:
+  read firstNumber
+  read secondNumber
+  create sum
+  create difference
+  create product
+  create quotient
+  
+  display sum difference product quotient
+
+OUTPUTS:
+  sum difference product quotient
+
+</pre>
+
+        <h3>3. Solution Algorithm</h3>
+        <p>Create a solution algorithm based on the defining diagram. (Don't forget the algorithm name and END).</p>
+
+
+<pre class="pseudocode">
+SOLUTION ALGORITHM
+  MathProblems
+    Initialize firstNumber to 0
+    Initialize secondNumber to 0
+    
+    Prompt for firstNumber
+    Prompt for secondNumber
+    
+    Convert firstNumber
+    Convert secondNumber
+    
+    sum = firstNumber + secondNumber
+    difference = firstNumber - secondNumber
+    product = firstNumber * secondNumber
+    quotient = firstNumber / secondNumber
+    
+    Display "Entered numbers: " + firstNumber + " " + secondNumber +  "\nSum: \n" + sum + "\nDifference: " + difference + "\nProduct: " + product + "\nQuotient: " + quotient
+  END
+</pre>
+
+
+        <h3>4. Checking the Solution Algorithm</h3>
+        <p>Create a test plan for the algorithm. You need to have <b>at least three</b> test cases. Once your JavaScript solution is running correctly, fill in the actual results.</p>
+
+        <p>Don't forget to fill in the <span class="keyword">VARIABLES</span> section at the
+          top of the test plan!</p>
+
+<pre class="pseudocode">
+VARIABLES: firstNumber secondNumber
+
+TEST CASE 1:
+
+  INPUT VALUES:12, 2
+
+  EXPECTED RESULT:
+  Entered Numbers: 12 2
+  Sum: 14
+  Difference: 10
+  Product: 24
+  Quotient: 6
+
+  ACTUAL RESULT:
+  Entered Numbers: 12 2
+  Sum: 14
+  Difference: 10
+  Product: 24
+  Quotient: 6
+
+TEST CASE 2:
+
+  INPUT VALUES:4, 5
+
+  EXPECTED RESULT:
+    Entered Numbers: 4 5
+    Sum: 9
+    Difference: -1
+    Product: 20
+    Quotient: .8
+  ACTUAL RESULT:
+    Entered Numbers: 4 5
+    Sum: 9
+    Difference: -1
+    Product: 20
+    Quotient: .8
+
+TEST CASE 3:
+
+  INPUT VALUES:20, 18
+
+  EXPECTED RESULT:
+  Entered Numbers: 20 18
+  Sum: 38
+  Difference: 2
+  Product: 360
+  Quotient: 1.1111111111111112
+
+  ACTUAL RESULT:
+  Entered Numbers: 20 18
+  Sum: 38
+  Difference: 2
+  Product: 360
+  Quotient: 1.1111111111111112
+
+</pre>
+
+
+        <h3>5. JavaScript Code</h3>
+        <p>Write the JavaScript code based on everything you've done. Your code must follow the course coding standards (Are you indenting correctly?). You should add good comments about the different parts of your solution.</p>
+        <h3><strong>Sample Output:</strong><br />
+        </h3>
+
+<pre class="output">
+Entered Numbers: 12, 10
+Sum: 22
+Difference: 2
+Product: 120
+Quotient: 1.2</pre>
+
+				<h3>Your Output</h3>
+
+<pre class="output">
+<script id="student_code">
+// YOUR CODE STARTS AFTER THIS LINE:
+//Declare variables
+  var firstNumber = 0;
+  var secondNumber = 0;
+  
+    // Prompts for numbers
+    firstNumber = prompt("Enter first number");
+    secondNumber = prompt("Enter second number");
+    
+    // convert strings to numbers
+    firstNumber = Number(firstNumber);
+    secondNumber = Number(secondNumber);
+    //Math equations
+    sum = (firstNumber + secondNumber)
+    difference = firstNumber - secondNumber
+    product = firstNumber * secondNumber
+    quotient = firstNumber / secondNumber
+    
+    document.write("Entered numbers: " + firstNumber + " " + secondNumber +  "\nSum: " + sum + "\nDifference: " + difference + "\nProduct: " + product + "\nQuotient: " + quotient);
+
+
+// END OF YOUR CODE
+</script>
+</pre>
+
+
+        <h2>What you learned</h2>
+        <p>You got more practice writing JavaScript code, going through the entire development process. You developed a defining diagram from nouns and verbs, you wrote pseudocode, then you developed a test plan. You then wrote code and tested your output against the testing plan. </p>
+        <p>The more you do this, the better software developer you'll be. Now go back to the main page for more.</p>
+        <p><a href="../index.html">Back</a></p>
+        <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

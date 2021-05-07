@@ -1,0 +1,108 @@
+body {
+  background-color: #F5F5DC;
+  background-image: url(javabackground.gif);
+  color: #2E0000;
+  font-family: Verdana, Arial, sans-serif;
+}
+
+#wrapper {
+  background-color: #E2D2B0;
+  box-shadow: 5px 5px 5px #2E0000;
+  max-width: 2048px;
+  min-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+header { background-color: #D2B48C; }
+
+h1 {
+  background-image: url(javalogo.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Georgia, "Times New Roman", serif;
+  height: 100px;
+  margin: 0;
+  text-indent: -9999px;
+}
+
+nav {
+  float: left;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  width: 160px;
+}
+
+nav ul {
+  font-size: 1.2em;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+nav a{ text-decoration: none; }
+
+nav a:link { color: #795240; }
+
+nav a:visited { color: #A58366; }
+
+nav a:hover, nav a:focus { color: #F5F5DC; }
+
+main {
+  background-color: #F5F5DC;
+  display: block;
+  margin-left: 175px;
+  padding: 20px;
+}
+
+main img {
+  float: left;
+  padding-right: 2em;
+}
+
+main article {
+  font-size: 90%;
+  margin-left: 20%;
+  margin-right: 20%;
+  overflow: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+h2 { font-family: Georgia, "Times New Roman", serif; }
+
+h3 {
+  background-color: #E6D6A9;
+  text-transform: uppercase;
+}
+
+dt { font-weight: bold; }
+
+main ul {
+  list-style-image: url(marker.gif);
+  list-style-position: inside;
+}
+
+#hero {
+  background-image: url(heroroad.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: #F5F5DC;
+  height: 300px;
+}
+
+footer {
+  background-color: #D2B48C;
+  color: #000000;
+  font-size: .60em;
+  font-style: italic;
+  text-align: center;
+  padding: 10px;
+}
+
+footer a:link { color: #2E0000; }
+
+footer a:visited { color: #000000; }
+
+footer a:hover, footer a:focus { color: #F5F5DC; }

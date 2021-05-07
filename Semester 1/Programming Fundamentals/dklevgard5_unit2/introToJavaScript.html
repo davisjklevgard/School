@@ -1,0 +1,278 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Unit 2 - Introduction to JavaScript</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> 
+    <!-- InstanceBeginEditable name="head" --> 
+    <!-- InstanceEndEditable -->
+  </head>  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 2: JavaScript Syntax and Variables</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>Introduction to JavaScript</h1>
+        <p>We're using the JavaScript programming language to learn the basics
+          of computer programming. This is a great language to learn with. All
+          you need to use it is a modern Internet browser, like
+          <strong>Firefox</strong>. You can use simple and free text editors,
+          like <strong>Notepad++</strong>, <strong>Brackets.io</strong>,
+          or even <strong>Vim</strong> to write JavaScript code.</p>
+
+
+        <h3>What is JavaScript?</h3>
+        <p>JavaScript is an <strong>interpreted</strong> programming language.
+          That means there is a full computer program that reads your
+          JavaScript code and runs each line, one at a time. This program is
+          called an "interpreter.&quot; Each line of code gets turned into
+          machine code and executed. <b>Each time you run the program</b>, your
+        code has to be interpreted.</p>
+<p> There is a JavaScript interpreter embedded in browsers. You can't really tell that it is separate from the browser itself, but it's there. JavaScript is the language that gives our web applications behavior. </p>
+        <p>You tell the interpreter what to do with a list of instructions. In this class you'll write JavaScript in the context of HTML pages running inside a web browser.</p>
+        <p>For JavaScript to work correctly it has to be associated with <span class="caps">HTML </span>files correctly. We can attach external JavaScript files, or we can place JavaScript inside of HTML. For now, we are going to place our JavaScript code right inside our HTML documents by a special <span class="caps">HTML </span>tag, the <code>&lt;script&gt;</code> tag. Like this:</p>
+
+<pre><code class="html">
+&lt;script&gt;
+// YOUR CODE STARTS AFTER THIS LINE:
+
+// END OF YOUR CODE
+&lt;/script&gt;
+</code></pre>
+
+
+
+        <ul>
+          <li><strong>Line 1:</strong> The <code>&lt;script&gt;</code> tag  tells the web browser to treat your code as JavaScript instead of trying to read it as regular text or HTML tags.</li>
+          <li><strong>Line 2-4:</strong> You put your JavaScript code in here and it will be handed to the JavaScript interpreter by the browser.</li>
+          <li><strong>Line 2:</strong>  This line starts with <code>//</code>. That makes the line a comment that will be ignored by JavaScript.</li>
+        </ul>
+        <p>Here's a peek at coding in JavaScript (Note: you don't have to modify or write anything with a "demo"... it is just for you to look at and learn from!): <a href="demos/demo-firstJavaScript.html">Demo: A Peek at JavaScript Coding</a></p>
+        <p>Let's have a lab on this. </p>
+        <p class="lab_link"> <a href="labs/lab-01-javascriptIntro.html">Lab 1: JavaScript Intro</a></p>
+        <h3>About Rules</h3>
+
+        <blockquote><p>In computer programming, there are different levels of rules. Here are the three we are concerned with in this course.</p></blockquote>
+
+
+        <ol>
+          <li><strong>Syntax</strong>
+            <ul>
+              <li>If a computer programming language enforces a rule then we call that rule "syntax". This is the strongest level of rule. You can't break these rules or your program just won't run.</li>
+            </ul>
+          </li>
+          <li><strong>Convention</strong>
+            <ul>
+              <li>
+                If virtually all the users of a programming language all over
+                the world do something the exact same way then that way is
+                called a "convention". The JavaScript language itself doesn't
+                care about these rules. However, if everybody is using the same
+                convention there is good reason for it. If you want to join the
+                ranks of professionals using JavaScript then you need to follow
+                these conventions.
+              </li>
+              <li>
+                In this course, JavaScript won't enforce these rules but your
+                instructor will. Part of the points for projects are on
+                conformance to the course coding standards which includes
+                variable names, indentation, editor settings, and spacing
+                of characters. Go here to see
+                those: <a href="javascriptCodingStandards.html">JavaScript
+                  Coding Standards </a>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Style</strong>
+            <ul>
+              <li>
+                There are some ways of structuring our code where there isn't
+                any agreement as to the best way to do it. A large group of
+                programmers will do it one way and another large group will do
+                it another way. When a rule is in this category we call it a
+                "style". Styles are not enforced by JavaScript or the
+                instructor. What is required is that you pick a style for your
+                code and then be consistent. Make sure that you use that style
+                in all your code. We will go over some common styles in
+                class.
+              </li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3>JavaScript Syntax Rules</h3>
+
+        <blockquote><p>Remember those rules about computers? They can't think and they can't figure out what you mean. You have to be very clear and you have to use their language, not yours. Programming languages are very simplistic compared to human languages, but they are very strict. You have to follow the rules of the language that are called its <strong>syntax</strong>. Here are some of the basic syntax rules of JavaScript.</p></blockquote>
+
+        <h4> JavaScript is <strong>Case Sensitive</strong></h4>
+        <p><strong>In JavaScript, everything has to be the correct case</strong>. For example,  the word &quot;IF&quot; is not the same as &quot;if&quot;. This is a challenge for lots of beginning programmers. We have to start "seeing" the case of text as part of the meaning. Almost everything you learn in programming is case sensitive. And if you mess up the case, you'll often get a syntax error (if you're lucky), or invalid results (if you're unlucky!)</p>
+        <p><strong>White space</strong> are characters you can type on the keyboard but you don't normally see on the screen or on paper when you print. Here are the white space characters:
+        </p>
+        <ul>
+          <li>Space</li>
+          <li>Tab</li>
+          <li>Carriage Return (officially called the "line terminator")</li>
+        </ul>
+        <p>In JavaScript, white space <strong>usually</strong> doesn't matter. Unfortunately, there's that word "usually" in that rule. There are some situations where it matters a lot. Therefore we're are going to have a course <strong>standard</strong> for using white space. Refer to the course <a href="javascriptCodingStandards.html">JavaScript Coding Standards </a> for more details.</p>
+        <h4>Comments</h4>
+        <p>Comments in our code are lines of text that are ignored by JavaScript. We use these to write notes to ourselves and other programmers who see our code. This is called <strong>Documenting our code</strong>.</p>
+        <p>There are two kinds of comments in JavaScript, single-line and multi-line.</p>
+        <p> A <strong>single-line comment</strong> starts with two forward slashes: <code>//</code> Example:</p>
+
+<pre><code class="js">// Here is a single-line comment.
+// JavaScript will ignore text that starts with
+// the double slashes until the end of the current line.
+</code></pre>
+
+        <p>It's actually OK to put a single-line comment on the same line as some code.
+          Many programmers do this to make it more clear what things do.</p>
+<pre><code class="js">var studentGrade;     // The grade for the student stored as a percentage
+</code></pre>
+
+        <p>However, comments like this are <strong>often bad practice! </strong>The programmer could have just written this with a much more meaningful variable name:</p>
+        <pre><code class="js">var studentGradeAsPercentage;
+</code></pre>
+        <p>Strive to use meaningful names so you don't need to use comments to explain your code.</p>
+        <p>A <strong>multi-line comment</strong> starts with <code>/*</code> and ends with <code>*/</code>. These can be over many lines. Example:</p>
+
+<pre><code class="js">/* This is a multi-line comment.
+It has several lines.
+JavaScript will ignore all these lines. */
+</code></pre>
+
+
+        <p>Sometimes we can use comments to prevent code from running.  </p>
+
+<pre><code class="js">// alert("this line won't run");
+alert("this line will");
+</code></pre>
+
+        <p>This is called "commenting out" code and it can be useful when we're testing our software.</p>
+        <h4>Semicolons</h4>
+        <p>Semicolons are used in JavaScript to end a line. Most of the time they are not required by JavaScript. However, they are required in a few places so as a course standard, <strong> the use of semicolons at the end of statements is required</strong>. You'll find that this is also a convention in the industry when it comes to writing JavaScript code.</p>
+        <p>Examples:</p>
+
+<pre><code class="js">// Semicolons
+
+var name;
+name = &quot;Fred&quot;;
+return name;
+
+var total = 0;
+total = total + 100;
+</code></pre>
+
+
+
+        <h3>JavaScript Statements</h3>
+        <p>JavaScript statements are lines of text that contain tokens, operators, and identifiers that the JavaScript interpreter understands. They are like the sentences of a programming language. When someone writes prose they write sentences that are organized into paragraphs. When we write JavaScript we write statements that are organized into blocks and functions. </p>
+        <p>Statements <em>usually</em> end with a semicolon ";"</p>
+        <p>There are two kinds of statements, <strong>simple</strong> and <strong>compound</strong></p>
+        <p>Simple statements are one line that just does one thing:</p>
+<pre><code class="js">// Simple JavaScript Statements
+
+x = 4;
+</code></pre>
+
+        <p>Compound statements combine multiple levels of logic:</p>
+
+<pre><code class="js">
+// Compound Statements
+
+if (statusCode === 0) {
+  alert(&quot;Everything is working fine!&quot;);
+} else {
+  alert(&quot;Really bad things happened.&quot;);
+}
+</code></pre>
+
+
+
+        <h3>Reserved Words</h3>
+
+        <p>There are a bunch of words that have special meaning to JavaScript. They are called <strong>Reserved Words</strong>. Because of this we can't use those words in our code. Here they are:</p>
+
+        <table>
+          <tr>
+            <td><code>break</code></td>
+            <td><code>delete</code></td>
+            <td><code>function</code></td>
+            <td><code>return</code></td>
+            <td><code>typeof</code></td>
+          </tr>
+          <tr>
+            <td><code>case</code></td>
+            <td><code>do</code></td>
+            <td><code>if</code></td>
+            <td><code>switch</code></td>
+            <td><code>var</code></td>
+          </tr>
+          <tr>
+            <td><code>catch</code></td>
+            <td><code>else</code></td>
+            <td><code>in</code></td>
+            <td><code>this</code></td>
+            <td><code>void</code></td>
+          </tr>
+          <tr>
+            <td><code>continue</code></td>
+            <td><code>finally</code></td>
+            <td><code>instanceof</code></td>
+            <td><code>throw</code></td>
+            <td><code>while</code></td>
+          </tr>
+          <tr>
+            <td><code>default</code></td>
+            <td><code>for</code></td>
+            <td><code>new</code></td>
+            <td><code>try</code></td>
+            <td><code>with</code></td>
+          </tr>
+          <tr>
+            <td><code>document</code></td>
+            <td><code>window</code></td>
+            <td><code>prompt</code></td>
+            <td><code>alert</code></td>
+            <td><code>confirm</code></td>
+          </tr>
+          <tr>
+            <td><code>name</code></td>
+            <td><code>Number</code></td>
+            <td><code>in</code></td>
+            <td><code>of</code></td>
+            <td><code>const</code></td>
+            <td><code>let</code></td>
+          </tr>
+
+        </table>
+        <p>This is far from a complete list.</p>
+
+        <h3>It's that time again!</h3>
+        <p>Let's go through another exercise, where you'll get used to writing JavaScript code by copying what you already see on the screen. JavaScript has lots of keywords and symbols you'll have to type, so it will be good practice.</p>
+        <p class="lab_link"><a href="labs/lab-02-simpleProgram.html">Lab 2: A simple program</a></p>
+        <h3>Be sure to go back to the Home Page after the lab...there's one more task left to do!</h3>
+        <p><a href="index.html">Back</a></p>
+
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

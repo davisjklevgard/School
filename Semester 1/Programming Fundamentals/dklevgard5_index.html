@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Sample Page</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="600" height="600">
+      <p>Sorry, your browser doesn't understand the canvas element.</p>
+    </canvas>
+    
+    <script>
+      var canvas;
+      var context;
+      
+      //Grab the Canvas element on the page
+      canvas = document.getElementById('canvas');
+      context = canvas.getContext('2d');
+      
+      //draws the character on the canvas
+      function drawCharacter(){
+        context.beginPath();
+        context.moveTo(118, 118);
+        context.lineTo(227, 73);
+        context.bezierCurveTo(209, 30, 167, 0, 118, 0);
+        context.bezierCurveTo(53, 0, 0.5, 53, 0, 118);
+        context.bezierCurveTo(0, 183, 53, 235, 118, 235);
+        context.bezierCurveTo(159, 235, 195, 215, 216, 183);
+        context.lineTo(118, 118);
+        context.closePath();
+        context.fillStyle = "rgb(249, 243, 161)";
+        context.fill();
+        context.stroke();
+        
+        // Draw the eye
+        context.beginPath();
+        context.arc(118, 60, 10, 0, 2 * Math.PI, false);
+        context.fillStyle = "rgb(0, 0, 0)";
+        context.fill();
+      }
+      
+      drawCharacter();
+    </script>
+  </body>
+</html>

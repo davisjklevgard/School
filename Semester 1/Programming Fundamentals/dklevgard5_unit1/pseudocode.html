@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Pseudocode</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css">
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+        <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 1</a>: Introduction and Program Design</h2>
+      </header>
+
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>Pseudocode</h1>
+
+        <h3>How to Write Pseudocode</h3>
+
+        <p>Pseudocode is a plain English way to write down algorithms. It uses a bit of structure so that it resembles a programming language, but it is not a programming language. There is no one correct way to write pseudocode, everyone could just do it however they want. But, to make it more useful we will have some guidelines for how to do it this semester. </p>
+
+
+
+        <h3>Six Basic computer operations</h3>
+
+
+        <ul>
+          <li>A computer can receive information</li>
+          <li>A computer can assign a value to a variable or memory location</li>
+          <li>A computer can put out information</li>
+          <li>A computer can perform arithmetic</li>
+          <li>A computer can compare values and select one of many alternative actions</li>
+          <li>A computer can repeat a group of actions</li>
+        </ul>
+        <h3>A computer can receive information</h3>
+
+        <p>The basic verbs we use are things like <strong>read</strong>, <strong>get</strong>. or <strong>prompt</strong>.</p>
+
+
+        <pre class="pseudocode">prompt for first name</pre>
+
+
+        <p>You might also need to get information from the computer, like the system date from the operating system:</p>
+
+
+        <pre class="pseudocode">get system date</pre>
+
+        <p> Once we get data, we need to do something with it.</p>
+
+
+        <h3>A computer can save things by assigning a value to a variable or memory location</h3>
+
+        <p>We create and use "variables" in computer programming and in pseudocode for a few reasons:</p>
+
+        <ul>
+          <li>To give data an initial value</li>
+          <li>To store data we capture from an end user</li>
+          <li>To assign a value as a result of some processing so we can use it later </li>
+        </ul>
+
+        <p>Variables are just a spot in computer memory (RAM) that we have named. It's a named reference to a spot in the computer's memory, but it's easier for us to remember a name we make up than a hexadecimal number that represents a spot in RAM.</p>
+        <p>Here are some examples:</p>
+
+
+<pre class="pseudocode">
+initialize totalPrice to zero
+set studentCount to 0
+totalPrice = costPrice + salesTax
+</pre>
+
+
+        <p>We use <code class="keyword">initialize</code> or <code class="keyword">set</code> to give a variable a default value. This is perfect for a variable that we'll use to keep a count of records we process. We need to start at zero and add one to that each time. </p>
+
+        <div class="notice">
+          It's a really good idea to initialize your values to a default value. Some languages actually require this.
+        </div>
+
+        <p>We can also just <strong>assign a value</strong> to a variable using the = sign. The right side gets processed and the result is assigned, or stored, in that variable.</p>
+
+        <p>Here's how we can state that we're getting some information from the user and storing it for later use:</p>
+
+
+        <pre class="pseudocode">prompt for firstName</pre>
+
+        <p>Notice we're  making it look a little like real code by adding things like using <em>camelCase</em> when there are more than one word (firstName). </p>
+
+        <p>However, we really want to make this more clear. How will the user know what to type? We can clarify that in our pseudocode:</p>
+
+        <pre class="pseudocode">prompt for firstName with "Please enter your first name."</pre>
+
+        <div class="notice">
+          <p>You will be expected to be specific with your prompts in your pseudocode assignments.</p>
+        </div>
+
+        <h3>A computer can put out information</h3>
+
+        <p>Computers wouldn't be very useful if they didn't communicate with us. This is called output and it can be as simple as a word or complicated like a video. The verbs are things like <strong>put</strong>, <strong>write</strong>, <strong>output</strong>, <strong>display</strong>, and <strong>print</strong>.</p>
+
+
+        <pre class="pseudocode">display &quot;Program Completed&quot;</pre>
+
+
+
+        <p>This is very simple message, but sometimes the simple ones are really important. For example, we may want to write the output to a file:</p>
+
+
+        <pre class="pseudocode">write customer record to file</pre>
+
+
+
+        <p>Now, here's one that's a little more vague:</p>
+
+
+        <pre class="pseudocode">display totalTax</pre>
+
+
+
+        <p>This one is a bit vague.  We might not know where we want the output yet. Remember, our pseudocode is a tool that we use to design the program. We can only be as specific as we can with what we know. If we don't know then we'll have to ask more questions and learn more about our problem. Once we found out, we can make it better:        </p>
+
+
+        <pre class="pseudocode">display "The total tax is $" + totalTax</pre>
+
+        <p>Note that I'm being very specific, showing that there should be a dollar sign, and then building up some output using the variable.</p>
+
+        <div class="notice">
+          <p>You will be expected to be specific with your outputs in your pesudocode assignments.</p>
+        </div>
+
+        <h3>A computer can perform arithmetic</h3>
+
+        <p>This is an extremely important function of computers and was one of the many reasons they were developed. Computers can do math and they can do it very fast. They can also be consistent and always give us the same results with the same data. The people who did this before computers were called "computers" because they did computations all day long on an adding machine. The early electronic computers were just faster adding machines. They gave us an advantage during World War II</p>
+
+
+<pre class="pseudocode">add number to total
+set total to total plus number
+total = total + number
+
+subtract age from currentYear to get birthYear
+set birthYear to currentYear minus age
+birthYear = currentYear - age
+
+divide total by count to get average
+set average to  total divided by count
+average = total / count
+</pre>
+
+<p>We can express math functions in an English way or the mathematics way in our pseudocode.</p>
+        <table>
+          <tr>
+            <td><code>+</code></td>
+            <td>add</td>
+          </tr>
+          <tr>
+            <td><code>-</code></td>
+            <td>subtract</td>
+          </tr>
+          <tr>
+            <td><code>*</code></td>
+            <td>multiply</td>
+          </tr>
+          <tr>
+            <td><code>/</code></td>
+            <td>divide</td>
+          </tr>
+          <tr>
+            <td><code>%</code></td>
+            <td>modulo (remainders)</td>
+          </tr>
+          <tr>
+            <td><code>()</code></td>
+            <td>parentheses</td>
+          </tr>
+        </table>
+        <p>The symbols we use in programming for math functions are like the ones you'd use in a spreadsheet. We have to use the asterisk for multiplication and the forward slash (/) for division.</p>
+
+        <p>The verbs we use are from math: <strong>add</strong>, <strong>divide</strong>, <strong>multiply</strong>, <strong>compute</strong>, <strong>calculate</strong>.</p>
+
+        <h3>A computer can compare values and select one of many alternative actions</h3>
+
+        <p>This is the "selection" part of the Structure Theorem and is one of the most important things that a computer can do. It compares the contents of memory, based on some rules, and determines if the contents are equal or not. Most computer languages have the simple word "if" as the operator for this.</p>
+
+
+
+<pre class="pseudocode">
+Initialize fullTimeCount to 0
+Initialize partTimeCount to 0
+
+prompt for studentAttendanceStatus with "Are you a part-time student?"
+
+IF studentAttendanceStatus is "yes" THEN
+  add 1 to partTimeCount
+  Display "You are enrolled part time."
+ELSE
+  add 1 to fullTimeCount
+  Display "You are enrolled full time."
+ENDIF</pre>
+
+        <p>
+          This is an example of an <code>IF/ELSE</code> statement. If the condition that follows the <code class="keyword">IF</code> is true, then  the code underneath the <code class="keyword">IF</code> statement is executed. But if the condition is not true, then the code under the <code class="keyword">ELSE</code> statement is executed.</p>
+
+        <div class="notice">
+          <p>Notice that the steps beneath the <code class="keyword">IF</code> statement and the <code class="keyword">ELSE</code> statement are indented? That shows us visually that those are sub-processes; that they aren't part of the normal flow of our program. </p>
+          <p>You will be expected to use indentation like this in your pseudocode, and in your program code.
+        </div>
+
+        <p>The <code class="keyword">ELSE</code> statement is optional. Sometimes there's nothing else to do. Sometimes we just need to check something and do an extra step instead of an &quot;either-or&quot; situation. In those cases, we would just do a simple IF statement:</p>
+
+<pre class="pseudocode">
+IF user is an administrator THEN
+  display "Welcome, administrator."
+ENDIF
+</pre>
+
+
+        <p>Each "branch" of a decision statement can have many statements within, which can make programs exponentially harder to maintain and test. And each branch can make further decisions. For example, imagine a program that asks for a state of residence. And then, if you enter "Wisconsin", it will ask you what county you live in. And then if you enter "Eau Claire" for the county, it asks you what city you live in. Sounds complicated, right? Remember that Wisconsin has 72 counties. Now what if you lived in Minnesota or Illinois?</p>
+
+        <p>Don't worry, we won't get into that level of complexity just yet. But we will in a few weeks.</p>
+
+
+        <p>Decision processing is an incredibly important part of software development.</p>
+        <h3>A computer can repeat a group of actions</h3>
+
+        <p>This is another important feature of computers. Once we have a sequence of tasks to perform, a computer can do those tasks over and over again the same way each time. Remember that computers aren't smart, they're just fast at doing the tasks they have been told to do.</p>
+
+        <p>Here's an example program that counts from 1 to 50 and asks for a student's first and last name. It then prints the first and last name out to the screen and adds one to a counter:</p>
+
+<pre class="pseudocode">
+Initialize studentTotal to 1
+WHILE studentTotal &lt; 50 DO
+  Prompt for firstName with "What is your first name?"
+  Prompt for lastName with "What is your last name?"
+  Display firstName + " " + " lastName + "."
+  add 1 to studentTotal
+ENDWHILE</pre>
+
+        <p>The loop completes when the <code>studentTotal</code> is 50, because the condition in the loop says to keep going "while the <code>studentTotal</code> is <b>less than 50.</b></p>
+
+        <p>
+           This is an example of a <code class="keyword">WHILE</code> loop. It repeats all of the steps between the <code class="keyword">WHILE</code> and <code class="keyword">ENDWHILE</code> statements.
+
+        <div class="notice">
+          <p>Notice that the steps inside of the
+           loop are indented. This makes it easier to see where
+           the steps that will be repeated are.
+        </div>
+
+        <p>With the concepts we've explored, we can write pseudocode to accurately describe what our program should do. Sometimes we'll need to make decisions, other times we'll need to repeat some steps over and over. And sometimes we'll even need to repeat some steps <b>and</b> make decisions inside of the part of the code that repeats.</p>
+
+        <p>Here's another example of pseudocode:</p>
+
+        <blockquote>A program needs to count from 1 to ten. If the number is an
+          even number, it should print out "even". If it's an odd number, then
+          we print out "odd." At the end of the program, it should print "Done".</blockquote>
+
+<pre class="pseudocode">DisplayOddAndEven
+  initialize count to 1
+  WHILE count &lt;= 10 DO
+    IF (count modulo 2 == 0) THEN
+      display "Even"
+    ELSE
+      display "Odd"
+    ENDIF
+    set count = count + 1
+  ENDWHILE
+  display "Done."
+END</pre>
+
+        <p>Notice in this example:</p>
+        <ol>
+          <li>First, we initialize a variable called count to 1.</li>
+          <li>Next, we create a loop that compares <code class="keyword">count</code> to
+            10. If it's less than or equal to 10, we enter the loop.</li>
+          <li>Next, we check to see if the number is odd. We use <code class="keyword">modulo</code> to do this. We're checking to see if the number divides evenly by 2 with no remainder. If it does, the number is even. Otherwise it's odd.</li>
+          <li>Based on the result, we print the appropriate word to the screen.</li>
+          <li>Then, we increase the <code class="keyword">count</code> variable by one. </li>
+          <li>The program will then hit the <code class="keyword">ENDWHILE</code> line and start the <code class="keyword">WHILE</code> section again, comparing the <code class="keyword">count</code> to see if it's less than 10. We started at one, but now it's 2. And so the steps in the loop are repeated.</li>
+          <li>Once the <code class="keyword">count</code> is 11, it's no longer less than or equal to 10, and so the steps of the loop are no longer executed and we move on to the rest of the program.</li>
+          <li>The last line is then executed, printing out the word "Done."
+        </ol>
+
+        <p>This is the gist of pseudocode. We just use it to express the algorithm we want to code. Based on this, writing a program in JavaScript, or any other language, is much easier.</p>
+
+
+        <h3>Separate Processing, and Output</h3>
+
+        <p>
+          All of these examples clearly demonstrate how we'd solve the problem.
+          But they also do something that can be problematic - they mix output with processing.
+          As programs get larger, this can be a problem.
+        </p>
+
+        <p>
+          Look at this program:
+        </p>
+
+<pre class="pseudocode">
+Initialize fullTimeCount to 0
+Initialize partTimeCount to 0
+
+prompt for studentAttendanceStatus with "Are you a part-time student?"
+
+IF studentAttendanceStatus is "yes" THEN
+  add 1 to partTimeCount
+  Display "You are enrolled part time."
+ELSE
+  add 1 to fullTimeCount
+  Display "You are enrolled full time."
+ENDIF</pre>
+
+        <p>
+          This program has <b>two outputs</b>. One in the <code>if</code> part,
+          and another in the <code>else</code> part. If we use a variable,
+          we can separate the display from the branches in our program:
+        </p>
+
+<pre class="pseudocode">
+Initialize fullTimeCount to 0
+Initialize partTimeCount to 0
+initialize output to &quot;&quot;
+
+prompt for studentAttendanceStatus with "Are you a part-time student?"
+
+IF studentAttendanceStatus is "yes" THEN
+  add 1 to partTimeCount
+  output = "You are enrolled part time."
+ELSE
+  add 1 to fullTimeCount
+  output =  "You are enrolled full time."
+ENDIF
+
+display output </pre>
+
+        <p>This code is slightly longer, but it's easier to maintain. Should
+          we need to change how we display content, or display additional
+          content later, we can simply add to the <code>output</code> variable.
+          Observe:</p>
+
+        <p>This program has lots of displays in it:</p>
+
+
+<pre class="pseudocode">DisplayOddAndEven
+  initialize count to 1
+  WHILE count &lt;= 10 DO
+    IF (count modulo 2 == 0) THEN
+      display "Even"
+    ELSE
+      display "Odd"
+    ENDIF
+    set count = count + 1
+  ENDWHILE
+  display "Done."
+END</pre>
+        <p>Instead of displaying "odd" or "even" in the loop, we could
+          build up a single output string and display it at the end. We can add
+          strings together just like we can numbers, although
+          we call this <em>concatenation.</em>.
+        </p>
+
+<pre class="pseudocode">DisplayOddAndEven
+  initialize count to 1
+  initialize output to &quot;&quot;
+
+  WHILE count &lt;= 10 DO
+    IF (count modulo 2 == 0) THEN
+      output = output + "Even\n"
+    ELSE
+      output = output + "Odd\n"
+    ENDIF
+    set count = count + 1
+  ENDWHILE
+  output = output + "Done."
+
+  display output
+END</pre>
+
+
+        <p>Notice the <code>\n</code> character? That's a special character
+          sequence in programming called a "newline." It's like pressing the
+          enter key. Here's what the program output would look like without those characters:
+        </p>
+
+<pre class="output"><script>
+var count = 0;
+var output = "";
+while (count <= 10) {
+  if (count % 2 == 0) {
+    output = output + "Even";
+  } else {
+    output = output + "Odd";
+  }
+  count++;
+}
+output = output + "Done.";
+document.write(output);
+</script></pre>
+
+        <p>And here's what it looks like with the <code>\n</code> characters in place:</p>
+
+<pre class="output"><script>
+var count = 0;
+var output = "";
+while (count <= 10) {
+  if (count % 2 == 0) {
+    output = output + "Even\n";
+  } else {
+    output = output + "Odd\n";
+  }
+  count++;
+}
+output = output + "Done.";
+document.write(output);
+</script></pre>
+
+        <div class="notice">
+          <p>You are encouraged to strive for a single output in small
+            programs. Later in the course, this will be a requirement.
+          </p>
+        </div>
+
+
+        <h3>Lab Time</h3>
+
+
+        <p>Here are two labs so you can practice writing some pseudocode:</p>
+        <p class="lab_link"> <a href="labs/lab-06-pseudocode.html">Lab 6: Pseudocode Problem 1</a></p>
+        <p class="lab_link"> <a href="labs/lab-07-pseudocode.html">Lab 7: Pseudocode Problem 2</a></p>
+
+        <p>When you're done, go back to the main page.</p>
+        <p><a href="index.html">Back</a></p>
+
+<!-- InstanceEndEditable -->
+      </section>
+
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

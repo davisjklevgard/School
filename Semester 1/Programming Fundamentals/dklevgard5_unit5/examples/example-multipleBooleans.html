@@ -1,0 +1,238 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Example: Drivers License</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 5: Making Decisions</a></h2>
+      </header>
+      
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Example: Drivers License</h1>
+
+        <h4>File: unit5/example-multipleBooleans.html</h4>
+        <h3>Problem Statement</h3>
+
+        <blockquote><p><strong><em>A program is required that determines if someone gets a driver's license. The user is prompted for the age of the applicant, if the applicant passed the written exam, and if they passed the behind-the-wheel exam. The applicant is given a driver's license if they are at least 16 and they passed both exams.
+        </em></strong></p></blockquote>
+
+        <h3>1. Nouns and Verbs</h3>
+
+        <p>Identify the nouns and verbs in the problem statement.</p>
+
+<pre class="pseudocode">
+PROBLEM STATEMENT:
+    A program is required that determines if someone gets a
+    driver's license. The user is prompted for the age of
+    the applicant, if the applicant passed the written exam,
+    and if they passed the behind-the-wheel exam. The
+    applicant is given a driver's license if they are at
+    least 16 and they passed both exams. Output a condolence
+    if they don't get their license.
+
+Nouns: driver's license, age, written exam, behind-the-wheel exam, condolence
+
+Verbs: determines, prompted, passed, given
+</pre>
+
+
+
+        <h3>2. Defining Diagram</h3>
+
+        <p>Convert the nouns and verbs into variable names and processes and create a defining diagram.</p>
+
+<pre class="pseudocode">
+INPUTS:
+  age
+  writtenExamResults
+  behindTheWheelExamResults
+
+PROCESSING:
+  prompt for age
+  convert entry to numeric age
+  prompt for written exam results
+  prompt for behind-the-wheel results
+  award driver's license if all are ok
+
+OUTPUTS:
+  driversLicense
+  condolence
+</pre>
+
+
+
+        <h3>3. Solution Algorithm</h3>
+
+        <p>Create a solution algorithm based on the defining diagram.</p>
+
+<pre class="pseudocode">
+AwardDriversLicence
+  Prompt user for age
+  Convert age to number
+  Prompt user for writtenExamResults
+  Prompt user for behindTheWheelExamResults
+  IF age &gt;= 16 AND
+     writtenExamResults is &quot;Y&quot; AND
+     behindTheWheelExamResults is &quot;Y&quot; THEN
+    Display &quot;Congratulations, here's your driver's license!&quot;
+  ELSE
+    Display  &quot;We're sorry, you didn't pass. Please retake the test again in 30 days&quot;
+  ENDIF
+END
+</pre>
+
+
+
+        <h3>4. Checking the Solution Algorithm</h3>
+
+        <p>Create a test plan for the algorithm.</p>
+
+<pre class="pseudocode">
+VARIABLES: age, writtenExamResults, behindTheWheelExamResults,
+
+
+TEST CASE 1:
+
+  INPUT VALUES: 16, Y, Y
+
+  EXPECTED RESULT: &quot;Congratulations, here's your driver's license!&quot;
+
+  ACTUAL RESULT: &quot;Congratulations, here's your driver's license!&quot;
+
+
+TEST CASE 2:
+
+  INPUT VALUES: 15, Y, Y
+
+  EXPECTED RESULT:  We're sorry, you didn't pass. Please retake the test again in 30 days
+
+  ACTUAL RESULT:  We're sorry, you didn't pass. Please retake the test again in 30 days
+
+TEST CASE 3:
+
+  INPUT VALUES: 17, Y, N
+
+  EXPECTED RESULT:  We're sorry, you didn't pass. Please retake the test again in 30 days
+
+  ACTUAL RESULT: We're sorry, you didn't pass. Please retake the test again in 30 days
+
+</pre>
+
+
+
+        <h3>5. JavaScript Output</h3>
+
+        <p>Write the JavaScript code based on everything you've done.</p>
+        <p><strong>Here's the code:</strong></p>
+
+<pre><code class="js">
+// Award Driver&#39;s License
+
+function AwardDriversLicense() {
+  // Declare variables
+  var age;
+  var behindTheWheelExamResults;
+  var output = &quot;&quot;;
+  var writtenExamResults;
+
+  // Get data from user
+  age = prompt(&quot;Enter the applicant&#39;s age.&quot;);
+  writtenExamResults = prompt(&quot;Did applicant pass the written exam? Y/N&quot;);
+  behindTheWheelExamResults = prompt(&quot;Did applicant pass the behind&quot;
+          + &quot;-the-wheel exam? Y/N&quot;);
+
+  // Convert the age to a number
+  age = Number(age);
+
+  // Determine if the applicant gets their license
+  if (age &gt;= 16 &amp;&amp; writtenExamResults === &quot;Y&quot; &amp;&amp; behindTheWheelExamResults === &quot;Y&quot;) {
+    output = &quot;Congratulations, here&#39;s your driver&#39;s license!&quot;;
+  } else {
+    output = &quot;We&#39;re sorry, you didn&#39;t pass. Please retake the test &quot; +
+             &quot;again in 30 days.&quot;;
+  }
+
+  document.write(output);
+}
+
+// run your program
+AwardDriversLicense();
+
+</code></pre>
+
+        <p><strong>Here's the output:</strong></p>
+
+
+<pre class="output"> <script>
+// YOUR CODE STARTS AFTER THIS LINE:
+// Award Driver's License
+
+function AwardDriversLicense() {
+  // Declare variables
+  var age;
+  var behindTheWheelExamResults;
+  var output = "";
+  var writtenExamResults;
+
+  // Get data from user
+  age = prompt("Enter the applicant's age.");
+  writtenExamResults = prompt("Did applicant pass the written exam? Y/N");
+  behindTheWheelExamResults = prompt("Did applicant pass the behind"
+          + "-the-wheel exam? Y/N");
+
+  // Convert the age to a number
+  age = Number(age);
+
+  // Determine if the applicant gets their license
+  if (age >= 16 && writtenExamResults === "Y" && behindTheWheelExamResults === "Y") {
+    output = "Congratulations, here's your driver's license!";
+  } else {
+    output = "We're sorry, you didn't pass. Please retake the test " +
+             "again in 30 days.";
+  }
+
+  document.write(output);
+}
+
+// run your program
+AwardDriversLicense();
+
+
+// END OF YOUR CODE
+
+</script>
+</pre>
+
+        <h3>Think about it</h3>
+
+
+        <p>How would you change this program so it handled lower-case &quot;Y&quot; and &quot;N&quot; answers?</p>
+        <p><a href="../multipleBooleans.html">Back</a></p>
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

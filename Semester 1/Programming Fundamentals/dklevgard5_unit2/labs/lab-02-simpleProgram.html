@@ -1,0 +1,111 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 2: A Simple Program</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" --> 
+    <!-- InstanceEndEditable --> 
+  </head>  
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 2: JavaScript Syntax and Variables</a></h2>
+      </header>
+      
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+        <h1>Lab 2: A Simple Program</h1>
+        <h4>File: /unit2/lab-02-simpleProgram.html</h4>
+        <h3>Student Information</h3>
+        <ul>
+          <li>Name: Davis Klevgard</li>
+        </ul>
+        <h3>Lab Steps</h3>
+        <ul>
+          <li>Open this file in both Firefox and Notepad++</li>
+          <li>Add your name to the file just like before, replacing<strong> Your name goes here</strong> with your name</li>
+          <li>Test that you added your information correctly by reloading this page in your browser. Remember to save!</li>
+          <li>In Notepad++, go to the spot in the code within the &lt;script&gt; tags, that says: <br>
+            <br>
+            <code class="keyword">// YOUR CODE STARTS AFTER THIS LINE:</code>
+            <!-- This isn't the right spot! Go down to the <script> block! -->
+            <br>
+            <br>
+          </li>
+          <li><strong>Type</strong> this code exactly as it appears into the coding area below the above comment. Yes, you could easily just copy and paste it. However, you will learn much more by typing it yourself. You can't avoid typing, that's what we do for a living!
+            <ul>
+              <li>Replace "Write a description of the application here." with a description of what the application does.</li>
+              <li>Replace "Your Name Here" with your actual name. You'll keep the quotes though.</li>
+            </ul>
+          </li>
+        </ul>
+
+<pre><code class="js">
+/*
+  Write your own description of the application here.
+  Don't just copy what this text says!
+*/
+
+var name;
+var yourName = &quot;Your Name Here&quot;;
+
+name = prompt(&quot;Enter a name:&quot;);
+
+if (name === yourName) {
+  document.write(&quot;Hi, &quot; + yourName + &quot;! Nice to meet you.&quot;);
+} else {
+  document.write(&quot;I don't recognize your name. Try again!&quot;);
+}</code></pre>
+    <p>Now run the application by refreshing the page. Run it several times entering different names. Enter your name too!</p>
+    <h3>Your Output:</h3>
+
+<pre class="output">
+<script>
+// YOUR CODE STARTS AFTER THIS LINE:
+/*
+  This program has a user input a name that is stored within the program.
+  If the name is not stored, the program will ask the user to try again.
+*/
+
+var name;
+var yourName = "Davis Klevgard";
+
+name = prompt("Enter a name:");
+
+if (name === yourName) {
+  document.write("Hi, " + yourName + "! Nice to meet you.");
+} else {
+  document.write("I don't recognize your name. Try again!");
+}
+
+
+// END OF YOUR CODE
+</script>
+</pre>
+
+
+        <h3>What You Did</h3>
+        <p>We just typed a small JavaScript application and ran it. We also started using the course coding standards, maybe without realizing it. Now might be a good time to review the <a href="../javascriptCodingStandards.html">JavaScript Coding Standards</a> one more time. Make sure your code follows them! Did you remember your semicolons? </p>
+        <p>Now go back to and do the next section.</p>
+        <p><a href="../introToJavaScript.html">Back</a></p>
+        <!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

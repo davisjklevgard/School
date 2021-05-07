@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Lab 5: Debugging Exercise</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="../resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/print.css" media="print">
+    <script src="../resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="../resources/lib/highlight/styles/default.css">
+    <script src="../resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="../index.html">Unit 3: Program Design and Debugging</a></h2>
+      </header>
+
+      <section id="main">
+      <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Lab 5: Debugging Exercise</h1>
+
+        <h4>File: /Unit3/labs/lab-05-debugExer.html</h4>
+        <p>Did you notice that there is no output below in the "Demo Output" box? There are several common errors in the code below - and those errors are preventing our output from displaying correctly. Follow these steps and use the <strong>Web Console</strong>  and <strong> comments </strong> to practice your debugging skills, and eventually get all of your output to display correctly.
+        </p>
+        <p>The error console won't catch everything.  But, it will catch some errors - and lead you to places <em>near</em> other errors. Once you have exhausted the help the error console offers, it's time to start using comments to systematically hide lines of code from JavaScript until you can identify the line that has an error.</p>
+
+        <h4>Debugging instructions:</h4>
+
+        <ol>
+          <li>While this page is open in Firefox, open the Web Console (select Firefox, Web Developer,,Web Console).
+             <ul>
+               <li>Let's make sure you are starting "fresh"...with no errors leftover from previous windows. Click <strong>Clear</strong>.</li>
+               <li> Close the Web Console window.</li>
+               <li> Now refresh your browser, and open the Web Console window again.</li>
+             </ul>
+          </li>
+          <li>Look at the first error message on the Web Console.
+             <ul>
+               <li> The error message is pointing to the line that reads: <strong>var test2 10;</strong></li>
+               <li> Notice the line number.... We can locate that line number in Notepad ++. We don't need to do this now, but sometimes it helps to click the link to have the Error Console show you the exact line with the error it has identified.</li>
+               <li> Click the Clear button and close the Web Console.</li>
+               <li> Proceed to Notepad ++, fix the error, save the file, and refresh your browser! (missing equal sign)</li>
+             </ul>
+          </li>
+          <li>Still no output!  There must be more errors. Open the Web Console again.
+             <ul>
+               <li> The error message is pointing to the line that reads: <strong>document.write(this is a string);</strong></li>
+               <li> Click the Clear button and close the Web Console.</li>
+               <li> Proceed to Notepad ++, fix the error, save the file, and refresh your browser! (missing quotes around the string)</li>
+             </ul>
+          </li>
+					<li>
+					  Ok, we still have some problems, so what's the next error?  Let the console tell you.
+						<ul>
+						  <li>Looks like it has something to do with another <code>document.write</code>.
+							See the problem?
+						  <li>Fix up the error and refresh the page. Any progress?</ul>
+					</li>
+          <li>Still no output!  Good grief - there must be more errors. Open the Web Console again.
+             <ul>
+               <li> This time the error message is pointing to a line that includes a break tag. What's missing in that syntax?</li>
+               <li> Note the line number, then click the Clear button and close the Web Console.</li>
+               <li> Proceed to Notepad ++, find that line, fix the error, save the file, and refresh your browser! (missing quotes)</li>
+             </ul>
+          </li>
+          <li>And.... nothing again! Open the Web Console again and see what's up.
+             <ul>
+               <li>Another break tag?? If people just wouldn't use these we wouldn't have to debug them!</li>
+               <li>Note the line number, then click the Clear button and close the Web Console.</li>
+               <li>Proceed to Notepad ++, find that line, fix the error, save the file, and refresh your browser to see if it worked.</li>
+             </ul>
+          </li>
+          <li>Again...no output!  Will this never end?!?!? Open the Web Console again.
+             <ul>
+               <li> The error message is pointing to the line that includes the <strong>"my favorite thing"</strong> line. Looks like another syntax issue.</li>
+               <li> Click the Clear button and close the Web Console.</li>
+               <li> Proceed to Notepad ++, fix the error, save the file, and refresh your browser! (double quotes around the string might do it)</li>
+             </ul>
+          </li>
+          <li>No output again. Open the Web Console again.
+             <ul>
+               <li> The error message sys "document is not defined".  What's that all about???</li>
+               <li> Note the line number. Can you spot what's wrong? Click the Clear button and close the Error Console.</li>
+               <li> Proceed to Notepad ++, fix the error, save the file, and refresh your browser! (oops, it's a spelling error!)</li>
+             </ul>
+          </li>
+          <li>At last - <strong>we have output!</strong>. But, we don't have all of our output. Open the Web Console again.
+             <ul>
+               <li> Same error message as last time - but a different line number.</li>
+               <li> Locate that line number in Notepad ++.  This time, there just doesn't seem to be an error in this line of code. But, click the Clear button and close the Web Console.</li>
+               <li> We can't fix the error, but we can HIDE that line of code from JavaScript to see if other errors are revealed. So, place the comment characters (two forward slashes) at the very beginning of that line of code, save the file, and refresh your browser. </li>
+             </ul>
+          </li>
+          <li>Let's see if the Web Console will tell us anything else. Open the Web Console again.
+             <ul>
+               <li> Look at this error message <strong>very carefully!</strong></li>
+               <li> Note that line number, click the Clear button and close the Error Console.</li>
+               <li> Fix that spelling error in Notepad ++, save the file, and refresh your browser. </li>
+             </ul>
+          </li>
+          <li>Again, we have output, but we don't have all of our output. Open the Error Console again.
+             <ul>
+               <li> Locate that line number in Notepad ++.  It's another situation where there just doesn't seem to be an error in this line of code. But, click the Clear button and close the Web Console.</li>
+               <li> We can't fix the error, but we can HIDE that line of code from JavaScript, too.  That will give us another chance to see if other errors are revealed. So, place the comment characters (two forward slashes) at the very beginning of that line of code, save the file, and refresh your browser. </li>
+             </ul>
+          </li>
+          <li>Same situation again.  We have output, but we don't have all of our output. And, it's pointing to a line that doesn't seem to have an error. Open the Web Console again.
+             <ul>
+               <li> Now we are getting suspicious.  Perhaps the line in error is <strong>NOT</strong> the line number being identified by the Web Console. Click the Clear button and close the Web Console.</li>
+               <li> Let's look at the line just BEFORE the lines we have commented out.  AHA!!! Do you see the problem with the "document.write" line that is supposed to display "This is fun"???  Fix those syntax errors, save the file, and refresh your browser. </li>
+             </ul>
+          </li>
+          <li>That seemed to make a difference, but we still should have more output! Open the Web Console again.
+             <ul>
+               <li> Ok...this time it's pointing to the "alert" command. Click the Clear button and close the Web Console.</li>
+               <li> Fix the spelling error, save the file, and refresh your browser. </li>
+             </ul>
+          </li>
+
+           <li>Now that's progress!  The "alert" worked...and we now have two lines of output! But we still should have more output. Open the Web Console again.
+             <ul>
+               <li> This time, the Web Console shows no errors. Click the Clear button and close the Web Console.</li>
+               <li> Now we'll have to continue by using comments to identify lines with errors that prevent our output from displaying. </li>
+               <li> Somewhere between the line that displays "this is a string" and the alert - there must be an error! Let's "comment out" the line immediately following the line that successfully displays the "this is a string" message. </li>
+               <li> Comment that line in Notepad++, save the file, and refresh your browser. </li>
+             </ul>
+          </li>
+           <li>That helped!  We now have an additional line of output! That should make us think that there could be a problem in the line of code we just commented.
+             <ul>
+               <li> Take a close look at that line we commented out. The break tag is missing something! Could that tiny error have really caused all of this trouble?  YES!</li>
+               <li> Remove the comment characters from that line in Notepad++, fix the syntax error, save the file, and refresh your browser. </li>
+             </ul>
+          </li>
+          <li>Even better!  We now have our message box working, along with three lines of output with working break tags! But, we're still missing output...
+             <ul>
+               <li> Let's try removing the comment characters from the other two lines we commented out in the debugging process.  We didn't really see any errors in those lines, anyway. </li>
+               <li> Remove the comment characters, save the file, and refresh your browser.</li>
+             </ul>
+          </li>
+          <li>Almost perfect!  We now have everything but one line of output displaying.
+             <ul>
+               <li> The only line that doesn't display is the second from the last "document.write" statement. If you look carefully, you'll see that there is, indeed, a syntax error.</li>
+               <li> Fix the syntax error (which character is used for concatenation???), save the file, and refresh your browser.</li>
+             </ul>
+          </li>
+          <li><strong>OH JOY - It worked!!!</strong>  We now have the message box and all of our lines of output displaying.
+             <ul>
+               <li> We successfully <strong>debugged</strong> our program line by line, using both the <strong>Web Console</strong> and <strong>comments</strong>.</li>
+            </ul>
+          </li>
+        </ol>
+
+
+
+
+				<h3>Source Code:</h3>
+
+<pre><code class="JScript">
+<!-- THIS IS JUST THE CODE THAT SHOWS UP IN THE BROWSER.
+     IT'S NOT THE CODE YOU EDIT. Scroll down for that! -->
+// Some common JavaScript errors
+
+var test = 5;
+var test2 = 10;
+
+document.write(this is a string);
+
+document.write("&lt;br");
+
+document.write = "This is fun";
+
+document.write(&lt;br&gt;);
+
+document.write("Hello");
+
+document.write("&lt;br&gt;);
+
+alertt("HOWDY!");
+
+document.write("I can debug " + test2 +
+               " times faster now!" & "&lt;br&gt;");
+
+document.write('It's my favorite thing!');
+</code></pre>
+
+
+
+				<h3>Your Output:</h3>
+
+<pre class="output">
+<script>
+// YOUR CODE STARTS AFTER THIS LINE:
+// Some common JavaScript errors
+
+var test = 5;
+var test2 = 10;
+
+document.write("this is a string");
+
+document.write("<br>");
+
+document.write("This is fun");
+
+document.write("<br>");
+
+document.write("Hello");
+
+document.write("<br>");
+
+alert("HOWDY!");
+
+document.write("I can debug " + test2 +
+              " times faster now!" + "<br>");
+
+document.write("It's my favorite thing!");
+
+// END OF YOUR CODE
+</script>
+</pre>
+
+
+        <h3>Explanation:</h3>
+        <p>You used two debugging techniques/tools to locate and fix errors in JavaScript code.  The Web Console and comments are both very valuable debugging tools.</p>
+        <p>By the way, if you happened to get stuck somewhere in the debugging process, here is a copy of the lab with the corrected code...but please look at this ONLY as a last resort, or to check your work: <a href="lab-05-debugExerKEY.html">Lab 5 Answers</a></p>
+        <p>What You Learned</p>
+        <p>You learned how to debug someone else's JavaScript code, a valuable skill you'll use all the time as a professional programmer. These techniques will serve you well. At this point in the class, you should no longer turn in programs that don't work.</p>
+        <p><a href="../debugIntro.html">Back</a></p>
+      <!-- InstanceEndEditable -->
+      </section>
+
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>

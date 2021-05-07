@@ -1,0 +1,251 @@
+<!DOCTYPE html>  
+<html lang="en-US"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->  
+  <head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Simple if/else Statements</title>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+    <link rel="stylesheet" href="resources/css/print.css" media="print">
+    <script src="resources/lib/jquery/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="resources/lib/highlight/styles/default.css"> 
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>Programming Fundamentals</h1>
+        <h2><a href="index.html">Unit 5: Making Decisions</a></h2>
+      </header>
+      
+      <section id="main">
+        <!-- InstanceBeginEditable name="Main" -->
+
+        <h1>Simple if/else Statements</h1>
+
+        <img src="resources/ySign.png" alt="" height="379" width="379">
+
+        <p>
+          We use IF/ELSE statements when we need to &quot;branch&quot; our
+          code, or make an &quot;either-or&quot; type of decision. IF/ELSE
+          statements are for those situations where you have to make a binary
+          choice. For example, you're either able to vote or you're not. You're
+          either an admin or you're not.
+        </p>
+
+        <p>While we could use two simple IF statements to do the same thing, it's a <strong>Very Bad Idea</strong> to do that, because it would make the computer check the same value more than once. So, for &quot;either or&quot; situations, we have:</p>
+
+        <h3>The <code>if/else</code> Statement</h3>
+        <p>Pseudocode</p>
+
+<pre class="pseudocode">IF some condition THEN
+  turn left
+ELSE
+  turn right
+ENDIF
+</pre>
+
+        <p>In JavaScript, this is how your <code>if/else</code> code should look.</p>
+
+<pre><code class="js">
+// Simple if/else
+
+if (boolean expression) {
+  // do something
+} else {
+  // do something else
+}
+</code></pre>
+
+
+        <h3>How does this work?</h3>
+        <p>If the boolean expressions is <code>true</code> then the code after the <code>if</code> is run. If it is <code>false</code> then the code after the <code>else</code> is run.</p>
+
+        <div style="text-align: center;">
+          <img src="resources/simpleIfElse.png" alt="" height="574" width="902">
+        </div>
+
+        <h3>Examples</h3>
+        <p>Here's the above example in running code. </p>
+
+<pre><code class="js">
+// if Example, false
+var count = 4;
+
+if (count === 5) {
+  document.write(&quot;yes&quot;);
+} else {
+  document.write(&quot;no&quot;);
+}
+</code></pre>
+
+<pre class="output"> <script>
+// if Example, false
+var count = 4;
+
+if (count === 5) {
+  document.write("yes");
+} else {
+  document.write("no");
+}
+</script>
+</pre>
+
+<p>Here's one that's true</p>
+
+<pre><code class="js">
+// if Example, true
+var price = 14.99;
+
+if (price &lt; 15.00) {
+  document.write(&quot;I'll buy it!&quot;);
+} else {
+  document.write(&quot;That's too much for me.&quot;);
+}
+</code></pre>
+
+<pre class="output"> <script>
+// if Example, true
+var price = 14.99;
+
+if (price < 15.00) {
+  document.write("I'll buy it!");
+} else {
+  document.write("That's too much for me.");
+}
+</script>
+</pre>
+
+        <p>Where it gets interesting is when we won't know which way it will go until the program is running.</p>
+
+<pre><code class="js">
+// Which way will it go?
+
+function WhichWay() {
+  // Variable Declarations
+  var output = &quot;&quot;;
+  var priceOne;
+  var priceTwo;
+  var total;
+  var subtotal;
+
+  // Get user input and convert to numbers.
+
+  priceOne = prompt(&quot;Enter 1st price.&quot;);
+  priceTwo = prompt(&quot;Enter 2nd price.&quot;);
+
+  //Convert input to numbers
+  priceOne = Number(priceOne);
+  priceTwo = Number(priceTwo);
+
+  // Calculate total and store it so we
+  // can use is more than once
+  subTotal = priceOne + priceTwo;
+
+  // Which discount should we apply?
+  if (subTotal &gt; 24.99) {
+    total = subTotal - (subTotal * 0.1);
+  } else {
+    total = subTotal - (subTotal * 0.05);
+  }
+
+  // Display output differently depending on the discount
+  // Here&#39;s where we use the subTotal again. Isn&#39;t it handy
+  // that we stored it?
+  output = &quot;Your total with a &quot;;
+  if (subTotal &gt; 24.99) {
+    output += &quot;BIG &quot;;
+  } else {
+    output +=&quot;small &quot;;
+  }
+
+  output += &quot;discount on a purchase of $&quot; + subTotal +
+            &quot; is &quot; + total;
+
+  document.write(output);
+}
+
+// run program - uncomment to run.
+ WhichWay();
+</code></pre>
+
+
+
+<pre class="output">
+<script>
+// Which way will it go?
+
+function WhichWay() {
+  // Variable Declarations
+  var output = "";
+  var priceOne;
+  var priceTwo;
+  var total;
+  var subtotal;
+
+  // Get user input and convert to numbers.
+
+  priceOne = prompt("Enter 1st price.");
+  priceTwo = prompt("Enter 2nd price.");
+
+  //Convert input to numbers
+  priceOne = Number(priceOne);
+  priceTwo = Number(priceTwo);
+
+  // Calculate total and store it so we
+  // can use is more than once
+  subTotal = priceOne + priceTwo;
+
+  // Which discount should we apply?
+  if (subTotal > 24.99) {
+    total = subTotal - (subTotal * 0.1);
+  } else {
+    total = subTotal - (subTotal * 0.05);
+  }
+
+  // Display output differently depending on the discount
+  // Here's where we use the subTotal again. Isn't it handy
+  // that we stored it?
+  output = "Your total with a ";
+  if (subTotal > 24.99) {
+    output += "BIG ";
+  } else {
+    output +="small ";
+  }
+
+  output += "discount on a purchase of $" + subTotal +
+            " is " + total;
+
+  document.write(output);
+}
+
+// run program - uncomment to run.
+ WhichWay();
+</script>
+</pre>
+
+        <h3>Full <code>if/else</code> Example</h3>
+        <p>IF / ELSE statements aren't just for controlling input and output. They're for &quot;control flow&quot; and that's really important when you write complex programs. When we &quot;branch&quot; our code, we can literally go down two completely different paths. We can, for example, check the value a user gives us, and only run the rest of our program if the value they give us is valid.</p>
+        <p>Here's a nice example: <a href="examples/example-DivideSafely.html">Full Example: Divide Safely</a></p>
+        <h3>Guess what's next?</h3>
+
+        <p><em>"History will be kind to me for I intend to write it."</em> - Winston Churchill</p>
+        <p class="lab_link"><a href="labs/lab-02-simpleIfElse.html">Lab 2: Simple If/Else</a></p>
+        <p><a href="index.html">Back</a></p>
+
+
+<!-- InstanceEndEditable -->
+      </section>
+      
+      <footer>
+        <p>
+          Latest Version: 1.2009
+        </p>
+      </footer>
+
+    </section>
+  </body>
+<!-- InstanceEnd --></html>
