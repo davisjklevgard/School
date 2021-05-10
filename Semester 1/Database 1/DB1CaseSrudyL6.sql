@@ -10,15 +10,15 @@ where FlightID = 79
 order by LastName;
 
 -- Query 2
-select FlightID, PickUpTime, sum(SeatPrice) as TotalSeatPrice, CostPerMile
--- I am having problems with this one as the information is spread over three tables and am not sure how to join them together. 
-from ManifestPassenger inner join Passenger using (PassID) inner join FlightReservation using (FlightID)
+select FlightID, PickUpTime, sum(SeatPrice) as TotalSeatPrice, CostPerMile 
+from ManifestPassenger inner join FlightReservation using (FlightID)
 group by FlightID
 order by TotalSeatPrice desc; 
 
 -- Query 3
 select FirstName, LastName, FlightID, PickUpTime, SeatPrice
-from ManifestPassenger inner join FlightReservation using (FlightID);
+-- I am having problems with this one as the information is spread over three tables and am not sure how to join them together.
+from ManifestPassenger inner join Passenger using (PassID) inner join FlightReservation using (FlightID);
 
 
 -- Query 4
