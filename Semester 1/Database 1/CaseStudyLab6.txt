@@ -1,0 +1,53 @@
+Query 1)
+
+Flight 79 is in progress and is about to pick up passengers, the flight manifest needs to be sent to the drone to display the passenger info for check-in as they board. 
+Show the Flight ID, Passenger ID, First Name, Last Name
+Sort by Last Name
+Label the query as Query 1
+ 
+
+Query 2)
+
+What is the total of all the seat prices, for each flight?
+Show Flight ID, Pick Up Time, Total Seat Price (this is a calculated field), and Cost per mile
+Hint: Two tables are needed along with a grouping.
+Sort by highest total seat price first
+Label the query as Query 2
+ 
+
+Query 3)
+
+Jon's team is working on displaying a passengers flight history page. They need a list of flights, for the passenger Cody Black (Pass Id #118), which shows the passengers name, Flight ID, Pick up time, and seat price. Eventually, the customer will be able to click on the flight to review details of each flight.
+Sort the results by the Pickup time.
+Label the query as Query 3
+ 
+
+Query 4)
+
+When did Flight 20 transport a package and what was the size and weight of the package delivered?
+Show the FlightID, PickUpTime, ActDropOffTime, PackageID, Length, Width, Height, and Weight
+Label the query as Query 4
+ 
+
+Query 5)
+
+A list showing ALL of the models is needed, along with showing the specific drone information about our fleet to make sure we have a balance between passenger and package models relative to the amount scheduled.
+Show the DroneID, Color, Added On date, Model, and the model's description
+Sort by Model
+Hint: You should get 18 records.
+Label the query as Query 5
+ 
+Query 6)
+
+Which flights has each remote pilot been assigned to?
+Show the Last Name, First Name, and Flight ID
+Sort by Last name then First name then Flight ID
+Label the query as Query 6
+ 
+
+Query 7)
+
+The Flight Reservation confirmation page needs a full descriptive listing of the flight details for Flight 1078
+Show the Flight ID, Pick up time, Est drop off time, cost per mile, pick up and drop off locations, the flight type (description, such as Passenger) alias as 'Type', the current status description alias as 'Status', and remote pilots first and last name.
+Hint: All foreign key ID fields must be swapped for the descriptive field
+Label the query as Query 7
