@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+      <meta charset="utf-8">
+      
+      <title>Final Project by Davis Klevgard</title>
+      <link rel="stylesheet" href="css/style.css">
+    </head>
+    
+    <body>
+      <section class="container">
+        <header>
+          <h1>Final Project</h1>
+        </header>
+      
+      <section id="main">
+        
+        <h1>The Chance of Dice!</h1>
+        
+        <h3>Rules of the Game</h3>
+        
+        <h3>Game's Problem Statement</h3>
+        <blockquote>
+          <p>Write a program that asks for the amount to bet. This will loop as long as
+          the user wishes to bet. Have them type "cash out" to stop betting. The amount of 
+          money a user has will appear with the prompt for the bet. A random dice roll will
+          determine what happens with the amount betted. When the user is done, 
+          or the money drops to zero, there will be an output of what the user betted and 
+          how they did.</p>
+          
+          <p>Nouns:</p>
+          <p>amount, money, prompt, dice roll, output</p>
+          <p>Verbs:</p>
+          <p> asks, stop, appear, determine</p>
+        </blockquote>
+        
+        <h3>Defining Diagram</h3> 
+        <pre class="pseudocode">
+        INPUT:
+          amount
+          
+        PROCESSING
+          prompt user for amount
+          display dice roll
+          display dice result
+          
+        OUTPUTS:
+          dice roll
+          money
+          
+        </pre>
+        
+        
+        <h3>Solution Algorithm</h3>
+        <pre class="pseudocode">
+        bettingOnDice
+          initialize money to 1000000
+          initialize bet
+          initialize lost to money minus bet
+          initialize won to money plus bet times 2
+          initialize dice
+          
+          WHILE bet does not equal "cash out" or money > 0 
+            prompt for amount
+            call rollDice
+            IF dice equals 2, 3, 4, 6, 8, 10, 12
+              display dice was + dice roll + you lost
+              display lost
+              money equals lost
+            ELSE IF dice equals 5, 9, 11
+              display dice roll and draw
+              display "Money was returned"
+            ELSE IF dice equals 7
+              display "The dice was 7. You won!"
+              display won
+              money equals won
+           ENDWHILE
+        END 
+          
+          rollDice
+            return dice equals Math.random between 2-12
+          END
+        </pre>
+        
+        <h3>Tests</h3>
+        <pre class="pseudocode">
+        VARIABLES:
+          bet
+          
+        TEST CASE 1
+          
+          INPUTS: 500000, 400, cash out
+          
+          EXPECTED RESULTS:
+          
+          
+        </pre>
+        
+        
+        <pre class="output">
+        <script src="js/bettingOnDice.js"></script>
+        </pre>
+        </section>
+        
+        <footer>
+          <p>
+            Version created: 5.2021
+          </p>
+        </footer>
+        </section>
+      </body>
+    </html>
+        
