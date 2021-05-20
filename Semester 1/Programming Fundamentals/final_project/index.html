@@ -20,19 +20,19 @@
         <h3>Rules of the Game</h3>
         
         <h3>Game's Problem Statement</h3>
-        <blockquote>
-          <p>Write a program that asks for the amount to bet. This will loop as long as
+        <pre class="pseudocode">
+          Write a program that asks for the amount to bet. This will loop as long as
           the user wishes to bet. Have them type "cash out" to stop betting. The amount of 
           money a user has will appear with the prompt for the bet. A random dice roll will
           determine what happens with the amount betted. When the user is done, 
           or the money drops to zero, there will be an output of what the user betted and 
-          how they did.</p>
+          how they did.
           
-          <p>Nouns:</p>
-          <p>amount, money, prompt, dice roll, output</p>
-          <p>Verbs:</p>
-          <p> asks, stop, appear, determine</p>
-        </blockquote>
+          Nouns:
+          amount, money, prompt, dice roll, output
+          Verbs:
+          asks, stop, appear, determine<
+        </pre>
         
         <h3>Defining Diagram</h3> 
         <pre class="pseudocode">
@@ -61,8 +61,9 @@
           initialize dice
           
           WHILE bet does not equal "cash out" or money > 0 
-            prompt for amount
-            call rollDice
+            prompt for amount of bet
+            check for errors in amount of bet
+            roll the dice
             IF dice equals 2, 3, 4, 6, 8, 10, 12
               display dice was + dice roll + you lost
               display lost
