@@ -1,0 +1,128 @@
+Game's Problem Statement 	
+ Write a program that asks for the amount to bet. This will loop as long as
+          the user wishes to bet. Have them type "cash out" to stop betting. The amount of money a user has will appear with the prompt for the bet. A random dice roll will determine what happens with the amount betted. When the user is done, or the money drops to zero, there will be an output of what the user betted and how they did.
+          
+          Nouns:
+          amount, money, prompt, dice roll, output
+          Verbs:
+          asks, stop, appear, determine<
+
+
+
+Defining Diagram
+	INPUT:
+          amount
+          
+        PROCESSING
+          prompt user for amount
+          display dice roll
+          display dice result
+          
+        OUTPUTS:
+          dice roll
+          money
+
+
+
+Solution Algorithm
+ 	bettingOnDice
+          initialize money to 1000000
+          initialize bet
+          initialize lost to money minus bet
+          initialize won to money plus bet times 2
+          initialize dice
+          
+          WHILE bet does not equal "cash out" or money > 0 
+            prompt for amount of bet
+            check for errors in amount of bet
+            roll the dice
+            IF dice equals 2, 3, 4, 6, 8, 10, 12
+              display dice was + dice roll + you lost
+              display lost
+              money equals lost
+            ELSE IF dice equals 5, 9, 11
+              display dice roll and draw
+              display "Money was returned"
+            ELSE IF dice equals 7
+              display "The dice was 7. You won!"
+              display won
+              money equals won
+           ENDWHILE
+        END 
+          
+Tests
+
+ VARIABLES:
+          bet
+          
+        TEST CASE 1
+          
+          INPUTS: 500000, cash out
+          
+          EXPECTED RESULTS:
+          The dice was (number on the losing roll). You lose the bet
+          Your money now equals 500000.
+          The dice was (number on the draw roll). It is a draw.
+          Your money is returned.
+          The dice was 7. You win!
+          Your money is now 2000000
+          Thanks for playing my game!
+          
+          ACTUAL RESULTS:
+          The dice was 7. You win!
+          Your money is now 2000000
+          Thanks for playing my game!
+          
+        TEST CASE 2
+          
+          INPUTS: 1000001, cash out
+          
+          EXPECTED RESULTS:
+          You are betting more than you have. Can't do that.
+          Thanks for playing the game!
+          ACTUAL RESULTS:
+          You are betting more than you have. Can't do that.
+          Thanks for playing the game!
+          
+        TEST CASE 3
+        
+          INPUTS: 600, cash out
+          
+          EXPECTED RESULTS:
+          The dice was (number on the losing roll). You lose the bet
+          Your money now equals 999400.
+          The dice was (number on the draw roll). It is a draw.
+          Your money is returned.
+          The dice was 7. You win!
+          Your money is now 1001200
+          Thanks for playing my game!
+          
+          ACTUAL RESULTS:
+          The dice was 4. You lost the bet.
+          Your money now equals 999400
+          Thanks for playing my game!
+          
+        TEST CASE 4
+        
+          INPUTS:5000, 80, cash out
+          
+          EXPECTED RESULTS:
+          The dice was (number on the losing roll). You lose the bet
+          Your money now equals 995000.
+          The dice was (number on the draw roll). It is a draw.
+          Your money is returned.
+          The dice was 7. You win!
+          Your money is now 1010000
+          The dice was (number on the losing roll). You lose the bet
+          Your money now equals (previous - 80)
+          The dice was (number on the draw roll). It is a draw.
+          Your money is returned.
+          The dice was 7. You win!
+          Your money is now (previous + 160)
+          Thanks for playing my game!
+          ACTUAL RESULTS:
+           The dice was 9. It is a draw.
+           Your money is returned.
+           The dice was 4. You lost the bet.
+           Your money now equals 999920
+           Thanks for playing my game!

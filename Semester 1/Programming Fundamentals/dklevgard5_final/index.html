@@ -90,11 +90,75 @@
           
         TEST CASE 1
           
-          INPUTS: 500000, 400, cash out
+          INPUTS: 500000, cash out
           
           EXPECTED RESULTS:
+          The dice was (number on the losing roll). You lose the bet
+          Your money now equals 500000.
+          The dice was (number on the draw roll). It is a draw.
+          Your money is returned.
+          The dice was 7. You win!
+          Your money is now 2000000
+          Thanks for playing my game!
           
+          ACTUAL RESULTS:
+          The dice was 7. You win!
+          Your money is now 2000000
+          Thanks for playing my game!
           
+        TEST CASE 2
+          
+          INPUTS: 1000001, cash out
+          
+          EXPECTED RESULTS:
+          You are betting more than you have. Can't do that.
+          Thanks for playing the game!
+          ACTUAL RESULTS:
+          You are betting more than you have. Can't do that.
+          Thanks for playing the game!
+          
+        TEST CASE 3
+        
+          INPUTS: 600, cash out
+          
+          EXPECTED RESULTS:
+          The dice was (number on the losing roll). You lose the bet
+          Your money now equals 999400.
+          The dice was (number on the draw roll). It is a draw.
+          Your money is returned.
+          The dice was 7. You win!
+          Your money is now 1001200
+          Thanks for playing my game!
+          
+          ACTUAL RESULTS:
+          The dice was 4. You lost the bet.
+          Your money now equals 999400
+          Thanks for playing my game!
+          
+        TEST CASE 4
+        
+          INPUTS:5000, 80, cash out
+          
+          EXPECTED RESULTS:
+          The dice was (number on the losing roll). You lose the bet
+          Your money now equals 995000.
+          The dice was (number on the draw roll). It is a draw.
+          Your money is returned.
+          The dice was 7. You win!
+          Your money is now 1010000
+          The dice was (number on the losing roll). You lose the bet
+          Your money now equals (previous - 80)
+          The dice was (number on the draw roll). It is a draw.
+          Your money is returned.
+          The dice was 7. You win!
+          Your money is now (previous + 160)
+          Thanks for playing my game!
+          ACTUAL RESULTS:
+           The dice was 9. It is a draw.
+           Your money is returned.
+           The dice was 4. You lost the bet.
+           Your money now equals 999920
+           Thanks for playing my game!
         </pre>
         
         
