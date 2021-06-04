@@ -26,7 +26,7 @@ SELECT
 FROM
     Model
 WHERE
-    Description LIKE '%package%'
+    TypeID = 2
 ORDER BY Brand , Model;
 
 -- Query 5

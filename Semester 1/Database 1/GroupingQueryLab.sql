@@ -90,6 +90,7 @@ SELECT
     COUNT(DATEDIFF(ShippedDate, RequiredDate)) AS NumOrders
 FROM
     `order`
+WHERE DATEDIFF(ShippedDate, RequiredDate) > 0
 GROUP BY DaysLate
 ORDER BY DaysLate DESC;
 

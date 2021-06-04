@@ -5,7 +5,7 @@ FROM
     customer
         INNER JOIN
     `order` USING (CustomerID)
-GROUP BY CompanyName
+GROUP BY CustomerID
 ORDER BY NumOrders DESC;
 
 -- Query 2
@@ -17,7 +17,7 @@ FROM
     product
         INNER JOIN
     orderDetail USING (ProductID)
-GROUP BY ProductName
+GROUP BY ProductID
 ORDER BY TotalSales DESC;
 
 -- Query 3
@@ -38,7 +38,7 @@ ORDER BY TotalSales DESC;
 SELECT 
     FirstName,
     LastName,
-    COUNT(OrderID) AS NumOrders,
+    COUNT(DISTINCT OrderID) AS NumOrders,
     ROUND(SUM(SalePrice * Quantity * (1 - Discount)),
             2) AS TotalSales
 FROM
@@ -59,7 +59,7 @@ SELECT
     SUM(Quantity) AS TotalOrdered
 FROM
     product
-        INNER JOIN
+        LEFT JOIN
     orderDetail USING (ProductID)
 GROUP BY ProductID
 ORDER BY TimesOrdered DESC;

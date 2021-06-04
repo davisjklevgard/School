@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="HelloDavis:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>HelloDavis</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="HelloDavis-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="HelloDavis:war exploded" />
+    </root>
+  </artifact>
+</component>
