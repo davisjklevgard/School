@@ -1,0 +1,12 @@
+package com.test.servlets;
+
+import javax.servlet.http.HttpServlet;
+
+public class GetServlet extends HttpServlets {
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    }
+
+}

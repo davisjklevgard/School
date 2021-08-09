@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>HPlusSample</display-name>
+  
+  <servlet>
+    //logical name that developer gives and is their choice
+  <servlet-name>GetServlet</servlet-name>
+    // the class name of the servlet class
+  <servlet-class>com.test.servlets.GetServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  // supposed to have the same value and the servlet tag
+  <servlet-name>GetServlet</servlet-name>
+    //unique url pattern identifying the servlet. relative to the WAR structure
+  <url-pattern>/getServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <servlet>
+  <servlet-name>HomeServlet</servlet-name>
+  <servlet-class>com.test.servlets.HomeServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>HomeServlet</servlet-name>
+  <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  <servlet-name>HomeServlet</servlet-name>
+  <url-pattern></url-pattern>
+  </servlet-mapping>
+  
+</web-app>

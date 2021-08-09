@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="web" name="Web27">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch02/02_05/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch02/02_05/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web26">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch08/08_03/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch08/08_03/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web29">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch02/02_03/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch02/02_03/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web28">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch08/08_02/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch08/08_02/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web63">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch06/06_06/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch06/06_06/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web62">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch06/06_03/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch06/06_03/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web65">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch08/08_06/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch08/08_06/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web21">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch08/08_02/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch08/08_02/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web64">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch03/03_03/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch03/03_03/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web20">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch04/04_02/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch04/04_02/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web23">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch02/02_02/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch02/02_02/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web22">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch03/03_04/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch03/03_04/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web25">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch03/03_04/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch03/03_04/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web24">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch03/03_02/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch03/03_02/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web61">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch09/09_02/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch09/09_02/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web60">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch07/07_06/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch07/07_06/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web16">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch04/04_04/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch04/04_04/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web59">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch09/09_03/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch09/09_03/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web15">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch08/08_04/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch08/08_04/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web18">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch04/04_03/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch04/04_03/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web17">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch10/10_07/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch10/10_07/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web19">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch06/06_04/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch06/06_04/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web5">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch05/05_02/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch05/05_02/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web52">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch02/02_02/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch02/02_02/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web51">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch08/08_06/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch08/08_06/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web4">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch02/02_05/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch02/02_05/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web10">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch06/06_06/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch06/06_06/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web7">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch10/10_06/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch10/10_06/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web54">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch01/01_05/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch01/01_05/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web6">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch02/02_04/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch02/02_04/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web53">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch09/09_03/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch09/09_03/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web56">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch07/07_05/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch07/07_05/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web12">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch08/08_03/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch08/08_03/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web9">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch04/04_04/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch04/04_04/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web55">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch10/10_02/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch10/10_02/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web11">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch07/07_06/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch07/07_06/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web8">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch06/06_07/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch06/06_07/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web14">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch07/07_05/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch07/07_05/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web58">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch09/09_02/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch09/09_02/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web57">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch02/02_04/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch02/02_04/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web13">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch03/03_02/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch03/03_02/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch05/05_02/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch05/05_02/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web50">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch06/06_07/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch06/06_07/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web49">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch02/02_03/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch02/02_03/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web48">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch10/10_07/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch10/10_07/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web41">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch06/06_03/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch06/06_03/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web40">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch07/07_03/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch07/07_03/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web43">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch10/10_04/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch10/10_04/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web42">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch09/09_05/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch09/09_05/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web45">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch10/10_02/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch10/10_02/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web44">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch01/01_05/Resources/HPlus/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch01/01_05/Resources/HPlus/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web47">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch01/01_05/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch01/01_05/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web46">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch10/10_04/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch10/10_04/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web3">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch10/10_06/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch10/10_06/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web2">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch03/03_03/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch03/03_03/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web38">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch05/05_01/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch05/05_01/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web37">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch04/04_01/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch04/04_01/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web39">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch04/04_02/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch04/04_02/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web30">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch08/08_04/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch08/08_04/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web32">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch04/04_01/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch04/04_01/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web31">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch04/04_03/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch04/04_03/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web34">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch10/10_03/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch10/10_03/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web33">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch06/06_04/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch06/06_04/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web36">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch07/07_03/End/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch07/07_03/End/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web35">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/Ch09/09_05/Start/HPlusSample/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/Ch09/09_05/Start/HPlusSample/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
