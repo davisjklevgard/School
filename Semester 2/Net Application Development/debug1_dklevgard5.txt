@@ -1,0 +1,6 @@
+#1	Line 24: [missing comma] [put comma in between arguments]
+#2	Line 25: [incorrect order] [switched order of arguments]
+#3	Line 39: [variable not declared] [added As Integer]
+#4	Line 17: [missing ArrayList =] [ added missing part]
+#5	Line 12: [Integer is written] [ replaced with Boolean]
+#6	Line 61: [the numbers are not being sent to print] [worked for a while but I could not figure out why this was not able to print and could not get this last part to work]

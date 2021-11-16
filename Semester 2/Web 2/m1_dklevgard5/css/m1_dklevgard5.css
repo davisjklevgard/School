@@ -1,0 +1,14 @@
+/*
+Style Rule
+
+selectors can be tagnames, .className, #id, etc...
+
+selector {
+	attribute: value;
+}
+*/
+
+body {
+	background: #222;
+	color: #00ff27;
+}
