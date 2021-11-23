@@ -20,7 +20,7 @@
 <body id="back">
 <div class="container">
     <div class="hero-unit">
-        <h1>Class List</h1>
+        <h1>Movie List</h1>
     </div>
 
     <%@include file="includes/navigation.jsp"%>
@@ -31,7 +31,7 @@
             </c:when>
             <c:otherwise>
                 <!-- The list has people in it -->
-                <c:forEach var="person" items="${movies}">
+                <c:forEach var="movie" items="${movies}">
                     <h2>${movie.title}</h2>
                     <p>${movie.title} is ${movie.lengthInMinutes} minutes long.<br>
                             ${movie.title} director is ${movie.director}</p>
