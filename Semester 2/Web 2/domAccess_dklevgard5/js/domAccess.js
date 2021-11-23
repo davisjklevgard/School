@@ -54,13 +54,15 @@ var MyDOMAccess = {
 		
 		
 		// Append these tab images and <br>'s to div#imageTabs
-		tab01.append(break1);
-		tab02.append(break2);
-		tab03.append(break3);
+		
 		
 		imageTabsDiv.append(tab01);
+		imageTabsDiv.append(break1);
 		imageTabsDiv.append(tab02);
+		imageTabsDiv.append(break2);
 		imageTabsDiv.append(tab03);
+		imageTabsDiv.append(break3);
+		imageTabsDiv.append(tab04);
 		
 		
 		// Get a reference to div#primaryPic and name it primaryPic
@@ -72,7 +74,9 @@ var MyDOMAccess = {
 		// Position div#imageTabs as shown in the video using "absolute 
 		// positioning" by dynamically altering this element's styles.
 		
-		
+		imageTabsDiv.style.position = 'absolute';
+		imageTabsDiv.style.left = '-26px';
+		imageTabsDiv.style.top = '15px';
 		
 		
 		// ****************************************************************
@@ -124,15 +128,14 @@ var MyDOMAccess = {
 		
 		// Get a nodelist of references to the <p> tags within div#motd 
 		// and store in a variable named pList.
-		let pList = document.querySelectorAll('#motd > p');
+		let pList = document.querySelectorAll(motdDiv > p);
 
 		// Step through the pList nodelist and change the forementioned styles
 		// on each <p> element inside div#motd - use a for loop to do this.
 		for (let i = 0; i < pList.length; i++) {
-			pList[i].background.src = "images/pBackground.png";
-			console.log(i + " " + pList[i].style.background);
+			pList[i].style.background = 'url(images/pBackground.png)';
 			pList[i].style.color = 'white';
-      pList[i].style.borderRadius = '8px';
+      pList[i].style.borderRadius = '1px';
       pList[i].style.position = 'relative'; 
       pList[i].style.textShadow = '2px, 2px, #FFF';
 		}
@@ -174,7 +177,7 @@ var MyDOMAccess = {
 
 		// Then, replace the <span> tag's content with just the 
 		// "'copyright symbol here' 2020 ".
-		copyRight.innerText = "'copyright symbol here' 2020 ";
+		copyRight.innerText = copy; "2020 ";
 
 		// Append email address at end of <span>'s content.
 		copyRight.append(emailAddress);
