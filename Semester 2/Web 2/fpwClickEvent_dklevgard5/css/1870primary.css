@@ -409,6 +409,8 @@ div#primaryPic img#pic {
 /* Style the imageTabs div here */
 
 div#imageTabs {
+	position: absolute;
+	left: -26px;
 	
 }
 

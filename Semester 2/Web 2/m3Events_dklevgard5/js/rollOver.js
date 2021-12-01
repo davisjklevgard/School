@@ -45,7 +45,7 @@ class NorthShoreGallery {
     // Newer way to handle events is called event listeners
     //
     // Syntax:
-    // Old: element.oneevent = eventHandlerFunctionName;
+    // Old: element.onevent = eventHandlerFunctionName;
     // New: element.addEventListener('event', eventhandlerFunctionName[, eventPropogation]);
     this.northShoreImage.addEventListener('mouseenter', this.showRandomImage);
     this.northShoreImage.addEventListener('mouseleave', NorthShoreGallery.resetImage);

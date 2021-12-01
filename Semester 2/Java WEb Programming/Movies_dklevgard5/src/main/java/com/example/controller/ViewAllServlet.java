@@ -1,6 +1,7 @@
 package com.example.controller;
 
 
+import com.example.comparator.LengthComparator;
 import com.example.model.Movie;
 import com.example.utility.WorkbookUtility;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -36,6 +37,12 @@ public class ViewAllServlet extends HttpServlet {
             //Sort list if necessary
             String sortType = request.getParameter("sortType");
 
+            if (sortType != null && !sortType.isEmpty()){
+                // sort our list
+                if (sortType.equals("length")) {
+                    Collections.sort(movies, new LengthComparator());
+                }
+            }
 
             // attach our data to the request
             request.setAttribute("movies", movies);

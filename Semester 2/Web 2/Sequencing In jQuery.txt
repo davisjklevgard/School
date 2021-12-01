@@ -1,0 +1,17 @@
+Sequencing in jQuery
+
+1. Using delay(milliseconds) method. Do use this in this assignment in a very specific place!
+
+2. Complete/callback function as a parameter in a jQuery method
+
+Eg animate({properties}, duration, easing, function() {
+	// code in here will only execute when the animate() completes
+   });
+
+3. Chaining animate() methods together on the same jQuery object
+
+eg $(selector).animate().animate();
+
+The second (chained) animate() would only begin to run once the first animate has completed.
+
+4. Using a jQuery promise.
