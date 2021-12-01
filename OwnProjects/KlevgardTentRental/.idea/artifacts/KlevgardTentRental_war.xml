@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="KlevgardTentRental:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>false</exploded>
+        <module>KlevgardTentRental</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
+    <root id="archive" name="KlevgardTentRental-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="KlevgardTentRental:war exploded" />
+    </root>
+  </artifact>
+</component>
