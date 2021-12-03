@@ -39,3 +39,30 @@ h1 {
 	text-shadow: 4px 4px 4px #888;
 }
 
+.polaroid {
+	background-color: #f8f8f8;
+	padding: .438rem .438rem 2.125rem;
+	border-radius: .25rem;
+	overflow: hidden;
+	box-shadow: 0 0 1rem .125rem #222;
+}
+
+.js #gallery {
+	height: 31.25rem;
+	margin: 3.125rem 0;
+	/*border: 1px solid #f00;*/
+}
+
+.js #gallery, .js #info{
+	width: 100%;
+	float: none;
+	position: relative; /* positioning parent */
+}
+
+.js #gallery > img {
+	margin: 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+}

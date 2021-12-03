@@ -1,6 +1,6 @@
 var ImagePicker = {
 
-   imageAside: document.querySelector('#picText'),
+   imageAside: document.querySelector('.picText'),
    imagePic: document.querySelector('#pic'),
    oldImagePicId: 0,
    newImagePicId: 0,
@@ -16,11 +16,8 @@ var ImagePicker = {
       
     }
 
-    let randomIndex = ImagePicker.randRange(0, imageTabsList.length);
+    var randomIndex = ImagePicker.randRange(0, imageTabsList.length);
     
-
-    // randomIndex.src = 'images/pic' + imageTabList[randomIndex] + '.png';
-//console.log(imageTabsList[randomIndex].getAttribute('longdesc'));
     ImagePicker.imagePic.src = imageTabsList[randomIndex].getAttribute('longdesc');
     ImagePicker.newImagePicId = randomIndex;
 
@@ -43,13 +40,13 @@ var ImagePicker = {
   },
 
   showImageDescription(){
-    this.imageAside.style.opacity = "1.0";
-    this.imageAside.querySelector('p' + randomIndex).style.display = block; 
-    console.log(this.imageAside);
+    ImagePicker.imageAside.style.opacity = "1.0";
+    ImagePicker.imageAside.querySelector('#p' + ImagePicker.newImagePicId).style.display = 'block'; 
+    console.log(ImagePicker.newImagePicId);
   },
 
   hideImageDescription() {
-    this.imageAside.style.opacity = "0.0";
+    ImagePicker.imageAside.style.opacity = "0.0";
   },
 
   randRange(min, max){
