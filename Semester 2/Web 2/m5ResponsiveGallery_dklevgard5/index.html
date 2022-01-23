@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Greensock TweenLite Testing - Image Gallery</title>
+	<meta charset="utf-8">
+    
+    <link href="css/styles.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet'>
+</head>
+
+<body>
+    
+    <h2>Greensock TweenLite testing page</h2>
+    
+    <div class="contentWrapper">
+    
+        <section class="thumbnails">
+        
+            <img src="images/thumbs/1.jpg" id="1" alt="thumbnail1">
+            <img src="images/thumbs/2.jpg" id="2" alt="thumbnail2">
+            <img src="images/thumbs/3.jpg" id="3" alt="thumbnail3">
+            <img src="images/thumbs/4.jpg" id="4" alt="thumbnail4">
+            <img src="images/thumbs/5.jpg" id="5" alt="thumbnail5">
+            <img src="images/thumbs/6.jpg" id="6" alt="thumbnail6">
+        
+        </section>
+        
+        <section class="content">
+        
+            <!--<img src="images/stPrivat.jpg" id="photo1" alt="The Cemetery at St Privat - by Alphonse De Neuville">-->
+            
+            <img src="images/4_1000px.jpg" id="photo1" alt="The Cemetery at St Privat - by Alphonse De Neuville" 
+                 srcset="images/4_300px.jpg 500w, images/4_500px.jpg 600w, images/4_800px.jpg 800w, images/4_1000px.jpg 1000w" 
+                 sizes="(max-width: 460px) 100vw, (min-width: 768px) 75vw">
+					
+						<!--  When determining what image to use from choices given via the srcset and sizes <img> tag attributes for responsive images, the browser uses a ratio of the width descriptor value divided by the actual screen width * viewport width percentage so the formula would look like this: 
+
+						widthDescriptorValue / (screenWidth * viewportWidthPercentage). 
+
+						The browser does this for each of the image possibilites that are part of the srcset attribute value.  It will always calculate this on every choice and then determine which image gives it the ratio greater than and closest to 1.
+
+						Which viewport width percentage (vw value in the sizes attribute) value the browser will use will be determined by the device's viewport width (screen size). So above if the screen size is 460px or less the image will take up 100% of the viewport because its vw value is 100vw.  If the screen size is 768px wide or wider, the image will use the 75vw value to display across 75% of the viewport (screen).
+
+						Example #1: for a screen width of 540px * 1 (100vw) = 540.  Then the ratio of 500 (500w is the width descriptor for the 4_300px.jpg image) / 540 < 1 so the browser will step up from 4_300px.jpg to use 4_500px.jpg which has a width descriptor of 600w so its ratio value of 600 / 540 is > 1 so the browser will use this image...
+
+						Example #2: for a screen width of 1200px * .75 (75vw) = 900.  Then using the width descriptor for the 4_880px.jpg image which is 800w, the ratio would be 800 / 900 < 1 so the browser will step up from 4_800px.jpg to try the next image size up which according to our srcset attribute would be the 4_1000px.jpg image which has a width descriptor value of 1000w. Now the ratio value is 1000 / 900 which is  > 1 so the browser will now automatically use the 4_1000px.jpg image.
+
+            Also, note that even in Firefox's Responsive Design Mode, you will need to manually alter the width values to see this work as it would on an actual physical device.  The device built-in values don't seem to update the browser correctly.  :-( -->
+            
+            <div class="picCaption">
+            
+                <p id="stPrivat" class="picTitle">The Cemetery at St Privat - 18 August, 1870
+                    <span class="artistInfo">Alphonse De Neuville</span>    </p>
+                        
+                <p id="picCaption1" class="picTitle">The Galgenhugel at Froeschwiller - 6 August, 1870
+                    <span class="artistInfo">Carl Rochling</span></p> 
+                        
+                <p id="picCaption2" class="picTitle">Billeting with the Enemy - August, 1870
+                    <span class="artistInfo">Anton Werner</span></p> 
+                        
+                <p id="picCaption3" class="picTitle">Morsbrunn - 6 August, 1870
+                    <span class="artistInfo">Edouard Detaille</span></p> 
+                        
+                <p id="picCaption4" class="picTitle">The Cemetery at St Privat - 18 August, 1870
+                    <span class="artistInfo">Alphonse De Neuville</span></p> 
+                        
+                <p id="picCaption5" class="picTitle">French Cuirassiers at Eberbach - 6 August, 1870
+                    <span class="artistInfo">Unknown</span></p> 
+                        
+                <p id="picCaption6" class="picTitle">The Spy - August, 1870
+                    <span class="artistInfo">Alphonse De Neuville</span></p>    
+            
+            </div>
+        
+        </section>
+    
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>       
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="js/gallery.js"></script>
+
+</body>
+</html>

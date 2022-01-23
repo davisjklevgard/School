@@ -25,6 +25,12 @@
             <input type="submit" value="Search">
         </form>
 
+        <form action="Search" method="get">
+            <label for="director"> Search by Director:</label>
+            <input type="text" name="title" id="director">
+            <input type="submit" value="Search">
+        </form>
+
     <%@include file="includes/footer.jsp"%>
     </div>
 </body>

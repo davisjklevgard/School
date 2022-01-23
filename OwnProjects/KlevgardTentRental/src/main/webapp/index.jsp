@@ -10,6 +10,6 @@
 </h1>
 <br/>
 <%@include file="assets/navigation.jsp"%>
-<p><h2>We set them up and tear them down!</h2></p>
+<p><h2>We put them up and we take them down!</h2></p>
 </body>
 </html>

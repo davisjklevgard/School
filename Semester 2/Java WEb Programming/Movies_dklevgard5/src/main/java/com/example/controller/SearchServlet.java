@@ -20,12 +20,12 @@ public class SearchServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String target = "/view-all.jsp";
 
-        String filePath = getServletContext().getRealPath("assets/JavaWebProgramming.xlsx");
+        String filePath = getServletContext().getRealPath("assets/MovieList.xlsx");
 
         File inputFile = new File(filePath);
 
         try {
-            List<Movie> people = WorkbookUtility.retrieveMoviesFromWorkbook(inputFile);
+            List<Movie> movies = WorkbookUtility.retrieveMoviesFromWorkbook(inputFile);
 
 
             String searchParameter = request.getParameter("title");
@@ -33,9 +33,9 @@ public class SearchServlet extends HttpServlet {
             int stringLength = searchParameter.length();
 
 
-            List<Movie> filteredList = people
+            List<Movie> filteredList = movies
                                 .stream()
-                                .filter( (person) -> stringLength < person.getTitle().length() ? person.getTitle().substring(0, stringLength).equalsIgnoreCase(searchParameter) : person.getTitle().equalsIgnoreCase(searchParameter))
+                                .filter( (movie) -> stringLength < movie.getTitle().length() ? movie.getTitle().substring(0, stringLength).equalsIgnoreCase(searchParameter) : movie.getTitle().equalsIgnoreCase(searchParameter))
                                 .collect(Collectors.toList());
 
             request.setAttribute("movies", filteredList);
@@ -43,6 +43,8 @@ public class SearchServlet extends HttpServlet {
         } catch (InvalidFormatException e) {
             e.printStackTrace();
         }
+        
+        
 
 
         getServletContext().getRequestDispatcher(target).forward(request, response);

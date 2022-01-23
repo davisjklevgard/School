@@ -11,6 +11,19 @@
     <title>Tents</title>
 </head>
 <body>
-
+<link href="assets/css/main.css" rel="stylesheet" type="text/css">
+<h1>Rentals we have on hand:</h1>
+    <dl><h2>Tents</h2>
+        <dt>White</dt>
+        <dd>- 20 x 30 tent</dd>
+        <dt>Blue</dt>
+        <dd>- 20 x 30 tent</dd>
+        <dt>Green</dt>
+        <dd>- 20 x 30 tent</dd>
+    </dl>
+    <h2>Sides</h2>
+    <p>Description to be put in later</p>
+<br/>
+<%@include file="assets/navigation.jsp"%>
 </body>
 </html>

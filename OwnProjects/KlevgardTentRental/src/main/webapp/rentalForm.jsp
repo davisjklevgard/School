@@ -11,6 +11,10 @@
     <title>Rental Form</title>
 </head>
 <body>
+<link href="assets/css/main.css" rel="stylesheet" type="text/css">
+<h1>Rental Form:</h1>
+
+<h2>Tent:</h2>
 
 </body>
 </html>
